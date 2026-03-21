@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .course-card h2 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .module-divider {
+            grid-column: 1fr;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-top: 20px;
+        }
+
+        .module-divider h3 {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>初中现代文阅读专题课程</h1>
+            <p>紧扣中考考点，提升阅读能力</p>
+        </header>
+
+        <div class="course-grid">
+            <!-- 模块一 -->
+            <div class="module-divider">
+                <h3>模块一：记叙文阅读</h3>
+            </div>
+
+            <a href="lessons/lesson01.html" class="course-card">
+                <span class="lesson-number">第 01 课</span>
+                <h2>记叙文的文章概括</h2>
+                <p>掌握概括文章主要内容和中心思想的方法</p>
+            </a>
+
+            <a href="lessons/lesson02.html" class="course-card">
+                <span class="lesson-number">第 02 课</span>
+                <h2>记叙文的线索与顺序</h2>
+                <p>学会寻找文章线索，理解记叙顺序的作用</p>
+            </a>
+
+            <a href="lessons/lesson03.html" class="course-card">
+                <span class="lesson-number">第 03 课</span>
+                <h2>人物形象分析</h2>
+                <p>从外貌、语言、动作、心理描写分析人物</p>
+            </a>
+
+            <a href="lessons/lesson04.html" class="course-card">
+                <span class="lesson-number">第 04 课</span>
+                <h2>重点语句赏析</h2>
+                <p>品味关键词句的含义和表达效果</p>
+            </a>
+
+            <a href="lessons/lesson05.html" class="course-card">
+                <span class="lesson-number">第 05 课</span>
+                <h2>标题的含义与作用</h2>
+                <p>理解标题的表层和深层含义</p>
+            </a>
+
+            <!-- 模块二 -->
+            <div class="module-divider">
+                <h3>模块二：说明文阅读</h3>
+            </div>
+
+            <a href="lessons/lesson06.html" class="course-card">
+                <span class="lesson-number">第 06 课</span>
+                <h2>说明对象与特征</h2>
+                <p>准确把握说明对象及其主要特征</p>
+            </a>
+
+            <a href="lessons/lesson07.html" class="course-card">
+                <span class="lesson-number">第 07 课</span>
+                <h2>说明方法及其作用</h2>
+                <p>识别常见说明方法，分析其表达效果</p>
+            </a>
+
+            <a href="lessons/lesson08.html" class="course-card">
+                <span class="lesson-number">第 08 课</span>
+                <h2>说明文语言特点</h2>
+                <p>体会说明文语言的准确性和严密性</p>
+            </a>
+
+            <!-- 模块三 -->
+            <div class="module-divider">
+                <h3>模块三：议论文阅读</h3>
+            </div>
+
+            <a href="lessons/lesson09.html" class="course-card">
+                <span class="lesson-number">第 09 课</span>
+                <h2>论点的提取与概括</h2>
+                <p>学会找出中心论点和分论点</p>
+            </a>
+
+            <a href="lessons/lesson10.html" class="course-card">
+                <span class="lesson-number">第 10 课</span>
+                <h2>论据的类型与作用</h2>
+                <p>识别事实论据和道理论据</p>
+            </a>
+
+            <a href="lessons/lesson11.html" class="course-card">
+                <span class="lesson-number">第 11 课</span>
+                <h2>论证方法辨析</h2>
+                <p>掌握举例、道理、对比、比喻论证</p>
+            </a>
+
+            <!-- 模块四 -->
+            <div class="module-divider">
+                <h3>模块四：散文与小说阅读</h3>
+            </div>
+
+            <a href="lessons/lesson12.html" class="course-card">
+                <span class="lesson-number">第 12 课</span>
+                <h2>散文的形与神</h2>
+                <p>理解散文"形散神聚"的特点</p>
+            </a>
+
+            <a href="lessons/lesson13.html" class="course-card">
+                <span class="lesson-number">第 13 课</span>
+                <h2>散文情感把握</h2>
+                <p>体会作者的情感变化和主旨</p>
+            </a>
+
+            <a href="lessons/lesson14.html" class="course-card">
+                <span class="lesson-number">第 14 课</span>
+                <h2>小说情节梳理</h2>
+                <p>理清故事情节，把握发展脉络</p>
+            </a>
+
+            <a href="lessons/lesson15.html" class="course-card">
+                <span class="lesson-number">第 15 课</span>
+                <h2>小说环境描写</h2>
+                <p>分析环境描写的作用</p>
+            </a>
+
+            <!-- 模块五 -->
+            <div class="module-divider">
+                <h3>模块五：中考真题实战</h3>
+            </div>
+
+            <a href="lessons/lesson16.html" class="course-card">
+                <span class="lesson-number">第 16 课</span>
+                <h2>记叙文真题精讲</h2>
+                <p>中考记叙文典型题目解析</p>
+            </a>
+
+            <a href="lessons/lesson17.html" class="course-card">
+                <span class="lesson-number">第 17 课</span>
+                <h2>说明文真题精讲</h2>
+                <p>中考说明文典型题目解析</p>
+            </a>
+
+            <a href="lessons/lesson18.html" class="course-card">
+                <span class="lesson-number">第 18 课</span>
+                <h2>议论文真题精讲</h2>
+                <p>中考议论文典型题目解析</p>
+            </a>
+
+            <a href="lessons/lesson19.html" class="course-card">
+                <span class="lesson-number">第 19 课</span>
+                <h2>答题技巧与规范</h2>
+                <p>掌握各类题型的答题模板和术语</p>
+            </a>
+
+            <a href="lessons/lesson20.html" class="course-card">
+                <span class="lesson-number">第 20 课</span>
+                <h2>易错点与备考指导</h2>
+                <p>梳理高频易错点，冲刺中考</p>
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 初中现代文阅读专题课程 | 共 20 课时</p>
+        </footer>
+    </div>
+</body>
+</html>
