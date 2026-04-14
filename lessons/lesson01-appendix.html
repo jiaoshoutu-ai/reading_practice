@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第 01 课 附录 文章原文 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-section h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .article-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .article-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .article-section .source {
+            text-align: right;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-indent: 0;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .article-index {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .article-index h3 {
+            color: #9c27b0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .article-index ul {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .article-index li {
+            margin-bottom: 8px;
+        }
+
+        .article-index a {
+            color: #9c27b0;
+            text-decoration: none;
+        }
+
+        .article-index a:hover {
+            text-decoration: underline;
+        }
+
+        /* 练习框样式 */
+        .exercise-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .exercise-box h3 {
+            color: #9c27b0;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ce93d8;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+        }
+
+        .question-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .answer-space {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px dashed #9c27b0;
+        }
+
+        .answer-space p {
+            text-indent: 0;
+            margin-bottom: 10px;
+            color: #9c27b0;
+            font-weight: 600;
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 29px,
+                #bbb 30px
+            );
+            background-size: 100% 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .navbar, .nav-links, .progress-indicator, .print-btn, .article-index {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .article-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .lesson-header {
+                box-shadow: none;
+            }
+
+            .exercise-box {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+
+            .writing-lines {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- 进度指示器 -->
+        <div class="progress-indicator">
+            <div class="progress-step completed">Part 1</div>
+            <div class="progress-step completed">Part 2</div>
+            <div class="progress-step completed">Part 3</div>
+            <div class="progress-step completed">Part 4</div>
+            <div class="progress-step completed">附录</div>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 01 课</span>
+            <span class="part-badge">附录</span>
+            <h1>文章原文 + 真题汇编</h1>
+            <p style="color: #666; margin-top: 10px;">本附录收录了第 01 课所有练习中用到的 5 篇文章原文、配套真题及 1 篇课外阅读文章，留白处可手写答案，方便学生打印和集中学习。</p>
+        </div>
+
+        <!-- 文章目录 -->
+        <div class="article-index">
+            <h3>📑 文章目录</h3>
+            <ul>
+                <li><a href="#article1">1. 《背影》（节选）—— 朱自清</a> 【Part 1 使用】<span style="color: #9c27b0; font-size: 0.85rem;">（附批注练习）</span></li>
+                <li><a href="#article2">2. 《看自行车的女人》—— 梁晓声</a> 【Part 2 使用】<span style="color: #9c27b0; font-size: 0.85rem;">（附真题）</span></li>
+                <li><a href="#article3">3. 《口罩》—— 黄大刚</a> 【Part 2 使用】<span style="color: #9c27b0; font-size: 0.85rem;">（附真题）</span></li>
+                <li><a href="#article4">4. 《那年春节》—— 黄咚咚</a> 【Part 2 使用】<span style="color: #9c27b0; font-size: 0.85rem;">（附真题）</span></li>
+                <li><a href="#article5">5. 《妈妈的树》—— 佚名</a> 【Part 3 使用】<span style="color: #9c27b0; font-size: 0.85rem;">（附真题）</span></li>
+                <li><a href="#article6">6. 《爱到无力》—— 丁立梅</a> 【课外阅读】<span style="color: #9c27b0; font-size: 0.85rem;">（附批注任务）</span></li>
+            </ul>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <!-- 文章 1：背影 -->
+        <div class="article-section" id="article1">
+            <h2>一、背影（节选）</h2>
+            <p class="author">朱自清</p>
+
+            <p>我看见他戴着黑布小帽，穿着黑布大马褂，深青布棉袍，蹒跚地走到铁道边，慢慢探身下去，尚不大难。可是他穿过铁道，要爬上那边月台，就不容易了。他用两手攀着上面，两脚再向上缩；他肥胖的身子向左微倾，显出努力的样子。这时我看见他的背影，我的泪很快地流下来了。</p>
+
+            <p>近几年来，父亲和我都是东奔西走，家中光景是一日不如一日。他少年出外谋生，独力支持，做了许多大事。哪知老境却如此颓唐！他触目伤怀，自然情不能自已。情郁于中，自然要发之于外；家庭琐屑便往往触他之怒。他待我渐渐不同往日。但最近两年的不见，他终于忘却我的不好，只是惦记着我，惦记着我的儿子。</p>
+
+            <p>我北来后，他写了一信给我，信中说道："我身体平安，惟膀子疼痛厉害，举箸提笔，诸多不便，大约大去之期不远矣。"我读到此处，在晶莹的泪光中，又看见那肥胖的、青布棉袍黑布马褂的背影。唉！我不知何时再能与他相见！</p>
+
+            <p class="source">（选自《朱自清散文选集》）</p>
+
+            <!-- 对应题目 -->
+            <div class="exercise-box">
+                <h3>📝 对应练习（Part 1）</h3>
+                <div class="question-item">
+                    <p><strong>随堂练习：</strong>请对文章最后一段进行批注，从以下三种批注类型中至少选择两种：</p>
+                    <ul>
+                        <li><strong>赏析式批注：</strong>品味关键词句的表达效果</li>
+                        <li><strong>感悟式批注：</strong>记录自己的阅读感受和联想</li>
+                        <li><strong>结构式批注：</strong>分析段落结构和写作手法</li>
+                    </ul>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的批注：</strong></p>
+                    <div class="writing-lines" style="height: 200px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章 2：看自行车的女人 -->
+        <div class="article-section" id="article2">
+            <h2>二、看自行车的女人</h2>
+            <p class="author">梁晓声</p>
+
+            <p>①想为那个看自行车的女人写点什么的念头，已萌生在我心里很久了。</p>
+
+            <p>②第一次见到她，是在北京一家医院前的人行道上。一个胖女人企图夺她装钱的书包，书包的带子已从她肩头滑落，搭垂在手臂上。身材瘦小的她双手将书包紧紧搂在怀里，以带着哭腔的声音叫嚷："你不能这样啊，我每天挣点儿钱多不容易呀！"</p>
+
+            <p>③她 40 余岁，穿着一套旧迷彩服，戴着一顶旧迷彩单帽。那身衣服一看就是地摊货。脚下是一双老式旧布鞋，没穿袜子，脚面晒得很黑。帽舌下，她的两只眼睛，呈现着莫大而又无助的惊恐。</p>
+
+            <p>④我从围观者的议论中听明白了两个女人纠缠的原因：那胖女人存车时，忘了拿放在车筐里的包，包丢了。她认为这个看自行车的外地女人应该负责任，并且怀疑是被她藏起来了。</p>
+
+            <p>⑤胖女人一用力，终于将看自行车的女人那书包夺了去，她将一只手伸进包里去掏，却只掏出了一把零钱。"当"的一声，一只小搪瓷碗抛在看自行车女人的脚旁，抢夺者骑上自己的自行车，带着装有一把零钱的别人的书包，扬长而去。</p>
+
+            <p>⑥看自行车的女人追了几步，回头看看一排自行车，慢慢走回原地，捡起自己的小搪瓷碗，瞧着发愣。忽然，她把头往身旁的大树上一抵，呜呜哭了……</p>
+
+            <p>⑦第二次见到她，是在一家商场的自行车场。我因没买到合适的东西，带着的一百元钱也就没破开。取自行车时，我歉意地说："忘带存车的零钱了，一百元你能找得开吗？"我以为她会朝不好的方面猜疑我，因为一个人从商场出来，居然说自己兜里连几角零钱都没有，不大可信的。她望着我怔了怔，然后一笑，很不好意思地说："那就不用给钱了，走吧走吧！"她当时那笑，给我留下很深的印象。</p>
+
+            <p>⑧后来我又去那家商场，付存车费时，我说："上次欠你两毛钱，这次一起付给你。"我之所以如此主动，是我觉得她肯定记得我欠她两毛钱的事，若由她提醒，我会尴尬的。不料她又像上次那样怔了怔，然后一笑，很不好意思地说："不用啊，不用啊！"硬塞还给了我两毛钱。我将装东西的纸箱夹在车后座上，忍不住问她："来北京多久了？""还不到半年。""家乡的日子怎么样？""不容易啊……再加上我儿子又上了大学……"她将"大学"两个字说出特别强调的意味，一脸自豪。我推自行车下人行道时，觉得后轮很轻，回头一看，她正替我提着后轮呢。骑上自行车刚蹬了几下，纸箱掉了，她跑过来，从书包里掏出一截塑料绳……</p>
+
+            <p>⑨这年冬天，雪后的一个晚上，单位一位退休摄影师给我打电话，让我替他写一封表扬信。他要表扬的，就是那个看自行车的女人。"我到那家商场去，遇到熟人聊了一会儿，竟忘了取自行车，拎兜也忘在车筐里了。拎兜里的几百元钱倒没什么，关键是我洗的三百多张老照片啊！干了一辈子摄影，那些老照片可都是我的宝呀！天黑了我才想起来，急忙赶去，你猜怎么着？就剩我那辆车了！商场早关门了，看车的女人在冷风中站着，抱着我的拎兜，守着我那辆旧自行车。人心不可以没有了感动呀，是不是？人对人也不可以不知感激呀，是不是？"他在电话里言辞恳切。</p>
+
+            <p>⑩不久前我又去那家商场，见看自行车的已经换成一个男人了，我想问原先那个女人到哪里去了，张了张嘴，却什么也没问。我祈愿她永远也不会再碰到什么欺负她的人，比如那个抢夺了她书包的胖女人。</p>
+
+            <p>⑪阳光底下，人与人应该是平等的。弱者有时对这平等反倒显得诚惶诚恐似的，不是他们不配，而是因为这起码的平等往往太少，太少……</p>
+
+            <!-- 对应题目 -->
+            <div class="exercise-box">
+                <h3>📝 对应练习（Part 2 真题练习一）</h3>
+                <div class="question-item">
+                    <p><strong>第 7 题：</strong>本文写了"看自行车的女人"的哪几件事？请用简洁的语言分别概括。（4 分）</p>
+                    <p><strong>提示：</strong>找时间关键词（第一次、第二次、后来、这年冬天），用"谁 + 做了什么"的格式概括</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的答案：</strong></p>
+                    <div class="writing-lines" style="height: 150px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章 3：口罩 -->
+        <div class="article-section" id="article3">
+            <h2>三、口罩</h2>
+            <p class="author">黄大刚</p>
+
+            <p>①街上戴口罩的人越来越多了。开始是零星几个人戴，人们还像看怪物似的，嘴上虽不说，眼里却藏着不屑。</p>
+
+            <p>②那个时候，疫情却像天边的闷雷，除了偶尔传来隐隐的几声动静外，大力住的地方还是艳阳高照。偶尔谈及，有人不以为然："武汉离咱这儿十万八千里，远着呢，微信上说，不会人传人，可防可控。"大力听说这种病毒像王冠，还打趣："王冠多漂亮啊，怎么和病毒搭上边了。"</p>
+
+            <p>③朋友圈关于疫情的消息越来越多，还明确了人是可以传人的。大力所在的地方也不幸免，确诊了一例，过后每天都有新增病例。官宣的防控措施中有一条"戴口罩，讲卫生"。可口罩呢，大力走在大街上，找寻药店。年假还没放完，不少药店还是铁将军把门，好不容易遇到开门的药店，有限的存货早已卖个精光。</p>
+
+            <p>④大力想到了几个平时消息灵通的朋友，电话刚一接通，他还没开口，对方就要他帮忙弄几个口罩，真是打铁打到钳子上来了。</p>
+
+            <p>⑤没有买到口罩，惶恐不安把大力裹挟得憋不过气来，总感觉病毒无处不在。宁愿酱油拌饭，也不让老婆出去买菜；进出电梯时，他拿着纸巾，不用手指去按楼层键。回到家，立马换衣服，洗好几遍手。</p>
+
+            <p>⑥怎么才能弄到口罩呢？他想到了在医院当护士的表妹，给表妹打了好几个电话，表妹都不接。难道表妹知道他会要口罩吗？现在向表妹开口要口罩的人一定很多，表妹肯定没那么多口罩，便有意不接他的电话。大力忐忑不安地胡思乱想。过了饭点儿，表妹来电话了。表妹说，她被抽到发热门诊做疫情防控工作了，现在才下班，饭还没有吃呢。"哥，你有什么事吗？"表妹关切地询问。"哦，也没什么事，你要注意做好防护。"心里想着口罩，可话到嘴边，却是这样说。</p>
+
+            <p>⑦大力发现，隔壁的亚方也没有买到口罩。亚方在农贸市场卖猪肉，一回到家里，就把卖猪肉的箩筐放在门口。大力与亚方的家门对门，卖猪肉的箩筐有一种难闻的肉腥味儿。一次，有几只苍蝇从市场跟了回来，围着箩筐边歌边舞，令人很是厌恶。大力开始是委婉地暗示，后来义正辞严地交涉，可亚方总是置之不理。亚方理直气壮地说，那地儿又不是大力的，大力无权过问。大力气极败坏，当着亚方的面，将箩筐拎起来扔到了楼梯口。两个人互不相让，差点儿打起来。最后物业来调解，这事才算过去。可两个人心里总有个疙瘩，遇见了都没有好脸色。</p>
+
+            <p>⑧大力在路上看见有人拿了好几个口罩，便心怀侥幸上前询问："口罩卖吗？多少钱一个？""多少钱我也不卖。"那人没有丝毫商量的余地。</p>
+
+            <p>⑨大力从报道上看到，一位著名作家接受采访后，得到的报酬是 20 个口罩。大力暗暗佩服这位作家的高明。大力想，要是我，我也会选择口罩。现在，我要是送礼，啥也不送，就送口罩。</p>
+
+            <p>⑩大力从微信上得知，政府在一心堂药店设了点，可以免费领取口罩。大力起了大早，可是一到一心堂，队伍已排到街上。长长的、弯弯曲曲的队伍井然有序，整个队伍就大力不戴口罩，显得很另类。大力时不时地踮起脚跟往前张望，担心排到自己时口罩没了。他不安的举动惹得排在前面的人不时回头看他，虽然口罩遮住了表情，但眼神里流露出别样的意思。大力有点儿恼火，心里说："哼，看什么看，我又不插队。"看了好几次后，那人说话了："兄弟，你怎么不戴口罩呢？""没有口罩我戴什么戴？"大力没好声气，可那个人一点儿也不生气，从口袋里掏出一个新口罩："戴上，注意做好防护。"大力愣住了，这话虽平常，但在大力心里却掀起狂涛巨浪，隔着口罩，他看不清那人的脸，却感觉是那样的亲近。</p>
+
+            <p>⑪大力喜滋滋地把领到的口罩宝贝般地放到抽屉里时，惊喜地发现，抽屉里还有一包医用口罩。大力想起来了，入秋后，鼻炎发作，便买了两包医用口罩，后来鼻炎减轻了，便忘了这件事。</p>
+
+            <p>⑫再次见到亚方，亚方还是一点儿防护都没有。大力好心好意地询问："你没有口罩吗？"亚方只是白了他一眼，一句话也不说，走进家里，重重地把门关上。</p>
+
+            <p>⑬大力从抽屉里拿出口罩来，老婆问："拿口罩干吗？"大力指了指对门："给他几个。"老婆瞪大眼睛。</p>
+
+            <p>⑭当大力敲开门，把口罩递给亚方时，亚方连声说着谢谢。大力嘱道："戴上，注意做好防护。"这是大力在一心堂排队时那个戴着口罩的陌生人对他说的话。</p>
+
+            <p class="source">（选自《小小说选刊》2020 年第 5 期）</p>
+
+            <!-- 对应题目 -->
+            <div class="exercise-box">
+                <h3>📝 对应练习（Part 2 真题练习二）</h3>
+                <div class="question-item">
+                    <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+                    <p><strong>提示：</strong>找出主人公"大力"，围绕"口罩"梳理主要情节，用"谁 + 做了什么 + 结果"的格式概括</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的答案：</strong></p>
+                    <div class="writing-lines" style="height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章 4：那年春节 -->
+        <div class="article-section" id="article4">
+            <h2>四、那年春节</h2>
+            <p class="author">黄咚咚</p>
+
+            <p>①那年我 23 岁。刚从学校毕业一年多，在一家纯文学的小型杂志社做小编，工资微薄，诸事不顺，感觉整个世界充满了一股令人心塞的戾气。</p>
+
+            <p>②临近年关，总还是要回家过年，看望一下爸妈。</p>
+
+            <p>③爸妈在老家经营着一家小馆子。店面开在镇上的小学校门口，主要卖包子、馒头、米粥，中午兼卖些家常小菜和米饭。爸妈每天凌晨三四点钟起来和面、发面、揉面，一个个拧下来，剁馅儿包好，守着灶火一屉屉蒸好，六点不到就开门，迎接第一拨打着手电走路或骑车来上学的学生，还有镇上早市摆摊卖菜的小贩，一直到下午学校放学、小贩收摊，才能收拾碗盘，稍事休息。</p>
+
+            <p>④记得有一次回家，无意间听到爸妈闲聊，说最近面粉又涨价了，本来馒头、包子一个只有一毛多的赚头，这下可能连每个赚一毛钱都够呛。我每年几千的学费，每个月定时拿到手的几百块的生活费，全是这一个包子、一个馒头赚几分钱攒下来的呀。我当时一下红了双眼，悄悄别过身，从他们身边默默走过，回到房里才让泪水落下来。</p>
+
+            <p>⑤虽然工资微薄，但省吃俭用，总归还是节余下来几千块。我把钱取了三分之二出来准备拿来孝敬爸妈。那天，我把从银行自助取款机里取出的钱搁背包里放好，骑车去邮局，准备把钱汇给家里。不巧的是，那天邮局的柜台机器临时出了故障在维修，柜员建议我再走几步，旁边还有个邮局可以办理，但是快要到下班时间了，要赶紧点。</p>
+
+            <p>⑥我把都已经拿出来的钱往包里匆匆一放，把包往后背一搭，赶紧出门推上车往另一个邮局赶。途中等了两个交通灯，依稀感到有人在推搡我的背包，但动作轻微。下班高峰的人流汹涌，不等我回过神查看，红灯变绿，我又身不由己地连人带车被推搡着向前了。</p>
+
+            <p>⑦还好，到了另一个邮局时，还没关门。我赶紧把车停好，赶到柜台，准备拉开背包的拉链把钱拿出来。但是我看到背包的拉链是开着的。我心里咯噔了一下，怀着残存的侥幸往包里掏了掏，钱已经不在里面了。我感觉浑身的血液一下子就冰凉了。大脑一片空白。</p>
+
+            <p>⑧柜台里的营业员问了我好几声，"姑娘，你要办理什么业务"，我完全没听见。等回过神来，我机械地对他摇了摇头，说我不办什么。然后失魂落魄地走出来，推上车。也不知是怎么骑回住处的，只觉得一路上风吹在脸上，冷得彻骨。</p>
+
+            <p>⑨那天晚上我一夜没睡好。深不见底的失望与懊恼完全淹没了我。沮丧，难受得无以复加，我甚至一下子不想回家过春节了。</p>
+
+            <p>⑩第二天，我给家里打了个电话。那时我家还没有装电话，电话是打到对门的畜牧站，让里面的熟人喊我妈来接的。我在电话里对我妈说，今年的票不好买，单位又正好安排我值班，我就不回去过春节了。等年过了，开春暖和了我再找机会回去。</p>
+
+            <p>⑪其实，我已经早早买好了回家的车票，我们杂志社也压根儿不需要值班。我妈在电话里愣了愣，但也没多说什么就说："哦，妈知道了，那你也要买点好吃的，找同学呀同事们一起过，不然一个人多冷清。"我说："好，你和爸爸也吃好喝好，过个好年。"我挂了电话，一个人呜呜地哭了起来。</p>
+
+            <p>⑫第二天，接到我爸打来的电话，说我妈坐火车来北京了，我惊呆了。我妈只上到小学二年级，识字非常有限，大半生里出远门并不多，竟然要独自辗转好几趟车从成都来北京!</p>
+
+            <p>⑬三天后，我在北京西站出站口的人山人海中，接到了时隔一年没见的妈，短发、微胖，穿着好几层毛衣，外面套着一件可能是我弟弟当兵退伍后带回家的黄绿色军服，挎着一个硕大的迷彩旅行袋，不用说，里面肯定装满了她早早就备好的、我爱吃的各种腊味、腌菜、腐乳、炒豆子、干豆角、地瓜。</p>
+
+            <p>⑭她的女儿说，今年不能回故乡过年了，她只好在严寒的年关奔波了三天两夜，坐了三十多个小时人挤人的火车，赶了两三千里的路，挎着那个硕大的迷彩旅行袋，把故乡搬到在异乡漂泊的女儿身边来，把年味搬到她朝思暮想的女儿身边来。</p>
+
+            <p>⑮看见我的那一瞬，她如释重负，风尘仆仆的脸笑成了一朵花。而在我的心里，扑簌簌的眼泪流成了一条河……</p>
+
+            <p class="source">（选自《青年文摘》，有删改）</p>
+
+            <!-- 对应题目 -->
+            <div class="exercise-box">
+                <h3>📝 对应练习（Part 2 真题练习三）</h3>
+                <div class="question-item">
+                    <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+                    <p><strong>提示：</strong>运用六要素概括法，找出时间、地点、人物、起因、经过、结果</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的答案：</strong></p>
+                    <div class="writing-lines" style="height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章 5：妈妈的树 -->
+        <div class="article-section" id="article5">
+            <h2>五、妈妈的树</h2>
+            <p class="author">佚 名</p>
+
+            <p>①春雨如丝，万物复苏，又是一个栽树的好时节。</p>
+
+            <p>②每到这个时候，我总会想起老家的那些树。老家的院子很大，正好适合栽树。每到春天，妈妈在劳作之余都会偷闲栽树，栽过榆钱树、桑树、桐树，还有好多我叫不出名字的树。我不知道妈妈到底栽过多少棵树，只知道妈妈对每一棵树都精心栽培，像呵护孩子似的呵护每一棵树。我们把这些树叫做妈妈的树。</p>
+
+            <p>③离开老家多年，许多树都在记忆里渐渐模糊了。但有三棵树，我至今仍清晰地记得。</p>
+
+            <p>④一棵是白杨树，长在院子的正中央。白杨树又高又直，每到夏天，满树的叶子哗啦啦地响。我喜欢在树下写作业、看书。微风吹过，树叶像千万只小手在鼓掌。有时，我会仰起头，透过层层叠叠的叶子看天空，阳光被剪成细细碎碎的光斑，洒在我的脸上、书上。那棵树，是我童年的伙伴。</p>
+
+            <p>⑤另一棵是香椿树，长在厨房旁边。春天，香椿树发芽了，嫩红的芽儿像一朵朵小花。弟弟最喜欢爬上去摘香椿芽。妈妈总是站在树下，仰着头喊："小心点，别摔着！"弟弟却总是不听，猴子似的在树上爬上爬下。摘下的香椿芽，妈妈会做成香椿炒鸡蛋，那香味，至今还在我的记忆里飘荡。</p>
+
+            <p>⑥还有一棵是柿子树，长在后院里。柿子树的树干很粗，要两个小孩才能合抱过来。秋天，柿子红了，像一个个小灯笼挂在枝头。我和弟弟最喜欢吃柿子，软软的、甜甜的。有一回，邻居家的孩子爬上去摘柿子，不小心摔了下来，把腿摔伤了。那天晚上，妈妈紧锁眉头，在树下徘徊良久，最后憋出一句："砍树。"转身回到屋子，不顾我们姐弟俩的哭喊恳求，拎了一把斧子冲了出去。第二天，柿子树不见了，只留下一个光秃秃的树桩。</p>
+
+            <p>⑦后来，我们渐渐长大了，离开了老家。妈妈也老了，不再有力气栽树了。但每次回老家，看到院子里那些树，我就觉得，妈妈的爱，就像这些树一样，深深扎根在我们的生命里。</p>
+
+            <!-- 对应题目 -->
+            <div class="exercise-box">
+                <h3>📝 对应练习（Part 3 真题练习）</h3>
+                <div class="question-item">
+                    <p><strong>问题：</strong>请用简洁的语言概括这篇文章的主要内容。（不超过 50 字）（4 分）</p>
+                    <p><strong>提示：</strong>运用段意合并法，先划分段落层次，概括每段段意，再合并整理</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的答案：</strong></p>
+                    <div class="writing-lines" style="height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章 6：爱到无力 -->
+        <div class="article-section" id="article6">
+            <h2>六、课外阅读：爱到无力</h2>
+            <p class="author">丁立梅</p>
+
+            <p>母亲进厨房有好大一会了。</p>
+
+            <p>我们兄妹几个坐在屋前晒太阳，等着开午饭，一边闲闲地说着话。这是每年的惯例，春节期间，兄妹几个约好了日子，从各自的小家出发，回到母亲身边来拜年。母亲总是高兴地给我们忙这忙那。这个喜欢吃蔬菜，那个喜欢吃鱼，这个爱吃糯米糕，那个好辣，母亲都记着。端上来的菜，投了人人的喜好。临了，母亲还给离家最远的我，备上好多好吃的带上。这个袋子里装青菜菠菜，那个袋子里装年糕肉丸子。姐姐戏称我每次回家，都是鬼子进村，大扫荡了。的确有点像。母亲恨不得把她自己，也塞到袋子里，让我带回城，好事无巨细地把我照顾好。</p>
+
+            <p>这次回家，母亲也是高兴的，围在我们身边转半天，看着这个笑，看着那个笑。我们的孩子，一齐叫她外婆，她不知怎么应答才好。摸摸这个的手，抚抚那个的脸。这是多么灿烂热闹的场景啊，它把一切的困厄苦痛，全都掩藏得不见影踪。母亲的笑，便一直挂在脸上，像窗花贴在窗上。母亲突然想起什么似的说，我要到地里挑青菜了。却因找一把小锹，屋里屋外乱转了一通，最后在窗台边找到它。姐姐说，妈老了。</p>
+
+            <p>妈真的老了吗？我们顺着姐姐的目光，一齐看过去。母亲在阳光下发愣，母亲说，我要做什么的？哦，挑青菜呢，母亲自言自语。背影看起来，真小啊，小得像一枚皱褶的核桃。</p>
+
+            <p>厨房里，动静不像往年大，有些静悄悄。母亲在切芋头，切几刀，停一下，仿佛被什么绊住了思绪。她抬头愣愣看着一处，复又低头切起来。我跳进厨房要帮忙，母亲慌了，拦住，连连说，快出去，别弄脏你的衣裳。我看看身上，银色外套，银色毛领子，的确是不经脏的。</p>
+
+            <p>我继续坐到屋前晒太阳。阳光无限好，仿佛还是昔时的模样，温暖，无忧。却又不同了，因为我们都不是昔时的那一个了，一些现实无法回避：祖父卧床不起已好些时日，大小便失禁，床前照料之人，只有母亲。大冬天里，母亲双手浸在冰冷的河水里，给祖父洗弄脏的被褥。姐姐的孩子，好好的突然患了眼疾，视力急剧下降，去医院检查，竟是严重的青光眼。母亲愁得夜不成眠，逢人便问，孩子没了眼睛咋办呢？都快问成祥林嫂了。弟弟婚姻破裂，一个人形只影单地晃来晃去，母亲当着人面落泪不止，她不知道拿她这个儿子怎么办。母亲自己，也是多病多难的，贫血，多眩晕。手有严重的风湿性关节炎，疼痛，指头已伸不直了。家里家外，却少不了她那双手的操劳。</p>
+
+            <p>我再进厨房，钟已敲过十二点了。太阳当头照，我的孩子嚷饿，我去看饭熟了没。母亲竟还在切芋头，旁边的篮子里，晾着洗好的青菜。锅灶却是冷的。母亲昔日的利落，已消失殆尽。看到我，她恍然惊醒过来，异常歉意地说，乖乖，饿了吧？饭就快好了。这一说，差点把我的泪说出来。我说，妈，还是我来吧。我麻利地清洗锅盆，炒菜烧汤煮饭，母亲在一边看着，没再阻拦。</p>
+
+            <p>回城的时候，我第一次没大包小包地往回带东西，连一片菜叶子也没带。母亲内疚得无以复加，她的脸，贴着我的车窗，反反复复地说，乖乖，让你空着手啊，让你空着手啊。我背过脸去，我说，妈，城里什么都有的。我怕我的泪，会抑制不住掉下来。以前我总以为，青山青，绿水长，我的母亲，永远是母亲，永远有着饱满的爱，供我们吮吸。而事实上，不是这样的，母亲犹如一棵老了的树，在不知不觉中，它掉叶了，它光秃秃了，连轻如羽毛的阳光，它也扛不住了。</p>
+
+            <p>我的母亲，终于爱到无力。</p>
+
+            <!-- 对应任务 -->
+            <div class="exercise-box">
+                <h3>📝 批注式阅读任务（运用 Part 1 所学技法）</h3>
+
+                <div class="question-item">
+                    <p><strong>任务一：找"笨拙感描写"</strong></p>
+                    <p>第一课的写作技法中提到了<strong>"笨拙感/障碍法"</strong>——特意描写人物的"不方便"来写感动。请在《爱到无力》中找出至少两处这样的"笨拙感"描写，并做批注赏析。</p>
+                    <p><strong>提示：</strong>关注母亲"找小锹""切芋头""发愣"等细节描写</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的批注：</strong></p>
+                    <div class="writing-lines" style="height: 180px;"></div>
+                </div>
+
+                <div class="question-item" style="margin-top: 20px;">
+                    <p><strong>任务二：找"慢镜头动作分解"</strong></p>
+                    <p>找出文中运用"慢镜头动作分解"的细节描写，分析作者是如何把一个动作拆解成多个小动作来写的。</p>
+                    <p><strong>提示：</strong>参考 Part 1 中《背影》攀月台的动作分解写法</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的批注：</strong></p>
+                    <div class="writing-lines" style="height: 150px;"></div>
+                </div>
+
+                <div class="question-item" style="margin-top: 20px;">
+                    <p><strong>任务三：素材转化训练</strong></p>
+                    <p>这篇文章中母亲"爱到无力"的状态，能让你联想到自己生活中的哪个瞬间？可以是家人的某个笨拙动作、某句反复念叨的话、某个渐行渐远的背影。</p>
+                    <p><strong>提示：</strong>完成 Part 4 的"素材转化训练表"，将阅读转化为写作素材</p>
+                </div>
+                <div class="answer-space">
+                    <p><strong>我的素材转化：</strong></p>
+                    <div class="writing-lines" style="height: 200px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <div class="nav-links">
+            <a href="lesson01-part4.html">← 返回 Part 4</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        // 进度指示器点击跳转
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.style.cursor = 'pointer';
+            step.addEventListener('click', () => {
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                window.location.href = pages[index];
+            });
+        });
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
