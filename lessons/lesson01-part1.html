@@ -565,9 +565,10 @@
         <!-- 进度指示器 -->
         <div class="progress-indicator">
             <div class="progress-step active">Part 1 批注式阅读</div>
-            <div class="progress-step">Part 2 六要素概括</div>
-            <div class="progress-step">Part 3 段意合并</div>
-            <div class="progress-step">Part 4 素材转化</div>
+            <div class="progress-step">Part 2 核心概括法</div>
+            <div class="progress-step">Part 3 六要素</div>
+            <div class="progress-step">Part 4 段意合并</div>
+            <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
 
@@ -833,7 +834,7 @@
 
         <div class="nav-links">
             <a href="../index.html">← 返回首页</a>
-            <a href="lesson01-part2.html">进入 Part 2：六要素概括法 →</a>
+            <a href="lesson01-part2.html">进入 Part 2：核心概括法 →</a>
         </div>
     </div>
 
@@ -842,7 +843,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-part5.html', 'lesson01-appendix.html'];
                 window.location.href = pages[index];
             });
         });

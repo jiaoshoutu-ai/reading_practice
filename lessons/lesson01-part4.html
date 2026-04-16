@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 4 部分 素材转化 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 4 部分 段意合并法 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -66,7 +66,7 @@
 
         .part-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
             color: white;
             padding: 8px 20px;
             border-radius: 25px;
@@ -76,15 +76,15 @@
         }
 
         .learning-objectives {
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
             padding: 20px 25px;
             border-radius: 0 8px 8px 0;
             margin-top: 20px;
         }
 
         .learning-objectives h3 {
-            color: #e65100;
+            color: #667eea;
             margin-bottom: 10px;
         }
 
@@ -141,307 +141,85 @@
             color: #f57c00;
         }
 
-        /* 第四部分：素材转化样式 */
-        .material-section {
+        .example-box {
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-box strong {
+            color: #2e7d32;
+        }
+
+        /* 真题练习样式 */
+        .practice-section {
             background: white;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #ff9800;
+            border: 2px solid #667eea;
         }
 
-        .material-section h2 {
-            color: #ff9800;
+        .practice-section h2 {
+            color: #667eea;
             font-size: 1.4rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #fff3e0;
+            border-bottom: 2px solid #667eea;
         }
 
-        .micro-lecture-box {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
-            border: 2px solid #ff9800;
-            border-radius: 12px;
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             padding: 25px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .passage-box p {
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        .question-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-box strong {
+            color: #1565c0;
+        }
+
+        .answer-box {
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-radius: 8px;
+            padding: 20px;
             margin: 20px 0;
         }
 
-        .micro-lecture-box h3 {
-            color: #e65100;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+        .answer-box strong {
+            color: #33691e;
         }
 
-        .writing-password {
-            background: white;
+        .analysis-box {
+            background: #fff8e1;
             border: 1px solid #ffcc80;
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
         }
 
-        .writing-password h3 {
-            color: #f57c00;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .password-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .password-table th {
-            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
-            color: white;
-            padding: 12px 10px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .password-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #ffe0b2;
-            vertical-align: top;
-        }
-
-        .password-table tr:nth-child(even) {
-            background: #fff8e1;
-        }
-
-        .password-table tr:hover {
-            background: #ffe0b2;
-        }
-
-        .material-training-box {
-            background: #f3e5f5;
-            border: 2px solid #9c27b0;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
-        }
-
-        .material-training-box h3 {
-            color: #9c27b0;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .training-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .training-table th {
-            background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
-            color: white;
-            padding: 12px 10px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .training-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #e1bee7;
-            vertical-align: top;
-        }
-
-        .training-table tr:nth-child(even) {
-            background: #f3e5f5;
-        }
-
-        .training-table input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ce93d8;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-family: inherit;
-        }
-
-        .training-table input[type="text"]:focus {
-            outline: none;
-            border-color: #9c27b0;
-            box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.1);
-        }
-
-        .challenge-box {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border: 2px solid #4caf50;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
-        }
-
-        .challenge-box h3 {
-            color: #2e7d32;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .challenge-requirement {
-            background: white;
-            border-left: 4px solid #4caf50;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .challenge-requirement ul {
-            margin-left: 20px;
-            color: #333;
-        }
-
-        .challenge-requirement li {
-            margin-bottom: 8px;
-        }
-
-        .challenge-input-area {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .challenge-input-area label {
-            display: block;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .challenge-input-area textarea {
-            width: 100%;
-            min-height: 300px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-            line-height: 1.8;
-        }
-
-        .challenge-input-area textarea:focus {
-            outline: none;
-            border-color: #4caf50;
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-        }
-
-        .submit-challenge-btn {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.05rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .submit-challenge-btn:hover {
-            opacity: 0.9;
-        }
-
-        .teacher-feedback {
-            background: #f1f8e9;
-            border: 1px solid #c5e1a5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            display: none;
-        }
-
-        .teacher-feedback.show {
-            display: block;
-        }
-
-        .teacher-feedback strong {
-            color: #33691e;
-        }
-
-        .feedback-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #a5d6a7;
-        }
-
-        .feedback-title h4 {
-            color: #2e7d32;
-            margin: 0;
-        }
-
-        .feedback-title .badge {
-            background: #4caf50;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-
-        .student-work {
-            background: white;
-            border: 1px solid #dcedc8;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-
-        .student-work .title {
-            font-weight: 600;
-            color: #558b2f;
-            margin-bottom: 10px;
-        }
-
-        .teacher-comment {
-            background: #fff8e1;
-            border-left: 4px solid #ff9800;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 6px 6px 0;
-        }
-
-        .teacher-comment .label {
-            display: inline-block;
-            background: #ff9800;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
-
-        .highlight-point {
-            background: #fffacd;
-            padding: 2px 5px;
-            border-radius: 3px;
-            border-bottom: 2px solid #ffd700;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
+        .analysis-box strong {
+            color: #e65100;
         }
 
         .toggle-btn {
@@ -456,6 +234,59 @@
         }
 
         .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        /* 输入框样式 */
+        .input-area {
+            background: #f5f7fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .input-area label {
+            display: block;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .input-area textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .input-area textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
             opacity: 0.9;
         }
 
@@ -486,6 +317,135 @@
 
         .feedback-box.incorrect h4 {
             color: #e65100;
+        }
+
+        .hint-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* 评分标准样式 */
+        .criteria-box {
+            background: #e8eaf6;
+            border: 2px solid #3f51b5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .criteria-box h4 {
+            color: #3f51b5;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .criteria-box ul {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .criteria-box li {
+            margin-bottom: 8px;
+        }
+
+        /* 常见失误表格样式 */
+        .error-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .error-table th, .error-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .error-table th {
+            background: #ffebee;
+            color: #c62828;
+            font-weight: 600;
+        }
+
+        .error-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .error-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .error-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .error-box strong {
+            color: #c62828;
+        }
+
+        /* 自评表单样式 */
+        .self-check-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .self-check-box h4 {
+            color: #9c27b0;
+            margin-bottom: 15px;
+        }
+
+        .self-check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .self-check-item input[type="checkbox"] {
+            margin-top: 3px;
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .self-check-item label {
+            cursor: pointer;
+            color: #333;
+        }
+
+        .self-result {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .self-btn {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        .self-btn:hover {
+            opacity: 0.9;
         }
 
         .nav-links {
@@ -525,7 +485,6 @@
             background: #e0e0e0;
             color: #666;
             font-size: 0.9rem;
-            cursor: pointer;
         }
 
         .progress-step.active {
@@ -536,6 +495,27 @@
         .progress-step.completed {
             background: #4caf50;
             color: white;
+        }
+
+        .step-box {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .method-summary {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #81ecec;
+        }
+
+        .method-summary h3 {
+            color: #00838f;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -548,172 +528,256 @@
         <!-- 进度指示器 -->
         <div class="progress-indicator">
             <div class="progress-step completed">Part 1 批注式阅读</div>
-            <div class="progress-step completed">Part 2 六要素概括</div>
-            <div class="progress-step completed">Part 3 段意合并</div>
-            <div class="progress-step active">Part 4 素材转化</div>
+            <div class="progress-step completed">Part 2 核心概括法</div>
+            <div class="progress-step completed">Part 3 六要素</div>
+            <div class="progress-step active">Part 4 段意合并</div>
+            <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
 
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第四部分</span>
-            <h1>素材转化——把阅读变成"作文提款机"</h1>
+            <h1>段意合并法——理清文章脉络</h1>
             <div class="learning-objectives">
                 <h3>学习目标</h3>
                 <ul>
-                    <li>学会将阅读中学到的技法转化为自己的写作素材</li>
-                    <li>掌握"连续动词法""笨拙感描写""情感触发点"三大技法</li>
-                    <li>建立个人素材库，为写作积累真实感人的细节</li>
-                    <li>完成微写作训练，实战运用所学技法</li>
+                    <li>掌握段意合并法的基本步骤和适用场景</li>
+                    <li>学会划分段落层次，概括每段段意</li>
+                    <li>能够合并段意，形成完整的内容概括</li>
+                    <li>通过真题练习，熟练运用段意合并法</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 第四部分：素材转化训练 -->
-        <div class="material-section">
-            <div class="micro-lecture-box">
-                <h3>🎬 微课讲解：你的生活不无聊，是你不会"翻译"</h3>
-                <p>为什么朱自清写父亲买橘子能成经典？你写你爸帮你搬行李就是流水账？区别在于有没有<strong>"翻译"</strong>素材。</p>
-                <p style="margin-top: 10px;">普通人看到的是"父亲爬月台"，朱自清看到的是<b>"一个笨拙的父亲为了儿子不顾形象地努力"</b>。写作就是把生活场景"翻译"成动人画面的过程。</p>
+        <!-- 方法讲解 -->
+        <div class="content-section">
+            <h2>📚 段意合并法详解</h2>
+
+            <div class="tip-box" style="background: #e8f5e9; border-color: #4caf50;">
+                <strong>方法说明：</strong><br>
+                文章往往由几个段落组成，阅读时理清文章的段落层次，然后写出每个段落的大意，最后把每段大意综合起来，加以概括，就是整篇文章的主要内容。
             </div>
 
-            <div class="writing-password">
-                <h3>🔑 写作密码提炼：慢镜头 + 情感触发点</h3>
-                <p>从《背影》学到的三大技法，让你的作文也能打动人心：</p>
+            <h3>使用步骤：</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>第一步：</strong>通读全文，理清段落层次</li>
+                <li><strong>第二步：</strong>写出每个段落的大意</li>
+                <li><strong>第三步：</strong>把每段大意综合起来，加以概括</li>
+                <li><strong>第四步：</strong>加上过渡词语，整理成通顺连贯的一段话</li>
+            </ol>
 
-                <table class="password-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 20%">从《背影》学到的技法</th>
-                            <th style="width: 35%">具体解释</th>
-                            <th style="width: 45%">如何用到我的作文里？</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1. 连续动词法</strong></td>
-                            <td>把一个大动作拆成 3-5 个小动作（探、爬、攀、缩、倾）。</td>
-                            <td>不要写"妈妈炒菜"，写<b>"妈妈侧身、探手、翻炒、后仰躲避油烟"</b>。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2. 笨拙感/障碍法</strong></td>
-                            <td>特意描写人物的"不方便"（肥胖、穿着臃肿、手上有伤）。</td>
-                            <td>写感动的瞬间，要写人物因为爱你而显露出的<b>"不优雅"或"费劲"</b>。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3. 情感触发点</strong></td>
-                            <td>找到一个具体的"物"或"画面"作为引爆眼泪的开关（背影）。</td>
-                            <td>不要写"我很感动"，写<b>"看着妈妈发间突然多出的一根白发，我愣住了"</b>。</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="example-box">
+                <strong>注意：</strong><br>
+                1. 各段大意之间，要加上一些过渡词语，以便读起来通顺连贯。<br>
+                2. 要区分重点段落和非重点段落，做到有详有略，有的内容甚至可以舍去。
+            </div>
+        </div>
+
+        <!-- 方法总结对比 -->
+        <div class="content-section">
+            <h2>✅ 两种概括方法对比</h2>
+            <p>通过第一部分和第二部分的学习，我们已经掌握了两种概括文章主要内容的方法。它们各有什么特点？何时使用哪种方法更合适？</p>
+
+            <table class="error-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%">方法</th>
+                        <th style="width: 25%">适用文章</th>
+                        <th style="width: 25%">核心思路</th>
+                        <th style="width: 30%">操作步骤</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>六要素概括法</strong></td>
+                        <td>写人记事为主的记叙文</td>
+                        <td>提取六要素，保留核心</td>
+                        <td>找要素 → 删次要 → 留核心 → 组句</td>
+                    </tr>
+                    <tr>
+                        <td><strong>段意合并法</strong></td>
+                        <td>段落层次清晰的记叙文、散文</td>
+                        <td>先分后合，合并段意</td>
+                        <td>分层次 → 概括段意 → 合并 → 润色</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
+                <strong>💡 温馨提示：</strong><br>
+                两种方法并非对立，实际运用中可以灵活结合。例如，先用段意合并法理清脉络，再用六要素法精炼核心事件。
+            </div>
+        </div>
+
+        <!-- 真题练习 -->
+        <div class="practice-section">
+            <h2>✍️ 真题练习</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">妈妈的树</p>
+                <p>①春雨如丝，万物复苏，又是一个栽树的好时节。</p>
+                <p>②每到这个时候，我总会想起老家的那些树。老家的院子很大，正好适合栽树。每到春天，妈妈在劳作之余都会偷闲栽树，栽过榆钱树、桑树、桐树，还有好多我叫不出名字的树。我不知道妈妈到底栽过多少棵树，只知道妈妈对每一棵树都精心栽培，像呵护孩子似的呵护每一棵树。我们把这些树叫做妈妈的树。</p>
+                <p>③离开老家多年，许多树都在记忆里渐渐模糊了。但有三棵树，我至今仍清晰地记得。</p>
+                <p>④一棵是白杨树，长在院子的正中央。白杨树又高又直，每到夏天，满树的叶子哗啦啦地响。我喜欢在树下写作业、看书。微风吹过，树叶像千万只小手在鼓掌。有时，我会仰起头，透过层层叠叠的叶子看天空，阳光被剪成细细碎碎的光斑，洒在我的脸上、书上。那棵树，是我童年的伙伴。</p>
+                <p>⑤另一棵是香椿树，长在厨房旁边。春天，香椿树发芽了，嫩红的芽儿像一朵朵小花。弟弟最喜欢爬上去摘香椿芽。妈妈总是站在树下，仰着头喊："小心点，别摔着！"弟弟却总是不听，猴子似的在树上爬上爬下。摘下的香椿芽，妈妈会做成香椿炒鸡蛋，那香味，至今还在我的记忆里飘荡。</p>
+                <p>⑥还有一棵是柿子树，长在后院里。柿子树的树干很粗，要两个小孩才能合抱过来。秋天，柿子红了，像一个个小灯笼挂在枝头。我和弟弟最喜欢吃柿子，软软的、甜甜的。有一回，邻居家的孩子爬上去摘柿子，不小心摔了下来，把腿摔伤了。那天晚上，妈妈紧锁眉头，在树下徘徊良久，最后憋出一句："砍树。"转身回到屋子，不顾我们姐弟俩的哭喊恳求，拎了一把斧子冲了出去。第二天，柿子树不见了，只留下一个光秃秃的树桩。</p>
+                <p>⑦后来，我们渐渐长大了，离开了老家。妈妈也老了，不再有力气栽树了。但每次回老家，看到院子里那些树，我就觉得，妈妈的爱，就像这些树一样，深深扎根在我们的生命里。</p>
             </div>
 
-            <div class="material-training-box">
-                <h3>📋 素材转化训练表</h3>
-                <p>下面这个表格是提升作文水平的关键工具。请完成表格的 <strong>"我的生活素材"</strong> 这一栏，把你生活中的类似瞬间写下来。</p>
+            <div class="question-box">
+                <p><strong>问题：</strong>请用简洁的语言概括这篇文章的主要内容。（不超过 50 字）（4 分）</p>
+            </div>
 
-                <table class="training-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 30%">阅读的名场面</th>
-                            <th style="width: 25%">作者的写作技法</th>
-                            <th style="width: 45%">我能想到的类似瞬间（你的生活素材）</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>父亲爬月台：</strong>肥胖的身子、双手攀、两脚缩、向左微倾。</td>
-                            <td>描写笨拙的动作，因为笨拙，所以动人。</td>
-                            <td><input type="text" placeholder="例如：一向严肃的爸爸笨手笨脚地给生病的我削苹果，皮削断了三次，最后只剩个核。" id="material1"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>父亲的来信：</strong>说自己"大去之期不远"。</td>
-                            <td>通过语言细节侧面表现人物的衰老与牵挂。</td>
-                            <td><input type="text" placeholder="例如：爷爷打电话说家里枇杷熟了，问我要不要吃，其实是他想我了，找个笨拙的借口。" id="material2"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>父亲的背影：</strong>混入人群再也找不着了。</td>
-                            <td>用一个渐行渐远的画面定格思念。</td>
-                            <td><input type="text" placeholder="例如：外婆送我到村口，我走出很远回头看，她还拄着拐杖像一棵老树站在风里。" id="material3"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="input-area">
+                <label for="student-answer"><strong>你的答案：</strong></label>
+                <textarea id="student-answer" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
+                <button class="submit-btn" onclick="checkAnswer()">提交答案</button>
+                <div id="feedback" class="feedback-box"></div>
+                <p class="hint-text">💡 提示：运用段意合并法，先划分段落层次，概括每段段意，再合并整理</p>
+            </div>
 
-                <button class="submit-btn" onclick="checkMaterialTable()">完成素材表格</button>
-                <div id="material-feedback" class="feedback-box"></div>
+            <button class="toggle-btn" onclick="toggleAnswer('answer')">点击查看答案与解析</button>
 
-                <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3; margin-top: 15px;">
-                    <strong>💡 提示：</strong> 这些素材都是你独一无二的写作财富，写下来后可以在以后的作文中反复使用！
+            <div id="answer" class="hidden-content">
+                <div class="analysis-box">
+                    <p><strong>解题思路：【段意合并法】</strong></p>
+                    <p><strong>第一步：划分段落，概括段意</strong></p>
+                    <table class="error-table">
+                        <thead>
+                            <tr>
+                                <th>段落</th>
+                                <th>主要内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>第①②段</td>
+                                <td>妈妈喜欢在院子里栽树，我们把这些树叫做"妈妈的树"</td>
+                            </tr>
+                            <tr>
+                                <td>第③段</td>
+                                <td>过渡段：有三棵树至今记得</td>
+                            </tr>
+                            <tr>
+                                <td>第④段</td>
+                                <td>白杨树是我童年的伙伴</td>
+                            </tr>
+                            <tr>
+                                <td>第⑤段</td>
+                                <td>弟弟喜欢爬香椿树摘香椿芽，妈妈做香椿炒鸡蛋</td>
+                            </tr>
+                            <tr>
+                                <td>第⑥段</td>
+                                <td>邻居孩子爬柿子树摔伤后，妈妈砍掉了柿子树</td>
+                            </tr>
+                            <tr>
+                                <td>第⑦段</td>
+                                <td>妈妈的爱像树一样扎根在我们生命里</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="step-box">
+                        <p><strong>第二步：合并段意</strong></p>
+                        <p>将各段大意综合起来，注意：</p>
+                        <ul>
+                            <li>删除重复内容（如多次出现的"妈妈""树"）</li>
+                            <li>合并同类信息（三棵树的事迹可以合并概括）</li>
+                            <li>保留核心要素（人物 + 事件 + 意义）</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <p><strong>第三步：组织语言</strong></p>
+                        <p>文章通过回忆妈妈栽种的白杨树、香椿树、柿子树，以及与这些树相关的故事，表现了妈妈对孩子的爱和呵护。</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="challenge-box">
-                <h3>🎯 最终挑战：微写作训练</h3>
-                <p>请运用今天学习的 <strong>"连续动词法"</strong>和 <strong>"笨拙感描写"</strong>，写一个 100 字左右的片段。</p>
+                <div class="answer-box">
+                    <p><strong>参考答案及评分标准</strong></p>
+                    <table class="error-table">
+                        <thead>
+                            <tr>
+                                <th>等第</th>
+                                <th>答案示例</th>
+                                <th>得分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>优秀</td>
+                                <td>文章回忆了妈妈栽种的白杨树、香椿树、柿子树，以及树背后的故事，表现了妈妈对孩子的爱。</td>
+                                <td>4 分</td>
+                            </tr>
+                            <tr>
+                                <td>良好</td>
+                                <td>写了妈妈栽的三种树，以及和树有关的事情，表达了妈妈的爱。</td>
+                                <td>3 分（缺具体内容）</td>
+                            </tr>
+                            <tr>
+                                <td>合格</td>
+                                <td>写了妈妈的树。</td>
+                                <td>2 分（过于简略）</td>
+                            </tr>
+                            <tr>
+                                <td>不合格</td>
+                                <td>写了白杨树、香椿树和柿子树。</td>
+                                <td>1 分（只罗列，无概括）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <div class="challenge-requirement">
-                    <p><strong>题目：</strong>《______的背影/侧影》（横线填一位家人）</p>
-                    <p><strong>写作要求：</strong></p>
-                    <ul>
-                        <li>选定一个场景（做饭、修理东西、接你放学、帮你拎箱子）</li>
-                        <li>不准写"他很辛苦""他很爱我"这样的直接抒情</li>
-                        <li>用至少<strong>4 个不同的动词</strong>描写他/她的动作</li>
-                        <li>写出他/她动作的<strong>"费力"或"笨拙"</strong>之处</li>
+                <div class="tip-box" style="background: #fff3e0; border-color: #ff9800;">
+                    <strong>📝 方法点拨：段意合并法的三个要点</strong><br>
+                    1. <strong>先理清脉络</strong>：通读全文，标出每个自然段或每个意义段的主要内容<br>
+                    2. <strong>分清主次</strong>：如果有的段落是主要内容，有的是次要内容，要抓住主要的，舍掉次要的<br>
+                    3. <strong>合并时做修改</strong>：删除重复内容，综合相同内容，使表达简洁通顺
+                </div>
+
+                <div class="error-box">
+                    <p><strong>❗ 易错提醒</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li>❌ 只罗列三棵树，没有概括事件和主题</li>
+                        <li>❌ 照抄原文句子，没有用自己的话归纳</li>
+                        <li>✓ 用"人物 + 事件 + 意义"的框架组织语言</li>
                     </ul>
                 </div>
 
-                <div class="challenge-input-area">
-                    <label for="challenge-writing"><strong>你的微写作：</strong></label>
-                    <textarea id="challenge-writing" placeholder="请在这里完成你的微写作片段：
-
-题目：《______的背影/侧影》
-
-写作提示：
-- 先确定你要写的家人和场景
-- 聚焦一个具体的画面或瞬间
-- 用连续的动词分解动作
-- 写出他/她的"笨拙"或"费力"
-- 让读者从细节中感受到情感，而不是直接说"我很感动"
-
-开始写作吧，期待你的精彩作品！"></textarea>
-                    <button class="submit-challenge-btn" onclick="submitChallenge()">提交作文</button>
-                    <div id="challenge-feedback" class="feedback-box"></div>
-                </div>
-
-                <button class="toggle-btn" onclick="toggleTeacherFeedback()">查看老师点评范例</button>
-
-                <div id="teacher-feedback" class="teacher-feedback">
-                    <div class="feedback-title">
-                        <h4>📖 学生作品范例与老师点评</h4>
-                        <span class="badge">满分示例</span>
+                <div class="self-check-box">
+                    <h4>✏️ 自评环节</h4>
+                    <p>请对照参考答案和评分标准，检查自己的答案：</p>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check4_1">
+                        <label for="check4_1">我概括了三棵树及相关事件（白杨树、香椿树、柿子树）</label>
                     </div>
-
-                    <div class="student-work">
-                        <p class="title">学生作品：《妈妈的侧影》</p>
-                        <p>厨房里的灯把妈妈的影子投在墙上。她左手按着滑溜溜的鱼，右手的刀凑过去，刮鳞片的声音"刺啦刺啦"响。鱼突然弹了一下，她整个人吓得往后缩了缩，手在围裙上蹭了两把，又小心翼翼地凑上去。我发现她的背微微弓着，后颈的碎发被汗水粘成了几缕。我这才意识到，那个说爱吃鱼却总把鱼肚夹给我的人，其实很怕收拾活鱼。</p>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check4_2">
+                        <label for="check4_2">我表达了文章的主题（妈妈的爱/母爱）</label>
                     </div>
-
-                    <div class="teacher-comment">
-                        <span class="label">老师点评</span>
-                        <p><strong>✓ 连续动词法运用出色：</strong> "按、凑、刮、缩、蹭、凑"——一连串动词把妈妈收拾鱼的过程分解成慢镜头，画面感极强。</p>
-                        <p style="margin-top: 10px;"><strong>✓ 笨拙感描写到位：</strong> "吓得往后缩了缩""小心翼翼地凑上去"，写出妈妈怕鱼却为了孩子硬着头皮做的"不优雅"，反而更动人。</p>
-                        <p style="margin-top: 10px;"><strong>✓ 情感触发点巧妙：</strong> 不直接说"妈妈爱我"，而是通过<b>"后颈的碎发被汗水粘成了几缕"</b>和<b>"说爱吃鱼却总把鱼肚夹给我"</b>这两个细节，让读者自己感受到母爱。</p>
-                        <p style="margin-top: 10px;"><strong>📊 评分：</strong> 内容 4/4 | 技法 4/4 | 情感 4/4 = <strong>12/12 分</strong></p>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check4_3">
+                        <label for="check4_3">我用自己的话归纳，没有照抄原文</label>
                     </div>
-
-                    <div class="tip-box" style="background: #fff3e0; border-color: #ff9800; margin-top: 15px;">
-                        <strong>💡 写作秘诀：</strong><br>
-                        好的作文不是"写出来"的，是"看出来"的——观察生活中的细节，把那些让你心头一动的瞬间记录下来，就是好素材。
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check4_4">
+                        <label for="check4_4">我的语言简洁，字数不超过 50 字</label>
                     </div>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check4_5">
+                        <label for="check4_5">我使用了"人物 + 事件 + 意义"的框架</label>
+                    </div>
+                    <button class="self-btn" onclick="calculateScore()">计算自评得分</button>
+                    <div id="self-result" class="self-result" style="display: none;"></div>
                 </div>
             </div>
         </div>
 
         <div class="nav-links">
             <a href="lesson01-part3.html">← 返回 Part 3</a>
+            <a href="lesson01-part5.html">进入 Part 5：素材转化 →</a>
             <a href="lesson01-appendix.html">去附录 📄</a>
-            <a href="../index.html">返回首页</a>
         </div>
     </div>
 
@@ -722,110 +786,68 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-part5.html', 'lesson01-appendix.html'];
                 window.location.href = pages[index];
             });
         });
 
-        // 检查素材转化训练表
-        function checkMaterialTable() {
-            var filledCount = 0;
-            var inputs = ['material1', 'material2', 'material3'];
-
-            inputs.forEach(function(id) {
-                var val = document.getElementById(id).value.trim();
-                if (val !== '') filledCount++;
-            });
-
-            var feedback = document.getElementById('material-feedback');
-            feedback.style.display = 'block';
-
-            if (filledCount === 0) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请先填写素材表格后再提交</h4><p>至少填写一个你生活中的类似瞬间！</p>';
-                return;
-            }
-
-            feedback.className = 'feedback-box correct';
-            var message = '<h4>✓ 太棒了！你已经完成了素材转化训练</h4>';
-            message += '<p>你完成了 ' + filledCount + '/3 个素材。</p>';
-            message += '<p style="margin-top: 15px;"><strong>📝 这些素材的价值：</strong></p>';
-            message += '<p>这些从阅读中"转化"来的生活素材，是你独一无二的写作财富。以后写到亲情、感动、成长等主题时，都可以用上它们！</p>';
-            message += '<p style="margin-top: 10px; color: #667eea;"><em>（建议把这些素材抄写到你的作文素材本上）</em></p>';
-            feedback.innerHTML = message;
-        }
-
-        // 切换老师点评显示
-        function toggleTeacherFeedback() {
-            var feedback = document.getElementById('teacher-feedback');
-            if (feedback.classList.contains('show')) {
-                feedback.classList.remove('show');
+        function toggleAnswer(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
             } else {
-                feedback.classList.add('show');
+                content.style.display = 'block';
             }
         }
 
-        // 提交微写作挑战
-        function submitChallenge() {
-            var writing = document.getElementById('challenge-writing').value.trim();
-            var feedback = document.getElementById('challenge-feedback');
+        function checkAnswer() {
+            var answer = document.getElementById('student-answer').value.trim();
+            var feedback = document.getElementById('feedback');
 
-            if (!writing) {
+            if (!answer) {
                 feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请先完成微写作后再提交</h4><p>期待看到你的精彩片段！</p>';
+                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
                 feedback.style.display = 'block';
                 return;
             }
 
-            // 检查字数
-            var charCount = writing.length;
-            var wordFeedback = '';
-            if (charCount < 80) {
-                wordFeedback = '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：</strong> 目前 ' + charCount + ' 字，建议写到 100 字左右，内容会更丰富。</p>';
-            } else if (charCount > 150) {
-                wordFeedback = '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：</strong> 目前 ' + charCount + ' 字，稍微精简一下，控制在 100 字左右更好。</p>';
-            } else {
-                wordFeedback = '<p style="color: #2e7d32; margin-top: 10px;"><strong>✓ 字数合适：</strong> ' + charCount + ' 字，符合 100 字左右的要求。</p>';
-            }
-
-            // 检查是否包含直接抒情
-            var directEmotion = ['很辛苦', '很爱我', '很感动', '非常爱', '太伟大', '无私奉献', '辛苦了'];
-            var hasDirectEmotion = false;
-            directEmotion.forEach(function(phrase) {
-                if (writing.indexOf(phrase) >= 0) hasDirectEmotion = true;
-            });
-
-            var emotionFeedback = '';
-            if (hasDirectEmotion) {
-                emotionFeedback = '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：</strong> 你使用了直接抒情的表达（如"很辛苦""很爱我"等）。试着删掉这些词，用动作和细节让读者自己感受到情感。</p>';
-            } else {
-                emotionFeedback = '<p style="color: #2e7d32; margin-top: 10px;"><strong>✓ 情感表达含蓄：</strong> 你没有直接说"爱"或"辛苦"，而是用细节让读者自己感受，很好！</p>';
-            }
-
-            // 检查是否包含多个动词
-            var actionVerbs = ['走', '跑', '跳', '坐', '站', '蹲', '拿', '提', '拎', '搬', '抬', '放', '按', '切', '炒', '煮', '洗', '擦', '拖', '扫', '修', '拧', '敲', '打', '缝', '织', '写', '画', '看', '听', '摸', '闻', '笑', '哭', '点头', '摇头', '弯腰', '转身', '抬头', '低头'];
-            var verbCount = 0;
-            actionVerbs.forEach(function(v) {
-                if (writing.indexOf(v) >= 0) verbCount++;
-            });
-
-            var verbFeedback = '';
-            if (verbCount >= 4) {
-                verbFeedback = '<p style="color: #2e7d32; margin-top: 10px;"><strong>✓ 动词丰富：</strong> 你使用了至少 ' + verbCount + ' 个不同的动词，符合"连续动词法"的要求！</p>';
-            } else if (verbCount >= 2) {
-                verbFeedback = '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：</strong> 你使用了 ' + verbCount + ' 个动词，如果能再用 1-2 个动词分解动作，会更生动。</p>';
-            } else {
-                verbFeedback = '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：</strong> 你使用了 ' + verbCount + ' 个动词，试着把一个大动作拆成 3-5 个小动作来写。</p>';
-            }
-
             feedback.className = 'feedback-box correct';
-            var message = '<h4>✓ 微写作已提交！</h4>';
-            message += wordFeedback;
-            message += verbFeedback;
-            message += emotionFeedback;
-            message += '<p style="margin-top: 15px;">💡 点击下方"查看老师点评范例"，看看满分作文是怎么写的，对比一下自己的作品，想想哪里还可以改进！</p>';
-            feedback.innerHTML = message;
+            var hint = '<h4>✓ 答案已提交</h4>';
+            hint += '<p>请对照参考答案，检查以下几点：</p>';
+            hint += '<ul>';
+            hint += '<li>是否概括了<strong>三棵树</strong>？（白杨树、香椿树、柿子树）</li>';
+            hint += '<li>是否表达了<strong>妈妈的爱/母爱</strong>这一主题？</li>';
+            hint += '<li>是否用自己的话归纳，没有照抄原文？</li>';
+            hint += '<li>语言是否简洁，字数是否超过 50 字？</li>';
+            hint += '</ul>';
+            feedback.innerHTML = hint;
             feedback.style.display = 'block';
+        }
+
+        function calculateScore() {
+            var score = 0;
+            var checks = ['check4_1', 'check4_2', 'check4_3', 'check4_4', 'check4_5'];
+            var resultDiv = document.getElementById('self-result');
+
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) {
+                    score++;
+                }
+            });
+
+            var finalScore = Math.min(4, Math.round(score * 4 / 5));
+
+            var message = '';
+            if (finalScore === 4) {
+                message = '<span style="color: #2e7d32;">🎉 太棒了！你的答案符合所有评分标准，预计可得 4 分！</span>';
+            } else if (finalScore >= 2) {
+                message = '<span style="color: #f57c00;">✓ 不错！你的答案基本符合要求，预计可得 ' + finalScore + ' 分。</span>';
+            } else {
+                message = '<span style="color: #c62828;">⚠️ 需要改进！你的答案还有差距，建议重新作答后再次自评。</span>';
+            }
+
+            resultDiv.innerHTML = '<strong>自评结果：</strong> 共勾选 ' + score + ' 项，预计得分 ' + finalScore + '/4 分<br>' + message;
+            resultDiv.style.display = 'block';
         }
     </script>
 </body>

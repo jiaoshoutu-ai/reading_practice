@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 2 部分 六要素概括法 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 2 部分 一个核心讲清楚所有概括大法 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -66,7 +66,7 @@
 
         .part-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
             color: white;
             padding: 8px 20px;
             border-radius: 25px;
@@ -76,15 +76,15 @@
         }
 
         .learning-objectives {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
             padding: 20px 25px;
             border-radius: 0 8px 8px 0;
             margin-top: 20px;
         }
 
         .learning-objectives h3 {
-            color: #667eea;
+            color: #c2185b;
             margin-bottom: 10px;
         }
 
@@ -104,361 +104,188 @@
             color: #667eea;
             font-size: 1.4rem;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             border-bottom: 2px solid #f0f4ff;
-        }
-
-        .content-section h3 {
-            color: #444;
-            font-size: 1.1rem;
-            margin: 25px 0 15px 0;
         }
 
         .content-section p {
             color: #555;
             margin-bottom: 15px;
-            text-align: justify;
+            line-height: 2;
         }
 
-        .content-section ul, .content-section ol {
-            margin: 15px 0 15px 25px;
-            color: #555;
+        /* 进度指示器样式 */
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
         }
 
-        .content-section li {
-            margin-bottom: 8px;
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
 
-        .tip-box {
-            background: #fff8e6;
-            border: 1px solid #ffd54f;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin: 20px 0;
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
         }
 
-        .tip-box strong {
-            color: #f57c00;
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
+            color: white;
         }
 
-        .example-box {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .example-box strong {
-            color: #2e7d32;
-        }
-
-        .formula-box {
-            background: #fff3e0;
-            border: 2px dashed #ff9800;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            font-size: 1.1rem;
-            color: #e65100;
-        }
-
-        /* 真题练习样式 */
-        .practice-section {
+        /* 视频区域样式 */
+        .video-section {
             background: white;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #667eea;
         }
 
-        .practice-section h2 {
-            color: #667eea;
+        .video-section h2 {
+            color: #e91e63;
             font-size: 1.4rem;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
         }
 
-        .passage-box {
-            background: #fafafa;
-            border: 1px solid #ddd;
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
             border-radius: 8px;
-            padding: 25px;
-            margin: 20px 0;
-            font-size: 0.95rem;
-            line-height: 2;
+            background: #000;
         }
 
-        .passage-box p {
-            margin-bottom: 10px;
-            text-indent: 2em;
-        }
-
-        .question-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .question-box strong {
-            color: #1565c0;
-        }
-
-        .answer-box {
-            background: #f1f8e9;
-            border: 1px solid #c5e1a5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .answer-box strong {
-            color: #33691e;
-        }
-
-        .analysis-box {
-            background: #fff8e1;
-            border: 1px solid #ffcc80;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .analysis-box strong {
-            color: #e65100;
-        }
-
-        .toggle-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            margin-top: 10px;
-        }
-
-        .toggle-btn:hover {
-            opacity: 0.9;
-        }
-
-        .hidden-content {
-            display: none;
-        }
-
-        /* 输入框样式 */
-        .input-area {
-            background: #f5f7fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .input-area label {
-            display: block;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .input-area textarea {
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            min-height: 120px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-        }
-
-        .input-area textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white;
+            height: 100%;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
         }
 
-        .submit-btn:hover {
-            opacity: 0.9;
-        }
-
-        .feedback-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .feedback-box.correct {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-        }
-
-        .feedback-box.incorrect {
-            background: #fff3e0;
-            border: 1px solid #ffcc80;
-        }
-
-        .feedback-box h4 {
-            margin-bottom: 10px;
-        }
-
-        .feedback-box.correct h4 {
-            color: #2e7d32;
-        }
-
-        .feedback-box.incorrect h4 {
-            color: #e65100;
-        }
-
-        .hint-text {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        /* 评分标准样式 */
-        .criteria-box {
-            background: #e8eaf6;
-            border: 2px solid #3f51b5;
-            border-radius: 8px;
-            padding: 20px;
+        /* 核心公式框样式 */
+        .core-formula {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border: 3px solid #e91e63;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
             margin: 20px 0;
         }
 
-        .criteria-box h4 {
-            color: #3f51b5;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+        .core-formula h3 {
+            color: #c2185b;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
         }
 
-        .criteria-box ul {
-            margin-left: 20px;
+        .formula-box {
+            background: white;
+            border: 2px dashed #e91e63;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 1.2rem;
             color: #333;
-        }
-
-        .criteria-box li {
-            margin-bottom: 8px;
-        }
-
-        /* 常见失误表格样式 */
-        .error-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .error-table th, .error-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        .error-table th {
-            background: #ffebee;
-            color: #c62828;
             font-weight: 600;
         }
 
-        .error-table tr:nth-child(even) {
+        .formula-box .highlight {
+            color: #e91e63;
+            font-size: 1.4rem;
+        }
+
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .explanation-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #e91e63;
+        }
+
+        .explanation-item h4 {
+            color: #e91e63;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .explanation-item p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* 对比表格样式 */
+        .method-comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .method-comparison th {
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .method-comparison td {
+            padding: 15px;
+            border-bottom: 1px solid #fce4ec;
+        }
+
+        .method-comparison tr:nth-child(even) {
             background: #fafafa;
         }
 
-        .error-table tr:hover {
-            background: #f5f5f5;
+        .method-comparison tr:hover {
+            background: #fce4ec;
         }
 
-        .error-box {
-            background: #ffebee;
-            border-left: 4px solid #f44336;
+        /* 要点提示框 */
+        .tip-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
             padding: 20px;
-            margin: 20px 0;
             border-radius: 0 8px 8px 0;
-        }
-
-        .error-box strong {
-            color: #c62828;
-        }
-
-        /* 自评表单样式 */
-        .self-check-box {
-            background: #f3e5f5;
-            border: 2px solid #9c27b0;
-            border-radius: 8px;
-            padding: 20px;
             margin: 20px 0;
         }
 
-        .self-check-box h4 {
-            color: #9c27b0;
-            margin-bottom: 15px;
+        .tip-box h4 {
+            color: #e65100;
+            margin-bottom: 10px;
         }
 
-        .self-check-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
+        .tip-box ul {
+            margin-left: 20px;
         }
 
-        .self-check-item input[type="checkbox"] {
-            margin-top: 3px;
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
+        .tip-box li {
+            margin-bottom: 8px;
         }
 
-        .self-check-item label {
-            cursor: pointer;
-            color: #333;
-        }
-
-        .self-result {
-            margin-top: 15px;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .self-btn {
-            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .self-btn:hover {
-            opacity: 0.9;
-        }
-
+        /* 导航链接样式 */
         .nav-links {
             display: flex;
             justify-content: space-between;
@@ -481,39 +308,100 @@
             color: white;
         }
 
-        .progress-indicator {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-            gap: 10px;
+        /* 反思练习样式 */
+        .reflection-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .progress-step {
+        .reflection-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .fill-blank {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .fill-blank p {
+            margin-bottom: 15px;
+            text-indent: 0;
+        }
+
+        .input-row {
             display: flex;
             align-items: center;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: #e0e0e0;
-            color: #666;
-            font-size: 0.9rem;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
         }
 
-        .progress-step.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .input-row label {
+            min-width: 80px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .input-row input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+
+        .input-row input[type="text"]:focus {
+            outline: none;
+            border-color: #e91e63;
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
             color: white;
-        }
-
-        .progress-step.completed {
-            background: #4caf50;
-            color: white;
-        }
-
-        .step-box {
-            background: #f0f4ff;
-            padding: 15px;
+            border: none;
+            padding: 12px 30px;
             border-radius: 8px;
-            margin: 10px 0;
-            border-left: 4px solid #667eea;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .feedback-box {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .feedback-box.correct {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+        }
+
+        .feedback-box.incorrect {
+            background: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
+        }
+
+        .feedback-box h4 {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -526,369 +414,152 @@
         <!-- 进度指示器 -->
         <div class="progress-indicator">
             <div class="progress-step completed">Part 1 批注式阅读</div>
-            <div class="progress-step active">Part 2 六要素概括</div>
-            <div class="progress-step">Part 3 段意合并</div>
-            <div class="progress-step">Part 4 素材转化</div>
+            <div class="progress-step active">Part 2 核心概括法</div>
+            <div class="progress-step">Part 3 六要素</div>
+            <div class="progress-step">Part 4 段意合并</div>
+            <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
 
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第二部分</span>
-            <h1>六要素概括法——提取核心事件</h1>
+            <h1>一个核心讲清楚所有概括大法</h1>
             <div class="learning-objectives">
                 <h3>学习目标</h3>
                 <ul>
-                    <li>掌握记叙文六要素的基本概念</li>
-                    <li>学会提取文章关键信息，概括主要内容</li>
-                    <li>熟悉中考记叙文概括题的答题规范</li>
-                    <li>通过真题练习，巩固六要素概括法的运用</li>
+                    <li>理解记叙文概括的"一个核心公式"</li>
+                    <li>掌握概括题的本质：谁 + 做了什么 + 结果如何</li>
+                    <li>能够区分"详细复述"和"简洁概括"</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 方法讲解 -->
+        <!-- 视频区域 -->
+        <div class="video-section">
+            <h2>📺 微课视频：记叙文概括的核心方法</h2>
+            <div class="video-container">
+                <iframe src="//player.bilibili.com/player.html?bvid=BV1HE41157gp&page=1&high_quality=1&danmuk=0"
+                        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+                </iframe>
+            </div>
+            <div class="tip-box" style="margin-top: 20px;">
+                <h4>💡 视频要点</h4>
+                <ul>
+                    <li>为什么很多同学在概括题上失分严重？</li>
+                    <li>"一句话概括"的核心公式是什么？</li>
+                    <li>如何避免"记流水账"式的错误概括？</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 核心公式讲解 -->
         <div class="content-section">
-            <h2>📚 六要素概括法详解</h2>
+            <h2>🎯 一个核心公式，搞定所有概括题</h2>
+
+            <p>无论是中考还是平时考试，记叙文概括题都是必考题型。很多同学觉得概括很难，其实只要掌握一个核心公式，就能应对各种概括题。</p>
+
+            <div class="core-formula">
+                <h3>✨ 概括万能公式</h3>
+                <div class="formula-box">
+                    <p class="highlight">谁 + 做了什么 + 结果如何</p>
+                    <p style="margin-top: 15px; font-size: 1rem; color: #666;">（人物）+ （事件）+ （结果/变化）</p>
+                </div>
+            </div>
+
+            <div class="explanation-grid">
+                <div class="explanation-item">
+                    <h4>📌 谁（人物）</h4>
+                    <p>找出文章的主人公或主要人物。注意：是"谁"做的事，就写"谁"，不要搞错对象。</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>📌 做了什么（事件）</h4>
+                    <p>用简洁的语言概括主要事件，保留核心情节，删除次要细节。</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>📌 结果如何（结果/变化）</h4>
+                    <p>事件的结局是什么？人物有什么变化？情感有什么转变？</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 对比表格 -->
+        <div class="content-section">
+            <h2>✅ 正确概括 vs 错误概括</h2>
+            <table class="method-comparison">
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">❌ 错误示例（记流水账）</th>
+                        <th style="width: 50%;">✅ 正确示例（简洁概括）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>那天天气很好，我和妈妈一起去公园，我们先去了湖边看鱼，然后去了花坛看花，后来又去了游乐场玩过山车，最后回家了。</td>
+                        <td>我和妈妈去公园游玩。</td>
+                    </tr>
+                    <tr>
+                        <td>他早上起床后刷牙洗脸，然后吃早饭，吃完早饭背上书包去学校，到了学校上课，下午放学回家写作业。</td>
+                        <td>他度过了普通的一天（或：他按部就班地完成了日常学习和生活）。</td>
+                    </tr>
+                    <tr>
+                        <td>她一开始很开心，后来遇到了一些困难，然后她很努力，最后成功了。</td>
+                        <td>她面对困难不懈努力，最终获得成功。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>📝 概括的三个原则</h4>
+                <ul>
+                    <li><strong>删：</strong>删除次要信息、细节描写、环境描写等</li>
+                    <li><strong>留：</strong>保留主要人物、核心事件、关键结果</li>
+                    <li><strong>改：</strong>用自己的话重新组织语言，不要照抄原文</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 反思练习 -->
+        <div class="reflection-section">
+            <h2>✍️ 反思练习</h2>
+            <p>看完视频和学习了核心公式后，请用自己的话总结一下记叙文概括的方法：</p>
+
+            <div class="fill-blank">
+                <p><strong>记叙文概括的核心公式是：</strong></p>
+                <div class="input-row">
+                    <label>我的答案：</label>
+                    <input type="text" id="formula-answer" placeholder="例如：谁 + 做了什么 + 结果...">
+                </div>
+
+                <p style="margin-top: 20px;"><strong>概括时要注意的三个原则是：</strong></p>
+                <div class="input-row">
+                    <label>原则 1：</label>
+                    <input type="text" id="principle1" placeholder="填入一个字">
+                </div>
+                <div class="input-row">
+                    <label>原则 2：</label>
+                    <input type="text" id="principle2" placeholder="填入一个字">
+                </div>
+                <div class="input-row">
+                    <label>原则 3：</label>
+                    <input type="text" id="principle3" placeholder="填入一个字">
+                </div>
+
+                <button class="submit-btn" onclick="checkReflection()">提交答案</button>
+
+                <div id="reflection-feedback" class="feedback-box"></div>
+            </div>
 
             <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
-                <strong>方法说明：</strong><br>
-                写人记事的文章，一般有时间、地点、人物、事件（包括起因、经过、结果）等基本要素。将文章的六要素提取出来，删除不必要的内容，整理成一段简洁、通顺的话即可。
-            </div>
-
-            <div class="formula-box">
-                <strong>六要素概括主要事件 = （时间、地点）谁 + 做什么 + 结果如何</strong>
-            </div>
-
-            <h3>使用步骤：</h3>
-            <ol style="margin-left: 20px;">
-                <li><strong>第一步：</strong>通读全文，找出六要素</li>
-                <li><strong>第二步：</strong>删除不必要的要素（时间、地点有时可省略）</li>
-                <li><strong>第三步：</strong>保留核心——<strong>谁 + 做什么 + 结果如何</strong></li>
-                <li><strong>第四步：</strong>整理成一段简洁、通顺的话</li>
-            </ol>
-
-            <div class="example-box">
-                <strong>注意：</strong><br>
-                六要素概括主要事件时，时间和地点有时可以省略，但<strong>人物、事件、结果</strong>这三个基本点务必保留！
+                <h4>💡 学习提示</h4>
+                <p>这一部分是整个第 01 课的<strong>核心</strong>。Part 3 的"六要素概括法"和 Part 4 的"段意合并法"都是这个核心公式的具体运用。学好这一部分，后面的方法会更轻松！</p>
             </div>
         </div>
 
-        <!-- 真题练习一 -->
-        <div class="practice-section">
-            <h2>✍️ 真题练习一</h2>
-
-            <div class="passage-box">
-                <p style="text-align: center; font-weight: bold; text-indent: 0;">看自行车的女人</p>
-                <p style="text-align: center; text-indent: 0;">梁晓声</p>
-                <p>①想为那个看自行车的女人写点什么的念头，已萌生在我心里很久了。</p>
-                <p>②第一次见到她，是在北京一家医院前的人行道上。一个胖女人企图夺她装钱的书包，书包的带子已从她肩头滑落，搭垂在手臂上。身材瘦小的她双手将书包紧紧搂在怀里，以带着哭腔的声音叫嚷："你不能这样啊，我每天挣点儿钱多不容易呀！"</p>
-                <p>③她 40 余岁，穿着一套旧迷彩服，戴着一顶旧迷彩单帽。那身衣服一看就是地摊货。脚下是一双老式旧布鞋，没穿袜子，脚面晒得很黑。帽舌下，她的两只眼睛，呈现着莫大而又无助的惊恐。</p>
-                <p>④我从围观者的议论中听明白了两个女人纠缠的原因：那胖女人存车时，忘了拿放在车筐里的包，包丢了。她认为这个看自行车的外地女人应该负责任，并且怀疑是被她藏起来了。</p>
-                <p>⑤胖女人一用力，终于将看自行车的女人那书包夺了去，她将一只手伸进包里去掏，却只掏出了一把零钱。"当"的一声，一只小搪瓷碗抛在看自行车女人的脚旁，抢夺者骑上自己的自行车，带着装有一把零钱的别人的书包，扬长而去。</p>
-                <p>⑥看自行车的女人追了几步，回头看看一排自行车，慢慢走回原地，捡起自己的小搪瓷碗，瞧着发愣。忽然，她把头往身旁的大树上一抵，呜呜哭了……</p>
-                <p>⑦第二次见到她，是在一家商场的自行车场。我因没买到合适的东西，带着的一百元钱也就没破开。取自行车时，我歉意地说："忘带存车的零钱了，一百元你能找得开吗？"我以为她会朝不好的方面猜疑我，因为一个人从商场出来，居然说自己兜里连几角零钱都没有，不大可信的。她望着我怔了怔，然后一笑，很不好意思地说："那就不用给钱了，走吧走吧！"她当时那笑，给我留下很深的印象。</p>
-                <p>⑧后来我又去那家商场，付存车费时，我说："上次欠你两毛钱，这次一起付给你。"我之所以如此主动，是我觉得她肯定记得我欠她两毛钱的事，若由她提醒，我会尴尬的。不料她又像上次那样怔了怔，然后一笑，很不好意思地说："不用啊，不用啊！"硬塞还给了我两毛钱。</p>
-                <p>⑨这年冬天，雪后的一个晚上，单位一位退休摄影师给我打电话，让我替他写一封表扬信。他要表扬的，就是那个看自行车的女人。"我到那家商场去，遇到熟人聊了一会儿，竟忘了取自行车，拎兜也忘在车筐里了。拎兜里的几百元钱倒没什么，关键是我洗的三百多张老照片啊！干了一辈子摄影，那些老照片可都是我的宝呀！天黑了我才想起来，急忙赶去，你猜怎么着？就剩我那辆车了！商场早关门了，看车的女人在冷风中站着，抱着我的拎兜，守着我那辆旧自行车。</p>
-                <p>⑩不久前我又去那家商场，见看自行车的已经换成一个男人了，我想问原先那个女人到哪里去了，张了张嘴，却什么也没问。我祈愿她永远也不会再碰到什么欺负她的人。</p>
-                <p>⑪阳光底下，人与人应该是平等的。弱者有时对这平等反倒显得诚惶诚恐似的，不是他们不配，而是因为这起码的平等往往太少，太少……</p>
-            </div>
-
-            <div class="question-box">
-                <p><strong>第 7 题：</strong>本文写了"看自行车的女人"的哪几件事？请用简洁的语言分别概括。（4 分）</p>
-            </div>
-
-            <div class="input-area">
-                <label for="student-answer1"><strong>你的答案：</strong></label>
-                <textarea id="student-answer1" placeholder="请在此输入你的答案，建议分条作答..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer1()">提交答案</button>
-                <div id="feedback1" class="feedback-box"></div>
-                <p class="hint-text">💡 提示：找时间关键词（第一次、第二次、后来、这年冬天），用"谁 + 做了什么"的格式概括</p>
-            </div>
-
-            <button class="toggle-btn" onclick="toggleAnswer('answer1')">点击查看答案与解析</button>
-
-            <div id="answer1" class="hidden-content">
-                <div class="answer-box">
-                    <p><strong>参考答案：</strong></p>
-                    <ol>
-                        <li>她被胖女人冤枉、抢走书包，无助地哭泣；（1 分）</li>
-                        <li>她不要"我"的存车费，还帮助"我"；（1 分）</li>
-                        <li>她记得"我"欠她的两毛钱，硬塞还给"我"；（1 分）</li>
-                        <li>她在冷风中守着摄影师的车和拎兜直到天黑。（1 分）</li>
-                    </ol>
-                </div>
-
-                <div class="analysis-box">
-                    <p><strong>解题思路：</strong></p>
-                    <ol>
-                        <li><strong>审题</strong>：题目要求概括"哪几件事"，说明需要找出多件事，分别概括。</li>
-                        <li><strong>定位</strong>：文章按时间顺序写了作者的几次见闻，找关键词"第一次""第二次""后来""这年冬天"。</li>
-                        <li><strong>提取要素</strong>：每件事都按照"谁 + 做了什么 + 结果"的格式概括。</li>
-                        <li><strong>检查</strong>：四件事，4 分，每题 1 分，符合要求。</li>
-                    </ol>
-                </div>
-
-                <div class="criteria-box">
-                    <h4>📋 评分标准</h4>
-                    <ul>
-                        <li>每件事 1 分，共 4 分</li>
-                        <li>对象错误（写成"我"怎样）不得分</li>
-                        <li>概括不全面或重点失当扣 1 分</li>
-                    </ul>
-                </div>
-
-                <div class="error-box">
-                    <p><strong>❗ 常见失误分析</strong></p>
-                    <p>根据全市得分数据（平均分 3.49），这道题的典型失误有：</p>
-                    <table class="error-table">
-                        <thead>
-                            <tr>
-                                <th>失误类型</th>
-                                <th>错误示例</th>
-                                <th>失分原因</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>答非所问</td>
-                                <td>"我因为没有零钱，欠了她两毛钱"</td>
-                                <td>对象搞错，问的是"女人"的事</td>
-                            </tr>
-                            <tr>
-                                <td>理解错误</td>
-                                <td>"她帮我看车一直等我出来"</td>
-                                <td>事件理解偏差</td>
-                            </tr>
-                            <tr>
-                                <td>重点失当</td>
-                                <td>"一位同事让我写表扬信"</td>
-                                <td>主次不分，抓错重点</td>
-                            </tr>
-                            <tr>
-                                <td>概括不全</td>
-                                <td>只写 1-2 件事</td>
-                                <td>遗漏事件</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="self-check-box">
-                    <h4>✏️ 自评环节</h4>
-                    <p>请对照参考答案和评分标准，检查自己的答案：</p>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check1">
-                        <label for="check1">我概括出了 4 件事（每件事 1 分）</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check2">
-                        <label for="check2">我的陈述对象都是"她/看自行车的女人"（不是"我"）</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3">
-                        <label for="check3">我抓住了每件事的重点，没有主次不分</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4">
-                        <label for="check4">我分条表述，得分点清晰</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check5">
-                        <label for="check5">我的语言简洁，每条不超过 20 字</label>
-                    </div>
-                    <button class="self-btn" onclick="calculateScore()">计算自评得分</button>
-                    <div id="self-result" class="self-result" style="display: none;"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 真题练习二 -->
-        <div class="practice-section">
-            <h2>✍️ 真题练习二</h2>
-
-            <div class="passage-box">
-                <p style="text-align: center; font-weight: bold; text-indent: 0;">口罩</p>
-                <p style="text-align: center; text-indent: 0;">黄大刚</p>
-                <p>①街上戴口罩的人越来越多了。开始是零星几个人戴，人们还像看怪物似的，嘴上虽不说，眼里却藏着不屑。</p>
-                <p>②那个时候，疫情却像天边的闷雷，除了偶尔传来隐隐的几声动静外，大力住的地方还是艳阳高照。偶尔谈及，有人不以为然："武汉离咱这儿十万八千里，远着呢。"</p>
-                <p>③朋友圈关于疫情的消息越来越多，还明确了人是可以传人的。大力所在的地方也不幸免，确诊了一例，过后每天都有新增病例。官宣的防控措施中有一条"戴口罩，讲卫生"。可口罩呢，大力走遍药店，有限的存货早已卖个精光。</p>
-                <p>④大力想到了几个平时消息灵通的朋友，电话刚一接通，他还没开口，对方就要他帮忙弄几个口罩。</p>
-                <p>⑤没有买到口罩，惶恐不安把大力裹挟得憋不过气来，总感觉病毒无处不在。</p>
-                <p>⑥他给在医院当护士的表妹打电话，表妹不接。表妹后来回电说被抽到发热门诊做疫情防控工作了。</p>
-                <p>⑦大力发现，隔壁的亚方也没有买到口罩。亚方在农贸市场卖猪肉，把卖猪肉的箩筐放在门口。大力与亚方曾因箩筐的事闹过矛盾。</p>
-                <p>⑧大力从微信上得知，政府在一心堂药店设了点，可以免费领取口罩。大力起了大早排队，队伍已排到街上。排在前面的人从口袋里掏出一个新口罩送给他。</p>
-                <p>⑨大力喜滋滋地把领到的口罩放到抽屉里时，惊喜地发现，抽屉里还有一包医用口罩，是之前买的。</p>
-                <p>⑩大力从抽屉里拿出口罩来，敲开亚方的门，把口罩递给亚方。</p>
-            </div>
-
-            <div class="question-box">
-                <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
-            </div>
-
-            <div class="input-area">
-                <label for="student-answer2"><strong>你的答案：</strong></label>
-                <textarea id="student-answer2" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer2()">提交答案</button>
-                <div id="feedback2" class="feedback-box"></div>
-                <p class="hint-text">💡 提示：找出主人公"大力"，围绕"口罩"梳理主要情节，用"谁 + 做了什么 + 结果"的格式概括</p>
-            </div>
-
-            <button class="toggle-btn" onclick="toggleAnswer('answer2')">点击查看答案与解析</button>
-
-            <div id="answer2" class="hidden-content">
-                <div class="analysis-box">
-                    <p><strong>解题思路：</strong></p>
-                    <table class="error-table" style="background: #f5f5f5;">
-                        <tbody>
-                            <tr><th>时间</th><td>疫情初期</td></tr>
-                            <tr><th>地点</th><td>无</td></tr>
-                            <tr><th>人物</th><td>大力、亚方</td></tr>
-                            <tr><th>起因</th><td>疫情初来，大力苦苦寻找口罩而不得</td></tr>
-                            <tr><th>经过</th><td>后来他领到了好心人赠送的免费口罩</td></tr>
-                            <tr><th>结果</th><td>受到感召，他把自己家里的口罩给了曾与自己有矛盾的邻居亚方</td></tr>
-                        </tbody>
-                    </table>
-
-                    <div class="step-box">
-                        <p><strong>Step1：时间 + 地点 + 人物 + 起因 + 经过 + 结果</strong></p>
-                        <p>疫情初来，大力苦苦寻找口罩而不得，后来他领到了好心人赠送的免费口罩，受到感召，他把自己家里的口罩给了曾与自己有矛盾的邻居亚方。</p>
-                    </div>
-
-                    <div class="step-box">
-                        <p><strong>Step2：人 + 什么事 + 结果</strong></p>
-                        <p>疫情期间，大力苦苦寻找口罩不得，最终获赠口罩，并将家里口罩赠送给亚方。</p>
-                    </div>
-
-                    <div class="tip-box">
-                        <strong>注意：</strong> 六要素法，有些要素可以有所取舍，但务必保留基本点：<strong>谁 + 做什么 + 结果如何（人物＋事件＋结果）</strong>。
-                    </div>
-                </div>
-
-                <div class="answer-box">
-                    <p><strong>参考答案：</strong></p>
-                    <p>这篇文章讲述了疫情期间，大力苦苦寻找口罩，最终获赠口罩，并将口罩赠送给邻居亚方。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 真题练习三 -->
-        <div class="practice-section">
-            <h2>✍️ 真题练习三</h2>
-
-            <div class="passage-box">
-                <p style="text-align: center; font-weight: bold; text-indent: 0;">那年春节</p>
-                <p style="text-align: center; text-indent: 0;">黄咚咚</p>
-                <p>①那年我 23 岁。刚从学校毕业一年多，在一家纯文学的小型杂志社做小编，工资微薄，诸事不顺。</p>
-                <p>②临近年关，总还是要回家过年，看望一下爸妈。</p>
-                <p>③爸妈在老家经营着一家小馆子。爸妈每天凌晨三四点钟起来和面、发面，守着灶火一屉屉蒸好，六点不到就开门，一直到下午才能稍事休息。</p>
-                <p>④我每年几千的学费，每个月定时拿到手的几百块的生活费，全是这一个包子、一个馒头赚几分钱攒下来的。</p>
-                <p>⑤虽然工资微薄，但省吃俭用，总归还是节余下来几千块。我把钱取了三分之二出来准备拿来孝敬爸妈。那天，我把钱搁背包里放好，骑车去邮局。</p>
-                <p>⑥途中等了两个交通灯，依稀感到有人在推搡我的背包，但动作轻微。下班高峰的人流汹涌，不等我回过神查看，红灯变绿，我又身不由己地被推搡着向前了。</p>
-                <p>⑦到了另一个邮局，准备拉开背包的拉链把钱拿出来。但是我看到背包的拉链是开着的。钱已经不在里面了。</p>
-                <p>⑧那天晚上我一夜没睡好。深不见底的失望与懊恼完全淹没了我。</p>
-                <p>⑨第二天，我给家里打了个电话，说今年的票不好买，单位又正好安排我值班，我就不回去过春节了。</p>
-                <p>⑩其实，我已经早早买好了回家的车票，我们杂志社也压根儿不需要值班。</p>
-                <p>⑪第二天，接到我爸打来的电话，说我妈坐火车来北京了。</p>
-                <p>⑫三天后，我在北京西站出站口，接到了妈。她挎着一个硕大的迷彩旅行袋，里面装满了我爱吃的各种腊味、腌菜、腐乳、炒豆子。</p>
-                <p>⑬她的女儿说今年不能回故乡过年了，她只好在严寒的年关奔波了三天两夜，坐了三十多个小时人挤人的火车，赶了两三千里的路，把故乡搬到在异乡漂泊的女儿身边来。</p>
-                <p>⑭看见我的那一瞬，她如释重负，风尘仆仆的脸笑成了一朵花。而在我的心里，扑簌簌的眼泪流成了一条河……</p>
-            </div>
-
-            <div class="question-box">
-                <p><strong>问题：</strong>请用简洁的语言概括选文主要内容。（4 分）</p>
-            </div>
-
-            <div class="input-area">
-                <label for="student-answer3"><strong>你的答案：</strong></label>
-                <textarea id="student-answer3" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer3()">提交答案</button>
-                <div id="feedback3" class="feedback-box"></div>
-                <p class="hint-text">💡 提示：找出主人公"我"，围绕"春节"梳理主要情节，用"谁 + 做了什么 + 结果"的格式概括</p>
-            </div>
-
-            <button class="toggle-btn" onclick="toggleAnswer('answer3')">点击查看答案与解析</button>
-
-            <div id="answer3" class="hidden-content">
-                <div class="analysis-box">
-                    <p><strong>解题思路：</strong></p>
-                    <table class="error-table" style="background: #f5f5f5;">
-                        <thead>
-                            <tr><th>段落</th><th>主要内容</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><th>1-4 段</th><td>年关将至，讲述爸妈的辛苦与自己毕业工作薪酬的微薄（为下文铺垫）</td></tr>
-                            <tr><th>5-9 段</th><td>"我"向爹妈寄钱结果中途丢失</td></tr>
-                            <tr><th>10-11 段</th><td>"我"于是向家里撒谎春节值班不回家</td></tr>
-                            <tr><th>12-14 段</th><td>妈妈奔波千里到北京陪"我"过春节</td></tr>
-                        </tbody>
-                    </table>
-
-                    <div class="step-box">
-                        <p><strong>Step1：段意合并</strong></p>
-                        <p>年关将至，毕业工作的"我"辛苦存的钱向爹妈寄钱结果中途丢失，于是撒谎春节值班不回家，妈妈奔波千里到北京陪"我"过春节。</p>
-                    </div>
-
-                    <div class="step-box">
-                        <p><strong>Step2：精简提炼</strong></p>
-                        <p>"我"向爹妈寄钱结果中途丢失，于是撒谎春节值班不回家，结果妈妈奔波千里到北京陪"我"过春节。</p>
-                    </div>
-
-                    <div class="tip-box">
-                        <strong>注意：</strong><br>
-                        1. 各段大意之间，有的要加上一些过渡词语，以便读起来通顺连贯。<br>
-                        2. 要区分重点段落和非重点段落，做到有详有略。
-                    </div>
-                </div>
-
-                <div class="answer-box">
-                    <p><strong>参考答案：</strong></p>
-                    <p>孝敬父母的钱被偷后，"我"打电话骗妈妈春节值班不回家，结果妈妈奔波千里赶来北京陪"我"过春节。</p>
-                </div>
-
-                <div class="criteria-box">
-                    <h4>📋 评分标准</h4>
-                    <ul>
-                        <li>答出"钱被偷/钱丢了"得 1 分</li>
-                        <li>答出"骗妈妈/撒谎不回家"得 1 分</li>
-                        <li>答出"妈妈来北京/妈妈奔波千里"得 1 分</li>
-                        <li>答出"陪'我'过春节"得 1 分</li>
-                        <li>未围绕"我"作答，扣 1 分</li>
-                    </ul>
-                </div>
-
-                <div class="self-check-box">
-                    <h4>✏️ 自评环节</h4>
-                    <p>请对照参考答案和评分标准，检查自己的答案：</p>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3_1">
-                        <label for="check3_1">我的答案围绕主人公"我"展开</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3_2">
-                        <label for="check3_2">我答出了"钱被偷/丢了"的情节</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3_3">
-                        <label for="check3_3">我答出了"撒谎/骗妈妈不回家"的情节</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3_4">
-                        <label for="check3_4">我答出了"妈妈来北京陪'我'过年"的情节</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check3_5">
-                        <label for="check3_5">我的语言简洁，字数在 50-100 字之间</label>
-                    </div>
-                    <button class="self-btn" onclick="calculateScore3()">计算自评得分</button>
-                    <div id="self-result3" class="self-result" style="display: none;"></div>
-                </div>
-            </div>
-        </div>
-
+        <!-- 导航链接 -->
         <div class="nav-links">
             <a href="lesson01-part1.html">← 返回 Part 1</a>
-            <a href="lesson01-part3.html">进入 Part 3：段意合并法 →</a>
+            <a href="lesson01-part3.html">进入 Part 3：六要素概括法 →</a>
         </div>
     </div>
 
@@ -897,144 +568,59 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-part5.html', 'lesson01-appendix.html'];
                 window.location.href = pages[index];
             });
         });
 
-        function toggleAnswer(id) {
-            var content = document.getElementById(id);
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
-        }
+        // 检查反思练习答案
+        function checkReflection() {
+            var formulaAnswer = document.getElementById('formula-answer').value.trim();
+            var principle1 = document.getElementById('principle1').value.trim();
+            var principle2 = document.getElementById('principle2').value.trim();
+            var principle3 = document.getElementById('principle3').value.trim();
 
-        function checkAnswer1() {
-            var answer = document.getElementById('student-answer1').value.trim();
-            var feedback = document.getElementById('feedback1');
+            var feedback = document.getElementById('reflection-feedback');
+            feedback.style.display = 'block';
 
-            if (!answer) {
+            // 检查是否填写
+            if (!formulaAnswer && !principle1 && !principle2 && !principle3) {
                 feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
-                feedback.style.display = 'block';
+                feedback.innerHTML = '<h4>⚠️ 请先完成填空后再提交</h4><p>至少填写一部分内容哦～</p>';
                 return;
             }
 
-            feedback.className = 'feedback-box correct';
-            var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查以下几点：</p>';
-            hint += '<ul>';
-            hint += '<li>是否概括出<strong>4 件事</strong>？（4 分，每件事 1 分）</li>';
-            hint += '<li>是否按<strong>时间顺序</strong>梳理？（第一次、第二次、后来、这年冬天）</li>';
-            hint += '<li>是否使用"<strong>谁 + 做了什么</strong>"的格式？</li>';
-            hint += '<li>语言是否<strong>简洁</strong>？（每条不超过 20 字）</li>';
-            hint += '</ul>';
-            hint += '<p style="margin-top: 15px;"><strong>关键词提示：</strong> 胖女人抢包、不要存车费、还两毛钱、替摄影师看车</p>';
-            feedback.innerHTML = hint;
-            feedback.style.display = 'block';
-        }
+            // 检查答案（关键词匹配）
+            var correctCount = 0;
+            var totalCount = 4;
 
-        function calculateScore() {
-            var score = 0;
-            var checks = ['check1', 'check2', 'check3', 'check4', 'check5'];
-            var resultDiv = document.getElementById('self-result');
-
-            checks.forEach(function(id) {
-                if (document.getElementById(id).checked) {
-                    score++;
-                }
-            });
-
-            var finalScore = Math.min(4, Math.round(score * 4 / 5));
-
-            var message = '';
-            if (finalScore === 4) {
-                message = '<span style="color: #2e7d32;">🎉 太棒了！你的答案符合所有评分标准，预计可得 4 分！</span>';
-            } else if (finalScore >= 2) {
-                message = '<span style="color: #f57c00;">✓ 不错！你的答案基本符合要求，预计可得 ' + finalScore + ' 分。</span>';
-            } else {
-                message = '<span style="color: #c62828;">⚠️ 需要改进！你的答案还有差距，建议重新作答后再次自评。</span>';
+            // 检查公式答案（包含"谁""做""结果"等关键词）
+            if (formulaAnswer && (formulaAnswer.includes('谁') || formulaAnswer.includes('做') || formulaAnswer.includes('结果'))) {
+                correctCount++;
             }
 
-            resultDiv.innerHTML = '<strong>自评结果：</strong> 共勾选 ' + score + ' 项，预计得分 ' + finalScore + '/4 分<br>' + message;
-            resultDiv.style.display = 'block';
-        }
-
-        function checkAnswer2() {
-            var answer = document.getElementById('student-answer2').value.trim();
-            var feedback = document.getElementById('feedback2');
-
-            if (!answer) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
-                feedback.style.display = 'block';
-                return;
+            // 检查三个原则（"删""留""改"）
+            if (principle1 && (principle1 === '删' || principle1 === '留' || principle1 === '改')) {
+                correctCount++;
+            }
+            if (principle2 && (principle2 === '删' || principle2 === '留' || principle2 === '改')) {
+                correctCount++;
+            }
+            if (principle3 && (principle3 === '删' || principle3 === '留' || principle3 === '改')) {
+                correctCount++;
             }
 
             feedback.className = 'feedback-box correct';
-            var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查以下几点：</p>';
-            hint += '<ul>';
-            hint += '<li>是否围绕主人公<strong>"大力"</strong>作答？</li>';
-            hint += '<li>是否答出<strong>买不到口罩</strong>的困境？</li>';
-            hint += '<li>是否答出<strong>领口罩时得到陌生人帮助</strong>？</li>';
-            hint += '<li>是否答出<strong>把口罩送给邻居亚方</strong>？</li>';
-            hint += '</ul>';
-            hint += '<p style="margin-top: 15px;"><strong>情节线索：</strong> 买口罩（困难）→ 领口罩（受助）→ 送口罩（助人）</p>';
-            feedback.innerHTML = hint;
-            feedback.style.display = 'block';
-        }
-
-        function checkAnswer3() {
-            var answer = document.getElementById('student-answer3').value.trim();
-            var feedback = document.getElementById('feedback3');
-
-            if (!answer) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
-                feedback.style.display = 'block';
-                return;
-            }
-
-            feedback.className = 'feedback-box correct';
-            var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查以下几点：</p>';
-            hint += '<ul>';
-            hint += '<li>是否围绕主人公<strong>"我"</strong>作答？</li>';
-            hint += '<li>是否答出<strong>钱被偷/丢了</strong>？</li>';
-            hint += '<li>是否答出<strong>撒谎不回家</strong>？</li>';
-            hint += '<li>是否答出<strong>妈妈来北京陪"我"过年</strong>？</li>';
-            hint += '</ul>';
-            feedback.innerHTML = hint;
-            feedback.style.display = 'block';
-        }
-
-        function calculateScore3() {
-            var score = 0;
-            var checks = ['check3_1', 'check3_2', 'check3_3', 'check3_4', 'check3_5'];
-            var resultDiv = document.getElementById('self-result3');
-
-            checks.forEach(function(id) {
-                if (document.getElementById(id).checked) {
-                    score++;
-                }
-            });
-
-            var finalScore = Math.min(4, Math.round(score * 4 / 5));
-
-            var message = '';
-            if (finalScore === 4) {
-                message = '<span style="color: #2e7d32;">🎉 太棒了！你的答案符合所有评分标准，预计可得 4 分！</span>';
-            } else if (finalScore >= 2) {
-                message = '<span style="color: #f57c00;">✓ 不错！你的答案基本符合要求，预计可得 ' + finalScore + ' 分。</span>';
-            } else {
-                message = '<span style="color: #c62828;">⚠️ 需要改进！你的答案还有差距，建议重新作答后再次自评。</span>';
-            }
-
-            resultDiv.innerHTML = '<strong>自评结果：</strong> 共勾选 ' + score + ' 项，预计得分 ' + finalScore + '/4 分<br>' + message;
-            resultDiv.style.display = 'block';
+            var percentage = Math.round((correctCount / totalCount) * 100);
+            var message = '<h4>✓ 答案已提交</h4>';
+            message += '<p>你的答案完整度约为 <strong>' + percentage + '%</strong></p>';
+            message += '<p style="margin-top: 10px;"><strong>参考答案：</strong></p>';
+            message += '<ul>';
+            message += '<li>核心公式：<strong>谁 + 做了什么 + 结果如何</strong></li>';
+            message += '<li>三个原则：<strong>删、留、改</strong></li>';
+            message += '</ul>';
+            message += '<p style="margin-top: 10px; color: #666;">提示：这只是参考答案，概括题没有唯一标准答案，关键是掌握方法！</p>';
+            feedback.innerHTML = message;
         }
     </script>
 </body>

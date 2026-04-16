@@ -319,6 +319,7 @@
             <div class="progress-step completed">Part 2</div>
             <div class="progress-step completed">Part 3</div>
             <div class="progress-step completed">Part 4</div>
+            <div class="progress-step completed">Part 5</div>
             <div class="progress-step completed">附录</div>
         </div>
 
@@ -621,7 +622,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-part5.html', 'lesson01-appendix.html'];
                 window.location.href = pages[index];
             });
         });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 3 部分 段意合并法 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 3 部分 六要素概括法 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -66,7 +66,7 @@
 
         .part-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
             color: white;
             padding: 8px 20px;
             border-radius: 25px;
@@ -76,15 +76,15 @@
         }
 
         .learning-objectives {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
             padding: 20px 25px;
             border-radius: 0 8px 8px 0;
             margin-top: 20px;
         }
 
         .learning-objectives h3 {
-            color: #667eea;
+            color: #1565c0;
             margin-bottom: 10px;
         }
 
@@ -104,53 +104,73 @@
             color: #667eea;
             font-size: 1.4rem;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             border-bottom: 2px solid #f0f4ff;
-        }
-
-        .content-section h3 {
-            color: #444;
-            font-size: 1.1rem;
-            margin: 25px 0 15px 0;
         }
 
         .content-section p {
             color: #555;
             margin-bottom: 15px;
-            text-align: justify;
+            line-height: 2;
         }
 
-        .content-section ul, .content-section ol {
-            margin: 15px 0 15px 25px;
-            color: #555;
+        /* 进度指示器样式 */
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
         }
 
-        .content-section li {
-            margin-bottom: 8px;
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
 
-        .tip-box {
-            background: #fff8e6;
-            border: 1px solid #ffd54f;
-            border-radius: 8px;
-            padding: 15px 20px;
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+        }
+
+        /* 六要素表格样式 */
+        .six-elements-table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 20px 0;
-        }
-
-        .tip-box strong {
-            color: #f57c00;
-        }
-
-        .example-box {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
+            background: white;
             border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
+            overflow: hidden;
         }
 
-        .example-box strong {
-            color: #2e7d32;
+        .six-elements-table th {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .six-elements-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e3f2fd;
+        }
+
+        .six-elements-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .six-elements-table tr:hover {
+            background: #e3f2fd;
         }
 
         /* 真题练习样式 */
@@ -160,15 +180,12 @@
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #667eea;
         }
 
         .practice-section h2 {
-            color: #667eea;
+            color: #2196f3;
             font-size: 1.4rem;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
         }
 
         .passage-box {
@@ -223,7 +240,7 @@
         }
 
         .toggle-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -241,7 +258,6 @@
             display: none;
         }
 
-        /* 输入框样式 */
         .input-area {
             background: #f5f7fa;
             border: 1px solid #ddd;
@@ -270,12 +286,12 @@
 
         .input-area textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #2196f3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -283,7 +299,6 @@
             cursor: pointer;
             font-size: 1rem;
             margin-top: 15px;
-            font-weight: 500;
         }
 
         .submit-btn:hover {
@@ -291,163 +306,35 @@
         }
 
         .feedback-box {
-            margin-top: 20px;
+            display: none;
             padding: 20px;
             border-radius: 8px;
-            display: none;
+            margin-top: 20px;
         }
 
         .feedback-box.correct {
             background: #e8f5e9;
-            border: 1px solid #a5d6a7;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
         }
 
         .feedback-box.incorrect {
-            background: #fff3e0;
-            border: 1px solid #ffcc80;
+            background: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
         }
 
         .feedback-box h4 {
             margin-bottom: 10px;
         }
 
-        .feedback-box.correct h4 {
-            color: #2e7d32;
-        }
-
-        .feedback-box.incorrect h4 {
-            color: #e65100;
-        }
-
         .hint-text {
-            font-size: 0.9rem;
             color: #666;
+            font-size: 0.9rem;
             margin-top: 10px;
         }
 
-        /* 评分标准样式 */
-        .criteria-box {
-            background: #e8eaf6;
-            border: 2px solid #3f51b5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .criteria-box h4 {
-            color: #3f51b5;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .criteria-box ul {
-            margin-left: 20px;
-            color: #333;
-        }
-
-        .criteria-box li {
-            margin-bottom: 8px;
-        }
-
-        /* 常见失误表格样式 */
-        .error-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .error-table th, .error-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        .error-table th {
-            background: #ffebee;
-            color: #c62828;
-            font-weight: 600;
-        }
-
-        .error-table tr:nth-child(even) {
-            background: #fafafa;
-        }
-
-        .error-table tr:hover {
-            background: #f5f5f5;
-        }
-
-        .error-box {
-            background: #ffebee;
-            border-left: 4px solid #f44336;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .error-box strong {
-            color: #c62828;
-        }
-
-        /* 自评表单样式 */
-        .self-check-box {
-            background: #f3e5f5;
-            border: 2px solid #9c27b0;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .self-check-box h4 {
-            color: #9c27b0;
-            margin-bottom: 15px;
-        }
-
-        .self-check-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-        }
-
-        .self-check-item input[type="checkbox"] {
-            margin-top: 3px;
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-        }
-
-        .self-check-item label {
-            cursor: pointer;
-            color: #333;
-        }
-
-        .self-result {
-            margin-top: 15px;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .self-btn {
-            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .self-btn:hover {
-            opacity: 0.9;
-        }
-
+        /* 导航链接样式 */
         .nav-links {
             display: flex;
             justify-content: space-between;
@@ -470,52 +357,54 @@
             color: white;
         }
 
-        .progress-indicator {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-            gap: 10px;
-        }
-
-        .progress-step {
-            display: flex;
-            align-items: center;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: #e0e0e0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .progress-step.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .progress-step.completed {
-            background: #4caf50;
-            color: white;
-        }
-
-        .step-box {
-            background: #f0f4ff;
-            padding: 15px;
+        /* 自评样式 */
+        .self-check-box {
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
             border-radius: 8px;
-            margin: 10px 0;
-            border-left: 4px solid #667eea;
-        }
-
-        .method-summary {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             margin: 20px 0;
-            border: 2px solid #81ecec;
         }
 
-        .method-summary h3 {
-            color: #00838f;
+        .self-check-box h4 {
+            color: #7b1fa2;
             margin-bottom: 15px;
+        }
+
+        .self-check-item {
+            margin-bottom: 10px;
+        }
+
+        .self-check-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .self-check-item label {
+            color: #555;
+        }
+
+        .self-btn {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .self-btn:hover {
+            opacity: 0.9;
+        }
+
+        .self-result {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            color: #2e7d32;
         }
     </style>
 </head>
@@ -528,219 +417,262 @@
         <!-- 进度指示器 -->
         <div class="progress-indicator">
             <div class="progress-step completed">Part 1 批注式阅读</div>
-            <div class="progress-step completed">Part 2 六要素概括</div>
-            <div class="progress-step active">Part 3 段意合并</div>
-            <div class="progress-step">Part 4 素材转化</div>
+            <div class="progress-step completed">Part 2 核心概括法</div>
+            <div class="progress-step active">Part 3 六要素</div>
+            <div class="progress-step">Part 4 段意合并</div>
+            <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
 
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第三部分</span>
-            <h1>段意合并法——理清文章脉络</h1>
+            <h1>六要素概括法——提取核心事件</h1>
             <div class="learning-objectives">
                 <h3>学习目标</h3>
                 <ul>
-                    <li>掌握段意合并法的基本步骤和适用场景</li>
-                    <li>学会划分段落层次，概括每段段意</li>
-                    <li>能够合并段意，形成完整的内容概括</li>
-                    <li>通过真题练习，熟练运用段意合并法</li>
+                    <li>掌握记叙文六要素的基本概念</li>
+                    <li>学会提取文章关键信息，概括主要内容</li>
+                    <li>通过真题练习，巩固六要素概括法的运用</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 方法讲解 -->
+        <!-- 六要素讲解 -->
         <div class="content-section">
-            <h2>📚 段意合并法详解</h2>
+            <h2>📚 什么是六要素概括法？</h2>
+            <p>记叙文的六要素是指：**时间、地点、人物、起因、经过、结果**。这六个要素构成了一篇记叙文的基本框架。</p>
 
-            <div class="tip-box" style="background: #e8f5e9; border-color: #4caf50;">
-                <strong>方法说明：</strong><br>
-                文章往往由几个段落组成，阅读时理清文章的段落层次，然后写出每个段落的大意，最后把每段大意综合起来，加以概括，就是整篇文章的主要内容。
-            </div>
-
-            <h3>使用步骤：</h3>
-            <ol style="margin-left: 20px;">
-                <li><strong>第一步：</strong>通读全文，理清段落层次</li>
-                <li><strong>第二步：</strong>写出每个段落的大意</li>
-                <li><strong>第三步：</strong>把每段大意综合起来，加以概括</li>
-                <li><strong>第四步：</strong>加上过渡词语，整理成通顺连贯的一段话</li>
-            </ol>
-
-            <div class="example-box">
-                <strong>注意：</strong><br>
-                1. 各段大意之间，要加上一些过渡词语，以便读起来通顺连贯。<br>
-                2. 要区分重点段落和非重点段落，做到有详有略，有的内容甚至可以舍去。
-            </div>
-        </div>
-
-        <!-- 方法总结对比 -->
-        <div class="content-section">
-            <h2>✅ 两种概括方法对比</h2>
-            <p>通过第一部分和第二部分的学习，我们已经掌握了两种概括文章主要内容的方法。它们各有什么特点？何时使用哪种方法更合适？</p>
-
-            <table class="error-table">
+            <table class="six-elements-table">
                 <thead>
                     <tr>
-                        <th style="width: 20%">方法</th>
-                        <th style="width: 25%">适用文章</th>
-                        <th style="width: 25%">核心思路</th>
-                        <th style="width: 30%">操作步骤</th>
+                        <th style="width: 15%;">要素</th>
+                        <th style="width: 35%;">含义</th>
+                        <th style="width: 50%;">示例</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>六要素概括法</strong></td>
-                        <td>写人记事为主的记叙文</td>
-                        <td>提取六要素，保留核心</td>
-                        <td>找要素 → 删次要 → 留核心 → 组句</td>
+                        <td><strong>时间</strong></td>
+                        <td>事情发生的时间</td>
+                        <td>那天早上、春节期间、疫情初期</td>
                     </tr>
                     <tr>
-                        <td><strong>段意合并法</strong></td>
-                        <td>段落层次清晰的记叙文、散文</td>
-                        <td>先分后合，合并段意</td>
-                        <td>分层次 → 概括段意 → 合并 → 润色</td>
+                        <td><strong>地点</strong></td>
+                        <td>事情发生的地点</td>
+                        <td>医院门口、北京、老家</td>
+                    </tr>
+                    <tr>
+                        <td><strong>人物</strong></td>
+                        <td>文章的主要人物</td>
+                        <td>我、母亲、看自行车的女人</td>
+                    </tr>
+                    <tr>
+                        <td><strong>起因</strong></td>
+                        <td>事情发生的原因</td>
+                        <td>钱被偷了、没有口罩、想回家过年</td>
+                    </tr>
+                    <tr>
+                        <td><strong>经过</strong></td>
+                        <td>事情发展的过程</td>
+                        <td>母亲坐火车来北京、大力获赠口罩</td>
+                    </tr>
+                    <tr>
+                        <td><strong>结果</strong></td>
+                        <td>事情的结局</td>
+                        <td>我被感动、大力把口罩送给邻居</td>
                     </tr>
                 </tbody>
             </table>
 
-            <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
-                <strong>💡 温馨提示：</strong><br>
-                两种方法并非对立，实际运用中可以灵活结合。例如，先用段意合并法理清脉络，再用六要素法精炼核心事件。
+            <div class="analysis-box" style="background: #e3f2fd; border-color: #2196f3;">
+                <p><strong>💡 核心提示：</strong>六要素概括法就是 Part 2 核心公式<strong>"谁 + 做了什么 + 结果如何"</strong>的具体展开。其中：</p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>谁</strong> = 人物</li>
+                    <li><strong>做了什么</strong> = 起因 + 经过（时间、地点可根据情况保留或省略）</li>
+                    <li><strong>结果如何</strong> = 结果</li>
+                </ul>
             </div>
         </div>
 
-        <!-- 真题练习 -->
+        <!-- 真题练习一 -->
         <div class="practice-section">
-            <h2>✍️ 真题练习</h2>
+            <h2>✍️ 真题练习一</h2>
 
             <div class="passage-box">
-                <p style="text-align: center; font-weight: bold; text-indent: 0;">妈妈的树</p>
-                <p>①春雨如丝，万物复苏，又是一个栽树的好时节。</p>
-                <p>②每到这个时候，我总会想起老家的那些树。老家的院子很大，正好适合栽树。每到春天，妈妈在劳作之余都会偷闲栽树，栽过榆钱树、桑树、桐树，还有好多我叫不出名字的树。我不知道妈妈到底栽过多少棵树，只知道妈妈对每一棵树都精心栽培，像呵护孩子似的呵护每一棵树。我们把这些树叫做妈妈的树。</p>
-                <p>③离开老家多年，许多树都在记忆里渐渐模糊了。但有三棵树，我至今仍清晰地记得。</p>
-                <p>④一棵是白杨树，长在院子的正中央。白杨树又高又直，每到夏天，满树的叶子哗啦啦地响。我喜欢在树下写作业、看书。微风吹过，树叶像千万只小手在鼓掌。有时，我会仰起头，透过层层叠叠的叶子看天空，阳光被剪成细细碎碎的光斑，洒在我的脸上、书上。那棵树，是我童年的伙伴。</p>
-                <p>⑤另一棵是香椿树，长在厨房旁边。春天，香椿树发芽了，嫩红的芽儿像一朵朵小花。弟弟最喜欢爬上去摘香椿芽。妈妈总是站在树下，仰着头喊："小心点，别摔着！"弟弟却总是不听，猴子似的在树上爬上爬下。摘下的香椿芽，妈妈会做成香椿炒鸡蛋，那香味，至今还在我的记忆里飘荡。</p>
-                <p>⑥还有一棵是柿子树，长在后院里。柿子树的树干很粗，要两个小孩才能合抱过来。秋天，柿子红了，像一个个小灯笼挂在枝头。我和弟弟最喜欢吃柿子，软软的、甜甜的。有一回，邻居家的孩子爬上去摘柿子，不小心摔了下来，把腿摔伤了。那天晚上，妈妈紧锁眉头，在树下徘徊良久，最后憋出一句："砍树。"转身回到屋子，不顾我们姐弟俩的哭喊恳求，拎了一把斧子冲了出去。第二天，柿子树不见了，只留下一个光秃秃的树桩。</p>
-                <p>⑦后来，我们渐渐长大了，离开了老家。妈妈也老了，不再有力气栽树了。但每次回老家，看到院子里那些树，我就觉得，妈妈的爱，就像这些树一样，深深扎根在我们的生命里。</p>
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">看自行车的女人</p>
+                <p style="text-align: center; text-indent: 0;">梁晓声</p>
+                <p>①想为那个看自行车的女人写点什么的念头，已萌生在我心里很久了。</p>
+                <p>②第一次见到她，是在北京一家医院前的人行道上。一个胖女人企图夺她装钱的书包，书包的带子已从她肩头滑落，搭垂在手臂上。身材瘦小的她双手将书包紧紧搂在怀里，以带着哭腔的声音叫嚷："你不能这样啊，我每天挣点儿钱多不容易呀！"</p>
+                <p>③她 40 余岁，穿着一套旧迷彩服，戴着一顶旧迷彩单帽。那身衣服一看就是地摊货。脚下是一双老式旧布鞋，没穿袜子，脚面晒得很黑。帽舌下，她的两只眼睛，呈现着莫大而又无助的惊恐。</p>
+                <p>④我从围观者的议论中听明白了两个女人纠缠的原因：那胖女人存车时，忘了拿放在车筐里的包，包丢了。她认为这个看自行车的外地女人应该负责任，并且怀疑是被她藏起来了。</p>
+                <p>⑤胖女人一用力，终于将看自行车的女人那书包夺了去，她将一只手伸进包里去掏，却只掏出了一把零钱。"当"的一声，一只小搪瓷碗抛在看自行车女人的脚旁，抢夺者骑上自己的自行车，带着装有一把零钱的别人的书包，扬长而去。</p>
+                <p>⑥看自行车的女人追了几步，回头看看一排自行车，慢慢走回原地，捡起自己的小搪瓷碗，瞧着发愣。忽然，她把头往身旁的大树上一抵，呜呜哭了……</p>
+                <p>⑦第二次见到她，是在一家商场的自行车场。我因没买到合适的东西，带着的一百元钱也就没破开。取自行车时，我歉意地说："忘带存车的零钱了，一百元你能找得开吗？"我以为她会朝不好的方面猜疑我，因为一个人从商场出来，居然说自己兜里连几角零钱都没有，不大可信的。她望着我怔了怔，然后一笑，很不好意思地说："那就不用给钱了，走吧走吧！"她当时那笑，给我留下很深的印象。</p>
+                <p>⑧后来我又去那家商场，付存车费时，我说："上次欠你两毛钱，这次一起付给你。"我之所以如此主动，是我觉得她肯定记得我欠她两毛钱的事，若由她提醒，我会尴尬的。不料她又像上次那样怔了怔，然后一笑，很不好意思地说："不用啊，不用啊！"硬塞还给了我两毛钱。我将装东西的纸箱夹在车后座上，忍不住问她："来北京多久了？""还不到半年。""家乡的日子怎么样？""不容易啊……再加上我儿子又上了大学……"她将"大学"两个字说出特别强调的意味，一脸自豪。我推自行车下人行道时，觉得后轮很轻，回头一看，她正替我提着后轮呢。骑上自行车刚蹬了几下，纸箱掉了，她跑过来，从书包里掏出一截塑料绳……</p>
+                <p>⑨这年冬天，雪后的一个晚上，单位一位退休摄影师给我打电话，让我替他写一封表扬信。他要表扬的，就是那个看自行车的女人。"我到那家商场去，遇到熟人聊了一会儿，竟忘了取自行车，拎兜也忘在车筐里了。拎兜里的几百元钱倒没什么，关键是我洗的三百多张老照片啊！干了一辈子摄影，那些老照片可都是我的宝呀！天黑了我才想起来，急忙赶去，你猜怎么着？就剩我那辆车了！商场早关门了，看车的女人在冷风中站着，抱着我的拎兜，守着我那辆旧自行车。人心不可以没有了感动呀，是不是？人对人也不可以不知感激呀，是不是？"他在电话里言辞恳切。</p>
+                <p>⑩不久前我又去那家商场，见看自行车的已经换成一个男人了，我想问原先那个女人到哪里去了，张了张嘴，却什么也没问。我祈愿她永远也不会再碰到什么欺负她的人。</p>
+                <p>⑪阳光底下，人与人应该是平等的。弱者有时对这平等反倒显得诚惶诚恐似的，不是他们不配，而是因为这起码的平等往往太少，太少……</p>
             </div>
 
             <div class="question-box">
-                <p><strong>问题：</strong>请用简洁的语言概括这篇文章的主要内容。（不超过 50 字）（4 分）</p>
+                <p><strong>第 7 题：</strong>本文写了"看自行车的女人"的哪几件事？请用简洁的语言分别概括。（4 分）</p>
             </div>
 
             <div class="input-area">
-                <label for="student-answer"><strong>你的答案：</strong></label>
-                <textarea id="student-answer" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer()">提交答案</button>
-                <div id="feedback" class="feedback-box"></div>
-                <p class="hint-text">💡 提示：运用段意合并法，先划分段落层次，概括每段段意，再合并整理</p>
+                <label for="student-answer1"><strong>你的答案：</strong></label>
+                <textarea id="student-answer1" placeholder="请在此输入你的答案，建议分条作答..."></textarea>
+                <button class="submit-btn" onclick="checkAnswer1()">提交答案</button>
+                <div id="feedback1" class="feedback-box"></div>
+                <p class="hint-text">💡 提示：找时间关键词（第一次、第二次、后来、这年冬天），用"谁 + 做了什么"的格式概括</p>
             </div>
 
-            <button class="toggle-btn" onclick="toggleAnswer('answer')">点击查看答案与解析</button>
+            <button class="toggle-btn" onclick="toggleAnswer('answer1')">点击查看答案与解析</button>
 
-            <div id="answer" class="hidden-content">
+            <div id="answer1" class="hidden-content">
+                <div class="answer-box">
+                    <p><strong>参考答案：</strong></p>
+                    <ol>
+                        <li>她被胖女人冤枉、抢走书包，无助地哭泣；</li>
+                        <li>她不要"我"的存车费，还帮助"我"；</li>
+                        <li>她记得"我"欠她的两毛钱，硬塞还给"我"；</li>
+                        <li>她在冷风中守着摄影师的车和拎兜直到天黑。</li>
+                    </ol>
+                </div>
+
                 <div class="analysis-box">
-                    <p><strong>解题思路：【段意合并法】</strong></p>
-                    <p><strong>第一步：划分段落，概括段意</strong></p>
-                    <table class="error-table">
-                        <thead>
-                            <tr>
-                                <th>段落</th>
-                                <th>主要内容</th>
-                            </tr>
-                        </thead>
+                    <p><strong>解题思路：</strong></p>
+                    <ol>
+                        <li><strong>审题</strong>：题目要求概括"哪几件事"，说明需要找出多件事，分别概括。</li>
+                        <li><strong>定位</strong>：文章按时间顺序写了作者的几次见闻，找关键词"第一次""第二次""后来""这年冬天"。</li>
+                        <li><strong>提取要素</strong>：每件事都按照"谁 + 做了什么 + 结果"的格式概括。</li>
+                        <li><strong>检查</strong>：四件事，4 分，每题 1 分，符合要求。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- 真题练习二 -->
+        <div class="practice-section">
+            <h2>✍️ 真题练习二</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">口罩</p>
+                <p style="text-align: center; text-indent: 0;">黄大刚</p>
+                <p>①街上戴口罩的人越来越多了。开始是零星几个人戴，人们还像看怪物似的，嘴上虽不说，眼里却藏着不屑。</p>
+                <p>②那个时候，疫情却像天边的闷雷，除了偶尔传来隐隐的几声动静外，大力住的地方还是艳阳高照。偶尔谈及，有人不以为然："武汉离咱这儿十万八千里，远着呢。"</p>
+                <p>③朋友圈关于疫情的消息越来越多，还明确了人是可以传人的。大力所在的地方也不幸免，确诊了一例，过后每天都有新增病例。官宣的防控措施中有一条"戴口罩，讲卫生"。可口罩呢，大力走遍药店，有限的存货早已卖个精光。</p>
+                <p>④大力想到了几个平时消息灵通的朋友，电话刚一接通，他还没开口，对方就要他帮忙弄几个口罩。</p>
+                <p>⑤没有买到口罩，惶恐不安把大力裹挟得憋不过气来，总感觉病毒无处不在。</p>
+                <p>⑥他给在医院当护士的表妹打电话，表妹不接。表妹后来回电说被抽到发热门诊做疫情防控工作了。</p>
+                <p>⑦大力发现，隔壁的亚方也没有买到口罩。亚方在农贸市场卖猪肉，把卖猪肉的箩筐放在门口。大力与亚方曾因箩筐的事闹过矛盾。</p>
+                <p>⑧大力从微信上得知，政府在一心堂药店设了点，可以免费领取口罩。大力起了大早排队，队伍已排到街上。排在前面的人从口袋里掏出一个新口罩送给他。</p>
+                <p>⑨大力喜滋滋地把领到的口罩放到抽屉里时，惊喜地发现，抽屉里还有一包医用口罩，是之前买的。</p>
+                <p>⑩大力从抽屉里拿出口罩来，敲开亚方的门，把口罩递给亚方。</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+            </div>
+
+            <div class="input-area">
+                <label for="student-answer2"><strong>你的答案：</strong></label>
+                <textarea id="student-answer2" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
+                <button class="submit-btn" onclick="checkAnswer2()">提交答案</button>
+                <div id="feedback2" class="feedback-box"></div>
+                <p class="hint-text">💡 提示：找出主人公"大力"，围绕"口罩"梳理主要情节，用"谁 + 做了什么 + 结果"的格式概括</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer2')">点击查看答案与解析</button>
+
+            <div id="answer2" class="hidden-content">
+                <div class="analysis-box">
+                    <p><strong>解题思路：</strong></p>
+                    <table class="six-elements-table" style="background: #f5f5f5;">
                         <tbody>
-                            <tr>
-                                <td>第①②段</td>
-                                <td>妈妈喜欢在院子里栽树，我们把这些树叫做"妈妈的树"</td>
-                            </tr>
-                            <tr>
-                                <td>第③段</td>
-                                <td>过渡段：有三棵树至今记得</td>
-                            </tr>
-                            <tr>
-                                <td>第④段</td>
-                                <td>白杨树是我童年的伙伴</td>
-                            </tr>
-                            <tr>
-                                <td>第⑤段</td>
-                                <td>弟弟喜欢爬香椿树摘香椿芽，妈妈做香椿炒鸡蛋</td>
-                            </tr>
-                            <tr>
-                                <td>第⑥段</td>
-                                <td>邻居孩子爬柿子树摔伤后，妈妈砍掉了柿子树</td>
-                            </tr>
-                            <tr>
-                                <td>第⑦段</td>
-                                <td>妈妈的爱像树一样扎根在我们生命里</td>
-                            </tr>
+                            <tr><th>时间</th><td>疫情初期</td></tr>
+                            <tr><th>地点</th><td>无</td></tr>
+                            <tr><th>人物</th><td>大力、亚方</td></tr>
+                            <tr><th>起因</th><td>疫情初来，大力苦苦寻找口罩而不得</td></tr>
+                            <tr><th>经过</th><td>后来他领到了好心人赠送的免费口罩</td></tr>
+                            <tr><th>结果</th><td>受到感召，他把自己家里的口罩给了曾与自己有矛盾的邻居亚方</td></tr>
                         </tbody>
                     </table>
 
                     <div class="step-box">
-                        <p><strong>第二步：合并段意</strong></p>
-                        <p>将各段大意综合起来，注意：</p>
-                        <ul>
-                            <li>删除重复内容（如多次出现的"妈妈""树"）</li>
-                            <li>合并同类信息（三棵树的事迹可以合并概括）</li>
-                            <li>保留核心要素（人物 + 事件 + 意义）</li>
-                        </ul>
+                        <p><strong>Step1：时间 + 地点 + 人物 + 起因 + 经过 + 结果</strong></p>
+                        <p>疫情初来，大力苦苦寻找口罩而不得，后来他领到了好心人赠送的免费口罩，受到感召，他把自己家里的口罩给了曾与自己有矛盾的邻居亚方。</p>
                     </div>
 
                     <div class="step-box">
-                        <p><strong>第三步：组织语言</strong></p>
-                        <p>文章通过回忆妈妈栽种的白杨树、香椿树、柿子树，以及与这些树相关的故事，表现了妈妈对孩子的爱和呵护。</p>
+                        <p><strong>Step2：人 + 什么事 + 结果</strong></p>
+                        <p>疫情期间，大力苦苦寻找口罩不得，最终获赠口罩，并将家里口罩赠送给亚方。</p>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>注意：</strong> 六要素法，有些要素可以有所取舍，但务必保留基本点：<strong>谁 + 做什么 + 结果如何（人物＋事件＋结果）</strong>。
                     </div>
                 </div>
 
                 <div class="answer-box">
-                    <p><strong>参考答案及评分标准</strong></p>
-                    <table class="error-table">
-                        <thead>
-                            <tr>
-                                <th>等第</th>
-                                <th>答案示例</th>
-                                <th>得分</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>优秀</td>
-                                <td>文章回忆了妈妈栽种的白杨树、香椿树、柿子树，以及树背后的故事，表现了妈妈对孩子的爱。</td>
-                                <td>4 分</td>
-                            </tr>
-                            <tr>
-                                <td>良好</td>
-                                <td>写了妈妈栽的三种树，以及和树有关的事情，表达了妈妈的爱。</td>
-                                <td>3 分（缺具体内容）</td>
-                            </tr>
-                            <tr>
-                                <td>合格</td>
-                                <td>写了妈妈的树。</td>
-                                <td>2 分（过于简略）</td>
-                            </tr>
-                            <tr>
-                                <td>不合格</td>
-                                <td>写了白杨树、香椿树和柿子树。</td>
-                                <td>1 分（只罗列，无概括）</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p><strong>参考答案：</strong></p>
+                    <p>这篇文章讲述了疫情期间，大力苦苦寻找口罩，最终获赠口罩，并将口罩赠送给邻居亚方。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 真题练习三 -->
+        <div class="practice-section">
+            <h2>✍️ 真题练习三</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">那年春节</p>
+                <p style="text-align: center; text-indent: 0;">黄咚咚</p>
+                <p>①那年我 23 岁。刚从学校毕业一年多，在一家纯文学的小型杂志社做小编，工资微薄，诸事不顺。</p>
+                <p>②临近年关，总还是要回家过年，看望一下爸妈。</p>
+                <p>③爸妈在老家经营着一家小馆子。爸妈每天凌晨三四点钟起来和面、发面，守着灶火一屉屉蒸好，六点不到就开门，一直到下午才能稍事休息。</p>
+                <p>④我每年几千的学费，每个月定时拿到手的几百块的生活费，全是这一个包子、一个馒头赚几分钱攒下来的。</p>
+                <p>⑤虽然工资微薄，但省吃俭用，总归还是节余下来几千块。我把钱取了三分之二出来准备拿来孝敬爸妈。那天，我把钱搁背包里放好，骑车去邮局。</p>
+                <p>⑥途中等了两个交通灯，依稀感到有人在推搡我的背包，但动作轻微。下班高峰的人流汹涌，不等我回过神查看，红灯变绿，我又身不由己地被推搡着向前了。</p>
+                <p>⑦到了另一个邮局，准备拉开背包的拉链把钱拿出来。但是我看到背包的拉链是开着的。钱已经不在里面了。</p>
+                <p>⑧那天晚上我一夜没睡好。深不见底的失望与懊恼完全淹没了我。</p>
+                <p>⑨第二天，我给家里打了个电话，说今年的票不好买，单位又正好安排我值班，我就不回去过春节了。</p>
+                <p>⑩其实，我已经早早买好了回家的车票，我们杂志社也压根儿不需要值班。</p>
+                <p>⑪第二天，接到我爸打来的电话，说我妈坐火车来北京了。</p>
+                <p>⑫三天后，我在北京西站出站口，接到了妈。她挎着一个硕大的迷彩旅行袋，里面装满了我爱吃的各种腊味、腌菜、腐乳、炒豆子。</p>
+                <p>⑬她的女儿说今年不能回故乡过年了，她只好在严寒的年关奔波了三天两夜，坐了三十多个小时人挤人的火车，赶了两三千里的路，把故乡搬到在异乡漂泊的女儿身边来。</p>
+                <p>⑭看见我的那一瞬，她如释重负，风尘仆仆的脸笑成了一朵花。而在我的心里，扑簌簌的眼泪流成了一条河……</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+            </div>
+
+            <div class="input-area">
+                <label for="student-answer3"><strong>你的答案：</strong></label>
+                <textarea id="student-answer3" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
+                <button class="submit-btn" onclick="checkAnswer3()">提交答案</button>
+                <div id="feedback3" class="feedback-box"></div>
+                <p class="hint-text">💡 提示：找出主人公"我"和"妈妈"，围绕"春节回家"梳理主要情节</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer3')">点击查看答案与解析</button>
+
+            <div id="answer3" class="hidden-content">
+                <div class="answer-box">
+                    <p><strong>参考答案：</strong></p>
+                    <p>文章讲述了"我"23 岁时在邮局汇款给父母时钱被偷，因懊恼决定不回家过年，母亲得知后独自坐三十多个小时火车来北京看望"我"的故事，表现了母爱的伟大。</p>
                 </div>
 
-                <div class="tip-box" style="background: #fff3e0; border-color: #ff9800;">
-                    <strong>📝 方法点拨：段意合并法的三个要点</strong><br>
-                    1. <strong>先理清脉络</strong>：通读全文，标出每个自然段或每个意义段的主要内容<br>
-                    2. <strong>分清主次</strong>：如果有的段落是主要内容，有的是次要内容，要抓住主要的，舍掉次要的<br>
-                    3. <strong>合并时做修改</strong>：删除重复内容，综合相同内容，使表达简洁通顺
-                </div>
-
-                <div class="error-box">
-                    <p><strong>❗ 易错提醒</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>❌ 只罗列三棵树，没有概括事件和主题</li>
-                        <li>❌ 照抄原文句子，没有用自己的话归纳</li>
-                        <li>✓ 用"人物 + 事件 + 意义"的框架组织语言</li>
+                <div class="analysis-box">
+                    <p><strong>解题思路（六要素法）：</strong></p>
+                    <ul>
+                        <li><strong>时间：</strong>那年春节（"我"23 岁）</li>
+                        <li><strong>地点：</strong>北京（邮局、住处）</li>
+                        <li><strong>人物：</strong>"我"、妈妈</li>
+                        <li><strong>起因：</strong>"我"的钱被偷，懊恼不回家过年</li>
+                        <li><strong>经过：</strong>妈妈独自坐火车来北京找"我"</li>
+                        <li><strong>结果：</strong>"我"被母爱感动</li>
                     </ul>
                 </div>
 
@@ -748,35 +680,31 @@
                     <h4>✏️ 自评环节</h4>
                     <p>请对照参考答案和评分标准，检查自己的答案：</p>
                     <div class="self-check-item">
-                        <input type="checkbox" id="check4_1">
-                        <label for="check4_1">我概括了三棵树及相关事件（白杨树、香椿树、柿子树）</label>
+                        <input type="checkbox" id="check3_1">
+                        <label for="check3_1">我找出了主要人物（"我"和妈妈）</label>
                     </div>
                     <div class="self-check-item">
-                        <input type="checkbox" id="check4_2">
-                        <label for="check4_2">我表达了文章的主题（妈妈的爱/母爱）</label>
+                        <input type="checkbox" id="check3_2">
+                        <label for="check3_2">我概括了主要事件（钱被偷、妈妈来北京）</label>
                     </div>
                     <div class="self-check-item">
-                        <input type="checkbox" id="check4_3">
-                        <label for="check4_3">我用自己的话归纳，没有照抄原文</label>
+                        <input type="checkbox" id="check3_3">
+                        <label for="check3_3">我写了结果或情感（被母爱感动）</label>
                     </div>
                     <div class="self-check-item">
-                        <input type="checkbox" id="check4_4">
-                        <label for="check4_4">我的语言简洁，字数不超过 50 字</label>
+                        <input type="checkbox" id="check3_4">
+                        <label for="check3_4">我的语言简洁，用自己的话归纳</label>
                     </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_5">
-                        <label for="check4_5">我使用了"人物 + 事件 + 意义"的框架</label>
-                    </div>
-                    <button class="self-btn" onclick="calculateScore()">计算自评得分</button>
-                    <div id="self-result" class="self-result" style="display: none;"></div>
+                    <button class="self-btn" onclick="calculateScore3()">计算自评得分</button>
+                    <div id="self-result3" class="self-result" style="display: none;"></div>
                 </div>
             </div>
         </div>
 
+        <!-- 导航链接 -->
         <div class="nav-links">
             <a href="lesson01-part2.html">← 返回 Part 2</a>
-            <a href="lesson01-part4.html">进入 Part 4：素材转化 →</a>
-            <a href="lesson01-appendix.html">去附录 📄</a>
+            <a href="lesson01-part4.html">进入 Part 4：段意合并法 →</a>
         </div>
     </div>
 
@@ -785,7 +713,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-appendix.html'];
+                const pages = ['lesson01-part1.html', 'lesson01-part2.html', 'lesson01-part3.html', 'lesson01-part4.html', 'lesson01-part5.html', 'lesson01-appendix.html'];
                 window.location.href = pages[index];
             });
         });
@@ -799,9 +727,9 @@
             }
         }
 
-        function checkAnswer() {
-            var answer = document.getElementById('student-answer').value.trim();
-            var feedback = document.getElementById('feedback');
+        function checkAnswer1() {
+            var answer = document.getElementById('student-answer1').value.trim();
+            var feedback = document.getElementById('feedback1');
 
             if (!answer) {
                 feedback.className = 'feedback-box incorrect';
@@ -812,41 +740,82 @@
 
             feedback.className = 'feedback-box correct';
             var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查以下几点：</p>';
+            hint += '<p>请对照参考答案，检查自己是否：</p>';
             hint += '<ul>';
-            hint += '<li>是否概括了<strong>三棵树</strong>？（白杨树、香椿树、柿子树）</li>';
-            hint += '<li>是否表达了<strong>妈妈的爱/母爱</strong>这一主题？</li>';
-            hint += '<li>是否用自己的话归纳，没有照抄原文？</li>';
-            hint += '<li>语言是否简洁，字数是否超过 50 字？</li>';
+            hint += '<li>找出了 4 件事（4 分题通常对应 4 个要点）</li>';
+            hint += '<li>用"谁 + 做了什么"的格式概括</li>';
+            hint += '<li>语言简洁，没有照抄原文</li>';
             hint += '</ul>';
             feedback.innerHTML = hint;
             feedback.style.display = 'block';
         }
 
-        function calculateScore() {
-            var score = 0;
-            var checks = ['check4_1', 'check4_2', 'check4_3', 'check4_4', 'check4_5'];
-            var resultDiv = document.getElementById('self-result');
+        function checkAnswer2() {
+            var answer = document.getElementById('student-answer2').value.trim();
+            var feedback = document.getElementById('feedback2');
 
-            checks.forEach(function(id) {
-                if (document.getElementById(id).checked) {
-                    score++;
-                }
-            });
-
-            var finalScore = Math.min(4, Math.round(score * 4 / 5));
-
-            var message = '';
-            if (finalScore === 4) {
-                message = '<span style="color: #2e7d32;">🎉 太棒了！你的答案符合所有评分标准，预计可得 4 分！</span>';
-            } else if (finalScore >= 2) {
-                message = '<span style="color: #f57c00;">✓ 不错！你的答案基本符合要求，预计可得 ' + finalScore + ' 分。</span>';
-            } else {
-                message = '<span style="color: #c62828;">⚠️ 需要改进！你的答案还有差距，建议重新作答后再次自评。</span>';
+            if (!answer) {
+                feedback.className = 'feedback-box incorrect';
+                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
+                feedback.style.display = 'block';
+                return;
             }
 
-            resultDiv.innerHTML = '<strong>自评结果：</strong> 共勾选 ' + score + ' 项，预计得分 ' + finalScore + '/4 分<br>' + message;
-            resultDiv.style.display = 'block';
+            feedback.className = 'feedback-box correct';
+            var hint = '<h4>✓ 答案已提交</h4>';
+            hint += '<p>请对照参考答案，检查自己是否：</p>';
+            hint += '<ul>';
+            hint += '<li>找出了主人公"大力"</li>';
+            hint += '<li>围绕"口罩"概括了主要情节</li>';
+            hint += '<li>写出了结果（把口罩送给亚方）</li>';
+            hint += '</ul>';
+            feedback.innerHTML = hint;
+            feedback.style.display = 'block';
+        }
+
+        function checkAnswer3() {
+            var answer = document.getElementById('student-answer3').value.trim();
+            var feedback = document.getElementById('feedback3');
+
+            if (!answer) {
+                feedback.className = 'feedback-box incorrect';
+                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            feedback.className = 'feedback-box correct';
+            var hint = '<h4>✓ 答案已提交</h4>';
+            hint += '<p>请对照参考答案，检查自己是否：</p>';
+            hint += '<ul>';
+            hint += '<li>找出了主要人物（"我"和妈妈）</li>';
+            hint += '<li>概括了主要事件（钱被偷、妈妈来北京）</li>';
+            hint += '<li>写出了情感或结果（被母爱感动）</li>';
+            hint += '</ul>';
+            feedback.innerHTML = hint;
+            feedback.style.display = 'block';
+        }
+
+        function calculateScore3() {
+            var checkedCount = 0;
+            if (document.getElementById('check3_1').checked) checkedCount++;
+            if (document.getElementById('check3_2').checked) checkedCount++;
+            if (document.getElementById('check3_3').checked) checkedCount++;
+            if (document.getElementById('check3_4').checked) checkedCount++;
+
+            var resultBox = document.getElementById('self-result3');
+            resultBox.style.display = 'block';
+
+            var score = checkedCount;
+            var message = '<h4>✏️ 自评得分：' + score + '/4 分</h4>';
+            if (score === 4) {
+                message += '<p>🎉 太棒了！你的答案非常完整！</p>';
+            } else if (score >= 2) {
+                message += '<p>👍 不错！再对照参考答案完善一下～</p>';
+            } else {
+                message += '<p>💪 加油！再看看参考答案，修改一下自己的答案。</p>';
+            }
+            resultBox.innerHTML = message;
         }
     </script>
 </body>
