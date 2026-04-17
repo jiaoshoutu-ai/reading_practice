@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 4 部分 段意合并法 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 4 部分 如何学会阅读批注 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -66,7 +66,7 @@
 
         .part-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 8px 20px;
             border-radius: 25px;
@@ -75,382 +75,48 @@
             margin-bottom: 20px;
         }
 
-        .learning-objectives {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
-            padding: 20px 25px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 20px;
-        }
-
-        .learning-objectives h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .learning-objectives ul {
-            margin-left: 20px;
-        }
-
-        .content-section {
+        /* 视频区域样式 */
+        .video-section {
             background: white;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ff6b6b;
         }
 
-        .content-section h2 {
-            color: #667eea;
+        .video-section h2 {
+            color: #ff6b6b;
             font-size: 1.4rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #f0f4ff;
+            border-bottom: 2px solid #ffe0e0;
         }
 
-        .content-section h3 {
-            color: #444;
-            font-size: 1.1rem;
-            margin: 25px 0 15px 0;
-        }
-
-        .content-section p {
-            color: #555;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .content-section ul, .content-section ol {
-            margin: 15px 0 15px 25px;
-            color: #555;
-        }
-
-        .content-section li {
-            margin-bottom: 8px;
-        }
-
-        .tip-box {
-            background: #fff8e6;
-            border: 1px solid #ffd54f;
-            border-radius: 8px;
-            padding: 15px 20px;
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
             margin: 20px 0;
-        }
-
-        .tip-box strong {
-            color: #f57c00;
-        }
-
-        .example-box {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .example-box strong {
-            color: #2e7d32;
-        }
-
-        /* 真题练习样式 */
-        .practice-section {
-            background: white;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #667eea;
+            overflow: hidden;
+            background: #000;
         }
 
-        .practice-section h2 {
-            color: #667eea;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
-        }
-
-        .passage-box {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 20px 0;
-            font-size: 0.95rem;
-            line-height: 2;
-        }
-
-        .passage-box p {
-            margin-bottom: 10px;
-            text-indent: 2em;
-        }
-
-        .question-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .question-box strong {
-            color: #1565c0;
-        }
-
-        .answer-box {
-            background: #f1f8e9;
-            border: 1px solid #c5e1a5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .answer-box strong {
-            color: #33691e;
-        }
-
-        .analysis-box {
-            background: #fff8e1;
-            border: 1px solid #ffcc80;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .analysis-box strong {
-            color: #e65100;
-        }
-
-        .toggle-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            margin-top: 10px;
-        }
-
-        .toggle-btn:hover {
-            opacity: 0.9;
-        }
-
-        .hidden-content {
-            display: none;
-        }
-
-        /* 输入框样式 */
-        .input-area {
-            background: #f5f7fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .input-area label {
-            display: block;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .input-area textarea {
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            min-height: 120px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-        }
-
-        .input-area textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-            color: white;
+            height: 100%;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-        }
-
-        .feedback-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .feedback-box.correct {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-        }
-
-        .feedback-box.incorrect {
-            background: #fff3e0;
-            border: 1px solid #ffcc80;
-        }
-
-        .feedback-box h4 {
-            margin-bottom: 10px;
-        }
-
-        .feedback-box.correct h4 {
-            color: #2e7d32;
-        }
-
-        .feedback-box.incorrect h4 {
-            color: #e65100;
-        }
-
-        .hint-text {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        /* 评分标准样式 */
-        .criteria-box {
-            background: #e8eaf6;
-            border: 2px solid #3f51b5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .criteria-box h4 {
-            color: #3f51b5;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .criteria-box ul {
-            margin-left: 20px;
-            color: #333;
-        }
-
-        .criteria-box li {
-            margin-bottom: 8px;
-        }
-
-        /* 常见失误表格样式 */
-        .error-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .error-table th, .error-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        .error-table th {
-            background: #ffebee;
-            color: #c62828;
-            font-weight: 600;
-        }
-
-        .error-table tr:nth-child(even) {
-            background: #fafafa;
-        }
-
-        .error-table tr:hover {
-            background: #f5f5f5;
-        }
-
-        .error-box {
-            background: #ffebee;
-            border-left: 4px solid #f44336;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .error-box strong {
-            color: #c62828;
-        }
-
-        /* 自评表单样式 */
-        .self-check-box {
-            background: #f3e5f5;
-            border: 2px solid #9c27b0;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .self-check-box h4 {
-            color: #9c27b0;
-            margin-bottom: 15px;
-        }
-
-        .self-check-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-        }
-
-        .self-check-item input[type="checkbox"] {
-            margin-top: 3px;
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-        }
-
-        .self-check-item label {
-            cursor: pointer;
-            color: #333;
-        }
-
-        .self-result {
-            margin-top: 15px;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .self-btn {
-            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .self-btn:hover {
-            opacity: 0.9;
         }
 
         .nav-links {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
             margin-top: 40px;
         }
 
@@ -496,27 +162,6 @@
             background: #4caf50;
             color: white;
         }
-
-        .step-box {
-            background: #f0f4ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border-left: 4px solid #667eea;
-        }
-
-        .method-summary {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
-            border: 2px solid #81ecec;
-        }
-
-        .method-summary h3 {
-            color: #00838f;
-            margin-bottom: 15px;
-        }
     </style>
 </head>
 <body>
@@ -527,10 +172,10 @@
     <div class="container">
         <!-- 进度指示器 -->
         <div class="progress-indicator">
-            <div class="progress-step completed">Part 1 批注式阅读</div>
-            <div class="progress-step completed">Part 2 核心概括法</div>
-            <div class="progress-step completed">Part 3 六要素</div>
-            <div class="progress-step active">Part 4 段意合并</div>
+            <div class="progress-step completed">Part 1 一个核心讲清楚所有概括大法</div>
+            <div class="progress-step completed">Part 2 两个基本结构</div>
+            <div class="progress-step completed">Part 3 真题练习</div>
+            <div class="progress-step active">Part 4 如何学会阅读批注</div>
             <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
@@ -538,246 +183,28 @@
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第四部分</span>
-            <h1>段意合并法——理清文章脉络</h1>
-            <div class="learning-objectives">
-                <h3>学习目标</h3>
-                <ul>
-                    <li>掌握段意合并法的基本步骤和适用场景</li>
-                    <li>学会划分段落层次，概括每段段意</li>
-                    <li>能够合并段意，形成完整的内容概括</li>
-                    <li>通过真题练习，熟练运用段意合并法</li>
-                </ul>
-            </div>
+            <h1>如何学会阅读批注</h1>
         </div>
 
-        <!-- 方法讲解 -->
-        <div class="content-section">
-            <h2>📚 段意合并法详解</h2>
+        <!-- 视频学习区域 -->
+        <div class="video-section">
+            <h2>📺 视频学习</h2>
 
-            <div class="tip-box" style="background: #e8f5e9; border-color: #4caf50;">
-                <strong>方法说明：</strong><br>
-                文章往往由几个段落组成，阅读时理清文章的段落层次，然后写出每个段落的大意，最后把每段大意综合起来，加以概括，就是整篇文章的主要内容。
-            </div>
-
-            <h3>使用步骤：</h3>
-            <ol style="margin-left: 20px;">
-                <li><strong>第一步：</strong>通读全文，理清段落层次</li>
-                <li><strong>第二步：</strong>写出每个段落的大意</li>
-                <li><strong>第三步：</strong>把每段大意综合起来，加以概括</li>
-                <li><strong>第四步：</strong>加上过渡词语，整理成通顺连贯的一段话</li>
-            </ol>
-
-            <div class="example-box">
-                <strong>注意：</strong><br>
-                1. 各段大意之间，要加上一些过渡词语，以便读起来通顺连贯。<br>
-                2. 要区分重点段落和非重点段落，做到有详有略，有的内容甚至可以舍去。
-            </div>
-        </div>
-
-        <!-- 方法总结对比 -->
-        <div class="content-section">
-            <h2>✅ 两种概括方法对比</h2>
-            <p>通过第一部分和第二部分的学习，我们已经掌握了两种概括文章主要内容的方法。它们各有什么特点？何时使用哪种方法更合适？</p>
-
-            <table class="error-table">
-                <thead>
-                    <tr>
-                        <th style="width: 20%">方法</th>
-                        <th style="width: 25%">适用文章</th>
-                        <th style="width: 25%">核心思路</th>
-                        <th style="width: 30%">操作步骤</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>六要素概括法</strong></td>
-                        <td>写人记事为主的记叙文</td>
-                        <td>提取六要素，保留核心</td>
-                        <td>找要素 → 删次要 → 留核心 → 组句</td>
-                    </tr>
-                    <tr>
-                        <td><strong>段意合并法</strong></td>
-                        <td>段落层次清晰的记叙文、散文</td>
-                        <td>先分后合，合并段意</td>
-                        <td>分层次 → 概括段意 → 合并 → 润色</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
-                <strong>💡 温馨提示：</strong><br>
-                两种方法并非对立，实际运用中可以灵活结合。例如，先用段意合并法理清脉络，再用六要素法精炼核心事件。
-            </div>
-        </div>
-
-        <!-- 真题练习 -->
-        <div class="practice-section">
-            <h2>✍️ 真题练习</h2>
-
-            <div class="passage-box">
-                <p style="text-align: center; font-weight: bold; text-indent: 0;">妈妈的树</p>
-                <p>①春雨如丝，万物复苏，又是一个栽树的好时节。</p>
-                <p>②每到这个时候，我总会想起老家的那些树。老家的院子很大，正好适合栽树。每到春天，妈妈在劳作之余都会偷闲栽树，栽过榆钱树、桑树、桐树，还有好多我叫不出名字的树。我不知道妈妈到底栽过多少棵树，只知道妈妈对每一棵树都精心栽培，像呵护孩子似的呵护每一棵树。我们把这些树叫做妈妈的树。</p>
-                <p>③离开老家多年，许多树都在记忆里渐渐模糊了。但有三棵树，我至今仍清晰地记得。</p>
-                <p>④一棵是白杨树，长在院子的正中央。白杨树又高又直，每到夏天，满树的叶子哗啦啦地响。我喜欢在树下写作业、看书。微风吹过，树叶像千万只小手在鼓掌。有时，我会仰起头，透过层层叠叠的叶子看天空，阳光被剪成细细碎碎的光斑，洒在我的脸上、书上。那棵树，是我童年的伙伴。</p>
-                <p>⑤另一棵是香椿树，长在厨房旁边。春天，香椿树发芽了，嫩红的芽儿像一朵朵小花。弟弟最喜欢爬上去摘香椿芽。妈妈总是站在树下，仰着头喊："小心点，别摔着！"弟弟却总是不听，猴子似的在树上爬上爬下。摘下的香椿芽，妈妈会做成香椿炒鸡蛋，那香味，至今还在我的记忆里飘荡。</p>
-                <p>⑥还有一棵是柿子树，长在后院里。柿子树的树干很粗，要两个小孩才能合抱过来。秋天，柿子红了，像一个个小灯笼挂在枝头。我和弟弟最喜欢吃柿子，软软的、甜甜的。有一回，邻居家的孩子爬上去摘柿子，不小心摔了下来，把腿摔伤了。那天晚上，妈妈紧锁眉头，在树下徘徊良久，最后憋出一句："砍树。"转身回到屋子，不顾我们姐弟俩的哭喊恳求，拎了一把斧子冲了出去。第二天，柿子树不见了，只留下一个光秃秃的树桩。</p>
-                <p>⑦后来，我们渐渐长大了，离开了老家。妈妈也老了，不再有力气栽树了。但每次回老家，看到院子里那些树，我就觉得，妈妈的爱，就像这些树一样，深深扎根在我们的生命里。</p>
-            </div>
-
-            <div class="question-box">
-                <p><strong>问题：</strong>请用简洁的语言概括这篇文章的主要内容。（不超过 50 字）（4 分）</p>
-            </div>
-
-            <div class="input-area">
-                <label for="student-answer"><strong>你的答案：</strong></label>
-                <textarea id="student-answer" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer()">提交答案</button>
-                <div id="feedback" class="feedback-box"></div>
-                <p class="hint-text">💡 提示：运用段意合并法，先划分段落层次，概括每段段意，再合并整理</p>
-            </div>
-
-            <button class="toggle-btn" onclick="toggleAnswer('answer')">点击查看答案与解析</button>
-
-            <div id="answer" class="hidden-content">
-                <div class="analysis-box">
-                    <p><strong>解题思路：【段意合并法】</strong></p>
-                    <p><strong>第一步：划分段落，概括段意</strong></p>
-                    <table class="error-table">
-                        <thead>
-                            <tr>
-                                <th>段落</th>
-                                <th>主要内容</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>第①②段</td>
-                                <td>妈妈喜欢在院子里栽树，我们把这些树叫做"妈妈的树"</td>
-                            </tr>
-                            <tr>
-                                <td>第③段</td>
-                                <td>过渡段：有三棵树至今记得</td>
-                            </tr>
-                            <tr>
-                                <td>第④段</td>
-                                <td>白杨树是我童年的伙伴</td>
-                            </tr>
-                            <tr>
-                                <td>第⑤段</td>
-                                <td>弟弟喜欢爬香椿树摘香椿芽，妈妈做香椿炒鸡蛋</td>
-                            </tr>
-                            <tr>
-                                <td>第⑥段</td>
-                                <td>邻居孩子爬柿子树摔伤后，妈妈砍掉了柿子树</td>
-                            </tr>
-                            <tr>
-                                <td>第⑦段</td>
-                                <td>妈妈的爱像树一样扎根在我们生命里</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="step-box">
-                        <p><strong>第二步：合并段意</strong></p>
-                        <p>将各段大意综合起来，注意：</p>
-                        <ul>
-                            <li>删除重复内容（如多次出现的"妈妈""树"）</li>
-                            <li>合并同类信息（三棵树的事迹可以合并概括）</li>
-                            <li>保留核心要素（人物 + 事件 + 意义）</li>
-                        </ul>
-                    </div>
-
-                    <div class="step-box">
-                        <p><strong>第三步：组织语言</strong></p>
-                        <p>文章通过回忆妈妈栽种的白杨树、香椿树、柿子树，以及与这些树相关的故事，表现了妈妈对孩子的爱和呵护。</p>
-                    </div>
-                </div>
-
-                <div class="answer-box">
-                    <p><strong>参考答案及评分标准</strong></p>
-                    <table class="error-table">
-                        <thead>
-                            <tr>
-                                <th>等第</th>
-                                <th>答案示例</th>
-                                <th>得分</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>优秀</td>
-                                <td>文章回忆了妈妈栽种的白杨树、香椿树、柿子树，以及树背后的故事，表现了妈妈对孩子的爱。</td>
-                                <td>4 分</td>
-                            </tr>
-                            <tr>
-                                <td>良好</td>
-                                <td>写了妈妈栽的三种树，以及和树有关的事情，表达了妈妈的爱。</td>
-                                <td>3 分（缺具体内容）</td>
-                            </tr>
-                            <tr>
-                                <td>合格</td>
-                                <td>写了妈妈的树。</td>
-                                <td>2 分（过于简略）</td>
-                            </tr>
-                            <tr>
-                                <td>不合格</td>
-                                <td>写了白杨树、香椿树和柿子树。</td>
-                                <td>1 分（只罗列，无概括）</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="tip-box" style="background: #fff3e0; border-color: #ff9800;">
-                    <strong>📝 方法点拨：段意合并法的三个要点</strong><br>
-                    1. <strong>先理清脉络</strong>：通读全文，标出每个自然段或每个意义段的主要内容<br>
-                    2. <strong>分清主次</strong>：如果有的段落是主要内容，有的是次要内容，要抓住主要的，舍掉次要的<br>
-                    3. <strong>合并时做修改</strong>：删除重复内容，综合相同内容，使表达简洁通顺
-                </div>
-
-                <div class="error-box">
-                    <p><strong>❗ 易错提醒</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>❌ 只罗列三棵树，没有概括事件和主题</li>
-                        <li>❌ 照抄原文句子，没有用自己的话归纳</li>
-                        <li>✓ 用"人物 + 事件 + 意义"的框架组织语言</li>
-                    </ul>
-                </div>
-
-                <div class="self-check-box">
-                    <h4>✏️ 自评环节</h4>
-                    <p>请对照参考答案和评分标准，检查自己的答案：</p>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_1">
-                        <label for="check4_1">我概括了三棵树及相关事件（白杨树、香椿树、柿子树）</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_2">
-                        <label for="check4_2">我表达了文章的主题（妈妈的爱/母爱）</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_3">
-                        <label for="check4_3">我用自己的话归纳，没有照抄原文</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_4">
-                        <label for="check4_4">我的语言简洁，字数不超过 50 字</label>
-                    </div>
-                    <div class="self-check-item">
-                        <input type="checkbox" id="check4_5">
-                        <label for="check4_5">我使用了"人物 + 事件 + 意义"的框架</label>
-                    </div>
-                    <button class="self-btn" onclick="calculateScore()">计算自评得分</button>
-                    <div id="self-result" class="self-result" style="display: none;"></div>
-                </div>
+            <div class="video-container">
+                <iframe src="//player.bilibili.com/player.html?bvid=BV19c411h73b&page=1&high_quality=1&danmuk=0"
+                        scrolling="no"
+                        border="0"
+                        frameborder="no"
+                        framespacing="0"
+                        allowfullscreen="true">
+                </iframe>
             </div>
         </div>
 
         <div class="nav-links">
             <a href="lesson01-part3.html">← 返回 Part 3</a>
+            <a href="../index.html">返回首页</a>
             <a href="lesson01-part5.html">进入 Part 5：素材转化 →</a>
-            <a href="lesson01-appendix.html">去附录 📄</a>
         </div>
     </div>
 
@@ -790,65 +217,6 @@
                 window.location.href = pages[index];
             });
         });
-
-        function toggleAnswer(id) {
-            var content = document.getElementById(id);
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
-        }
-
-        function checkAnswer() {
-            var answer = document.getElementById('student-answer').value.trim();
-            var feedback = document.getElementById('feedback');
-
-            if (!answer) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
-                feedback.style.display = 'block';
-                return;
-            }
-
-            feedback.className = 'feedback-box correct';
-            var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查以下几点：</p>';
-            hint += '<ul>';
-            hint += '<li>是否概括了<strong>三棵树</strong>？（白杨树、香椿树、柿子树）</li>';
-            hint += '<li>是否表达了<strong>妈妈的爱/母爱</strong>这一主题？</li>';
-            hint += '<li>是否用自己的话归纳，没有照抄原文？</li>';
-            hint += '<li>语言是否简洁，字数是否超过 50 字？</li>';
-            hint += '</ul>';
-            feedback.innerHTML = hint;
-            feedback.style.display = 'block';
-        }
-
-        function calculateScore() {
-            var score = 0;
-            var checks = ['check4_1', 'check4_2', 'check4_3', 'check4_4', 'check4_5'];
-            var resultDiv = document.getElementById('self-result');
-
-            checks.forEach(function(id) {
-                if (document.getElementById(id).checked) {
-                    score++;
-                }
-            });
-
-            var finalScore = Math.min(4, Math.round(score * 4 / 5));
-
-            var message = '';
-            if (finalScore === 4) {
-                message = '<span style="color: #2e7d32;">🎉 太棒了！你的答案符合所有评分标准，预计可得 4 分！</span>';
-            } else if (finalScore >= 2) {
-                message = '<span style="color: #f57c00;">✓ 不错！你的答案基本符合要求，预计可得 ' + finalScore + ' 分。</span>';
-            } else {
-                message = '<span style="color: #c62828;">⚠️ 需要改进！你的答案还有差距，建议重新作答后再次自评。</span>';
-            }
-
-            resultDiv.innerHTML = '<strong>自评结果：</strong> 共勾选 ' + score + ' 项，预计得分 ' + finalScore + '/4 分<br>' + message;
-            resultDiv.style.display = 'block';
-        }
     </script>
 </body>
 </html>

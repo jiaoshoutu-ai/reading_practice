@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 1 部分 批注式阅读 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 1 部分 一个核心讲清楚所有概括大法 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -75,215 +75,48 @@
             margin-bottom: 20px;
         }
 
-        .learning-objectives {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
-            padding: 20px 25px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 20px;
-        }
-
-        .learning-objectives h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .learning-objectives ul {
-            margin-left: 20px;
-        }
-
-        .content-section {
+        /* 视频区域样式 */
+        .video-section {
             background: white;
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ff6b6b;
         }
 
-        .content-section h2 {
-            color: #667eea;
+        .video-section h2 {
+            color: #ff6b6b;
             font-size: 1.4rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #f0f4ff;
+            border-bottom: 2px solid #ffe0e0;
         }
 
-        .content-section h3 {
-            color: #444;
-            font-size: 1.1rem;
-            margin: 25px 0 15px 0;
-        }
-
-        .content-section p {
-            color: #555;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        .content-section ul, .content-section ol {
-            margin: 15px 0 15px 25px;
-            color: #555;
-        }
-
-        .content-section li {
-            margin-bottom: 8px;
-        }
-
-        .tip-box {
-            background: #fff8e6;
-            border: 1px solid #ffd54f;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin: 20px 0;
-        }
-
-        .tip-box strong {
-            color: #f57c00;
-        }
-
-        /* 批注式阅读特有样式 */
-        .annotation-intro {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
-            border: 2px solid #ff9a8b;
-        }
-
-        .annotation-intro h3 {
-            color: #d63031;
-            margin-bottom: 15px;
-        }
-
-        .annotation-table {
+        .video-container {
+            position: relative;
             width: 100%;
-            border-collapse: collapse;
+            padding-bottom: 56.25%;
+            height: 0;
             margin: 20px 0;
-            font-size: 0.95rem;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .annotation-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .annotation-table td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-
-        .annotation-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .annotation-table tr:nth-child(even) {
-            background: #f8f9ff;
-        }
-
-        .annotation-symbol {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .symbol-wave {
-            background: #fff3cd;
-            color: #856404;
-            border: 1px dashed #856404;
-        }
-
-        .symbol-line {
-            background: #d1ecf1;
-            color: #0c5460;
-            border: 1px dashed #0c5460;
-        }
-
-        .symbol-double-line {
-            background: #d4edda;
-            color: #155724;
-            border: 1px dashed #155724;
-        }
-
-        /* 示范精读样式 */
-        .demo-passage {
-            background: #fafafa;
-            border: 2px solid #ddd;
             border-radius: 12px;
-            padding: 30px;
-            margin: 25px 0;
-            font-size: 1.05rem;
-            line-height: 2.2;
-            position: relative;
+            overflow: hidden;
+            background: #000;
         }
 
-        .demo-passage h4 {
-            text-align: center;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .demo-passage .author {
-            text-align: center;
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .annotation-inline {
-            display: inline-block;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-left: 3px solid #667eea;
-            padding: 8px 15px;
-            margin: 5px 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.9rem;
-            color: #333;
-            position: relative;
-        }
-
-        .annotation-inline::before {
-            content: "📝 ";
-        }
-
-        .highlight-text {
-            background: #fffacd;
-            padding: 2px 5px;
-            border-radius: 3px;
-            border-bottom: 2px solid #ffd700;
-        }
-
-        .annotation-block {
-            background: #e8f5e9;
-            border: 1px solid #a5d6a7;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
-
-        .annotation-block .label {
-            display: inline-block;
-            background: #4caf50;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-right: 10px;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .nav-links {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
             margin-top: 40px;
         }
 
@@ -329,231 +162,6 @@
             background: #4caf50;
             color: white;
         }
-
-        /* 视频区域样式 */
-        .video-section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #ff6b6b;
-        }
-
-        .video-section h2 {
-            color: #ff6b6b;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ffe0e0;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 比例 */
-            height: 0;
-            margin: 20px 0;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-info {
-            background: #fff8f8;
-            border: 1px solid #ffcccb;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .video-info h4 {
-            color: #ff6b6b;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .video-chapters {
-            margin-top: 15px;
-        }
-
-        .video-chapters h5 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .video-chapters ul {
-            margin-left: 20px;
-            color: #555;
-        }
-
-        .video-chapters li {
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .video-chapters .timestamp {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 8px;
-        }
-
-        /* 随堂练习样式 */
-        .practice-section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 2px solid #667eea;
-        }
-
-        .practice-section h2 {
-            color: #667eea;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e8eaff;
-        }
-
-        .practice-passage {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 20px 0;
-            font-size: 1.05rem;
-            line-height: 2;
-        }
-
-        .practice-passage p {
-            margin-bottom: 15px;
-            text-indent: 2em;
-        }
-
-        .practice-passage .title {
-            text-align: center;
-            font-weight: bold;
-            text-indent: 0;
-            margin-bottom: 5px;
-        }
-
-        .practice-passage .author {
-            text-align: center;
-            color: #666;
-            text-indent: 0;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .practice-requirement {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .practice-requirement strong {
-            color: #1565c0;
-        }
-
-        .answer-area {
-            background: #f5f7fa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .answer-area label {
-            display: block;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .answer-area textarea {
-            width: 100%;
-            min-height: 250px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-        }
-
-        .answer-area textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-weight: 500;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-        }
-
-        .reference-answer {
-            background: #f1f8e9;
-            border: 1px solid #c5e1a5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            display: none;
-        }
-
-        .reference-answer.show {
-            display: block;
-        }
-
-        .reference-answer strong {
-            color: #33691e;
-        }
-
-        .reference-answer .annotation-demo {
-            background: white;
-            border-left: 3px solid #4caf50;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 6px 6px 0;
-        }
-
-        .reference-answer .annotation-demo .label {
-            display: inline-block;
-            background: #4caf50;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
@@ -564,10 +172,10 @@
     <div class="container">
         <!-- 进度指示器 -->
         <div class="progress-indicator">
-            <div class="progress-step active">Part 1 批注式阅读</div>
-            <div class="progress-step">Part 2 核心概括法</div>
-            <div class="progress-step">Part 3 六要素</div>
-            <div class="progress-step">Part 4 段意合并</div>
+            <div class="progress-step active">Part 1 一个核心讲清楚所有概括大法</div>
+            <div class="progress-step">Part 2 两个基本结构</div>
+            <div class="progress-step">Part 3 真题练习</div>
+            <div class="progress-step">Part 4 批注式阅读</div>
             <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
@@ -575,149 +183,15 @@
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第一部分</span>
-            <h1>学会"批注式阅读"——把书读厚</h1>
-            <div class="learning-objectives">
-                <h3>学习目标</h3>
-                <ul>
-                    <li>理解批注式精读的核心方法和价值</li>
-                    <li>掌握三种批注类型：赏析式、感悟式、结构式</li>
-                    <li>学会在文本中留下自己的思考痕迹</li>
-                    <li>通过示范学习，模仿批注的基本技巧</li>
-                </ul>
-            </div>
+            <h1>一个核心讲清楚所有概括大法</h1>
         </div>
-
-        <!-- 引入部分 -->
-        <div class="content-section">
-            <h2>📖 什么是"批注式阅读"？</h2>
-
-            <div class="annotation-intro">
-                <h3>💡 核心概念</h3>
-                <p><strong>"很多同学读书像看热闹，读完只记得大概情节。"</strong></p>
-                <p>而<strong>"批注式精读"</strong>要求你手里必须拿一支笔，边读边留下你的思考痕迹。就像在文字里和作者聊天一样。</p>
-            </div>
-
-            <p>批注式阅读不是简单地画线、做标记，而是让思考在纸上"留下痕迹"。当你养成批注的习惯，你会发现：</p>
-            <ul>
-                <li>读得更<strong>深</strong>——不再浮光掠影，而是深入文字内部</li>
-                <li>读得更<strong>慢</strong>——慢下来品味每个词的用意</li>
-                <li>读得更<strong>懂</strong>——理解作者的匠心独运</li>
-            </ul>
-        </div>
-
-        <!-- 三种批注类型表格 -->
-        <div class="content-section">
-            <h2>📋 三种核心"批注点"</h2>
-            <p>批注式阅读需要重点关注以下三种批注类型，每种类型都有自己独特的符号标记和关注重点：</p>
-
-            <table class="annotation-table">
-                <thead>
-                    <tr>
-                        <th style="width: 15%">批注类型</th>
-                        <th style="width: 15%">符号标记</th>
-                        <th style="width: 25%">批注的核心问题</th>
-                        <th style="width: 45%">示例</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>赏析式批注</strong></td>
-                        <td><span class="annotation-symbol symbol-wave">~~~~</span></td>
-                        <td><strong>怎么写的？</strong><br>这个词/句子用了什么手法？好在哪里？</td>
-                        <td>动词用得真准，写出了……<br>这个比喻很新颖，把……比作……</td>
-                    </tr>
-                    <tr>
-                        <td><strong>感悟式批注</strong></td>
-                        <td><span class="annotation-symbol symbol-line">——</span></td>
-                        <td><strong>想到了什么？</strong><br>读到这里我有什么感受、联想或疑问？</td>
-                        <td>这让我想起……<br>如果我是他……<br>为什么会这样？</td>
-                    </tr>
-                    <tr>
-                        <td><strong>结构式批注</strong></td>
-                        <td><span class="annotation-symbol symbol-double-line">‖</span></td>
-                        <td><strong>为什么写？</strong><br>这段在全文起了什么作用？（引出下文？转折？）</td>
-                        <td>这一段是过渡，从叙事转为抒情。<br>此处为下文埋下伏笔。</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="tip-box">
-                <strong>📝 使用建议：</strong><br>
-                1. 准备一支笔和一本可以书写的书（或打印的文稿）<br>
-                2. 第一遍阅读时，先用不同符号标记，暂不写批注<br>
-                3. 第二遍阅读时，再针对标记处写下你的思考
-            </div>
-        </div>
-
-        <!-- 示范精读 -->
-        <div class="content-section">
-            <h2>📚 示范精读：朱自清《背影》片段</h2>
-            <p>请仔细阅读以下片段，并观察老师的批注是如何做的。</p>
-
-            <div class="demo-passage">
-                <h4>背 影（节选）</h4>
-                <p class="author">朱自清</p>
-
-                <p>
-                    <span class="highlight-text">我看见他戴着黑布小帽，穿着黑布大马褂，深青布棉袍</span>
-                    <span class="annotation-inline">连写三种黑色/深色的衣服，色调灰暗压抑，暗示父亲刚经历丧母之痛和家道中落的心情。</span>
-                    ，<span class="highlight-text">蹒跚地走</span>到铁道边，
-                    <span class="annotation-inline">"蹒跚"一词精准！写出父亲年老体胖、腿脚不便的样子，为下文爬月台的艰难做铺垫。</span>
-                    <span class="highlight-text">慢慢探身</span>下去，
-                    <span class="annotation-inline">"探"字用得小心翼翼，说明父亲动作迟缓，担心摔倒。</span>
-                    尚不大难。
-                </p>
-
-                <p>
-                    可是他穿过铁道，要爬上那边月台，就不容易了。他用两手<span class="highlight-text">攀</span>着上面，
-                    <span class="annotation-inline">"攀"字写出月台之高和父亲向上用力的挣扎感。</span>
-                    两脚再向上<span class="highlight-text">缩</span>；
-                    <span class="annotation-inline">"缩"字太传神了！想象一下胖子抬腿费力的样子，这个动作显得笨拙又心酸。</span>
-                    他肥胖的身子向左微<span class="highlight-text">倾</span>，显出努力的样子。
-                    <span class="annotation-inline">五个连续的动词：探、穿、爬、攀、缩、倾。这就是"慢镜头"写法！把一瞬间的动作分解了，感动就藏在细节里。</span>
-                </p>
-
-                <p>
-                    这时我看见他的<span class="highlight-text">背影</span>，
-                    <span class="annotation-inline">点题！前文铺垫这么多，就是为了这一刻的"背影"，情感爆发点。</span>
-                    我的泪很快地流下来了。
-                    <span class="annotation-inline">感悟：我读到这里鼻子也酸了。原来写感动不用喊口号，把动作写细就够了。</span>
-                </p>
-            </div>
-
-            <div class="annotation-block">
-                <span class="label">赏析式</span>
-                注意老师对动词的批注——"攀"、"缩"、"倾"，每个动词都分析了它的表达效果。这就是赏析式批注：关注作者<strong>怎么写</strong>。
-            </div>
-
-            <div class="annotation-block" style="background: #e3f2fd; border-color: #2196f3;">
-                <span class="label" style="background: #2196f3;">感悟式</span>
-                "我读到这里鼻子也酸了"——这是真实的阅读感受。感悟式批注记录你<strong>想到什么</strong>，不必追求深刻，真实最重要。
-            </div>
-
-            <div class="annotation-block" style="background: #fff3e0; border-color: #ff9800;">
-                <span class="label" style="background: #ff9800;">结构式</span>
-                "点题！前文铺垫这么多，就是为了这一刻的'背影'"——这是在分析段落的<strong>结构作用</strong>。
-            </div>
-        </div>
-
-        <!-- 批注要点总结 -->
-        <div class="content-section">
-            <h2>✅ 批注的三个要点</h2>
-            <ol>
-                <li><strong>批注要"小"</strong>——不要写大段评论，抓住一个词、一个句子即可</li>
-                <li><strong>批注要"真"</strong>——写下你真实的感受和疑问，不必套话</li>
-                <li><strong>批注要"勤"</strong>——好文章值得反复批注，每次阅读都有新发现</li>
-            </ol>
-
-       </div>
 
         <!-- 视频学习区域 -->
         <div class="video-section">
-            <h2>📺 拓展学习：如何阅读批注</h2>
+            <h2>📺 视频学习</h2>
 
             <div class="video-container">
-                <iframe src="//player.bilibili.com/player.html?bvid=BV19c411h73b&page=1&high_quality=1&danmuk=0"
+                <iframe src="//player.bilibili.com/player.html?bvid=BV1HE41157gp&page=1&high_quality=1&danmuk=0"
                         scrolling="no"
                         border="0"
                         frameborder="no"
@@ -725,116 +199,12 @@
                         allowfullscreen="true">
                 </iframe>
             </div>
-
-            <div class="video-info">
-                <h4>📌 视频内容概览</h4>
-                <p>本视频详细讲解批注的定义、常用符号、内容和方法，以及如何通过批注提高读书效率，让阅读成为一种常态。</p>
-           </div>
-        </div>
-
-        <!-- 视频后填空练习 -->
-        <div class="content-section" style="background: linear-gradient(135deg, #fff8f8 0%, #ffe8e8 100%); border: 2px solid #ff9a9a;">
-            <h2 style="color: #ff6b6b;">✍️ 学后反思：我如何进行阅读批注</h2>
-            <p>观看完视频后，请结合本课所学，完成以下填空，总结你自己的批注阅读方法：</p>
-
-            <div class="input-area" style="background: white; border-color: #ffcccb;">
-                <p style="line-height: 2.5; font-size: 1.05rem;">
-                    1. 我以后读书时，会用 <input type="text" placeholder="填写数量" style="border: none; border-bottom: 1px dashed #667eea; width: 80px; text-align: center; font-size: 1rem; color: #667eea;"> 种批注类型，分别是：
-                    <input type="text" placeholder="批注类型 1" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;">、
-                    <input type="text" placeholder="批注类型 2" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;">、
-                    <input type="text" placeholder="批注类型 3" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;">。
-                </p>
-
-                <p style="line-height: 2.5; font-size: 1.05rem; margin-top: 20px;">
-                    2. 批注的内容应该包括文章的重点、
-                    <input type="text" placeholder="填写内容" style="border: none; border-bottom: 1px dashed #667eea; width: 80px; text-align: center; font-size: 1rem; color: #667eea;"> 和
-                    <input type="text" placeholder="填写内容" style="border: none; border-bottom: 1px dashed #667eea; width: 80px; text-align: center; font-size: 1rem; color: #667eea;">。
-                </p>
-
-                <p style="line-height: 2.5; font-size: 1.05rem; margin-top: 20px;">
-                    3. 我会用不同的符号做标记：好词好句用 <input type="text" placeholder="填写符号" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;"> 标记，有感悟的地方用 <input type="text" placeholder="填写符号" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;"> 标记，分段用 <input type="text" placeholder="填写符号" style="border: none; border-bottom: 1px dashed #667eea; width: 80px; text-align: center; font-size: 1rem; color: #667eea;"> 标记。
-                </p>
-
-                <p style="line-height: 2.5; font-size: 1.05rem; margin-top: 20px;">
-                    4. 除了手写批注，我还可以用 <input type="text" placeholder="填写活动名称" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;"> 和 <input type="text" placeholder="填写活动名称" style="border: none; border-bottom: 1px dashed #667eea; width: 100px; text-align: center; font-size: 1rem; color: #667eea;"> 等方式增加阅读趣味。
-                </p>
-
-                <p style="line-height: 2.5; font-size: 1.05rem; margin-top: 20px;">
-                    5. 我的批注小目标：每周至少做 <input type="text" placeholder="填写数量" style="border: none; border-bottom: 1px dashed #667eea; width: 60px; text-align: center; font-size: 1rem; color: #667eea;"> 次批注式阅读，每次至少写 <input type="text" placeholder="填写数量" style="border: none; border-bottom: 1px dashed #667eea; width: 60px; text-align: center; font-size: 1rem; color: #667eea;"> 条批注。
-                </p>
-
-                <button class="submit-btn" onclick="checkReflection()">完成填空</button>
-                <div id="reflection-feedback" class="feedback-box"></div>
-            </div>
-
-            <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3; margin-top: 20px;">
-                <strong>💡 提示：</strong> 答案没有对错之分，填写你认为重要的内容即可。关键是形成自己的阅读习惯！
-            </div>
-        </div>
-
-        <!-- 随堂练习 -->
-        <div class="practice-section">
-            <h2>✍️ 随堂练习：动手批注</h2>
-
-            <div class="practice-requirement">
-                <p><strong>练习要求：</strong></p>
-                <p>请你拿出笔记本，或者利用下方的留言板功能，尝试对《背影》的最后一段进行批注式阅读。</p>
-                <p><strong>至少完成：</strong></p>
-                <ul>
-                    <li>找出<b>一处动词</b>进行赏析式批注</li>
-                    <li>找出<b>一处感悟</b>写下你的想法</li>
-                </ul>
-            </div>
-
-            <div class="practice-passage">
-                <p class="title">背 影（节选）</p>
-                <p class="author">朱自清</p>
-                <p>近几年来，父亲和我都是东奔西走，家中光景是一日不如一日。他少年出外谋生，独力支持，做了许多大事。哪知老境却如此颓唐！他触目伤怀，自然情不能自已。情郁于中，自然要发之于外；家庭琐屑便往往触他之怒。他待我渐渐不同往日。但最近两年的不见，他终于忘却我的不好，只是惦记着我，惦记着我的儿子。</p>
-                <p>我北来后，他写了一信给我，信中说道："我身体平安，惟膀子疼痛厉害，举箸提笔，诸多不便，大约大去之期不远矣。"我读到此处，在晶莹的泪光中，又看见那肥胖的、青布棉袍黑布马褂的背影。唉！我不知何时再能与他相见！</p>
-            </div>
-
-            <div class="answer-area">
-                <label for="student-annotation"><strong>你的批注：</strong></label>
-                <textarea id="student-annotation" placeholder="请在这里写下你的批注：
-1. 赏析式批注：找出一个动词，分析它的表达效果
-2. 感悟式批注：写下你读到这里时的感受或联想
-
-示例格式：
-- 我赏析的词句：……
-  我的批注：……
-- 我有感悟的地方：……
-  我的想法：……"></textarea>
-                <button class="submit-btn" onclick="checkAnnotation()">提交批注</button>
-                <div id="annotation-feedback" class="feedback-box"></div>
-            </div>
-
-            <button class="toggle-btn" onclick="toggleReferenceAnswer()">点击查看答案与示例</button>
-
-            <div id="reference-answer" class="reference-answer">
-                <p><strong>参考答案：</strong></p>
-
-                <div class="annotation-demo">
-                    <span class="label">赏析式</span>
-                    <p><strong>赏析："举箸提笔，诸多不便"</strong></p>
-                    <p>"举"和"提"这样极轻的动作都说"不便"，可见父亲身体衰弱的程度，侧面写出父亲老去的辛酸。</p>
-                </div>
-
-                <div class="annotation-demo" style="border-left-color: #2196f3;">
-                    <span class="label" style="background: #2196f3;">感悟式</span>
-                    <p><strong>感悟：父亲写信说"大去之期不远"</strong></p>
-                    <p>既是实情，也可能是父亲在向儿子"示弱"求关注。这让我想到我爷爷生病时也总爱给我爸打电话说身体不舒服，其实是想他了。</p>
-                </div>
-
-                <div class="tip-box" style="background: #fff3e0; border-color: #ff9800; margin-top: 15px;">
-                    <strong>💡 批注提示：</strong><br>
-                    批注没有标准答案，关键是写出你的真实思考和感受。参考答案只是示例，你的批注可能更精彩！
-                </div>
-            </div>
         </div>
 
         <div class="nav-links">
-            <a href="../index.html">← 返回首页</a>
-            <a href="lesson01-part2.html">进入 Part 2：核心概括法 →</a>
+            <a href="lesson01.html">← 返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson01-part2.html">进入 Part 2：两个基本结构 →</a>
         </div>
     </div>
 
@@ -847,90 +217,6 @@
                 window.location.href = pages[index];
             });
         });
-
-        // 检查填空练习
-        function checkReflection() {
-            var inputs = document.querySelectorAll('.input-area input[type="text"]');
-            var filledCount = 0;
-
-            inputs.forEach(function(input) {
-                if (input.value.trim() !== '') {
-                    filledCount++;
-                }
-            });
-
-            var feedback = document.getElementById('reflection-feedback');
-            feedback.style.display = 'block';
-
-            if (filledCount === 0) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请先完成填空后再提交</h4><p>至少填写一部分内容哦～</p>';
-                return;
-            }
-
-            feedback.className = 'feedback-box correct';
-            var message = '<h4>✓ 太棒了！你已经完成了反思填空</h4>';
-            message += '<p>你完成了 ' + filledCount + '/' + inputs.length + ' 个空。</p>';
-            message += '<p style="margin-top: 15px;"><strong>📝 批注阅读承诺：</strong></p>';
-            message += '<p>从今天开始，我将养成批注式阅读的习惯，让每一本书都留下我思考的痕迹！</p>';
-            message += '<p style="margin-top: 10px; color: #667eea;"><em>（提示：可以把这份填空截图保存，作为你的阅读计划提醒自己）</em></p>';
-            feedback.innerHTML = message;
-        }
-
-        // 切换参考答案显示
-        function toggleReferenceAnswer() {
-            var answer = document.getElementById('reference-answer');
-            if (answer.classList.contains('show')) {
-                answer.classList.remove('show');
-            } else {
-                answer.classList.add('show');
-            }
-        }
-
-        // 检查批注练习
-        function checkAnnotation() {
-            var annotation = document.getElementById('student-annotation').value.trim();
-            var feedback = document.getElementById('annotation-feedback');
-
-            if (!annotation) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请先写下你的批注后再提交</h4><p>期待看到你的精彩思考！</p>';
-                feedback.style.display = 'block';
-                return;
-            }
-
-            // 检查是否包含必要的元素
-            var hasVerb = false;
-            var hasReflection = false;
-            var keywords = ['动词', '动作', '写得', '用得好', '写出', '表现', '看出', '觉得', '想到', '感受', '感悟', '让我', '想起'];
-            var verbKeywords = ['举', '提', '奔', '走', '惦记', '触', '发', '读', '看见', '写'];
-
-            verbKeywords.forEach(function(v) {
-                if (annotation.indexOf(v) >= 0) hasVerb = true;
-            });
-
-            keywords.forEach(function(k) {
-                if (annotation.indexOf(k) >= 0) hasReflection = true;
-            });
-
-            feedback.className = 'feedback-box correct';
-            var message = '<h4>✓ 批注已提交！</h4>';
-            message += '<p>你的思考很有见地！</p>';
-
-            if (hasVerb && hasReflection) {
-                message += '<p style="color: #2e7d32; margin-top: 10px;"><strong>✓ 太棒了！你的批注包含了动词赏析和个人感悟，非常完整！</strong></p>';
-            } else if (hasVerb) {
-                message += '<p style="color: #f57c00; margin-top: 10px;"><strong>✓ 不错！你分析了动词，如果能再加点个人感悟会更完整。</strong></p>';
-            } else if (hasReflection) {
-                message += '<p style="color: #f57c00; margin-top: 10px;"><strong>✓ 不错！你有个人感悟，如果能具体分析一个动词会更好。</strong></p>';
-            } else {
-                message += '<p style="color: #f57c00; margin-top: 10px;"><strong>提示：试着找出一个动词分析，并写下你的真实感受。</strong></p>';
-            }
-
-            message += '<p style="margin-top: 15px;">💡 参考答案已经在你下方，做完后可以对照看看，但你的批注可能更精彩哦！</p>';
-            feedback.innerHTML = message;
-            feedback.style.display = 'block';
-        }
     </script>
 </body>
 </html>

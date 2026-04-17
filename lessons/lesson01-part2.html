@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第 01 课 第 2 部分 一个核心讲清楚所有概括大法 - 初中现代文阅读专题课程</title>
+    <title>第 01 课 第 2 部分 两个基本结构 - 初中现代文阅读专题课程</title>
     <style>
         * {
             margin: 0;
@@ -73,23 +73,6 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 20px;
-        }
-
-        .learning-objectives {
-            background: #fce4ec;
-            border-left: 4px solid #e91e63;
-            padding: 20px 25px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 20px;
-        }
-
-        .learning-objectives h3 {
-            color: #c2185b;
-            margin-bottom: 10px;
-        }
-
-        .learning-objectives ul {
-            margin-left: 20px;
         }
 
         .content-section {
@@ -176,65 +159,8 @@
             border: none;
         }
 
-        /* 核心公式框样式 */
-        .core-formula {
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
-            border: 3px solid #e91e63;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .core-formula h3 {
-            color: #c2185b;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-
-        .formula-box {
-            background: white;
-            border: 2px dashed #e91e63;
-            border-radius: 8px;
-            padding: 20px;
-            font-size: 1.2rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .formula-box .highlight {
-            color: #e91e63;
-            font-size: 1.4rem;
-        }
-
-        .explanation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .explanation-item {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            border-left: 4px solid #e91e63;
-        }
-
-        .explanation-item h4 {
-            color: #e91e63;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .explanation-item p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* 对比表格样式 */
-        .method-comparison {
+        /* 结构对比表格样式 */
+        .structure-comparison {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
@@ -243,23 +169,23 @@
             overflow: hidden;
         }
 
-        .method-comparison th {
+        .structure-comparison th {
             background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
             color: white;
             padding: 15px;
             text-align: left;
         }
 
-        .method-comparison td {
+        .structure-comparison td {
             padding: 15px;
             border-bottom: 1px solid #fce4ec;
         }
 
-        .method-comparison tr:nth-child(even) {
+        .structure-comparison tr:nth-child(even) {
             background: #fafafa;
         }
 
-        .method-comparison tr:hover {
+        .structure-comparison tr:hover {
             background: #fce4ec;
         }
 
@@ -288,7 +214,8 @@
         /* 导航链接样式 */
         .nav-links {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
             margin-top: 40px;
         }
 
@@ -308,100 +235,59 @@
             color: white;
         }
 
-        /* 反思练习样式 */
-        .reflection-section {
-            background: white;
+        /* 结构图示样式 */
+        .structure-diagram {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            margin: 20px 0;
         }
 
-        .reflection-section h2 {
-            color: #e91e63;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+        .structure-diagram h3 {
+            color: #9c27b0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
 
-        .fill-blank {
-            background: #fafafa;
-            border: 1px solid #ddd;
+        .diagram-box {
+            background: white;
+            border: 1px dashed #9c27b0;
             border-radius: 8px;
             padding: 20px;
             margin: 15px 0;
         }
 
-        .fill-blank p {
-            margin-bottom: 15px;
-            text-indent: 0;
-        }
-
-        .input-row {
+        .diagram-box .stage {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .input-row label {
-            min-width: 80px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .input-row input[type="text"] {
-            flex: 1;
-            min-width: 200px;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            margin-left: 10px;
-        }
-
-        .input-row input[type="text"]:focus {
-            outline: none;
-            border-color: #e91e63;
-            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
-            margin-top: 15px;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-        }
-
-        .feedback-box {
-            display: none;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .feedback-box.correct {
-            background: #e8f5e9;
-            border: 1px solid #4caf50;
-            color: #2e7d32;
-        }
-
-        .feedback-box.incorrect {
-            background: #ffebee;
-            border: 1px solid #f44336;
-            color: #c62828;
-        }
-
-        .feedback-box h4 {
             margin-bottom: 10px;
+        }
+
+        .diagram-box .stage-num {
+            background: #9c27b0;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .diagram-box .stage-content {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .arrow-down {
+            text-align: center;
+            color: #9c27b0;
+            font-size: 1.5rem;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -413,10 +299,10 @@
     <div class="container">
         <!-- 进度指示器 -->
         <div class="progress-indicator">
-            <div class="progress-step completed">Part 1 批注式阅读</div>
-            <div class="progress-step active">Part 2 核心概括法</div>
-            <div class="progress-step">Part 3 六要素</div>
-            <div class="progress-step">Part 4 段意合并</div>
+            <div class="progress-step completed">Part 1 核心概括法</div>
+            <div class="progress-step active">Part 2 两个基本结构</div>
+            <div class="progress-step">Part 3 真题练习</div>
+            <div class="progress-step">Part 4 批注式阅读</div>
             <div class="progress-step">Part 5 素材转化</div>
             <div class="progress-step">附录</div>
         </div>
@@ -424,92 +310,130 @@
         <div class="lesson-header">
             <span class="lesson-number">第 01 课</span>
             <span class="part-badge">第二部分</span>
-            <h1>一个核心讲清楚所有概括大法</h1>
-            <div class="learning-objectives">
-                <h3>学习目标</h3>
-                <ul>
-                    <li>理解记叙文概括的"一个核心公式"</li>
-                    <li>掌握概括题的本质：谁 + 做了什么 + 结果如何</li>
-                </ul>
-            </div>
+            <h1>两个基本结构</h1>
         </div>
 
         <!-- 视频区域 -->
         <div class="video-section">
-            <h2>📺 微课视频：记叙文概括的核心方法</h2>
+            <h2>📺 微课视频：记叙文的两个基本结构</h2>
             <div class="video-container">
-                <iframe src="//player.bilibili.com/player.html?bvid=BV1HE41157gp&page=1&high_quality=1&danmuk=0"
+                <iframe src="//player.bilibili.com/player.html?bvid=BV1G7411o7yG&page=1&high_quality=1&danmuk=0"
                         scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
                 </iframe>
             </div>
             <div class="tip-box" style="margin-top: 20px;">
                 <h4>💡 视频要点</h4>
                 <ul>
-                    <li>"一句话概括"的核心公式是什么？</li>
+                    <li>记叙文的两种基本结构形式是什么？</li>
+                    <li>如何快速识别文章的结构类型？</li>
+                    <li>不同结构对概括有什么影响？</li>
                 </ul>
             </div>
         </div>
 
-        <!-- 核心公式讲解 -->
+        <!-- 结构讲解 -->
         <div class="content-section">
-            <h2>🎯 一个核心公式，搞定所有概括题</h2>
+            <h2>📚 记叙文的两个基本结构</h2>
+            <p>记叙文虽然千变万化，但最基本的结构只有两种。掌握了这两种结构，你就能快速理清文章脉络，准确概括主要内容。</p>
 
-            <div class="core-formula">
-                <h3>✨ 概括万能公式</h3>
-                <div class="formula-box">
-                    <p class="highlight">谁 + 做了什么 + 结果如何</p>
-                    <p style="margin-top: 15px; font-size: 1rem; color: #666;">（人物）+ （事件）+ （结果/变化）</p>
-                </div>
-            </div>
-
-            <div class="explanation-grid">
-                <div class="explanation-item">
-                    <h4>📌 谁（人物）</h4>
-                    <p>找出文章的主人公或主要人物。注意：是"谁"做的事，就写"谁"，不要搞错对象。</p>
-                </div>
-                <div class="explanation-item">
-                    <h4>📌 做了什么（事件）</h4>
-                    <p>用简洁的语言概括主要事件，保留核心情节，删除次要细节。</p>
-                </div>
-                <div class="explanation-item">
-                    <h4>📌 结果如何（结果/变化）</h4>
-                    <p>事件的结局是什么？人物有什么变化？情感有什么转变？</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 对比表格 -->
-        <div class="content-section">
-            <h2>✅ 正确概括 vs 错误概括</h2>
-            <table class="method-comparison">
+            <table class="structure-comparison">
                 <thead>
                     <tr>
-                        <th style="width: 50%;">❌ 错误示例（记流水账）</th>
-                        <th style="width: 50%;">✅ 正确示例（简洁概括）</th>
+                        <th style="width: 30%;">结构类型</th>
+                        <th style="width: 35%;">特点</th>
+                        <th style="width: 35%;">识别方法</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>那天天气很好，我和妈妈一起去公园，我们先去了湖边看鱼，然后去了花坛看花，后来又去了游乐场玩过山车，最后回家了。</td>
-                        <td>我和妈妈去公园游玩。</td>
+                        <td><strong>1. 时间顺序式</strong><br>（纵向结构）</td>
+                        <td>按照事情发展的时间先后顺序来写，有明显的起始、经过、结局。</td>
+                        <td>找时间词：如"那天早上""后来""第二天"等</td>
                     </tr>
                     <tr>
-                        <td>他早上起床后刷牙洗脸，然后吃早饭，吃完早饭背上书包去学校，到了学校上课，下午放学回家写作业。</td>
-                        <td>他度过了普通的一天（或：他按部就班地完成了日常学习和生活）。</td>
-                    </tr>
-                    <tr>
-                        <td>她一开始很开心，后来遇到了一些困难，然后她很努力，最后成功了。</td>
-                        <td>她面对困难不懈努力，最终获得成功。</td>
+                        <td><strong>2. 并列片段式</strong><br>（横向结构）</td>
+                        <td>围绕一个中心，选取几个并列的片段或场景来表现主题。</td>
+                        <td>找并列标志：段落开头句式相似，或写不同时间/地点的类似事件</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="tip-box">
-                <h4>📝 概括的三个原则</h4>
+        <!-- 结构图示 -->
+        <div class="content-section">
+            <h2>🔍 结构图示解析</h2>
+
+            <div class="structure-diagram">
+                <h3>📌 结构一：时间顺序式</h3>
+                <div class="diagram-box">
+                    <div class="stage">
+                        <div class="stage-num">1</div>
+                        <div class="stage-content"><strong>起因</strong> — 事情的开始</div>
+                    </div>
+                    <div class="arrow-down">↓</div>
+                    <div class="stage">
+                        <div class="stage-num">2</div>
+                        <div class="stage-content"><strong>经过</strong> — 事情的发展过程（可能有波折）</div>
+                    </div>
+                    <div class="arrow-down">↓</div>
+                    <div class="stage">
+                        <div class="stage-num">3</div>
+                        <div class="stage-content"><strong>结果</strong> — 事情的结局</div>
+                    </div>
+                </div>
+                <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
+                    <strong>💡 典型文章：</strong>《背影》《口罩》《那年春节》等，都是按时间顺序写的。
+                </div>
+            </div>
+
+            <div class="structure-diagram" style="background: #e8f5e9; border-color: #4caf50;">
+                <h3 style="color: #4caf50;">📌 结构二：并列片段式</h3>
+                <div class="diagram-box" style="border-color: #4caf50;">
+                    <div class="stage">
+                        <div class="stage-num" style="background: #4caf50;">1</div>
+                        <div class="stage-content"><strong>片段一</strong> — 围绕中心的一个场景/事例</div>
+                    </div>
+                    <div class="arrow-down" style="color: #4caf50;">↓</div>
+                    <div class="stage">
+                        <div class="stage-num" style="background: #4caf50;">2</div>
+                        <div class="stage-content"><strong>片段二</strong> — 围绕中心的另一个场景/事例</div>
+                    </div>
+                    <div class="arrow-down" style="color: #4caf50;">↓</div>
+                    <div class="stage">
+                        <div class="stage-num" style="background: #4caf50;">3</div>
+                        <div class="stage-content"><strong>片段三</strong> — 围绕中心的又一个场景/事例</div>
+                    </div>
+                    <div class="arrow-down" style="color: #4caf50;">↓</div>
+                    <div class="stage">
+                        <div class="stage-num" style="background: #4caf50;">4</div>
+                        <div class="stage-content"><strong>总结</strong> — 点明中心，升华主题</div>
+                    </div>
+                </div>
+                <div class="tip-box" style="background: #f1f8e9; border-color: #8bc34a;">
+                    <strong>💡 典型文章：</strong>《妈妈的树》（写三棵树）等，通过几个并列片段表现一个主题。
+                </div>
+            </div>
+        </div>
+
+        <!-- 概括方法总结 -->
+        <div class="content-section">
+            <h2>✅ 不同结构的概括策略</h2>
+
+            <div class="tip-box" style="background: #e3f2fd; border-color: #2196f3;">
+                <h4>📝 时间顺序式文章的概括方法</h4>
                 <ul>
-                    <li><strong>删：</strong>删除次要信息、细节描写、环境描写等</li>
-                    <li><strong>留：</strong>保留主要人物、核心事件、关键结果</li>
-                    <li><strong>改：</strong>用自己的话重新组织语言，不要照抄原文</li>
+                    <li>直接用 Part 1 学的核心公式：<strong>谁 + 做了什么 + 结果如何</strong></li>
+                    <li>保留主要情节，删除细节描写</li>
+                    <li>用自己的话串联起因、经过、结果</li>
+                </ul>
+            </div>
+
+            <div class="tip-box" style="background: #f1f8e9; border-color: #8bc34a;">
+                <h4>📝 并列片段式文章的概括方法</h4>
+                <ul>
+                    <li><strong>第一步：</strong>找出每个片段的核心内容（写了什么事/物）</li>
+                    <li><strong>第二步：</strong>找出贯穿全文的中心（这些片段共同表现什么主题）</li>
+                    <li><strong>第三步：</strong>用"通过写……表现了……"的格式概括</li>
                 </ul>
             </div>
         </div>
@@ -517,7 +441,8 @@
         <!-- 导航链接 -->
         <div class="nav-links">
             <a href="lesson01-part1.html">← 返回 Part 1</a>
-            <a href="lesson01-part3.html">进入 Part 3：六要素概括法 →</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson01-part3.html">进入 Part 3：真题练习 →</a>
         </div>
     </div>
 
@@ -530,56 +455,6 @@
                 window.location.href = pages[index];
             });
         });
-
-        // 检查反思练习答案
-        function checkReflection() {
-            var formulaAnswer = document.getElementById('formula-answer').value.trim();
-            var principle1 = document.getElementById('principle1').value.trim();
-            var principle2 = document.getElementById('principle2').value.trim();
-            var principle3 = document.getElementById('principle3').value.trim();
-
-            var feedback = document.getElementById('reflection-feedback');
-            feedback.style.display = 'block';
-
-            // 检查是否填写
-            if (!formulaAnswer && !principle1 && !principle2 && !principle3) {
-                feedback.className = 'feedback-box incorrect';
-                feedback.innerHTML = '<h4>⚠️ 请先完成填空后再提交</h4><p>至少填写一部分内容哦～</p>';
-                return;
-            }
-
-            // 检查答案（关键词匹配）
-            var correctCount = 0;
-            var totalCount = 4;
-
-            // 检查公式答案（包含"谁""做""结果"等关键词）
-            if (formulaAnswer && (formulaAnswer.includes('谁') || formulaAnswer.includes('做') || formulaAnswer.includes('结果'))) {
-                correctCount++;
-            }
-
-            // 检查三个原则（"删""留""改"）
-            if (principle1 && (principle1 === '删' || principle1 === '留' || principle1 === '改')) {
-                correctCount++;
-            }
-            if (principle2 && (principle2 === '删' || principle2 === '留' || principle2 === '改')) {
-                correctCount++;
-            }
-            if (principle3 && (principle3 === '删' || principle3 === '留' || principle3 === '改')) {
-                correctCount++;
-            }
-
-            feedback.className = 'feedback-box correct';
-            var percentage = Math.round((correctCount / totalCount) * 100);
-            var message = '<h4>✓ 答案已提交</h4>';
-            message += '<p>你的答案完整度约为 <strong>' + percentage + '%</strong></p>';
-            message += '<p style="margin-top: 10px;"><strong>参考答案：</strong></p>';
-            message += '<ul>';
-            message += '<li>核心公式：<strong>谁 + 做了什么 + 结果如何</strong></li>';
-            message += '<li>三个原则：<strong>删、留、改</strong></li>';
-            message += '</ul>';
-            message += '<p style="margin-top: 10px; color: #666;">提示：这只是参考答案，概括题没有唯一标准答案，关键是掌握方法！</p>';
-            feedback.innerHTML = message;
-        }
     </script>
 </body>
 </html>
