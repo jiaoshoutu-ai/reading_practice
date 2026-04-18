@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
     <title>初中现代文阅读专题课程</title>
     <style>
         * {
@@ -96,6 +98,23 @@
             font-size: 1.2rem;
         }
 
+        .settings-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .settings-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+
         footer {
             text-align: center;
             color: white;
@@ -109,6 +128,7 @@
     <div class="container">
         <header>
             <h1>初中现代文阅读专题课程</h1>
+            <a href="settings.html" class="settings-link">🤖 大模型配置</a>
         </header>
 
         <div class="course-grid">
