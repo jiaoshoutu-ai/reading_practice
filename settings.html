@@ -356,7 +356,7 @@
             <div id="iflow-notice" class="iflow-notice hidden">
                 <h4>⚠️ iflow 临时 Key 说明</h4>
                 <p>iflow 提供的临时 API Key 每周更新一次，可能存在配额限制或不稳定的情况。如果您频繁使用 AI 功能，建议申请自己的 DeepSeek API Key。</p>
-                <p style="margin-top: 8px;"><strong>当前临时 Key：</strong><span id="current-iflow-key" style="font-family: monospace; margin-left: 5px;">sk-4586617c••••••98bec</span></p>
+                <p style="margin-top: 8px;"><strong>📋 如何更新：</strong>获取新的临时 Key 后，粘贴到上方输入框，点击"保存设置"即可。</p>
             </div>
 
             <!-- API Key 显示区域（已保存时） -->
@@ -377,6 +377,7 @@
                 >
                 <p id="error-message" class="error-message">请输入有效的 API Key</p>
                 <p class="help-text" id="help-text">DeepSeek API Key 可在 <a href="https://platform.deepseek.com" target="_blank" style="color: #667eea;">DeepSeek 开放平台</a> 获取</p>
+                <p class="help-text iflow-help hidden" id="iflow-help-text">💡 每周更新临时 Key，粘贴到上方输入框后点击"保存设置"即可</p>
             </div>
 
             <!-- 显示/隐藏切换 -->
@@ -454,14 +455,17 @@
             const label = document.getElementById('api-key-label');
             const helpText = document.getElementById('help-text');
             const iflowNotice = document.getElementById('iflow-notice');
+            const iflowHelp = document.getElementById('iflow-help-text');
 
             if (currentProvider === 'iflow') {
-                label.textContent = 'iflow API Key（可选）';
-                helpText.innerHTML = '如果不填写，将使用系统默认的临时 API Key（每周更新）';
+                label.textContent = 'iflow API Key';
+                helpText.innerHTML = '当前默认临时 Key：sk-4586617c••••••98bec';
+                iflowHelp.classList.remove('hidden');
                 iflowNotice.classList.remove('hidden');
             } else {
                 label.textContent = 'DeepSeek API Key';
                 helpText.innerHTML = 'DeepSeek API Key 可在 <a href="https://platform.deepseek.com" target="_blank" style="color: #667eea;">DeepSeek 开放平台</a> 获取';
+                iflowHelp.classList.add('hidden');
                 iflowNotice.classList.add('hidden');
             }
         }
@@ -555,15 +559,13 @@
                 key = DEFAULT_IFLOW_KEY;
             }
 
-            // 验证（deepseek 必须输入，iflow 可选）
-            if (currentProvider === 'deepseek') {
-                const validation = validateApiKey(key);
-                if (!validation.valid) {
-                    input.classList.add('error');
-                    document.getElementById('error-message').textContent = validation.message;
-                    document.getElementById('error-message').classList.add('show');
-                    return;
-                }
+            // 验证格式（两种 provider 都要求有效格式）
+            const validation = validateApiKey(key);
+            if (!validation.valid) {
+                input.classList.add('error');
+                document.getElementById('error-message').textContent = validation.message;
+                document.getElementById('error-message').classList.add('show');
+                return;
             }
 
             // 保存到 localStorage
@@ -592,6 +594,7 @@
                     // iflow 删除后恢复默认 key
                     localStorage.setItem(storageKey, DEFAULT_IFLOW_KEY);
                     showStatus(`已恢复为默认临时 Key`, 'success');
+                    showSavedState(DEFAULT_IFLOW_KEY);
                 } else {
                     hideSavedState();
                     showStatus(`${providerName} API Key 已删除`, 'success');
