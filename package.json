@@ -1,0 +1,12 @@
+{
+  "name": "reading-practice",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Reading practice tools with DeepSeek AI integration",
+  "scripts": {
+    "test": "node --experimental-vm-modules deepseek.js"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}

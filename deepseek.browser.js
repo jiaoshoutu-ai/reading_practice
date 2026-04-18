@@ -1,20 +1,10 @@
 /**
- * DeepSeek API 调用封装
- *
- * 使用示例：
- *   // 方法 1：直接使用 callAPI
- *   const result = await callAPI([
- *     { role: 'system', content: '你是助手' },
- *     { role: 'user', content: '你好' }
- *   ]);
- *
- *   // 方法 2：使用 chat 快捷方法
- *   const result = await chat('你好', '你是助手');
- *
+ * DeepSeek API 调用封装 (浏览器版本)
+ * 直接通过 script 标签引入，无需模块导入
  */
 
 // 配置
-const APIConfig = {
+const DeepSeekAPI = {
     providers: {
         deepseek: {
             baseURL: 'https://api.deepseek.com/v1',
@@ -36,27 +26,21 @@ function getCurrentConfig() {
 
     // iflow 使用默认 key
     if (provider === 'iflow' && !apiKey) {
-        apiKey = APIConfig.defaultIflowKey;
+        apiKey = DeepSeekAPI.defaultIflowKey;
     }
 
     return {
         provider,
         apiKey,
-        baseURL: APIConfig.providers[provider].baseURL,
-        model: APIConfig.providers[provider].model
+        baseURL: DeepSeekAPI.providers[provider].baseURL,
+        model: DeepSeekAPI.providers[provider].model
     };
 }
 
 /**
  * 调用 API
- * @param {Array<{role: string, content: string}>} messages - 消息数组
- * @param {Object} options - 配置选项
- * @param {string} options.model - 模型名称
- * @param {number} options.max_tokens - 最大 token 数
- * @param {number} options.temperature - 温度 (0-2)
- * @returns {Promise<{content: string, usage: object}>}
  */
-export async function callAPI(messages, options = {}) {
+async function callAPI(messages, options = {}) {
     const config = getCurrentConfig();
 
     if (!config.apiKey) {
@@ -110,11 +94,8 @@ export async function callAPI(messages, options = {}) {
 
 /**
  * 简单聊天
- * @param {string} userMessage - 用户消息
- * @param {string} systemPrompt - 系统提示
- * @returns {Promise<string>}
  */
-export async function chat(userMessage, systemPrompt = '你是经验丰富的上海初中语文名师,擅长指导学生写作和阅读作业。你的点评专业、温和、鼓励性强，能用学生容易理解的语言指出问题并给出具体修改建议.') {
+async function chat(userMessage, systemPrompt = '你是经验丰富的上海初中语文名师，擅长指导学生写作和阅读作业。你的点评专业、温和、鼓励性强，能用学生容易理解的语言指出问题并给出具体修改建议.') {
     const messages = [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userMessage },
@@ -124,13 +105,8 @@ export async function chat(userMessage, systemPrompt = '你是经验丰富的上
     return result.content;
 }
 
-// 导出配置获取方法
-export { getCurrentConfig };
-
-// 浏览器环境：暴露到全局作用域
-if (typeof window !== 'undefined') {
-    window.chat = chat;
-    window.callAPI = callAPI;
-    window.getCurrentConfig = getCurrentConfig;
-}
-
+// 暴露到全局作用域
+window.chat = chat;
+window.callAPI = callAPI;
+window.getCurrentConfig = getCurrentConfig;
+window.DeepSeekAPI = DeepSeekAPI;
