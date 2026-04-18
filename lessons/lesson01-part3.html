@@ -500,8 +500,13 @@
             <div class="input-area">
                 <label for="student-answer1"><strong>你的答案：</strong></label>
                 <textarea id="student-answer1" placeholder="请在此输入你的答案，建议分条作答..."></textarea>
-                <button class="submit-btn" onclick="checkAnswer1()">提交答案</button>
-                <div id="feedback1" class="feedback-box"></div>
+                <div class="input-actions">
+                    <div class="submit-wrapper">
+                        <button class="submit-btn" onclick="checkAnswer1()">提交答案</button>
+                        <div id="feedback1" class="feedback-box"></div>
+                    </div>
+                    <div id="ai-comment1" class="ai-comment-box"></div>
+                </div>
                 <p class="hint-text">💡 提示：找时间关键词（第一次、第二次、后来、这年冬天），用"谁 + 做了什么"的格式概括</p>
             </div>
 
@@ -719,24 +724,61 @@
         function checkAnswer1() {
             var answer = document.getElementById('student-answer1').value.trim();
             var feedback = document.getElementById('feedback1');
+            var aiComment = document.getElementById('ai-comment1');
 
             if (!answer) {
                 feedback.className = 'feedback-box incorrect';
                 feedback.innerHTML = '<h4>⚠️ 请输入答案后再提交</h4>';
                 feedback.style.display = 'block';
+                aiComment.classList.remove('show');
                 return;
             }
 
+            // 显示加载状态
             feedback.className = 'feedback-box correct';
-            var hint = '<h4>✓ 答案已提交</h4>';
-            hint += '<p>请对照参考答案，检查自己是否：</p>';
-            hint += '<ul>';
-            hint += '<li>找出了 4 件事（4 分题通常对应 4 个要点）</li>';
-            hint += '<li>用"谁 + 做了什么"的格式概括</li>';
-            hint += '<li>语言简洁，没有照抄原文</li>';
-            hint += '</ul>';
-            feedback.innerHTML = hint;
+            feedback.innerHTML = '<h4>✓ 答案已提交，AI 正在点评中...</h4>';
             feedback.style.display = 'block';
+            aiComment.classList.remove('show');
+
+            // 调用 AI 进行点评
+            getAIComment1(answer);
+        }
+
+        async function getAIComment1(answer) {
+            var aiComment = document.getElementById('ai-comment1');
+
+            try {
+                // 使用全局 chat 方法
+                if (!window.chat) {
+                    throw new Error('AI 模块未加载，请刷新页面重试');
+                }
+
+                const referenceAnswer = "1. 她被胖女人冤枉、抢走书包，无助地哭泣；2. 她不要\"我\"的存车费，还帮助\"我\"；3. 她记得\"我\"欠她的两毛钱，硬塞还给\"我\"；4. 她在冷风中守着摄影师的车和拎兜直到天黑。";
+                const prompt = `请对以下学生的阅读理解答案进行打分和点评。
+
+【题目】本文写了"看自行车的女人"的哪几件事？请用简洁的语言分别概括。（4 分）
+【参考答案】${referenceAnswer}
+
+【学生答案】${answer}
+
+请从以下几个方面进行点评：
+1. 打分（0-4 分）
+2. 是否找出 4 件事
+3. 是否用"谁 + 做了什么"的格式概括
+4. 语言是否简洁，没有照抄原文
+5. 具体改进建议
+
+请用简洁、鼓励性的语言，总分结构回复。`;
+
+                const comment = await window.chat(prompt);
+
+                aiComment.innerHTML = '<h4>🤖 AI 点评</h4><p>' + comment + '</p>';
+                aiComment.classList.add('show');
+            } catch (error) {
+                console.error('AI 点评失败:', error);
+                aiComment.innerHTML = '<h4>⚠️ AI 点评失败</h4><p>错误信息：' + error.message + '</p><p>请确保已在设置页面配置 API Key，或检查网络连接。</p>';
+                aiComment.classList.add('show');
+            }
         }
 
         function checkAnswer2() {
