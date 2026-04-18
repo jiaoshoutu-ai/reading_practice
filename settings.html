@@ -642,12 +642,16 @@
                             { role: 'system', content: 'You are a helpful assistant.' },
                             { role: 'user', content: 'Hello' }
                         ],
-                        max_tokens: 10,
+                        max_tokens: 50,
                     }),
                 });
 
                 if (response.ok) {
-                    showStatus('连接测试成功！API Key 有效', 'success');
+                    const data = await response.json();
+                    const content = data.choices?.[0]?.message?.content || '';
+                    // 提取前 10 个词
+                    const words = content.split(/\s+/).slice(0, 10).join(' ');
+                    showStatus(`连接测试成功！API Key 有效<br><br>响应内容（前 10 词）：<br><em style="color: #666;">${words}...</em>`, 'success');
                 } else {
                     const error = await response.json();
                     showStatus('连接失败：' + (error.error?.message || '未知错误'), 'error');
