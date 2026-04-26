@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 02 课 第 1 部分 真题训练 - 初中现代文阅读专题课程</title>
+    <script src="../deepseek.browser.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        /* Practice section styles */
+        .practice-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .practice-section h2 {
+            color: #11998e;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .passage-box p {
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        .question-box {
+            background: #e0f2f1;
+            border-left: 4px solid #11998e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-box strong {
+            color: #004d40;
+        }
+
+        .answer-box {
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .answer-box strong {
+            color: #33691e;
+        }
+
+        .analysis-box {
+            background: #fff8e1;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .analysis-box strong {
+            color: #e65100;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .input-area {
+            background: #f5f7fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .input-area label {
+            display: block;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .input-area textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .input-area textarea:focus {
+            outline: none;
+            border-color: #11998e;
+            box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.1);
+        }
+
+        .input-actions {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .input-actions .submit-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .ai-comment-box {
+            flex: 1;
+            display: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
+        }
+
+        .ai-comment-box.show {
+            display: block;
+        }
+
+        .ai-comment-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .ai-comment-box p {
+            color: #555;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .feedback-box {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .feedback-box.correct {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+        }
+
+        .feedback-box.incorrect {
+            background: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
+        }
+
+        .feedback-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .hint-text {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #11998e;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #11998e;
+            color: white;
+        }
+
+        .self-check-box {
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .self-check-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 15px;
+        }
+
+        .self-check-item {
+            margin-bottom: 10px;
+        }
+
+        .self-check-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .self-check-item label {
+            color: #555;
+        }
+
+        .self-btn {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .self-btn:hover {
+            opacity: 0.9;
+        }
+
+        .self-result {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            color: #2e7d32;
+        }
+
+        .tip-box {
+            background: #e0f2f1;
+            border-left: 4px solid #11998e;
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+            color: #004d40;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <div class="progress-step active">Part 1 真题训练</div>
+            <div class="progress-step">Part 2 进阶概括</div>
+            <div class="progress-step">Part 3 综合练习</div>
+            <div class="progress-step">附录</div>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 02 课</span>
+            <span class="part-badge">第一部分</span>
+            <h1>真题训练</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">运用第 01 课学到的核心概括法和结构分析法，完成以下 3 篇全新中考真题。每篇都有 AI 即时点评，帮你精准定位问题。</p>
+        </div>
+
+        <!-- ==================== Practice 1: 《父亲的长笛》 ==================== -->
+        <div class="practice-section">
+            <h2>真题练习一</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">父亲的长笛</p>
+                <p style="text-align: center; text-indent: 0;">赵文静</p>
+                <p>小时候，我很崇拜父亲。父亲有一支长笛，晚饭后，他总站在院子里吹上一曲。笛声悠扬，飘过院墙，飞到很远的地方。邻居们都说，老赵的笛子吹得真好。那时，我觉得父亲是天下最了不起的人。</p>
+                <p>上了初中，我渐渐发现，父亲在街头吹长笛的身影有些刺眼了。他每天傍晚在巷口等我放学，手里拿着那支长笛，有时为了打发时间，就会吹上一曲。同学们看见了，悄悄问我："那是你爸啊？天天在街上吹笛子，像个卖艺的。"我涨红了脸，不知怎么回答。</p>
+                <p>一天放学，父亲又站在巷口吹长笛。几个同学从旁边经过，嬉笑着指指点点。我远远地绕开了。晚饭时，我闷声说："爸，以后别在学校附近吹笛子了。"父亲愣住了，筷子停在半空，过了一会儿，他"嗯"了一声，把长笛收进了抽屉。那晚，院子里静得让人心慌。</p>
+                <p>后来，我们搬了家，不用再走那条巷子了。父亲把长笛拿出来，却很少再吹。偶尔夜深人静，我会听见他轻轻抚摸长笛的声音，像抚摸一个沉睡的孩子。我假装睡着了，心里有说不出的酸楚。</p>
+                <p>多年后，我大学毕业，在异乡工作。一个冬天的夜晚，突然接到父亲的电话。他说："闲来无事，给你吹一段吧。"电话那头，传来熟悉的笛声。还是那支曲子，却有些生疏了。父亲吹了几句，自己笑了："好久不吹，手生了。"那一刻，我的眼泪无声地流了下来。</p>
+                <p>我终于明白，那支长笛里，藏着父亲对我全部的爱——他因为我的任性放弃了它，又因为对我的思念拿起它。而那每一次吹响，都是父亲在说："孩子，我想你了。"</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>第 1 题：</strong>文章写了关于父亲的哪几件事？请用简洁的语言分别概括。（4 分）</p>
+            </div>
+
+            <div class="input-area">
+                <label for="student-answer1"><strong>你的答案：</strong></label>
+                <textarea id="student-answer1" placeholder="请在此输入你的答案，建议分条作答..."></textarea>
+                <div class="input-actions">
+                    <div class="submit-wrapper">
+                        <button class="submit-btn" onclick="checkAnswer1()">提交答案</button>
+                        <div id="feedback1" class="feedback-box"></div>
+                    </div>
+                    <div id="ai-comment1" class="ai-comment-box"></div>
+                </div>
+                <p class="hint-text">找时间关键词（小时候、上了初中、一天放学、后来、多年后），用"谁 + 做了什么"的格式概括</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer1')">点击查看答案与解析</button>
+
+            <div id="answer1" class="hidden-content">
+                <div class="answer-box">
+                    <p><strong>参考答案：</strong></p>
+                    <ol>
+                        <li>小时候，"我"崇拜父亲吹长笛，觉得他是最了不起的人；</li>
+                        <li>初中时，"我"因同学嘲笑，要求父亲不要再在学校附近吹长笛；</li>
+                        <li>搬家后，父亲很少再吹长笛，只在夜深时抚摸长笛；</li>
+                        <li>多年后，父亲在电话里为"我"吹长笛，手已生疏。</li>
+                    </ol>
+                </div>
+
+                <div class="analysis-box">
+                    <p><strong>解题思路：</strong></p>
+                    <ol>
+                        <li><strong>审题</strong>：题目要求概括"关于父亲的哪几件事"，需要找出文中所有与父亲相关的核心事件。</li>
+                        <li><strong>定位</strong>：文章按时间顺序写了四个阶段——小时候 → 初中 → 搬家后 → 多年后。</li>
+                        <li><strong>提取</strong>：每件事都围绕"长笛"展开，但事件主体不同——崇拜、嫌弃、沉默、和解。</li>
+                        <li><strong>串联</strong>：四个事件构成了"女儿对父亲情感变化"的完整线索。</li>
+                        <li><strong>检查</strong>：4 件事，4 分，每件事 1 分。</li>
+                    </ol>
+                </div>
+
+                <div class="tip-box">
+                    <strong>本题与 01 课《看自行车的女人》对比：</strong>两题都是"概括哪几件事"，但《父亲的长笛》多了"情感变化"的线索——需要在概括事件时体现出女儿态度的转变。
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Practice 2: 《雪天里的暖》 ==================== -->
+        <div class="practice-section">
+            <h2>真题练习二</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">雪天里的暖</p>
+                <p style="text-align: center; text-indent: 0;">佚 名</p>
+                <p>大雪下了一整夜，第二天早晨，路面结了厚厚的冰。</p>
+                <p>我是一家外卖平台的骑手。这样的天气，订单比平时多了两倍。我裹紧棉袄，把保温箱绑在后座上，一头扎进风雪里。</p>
+                <p>第一单送到一位独居老人家。我敲开门，老人接过餐盒，却拉住我不让走。他颤巍巍地从屋里拿出一副厚手套，塞到我手里："小伙子，天冷，戴上。"那手套是崭新的，还挂着标签。我说不用，老人说："我儿子也在外地送外卖，我看见你，就像看见他。"</p>
+                <p>第二单送到时，顾客已经在楼下等着了。是个年轻姑娘，穿着睡衣，披了件羽绒服就跑下来了。她说："哥，我下来等着，你就不用爬六楼了。"她把一杯热奶茶递给我："顺路买的，趁热喝。"</p>
+                <p>第三单的顾客在备注里写："外卖小哥，不着急，路上滑，慢点骑。超时我不投诉。"后面还画了一个笑脸。送到时，门把手上系着一个红色塑料袋，里面装着两个煮熟的鸡蛋，袋子上贴了张纸条："辛苦了，暖暖手。"</p>
+                <p>那天我送了三十多单，每一单都有人叮嘱"慢点"。虽然雪还在下，风还在刮，但我心里始终暖暖的。</p>
+                <p>回到出租屋，我掏出手机，给家里打了个电话："妈，我在外面挺好的，你放心。"</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+            </div>
+
+            <div class="input-area">
+                <label for="student-answer2"><strong>你的答案：</strong></label>
+                <textarea id="student-answer2" placeholder="请在此输入你的答案，注意控制字数..."></textarea>
+                <div class="input-actions">
+                    <div class="submit-wrapper">
+                        <button class="submit-btn" onclick="checkAnswer2()">提交答案</button>
+                        <div id="feedback2" class="feedback-box"></div>
+                    </div>
+                    <div id="ai-comment2" class="ai-comment-box"></div>
+                </div>
+                <p class="hint-text">找出主人公、主要事件和结果，用"谁 + 做了什么 + 结果/感受"的格式概括</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer2')">点击查看答案与解析</button>
+
+            <div id="answer2" class="hidden-content">
+                <div class="answer-box">
+                    <p><strong>参考答案：</strong></p>
+                    <p>文章讲述了一位外卖骑手在大雪天送餐的过程中，接连收到顾客的暖心关怀——独居老人送手套、年轻姑娘送奶茶、匿名顾客留纸条和鸡蛋，让他感受到寒冬中的温暖的故事。</p>
+                </div>
+
+                <div class="analysis-box">
+                    <p><strong>解题思路：</strong></p>
+                    <ol>
+                        <li><strong>找出人物：</strong>"我"——一位外卖骑手。</li>
+                        <li><strong>找出核心事件：</strong>大雪天送外卖，收到三位顾客的温暖对待。</li>
+                        <li><strong>找出结果/感受：</strong>心里暖暖的。</li>
+                        <li><strong>串联概括：</strong>人物 + 环境 + 事件（三个温暖瞬间）+ 感受。</li>
+                    </ol>
+                </div>
+
+                <div class="tip-box">
+                    <strong>本题与 01 课《口罩》对比：</strong>两题都是"概括主要内容"，但《雪天里的暖》涉及多个并列的顾客故事。概括时不需要逐一详述，可用"接连收到顾客的暖心关怀"一句概括，再举一两个典型例子即可。
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Practice 3: 《谢谢你，盛装莅临我的成长》 ==================== -->
+        <div class="practice-section">
+            <h2>真题练习三</h2>
+
+            <div class="passage-box">
+                <p style="text-align: center; font-weight: bold; text-indent: 0;">谢谢你，盛装莅临我的成长</p>
+                <p style="text-align: center; text-indent: 0;">汪 洋</p>
+                <p>每个人的成长路上，都会遇到几位特别的老师。他们不只是传授知识，更是在某个关键的时刻，点亮了你心里的灯。我有幸遇到了两位。</p>
+                <p>第一位是高中的语文老师，姓汪。汪老师上课有个特点：每节课前五分钟，她会随机请一位同学上台演讲，题目不限。轮到我时，我紧张得手心出汗。站在讲台上，我结结巴巴地说了几句，底下传来窃窃私语。我恨不得找条地缝钻进去。汪老师却带头鼓起了掌，她说："说得很好，有真情实感。"那天放学后，她把我叫到办公室，对我说："你要相信自己的声音，它值得被听见。"这句话，像种子一样种在了我心里。</p>
+                <p>高二那年，学校举办演讲比赛，汪老师点名要我参加。我写了稿子，她帮我改了七遍。我练了一遍又一遍，她在教室后排坐着，一遍又一遍地听。比赛那天，我拿了第二名。下台时，我看见汪老师站在角落里，冲我竖起了大拇指，眼眶微微泛红。</p>
+                <p>第二位是初中的数学老师，姓刘。刘老师以严厉著称，上课时绝不允许学生走神。我天生对数学不敏感，一上数学课就犯怵。有一次期中考试，我的数学考了全班倒数第三。刘老师在试卷上写了四个字："我相信你。"</p>
+                <p>这四个字，比任何批评都让我难受。我不知道老师为什么会相信一个倒数第三的学生，但我不想辜负这份信任。从那以后，我每天多做十道数学题。慢慢地，数学不再是我最怕的科目。中考时，我的数学考了满分。拿到成绩那天，我第一个想到的就是刘老师。后来听说，刘老师把我那张写着"我相信你"的试卷，一直放在办公桌的抽屉里。</p>
+                <p>汪老师教会了我勇敢表达，刘老师教会了我不要放弃。多年以后，当我也站上讲台成为一名老师时，我常常想起她们。我明白了，一个好老师，不是把知识塞进学生的脑子，而是把自信种进学生的心里。</p>
+                <p>谢谢你们，盛装莅临我的成长。</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>问题：</strong>文章写了两位老师的哪些事？分别对"我"产生了怎样的影响？请简要概括。（4 分）</p>
+            </div>
+
+            <div class="input-area">
+                <label for="student-answer3"><strong>你的答案：</strong></label>
+                <textarea id="student-answer3" placeholder="请在此输入你的答案，注意分别写出两位老师的事迹和影响..."></textarea>
+                <div class="input-actions">
+                    <div class="submit-wrapper">
+                        <button class="submit-btn" onclick="checkAnswer3()">提交答案</button>
+                        <div id="feedback3" class="feedback-box"></div>
+                    </div>
+                    <div id="ai-comment3" class="ai-comment-box"></div>
+                </div>
+                <p class="hint-text">本文是并列片段式结构，先分别概括两位老师的事迹，再说明各自对"我"的影响</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer3')">点击查看答案与解析</button>
+
+            <div id="answer3" class="hidden-content">
+                <div class="answer-box">
+                    <p><strong>参考答案：</strong></p>
+                    <p>汪老师：在"我"演讲紧张时鼓励"我"，帮"我"改演讲稿、听"我"练习，让"我"拿了演讲比赛第二名；教会了"我"要勇敢表达。<br>
+                    刘老师：在"我"数学考倒数第三时，在试卷上写"我相信你"；从此"我"发奋努力，中考数学考了满分；教会了"我"不要放弃。</p>
+                </div>
+
+                <div class="analysis-box">
+                    <p><strong>解题思路：</strong></p>
+                    <ol>
+                        <li><strong>审题</strong>：题目有两问——①写了哪些事，②产生了什么影响。需要分别作答。</li>
+                        <li><strong>识别结构</strong>：本文是典型的<strong>并列片段式结构</strong>。两个老师各自为一段，分别讲述。</li>
+                        <li><strong>概括方法</strong>：先分别概括每个老师的事迹（谁 + 做了什么），再提炼影响（教会了我什么）。</li>
+                        <li><strong>注意</strong>：两个老师的事不能混为一谈，要明确区分。</li>
+                    </ol>
+                </div>
+
+                <div class="self-check-box">
+                    <h4>自评环节</h4>
+                    <p>请对照参考答案和评分标准，检查自己的答案：</p>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check3_1">
+                        <label for="check3_1">我分别概括了两位老师的事迹，没有混淆</label>
+                    </div>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check3_2">
+                        <label for="check3_2">我写出了每位老师对"我"的具体影响（不只是"帮助了我"）</label>
+                    </div>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check3_3">
+                        <label for="check3_3">我没有照抄原文，而是用自己的话归纳</label>
+                    </div>
+                    <div class="self-check-item">
+                        <input type="checkbox" id="check3_4">
+                        <label for="check3_4">我的语言简洁，条理清晰</label>
+                    </div>
+                    <button class="self-btn" onclick="calculateScore3()">计算自评得分</button>
+                    <div id="self-result3" class="self-result" style="display: none;"></div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>本题与 01 课《那年春节》对比：</strong>这两题都是"概括主要内容"，但本文是并列片段式结构（两个老师），而《那年春节》是时间顺序式。《那年春节》按时间流水概括即可，本文需要分别概括两个并列段落，再用共同主题串联。
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson02.html">← 返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson01-part3.html">对比 01 课真题 →</a>
+        </div>
+    </div>
+
+    <script>
+        // Progress indicator click navigation
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.style.cursor = 'pointer';
+            step.addEventListener('click', () => {
+                const pages = ['lesson02-part1.html', 'lesson02.html', 'lesson02.html', 'lesson02.html'];
+                window.location.href = pages[index];
+            });
+        });
+
+        function toggleAnswer(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // ==================== Practice 1 ====================
+        function checkAnswer1() {
+            var answer = document.getElementById('student-answer1').value.trim();
+            var feedback = document.getElementById('feedback1');
+            var aiComment = document.getElementById('ai-comment1');
+
+            if (!answer) {
+                feedback.className = 'feedback-box incorrect';
+                feedback.innerHTML = '<h4>请先输入答案后再提交</h4>';
+                feedback.style.display = 'block';
+                aiComment.classList.remove('show');
+                return;
+            }
+
+            feedback.className = 'feedback-box correct';
+            feedback.innerHTML = '<h4>答案已提交，AI 正在点评中...</h4>';
+            feedback.style.display = 'block';
+            aiComment.classList.remove('show');
+
+            getAIComment1(answer);
+        }
+
+        async function getAIComment1(answer) {
+            var aiComment = document.getElementById('ai-comment1');
+
+            try {
+                if (!window.chat) {
+                    throw new Error('AI 模块未加载，请刷新页面重试');
+                }
+
+                const referenceAnswer = "1. 小时候，"我"崇拜父亲吹长笛，觉得他是最了不起的人；2. 初中时，"我"因同学嘲笑，要求父亲不要再在学校附近吹长笛；3. 搬家后，父亲很少再吹长笛，只在夜深时抚摸长笛；4. 多年后，父亲在电话里为"我"吹长笛，手已生疏。";
+                const prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】文章写了关于父亲的哪几件事？请用简洁的语言分别概括。（4 分）\n【文章梗概】《父亲的长笛》讲的是父亲擅长吹长笛，女儿小时候崇拜父亲，初中时因同学嘲笑嫌弃父亲在街头吹笛子，让父亲不要再在学校附近吹了。父亲收起长笛不再吹。多年后女儿在异乡工作，父亲在电话里为她吹了一段，女儿泪流满面。\n【参考答案】' + referenceAnswer + '\n\n【学生答案】' + answer + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分）\n2. 是否找出了 4 件事\n3. 是否按时间顺序概括\n4. 是否体现女儿情感的变化\n5. 语言是否简洁，有自己的归纳\n6. 具体改进建议\n\n请用简洁、鼓励性的语言，总分结构回复。';
+
+                const comment = await window.chat(prompt);
+                aiComment.innerHTML = '<h4>AI 点评</h4><p>' + comment + '</p>';
+                aiComment.classList.add('show');
+            } catch (error) {
+                console.error('AI 点评失败:', error);
+                aiComment.innerHTML = '<h4>AI 点评失败</h4><p>错误信息：' + error.message + '</p><p>请确保已在设置页面配置 API Key，或检查网络连接。</p>';
+                aiComment.classList.add('show');
+            }
+        }
+
+        // ==================== Practice 2 ====================
+        function checkAnswer2() {
+            var answer = document.getElementById('student-answer2').value.trim();
+            var feedback = document.getElementById('feedback2');
+            var aiComment = document.getElementById('ai-comment2');
+
+            if (!answer) {
+                feedback.className = 'feedback-box incorrect';
+                feedback.innerHTML = '<h4>请先输入答案后再提交</h4>';
+                feedback.style.display = 'block';
+                aiComment.classList.remove('show');
+                return;
+            }
+
+            feedback.className = 'feedback-box correct';
+            feedback.innerHTML = '<h4>答案已提交，AI 正在点评中...</h4>';
+            feedback.style.display = 'block';
+            aiComment.classList.remove('show');
+
+            getAIComment2(answer);
+        }
+
+        async function getAIComment2(answer) {
+            var aiComment = document.getElementById('ai-comment2');
+
+            try {
+                if (!window.chat) {
+                    throw new Error('AI 模块未加载，请刷新页面重试');
+                }
+
+                const referenceAnswer = "文章讲述了一位外卖骑手在大雪天送餐的过程中，接连收到顾客的暖心关怀——独居老人送手套、年轻姑娘送奶茶、匿名顾客留纸条和鸡蛋，让他感受到寒冬中的温暖的故事。";
+                const prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】请用简洁的语言概括文章的主要内容。（4 分）\n【文章梗概】大雪天，外卖骑手"我"在送餐过程中遇到了三位温暖的顾客：独居老人送给"我"新手套、一位姑娘送热奶茶并下楼取餐、匿名顾客送鸡蛋并留言嘱咐慢点骑。那天虽然天寒地冻，"我"心里却暖暖的。\n【参考答案】' + referenceAnswer + '\n\n【学生答案】' + answer + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分）\n2. 是否找出了主要人物和事件\n3. 是否概括了"温暖"这个核心情感\n4. 三个顾客的故事是否处理得当（详略适宜）\n5. 语言是否简洁\n6. 具体改进建议\n\n请用简洁、鼓励性的语言，总分结构回复。';
+
+                const comment = await window.chat(prompt);
+                aiComment.innerHTML = '<h4>AI 点评</h4><p>' + comment + '</p>';
+                aiComment.classList.add('show');
+            } catch (error) {
+                console.error('AI 点评失败:', error);
+                aiComment.innerHTML = '<h4>AI 点评失败</h4><p>错误信息：' + error.message + '</p><p>请确保已在设置页面配置 API Key，或检查网络连接。</p>';
+                aiComment.classList.add('show');
+            }
+        }
+
+        // ==================== Practice 3 ====================
+        function checkAnswer3() {
+            var answer = document.getElementById('student-answer3').value.trim();
+            var feedback = document.getElementById('feedback3');
+            var aiComment = document.getElementById('ai-comment3');
+
+            if (!answer) {
+                feedback.className = 'feedback-box incorrect';
+                feedback.innerHTML = '<h4>请先输入答案后再提交</h4>';
+                feedback.style.display = 'block';
+                aiComment.classList.remove('show');
+                return;
+            }
+
+            feedback.className = 'feedback-box correct';
+            feedback.innerHTML = '<h4>答案已提交，AI 正在点评中...</h4>';
+            feedback.style.display = 'block';
+            aiComment.classList.remove('show');
+
+            getAIComment3(answer);
+        }
+
+        async function getAIComment3(answer) {
+            var aiComment = document.getElementById('ai-comment3');
+
+            try {
+                if (!window.chat) {
+                    throw new Error('AI 模块未加载，请刷新页面重试');
+                }
+
+                const referenceAnswer = "汪老师：在"我"演讲紧张时鼓励"我"，帮"我"改演讲稿、听"我"练习，让"我"拿了演讲比赛第二名；教会了"我"要勇敢表达。\n刘老师：在"我"数学考倒数第三时，在试卷上写"我相信你"；从此"我"发奋努力，中考数学考了满分；教会了"我"不要放弃。";
+                const prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】文章写了两位老师的哪些事？分别对"我"产生了怎样的影响？请简要概括。（4 分）\n【文章梗概】文章为并列片段式结构：第一位汪老师是高中语文老师，她鼓励内向的"我"勇敢演讲，帮"我"改稿七遍，最终"我"拿到演讲比赛第二名；汪老师教会"我"勇敢表达。第二位刘老师是初中数学老师，在"我"考倒数第三时写下"我相信你"，"我"从此发奋，中考数学考了满分；刘老师教会"我"不要放弃。\n【参考答案】' + referenceAnswer + '\n\n【学生答案】' + answer + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分）\n2. 是否分别概括了两位老师的事迹（不混淆）\n3. 是否写出了每位老师对"我"的具体影响\n4. 是否识别了并列片段式结构\n5. 语言是否简洁\n6. 具体改进建议\n\n请用简洁、鼓励性的语言，总分结构回复。';
+
+                const comment = await window.chat(prompt);
+                aiComment.innerHTML = '<h4>AI 点评</h4><p>' + comment + '</p>';
+                aiComment.classList.add('show');
+            } catch (error) {
+                console.error('AI 点评失败:', error);
+                aiComment.innerHTML = '<h4>AI 点评失败</h4><p>错误信息：' + error.message + '</p><p>请确保已在设置页面配置 API Key，或检查网络连接。</p>';
+                aiComment.classList.add('show');
+            }
+        }
+
+        // ==================== Self-assessment ====================
+        function calculateScore3() {
+            var checkedCount = 0;
+            if (document.getElementById('check3_1').checked) checkedCount++;
+            if (document.getElementById('check3_2').checked) checkedCount++;
+            if (document.getElementById('check3_3').checked) checkedCount++;
+            if (document.getElementById('check3_4').checked) checkedCount++;
+
+            var resultBox = document.getElementById('self-result3');
+            resultBox.style.display = 'block';
+
+            var score = checkedCount;
+            var message = '<h4>自评得分：' + score + '/4 分</h4>';
+            if (score === 4) {
+                message += '<p>太棒了！你的答案非常完整！</p>';
+            } else if (score >= 2) {
+                message += '<p>不错！再对照参考答案完善一下～</p>';
+            } else {
+                message += '<p>加油！再看看参考答案，修改一下自己的答案。</p>';
+            }
+            resultBox.innerHTML = message;
+        }
+    </script>
+</body>
+</html>
