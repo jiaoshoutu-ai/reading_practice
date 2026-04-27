@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 02 课 附录 文章原文 + 真题汇编 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-section h2 {
+            color: #11998e;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0f2f1;
+        }
+
+        .article-section .source-info {
+            text-align: center;
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .article-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .article-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .article-section .source {
+            text-align: right;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-indent: 0;
+        }
+
+        .part-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .part-label.p1 { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .part-label.p4 { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); }
+
+        .exercise-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .exercise-box h3 {
+            color: #9c27b0;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ce93d8;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+            color: #333;
+        }
+
+        .answer-space {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px dashed #9c27b0;
+            min-height: 100px;
+        }
+
+        .answer-space p {
+            text-indent: 0;
+            margin-bottom: 10px;
+            color: #9c27b0;
+            font-weight: 600;
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 29px,
+                #bbb 30px
+            );
+            background-size: 100% 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            min-height: 120px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #11998e;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #11998e;
+            color: white;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .article-index {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border: 2px solid #11998e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .article-index h3 {
+            color: #004d40;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .article-index ul {
+            margin-left: 20px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .article-index a {
+            color: #004d40;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-index a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .navbar, .nav-links, .progress-indicator, .print-btn, .article-index {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .article-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .lesson-header {
+                box-shadow: none;
+            }
+
+            .exercise-box {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <div class="progress-step completed">Part 0 复习回顾</div>
+            <div class="progress-step completed">Part 1 真题训练</div>
+            <div class="progress-step completed">Part 2 高度概括</div>
+            <div class="progress-step completed">Part 3 常见误区</div>
+            <div class="progress-step completed">Part 4 真题训练</div>
+            <div class="progress-step completed">附录</div>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 02 课</span>
+            <span class="part-badge">附录</span>
+            <h1>文章原文 + 真题汇编</h1>
+            <p style="color: #666; margin-top: 10px; font-size: 0.95rem;">收录 Part 1（3 篇）和 Part 4（2 篇）所有真题文章，附答题区域，方便打印练习。</p>
+        </div>
+
+        <!-- Article index -->
+        <div class="article-index">
+            <h3>📚 文章目录</h3>
+            <ul>
+                <li><a href="#p1-1">一、父亲的长笛（Part 1 真题练习一）</a></li>
+                <li><a href="#p1-2">二、雪天里的暖（Part 1 真题练习二）</a></li>
+                <li><a href="#p1-3">三、谢谢你，盛装莅临我的成长（Part 1 真题练习三）</a></li>
+                <li><a href="#p4-1">四、老柿树（节选）（Part 4 真题练习一）</a></li>
+                <li><a href="#p4-2">五、中国地图（Part 4 真题练习二）</a></li>
+            </ul>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <!-- ==================== Part 1, Practice 1: 父亲的长笛 ==================== -->
+        <div class="article-section" id="p1-1">
+            <span class="part-label p1">Part 1 真题练习一</span>
+            <h2>父亲的长笛</h2>
+            <p class="author">赵文静</p>
+            <p>小时候，我很崇拜父亲。父亲有一支长笛，晚饭后，他总站在院子里吹上一曲。笛声悠扬，飘过院墙，飞到很远的地方。邻居们都说，老赵的笛子吹得真好。那时，我觉得父亲是天下最了不起的人。</p>
+            <p>上了初中，我渐渐发现，父亲在街头吹长笛的身影有些刺眼了。他每天傍晚在巷口等我放学，手里拿着那支长笛，有时为了打发时间，就会吹上一曲。同学们看见了，悄悄问我："那是你爸啊？天天在街上吹笛子，像个卖艺的。"我涨红了脸，不知怎么回答。</p>
+            <p>一天放学，父亲又站在巷口吹长笛。几个同学从旁边经过，嬉笑着指指点点。我远远地绕开了。晚饭时，我闷声说："爸，以后别在学校附近吹笛子了。"父亲愣住了，筷子停在半空，过了一会儿，他"嗯"了一声，把长笛收进了抽屉。那晚，院子里静得让人心慌。</p>
+            <p>后来，我们搬了家，不用再走那条巷子了。父亲把长笛拿出来，却很少再吹。偶尔夜深人静，我会听见他轻轻抚摸长笛的声音，像抚摸一个沉睡的孩子。我假装睡着了，心里有说不出的酸楚。</p>
+            <p>多年后，我大学毕业，在异乡工作。一个冬天的夜晚，突然接到父亲的电话。他说："闲来无事，给你吹一段吧。"电话那头，传来熟悉的笛声。还是那支曲子，却有些生疏了。父亲吹了几句，自己笑了："好久不吹，手生了。"那一刻，我的眼泪无声地流了下来。</p>
+            <p>我终于明白，那支长笛里，藏着父亲对我全部的爱——他因为我的任性放弃了它，又因为对我的思念拿起它。而那每一次吹响，都是父亲在说："孩子，我想你了。"</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题</h3>
+                <div class="question-item">
+                    <p><strong>第 1 题：</strong>文章写了关于父亲的哪几件事？请用简洁的语言分别概括。（4 分）</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 150px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Part 1, Practice 2: 雪天里的暖 ==================== -->
+        <div class="article-section" id="p1-2">
+            <span class="part-label p1">Part 1 真题练习二</span>
+            <h2>雪天里的暖</h2>
+            <p class="author">佚 名</p>
+            <p>大雪下了一整夜，第二天早晨，路面结了厚厚的冰。</p>
+            <p>我是一家外卖平台的骑手。这样的天气，订单比平时多了两倍。我裹紧棉袄，把保温箱绑在后座上，一头扎进风雪里。</p>
+            <p>第一单送到一位独居老人家。我敲开门，老人接过餐盒，却拉住我不让走。他颤巍巍地从屋里拿出一副厚手套，塞到我手里："小伙子，天冷，戴上。"那手套是崭新的，还挂着标签。我说不用，老人说："我儿子也在外地送外卖，我看见你，就像看见他。"</p>
+            <p>第二单送到时，顾客已经在楼下等着了。是个年轻姑娘，穿着睡衣，披了件羽绒服就跑下来了。她说："哥，我下来等着，你就不用爬六楼了。"她把一杯热奶茶递给我："顺路买的，趁热喝。"</p>
+            <p>第三单的顾客在备注里写："外卖小哥，不着急，路上滑，慢点骑。超时我不投诉。"后面还画了一个笑脸。送到时，门把手上系着一个红色塑料袋，里面装着两个煮熟的鸡蛋，袋子上贴了张纸条："辛苦了，暖暖手。"</p>
+            <p>那天我送了三十多单，每一单都有人叮嘱"慢点"。虽然雪还在下，风还在刮，但我心里始终暖暖的。</p>
+            <p>回到出租屋，我掏出手机，给家里打了个电话："妈，我在外面挺好的，你放心。"</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题</h3>
+                <div class="question-item">
+                    <p><strong>问题：</strong>请用简洁的语言概括文章的主要内容。（4 分）</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Part 1, Practice 3: 谢谢你 ==================== -->
+        <div class="article-section" id="p1-3">
+            <span class="part-label p1">Part 1 真题练习三</span>
+            <h2>谢谢你，盛装莅临我的成长</h2>
+            <p class="author">汪 洋</p>
+            <p>每个人的成长路上，都会遇到几位特别的老师。他们不只是传授知识，更是在某个关键的时刻，点亮了你心里的灯。我有幸遇到了两位。</p>
+            <p>第一位是高中的语文老师，姓汪。汪老师上课有个特点：每节课前五分钟，她会随机请一位同学上台演讲，题目不限。轮到我时，我紧张得手心出汗。站在讲台上，我结结巴巴地说了几句，底下传来窃窃私语。我恨不得找条地缝钻进去。汪老师却带头鼓起了掌，她说："说得很好，有真情实感。"那天放学后，她把我叫到办公室，对我说："你要相信自己的声音，它值得被听见。"这句话，像种子一样种在了我心里。</p>
+            <p>高二那年，学校举办演讲比赛，汪老师点名要我参加。我写了稿子，她帮我改了七遍。我练了一遍又一遍，她在教室后排坐着，一遍又一遍地听。比赛那天，我拿了第二名。下台时，我看见汪老师站在角落里，冲我竖起了大拇指，眼眶微微泛红。</p>
+            <p>第二位是初中的数学老师，姓刘。刘老师以严厉著称，上课时绝不允许学生走神。我天生对数学不敏感，一上数学课就犯怵。有一次期中考试，我的数学考了全班倒数第三。刘老师在试卷上写了四个字："我相信你。"</p>
+            <p>这四个字，比任何批评都让我难受。我不知道老师为什么会相信一个倒数第三的学生，但我不想辜负这份信任。从那以后，我每天多做十道数学题。慢慢地，数学不再是我最怕的科目。中考时，我的数学考了满分。拿到成绩那天，我第一个想到的就是刘老师。后来听说，刘老师把我那张写着"我相信你"的试卷，一直放在办公桌的抽屉里。</p>
+            <p>汪老师教会了我勇敢表达，刘老师教会了我不要放弃。多年以后，当我也站上讲台成为一名老师时，我常常想起她们。我明白了，一个好老师，不是把知识塞进学生的脑子，而是把自信种进学生的心里。</p>
+            <p>谢谢你们，盛装莅临我的成长。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题</h3>
+                <div class="question-item">
+                    <p><strong>问题：</strong>文章写了两位老师的哪些事？分别对"我"产生了怎样的影响？请简要概括。（4 分）</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 150px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Part 4, Practice 1: 老柿树 ==================== -->
+        <div class="article-section" id="p4-1">
+            <span class="part-label p4">Part 4 真题练习一</span>
+            <h2>老柿树</h2>
+            <p class="source-info">（节选）</p>
+            <p>我临窗而坐，旁边坐着一位年轻的少尉。他腋下夹着一个浅灰色公文包，神色庄重。自从踏上列车，他就一直坐在我的旁边，没有言语。</p>
+            <p>列车经过十几个小时的行驶，这会儿，已从南国秀丽的山川进入了一片丘陵地带。窗外古朴的山峦，在旭阳的铺盖下，呈现出一片醒目的土黄。</p>
+            <p>突然，那少尉说话了："请你跟我换换座位好吗？列车就要经过我的家乡了，我想好好看看。"</p>
+            <p>我一听，忙说："行。"</p>
+            <p>换过座位，我问他："路过家乡不停停？"</p>
+            <p>他说："不行啊，任务太紧。"</p>
+            <p>"看样子，你很久没回过家乡了吧？"我又问。</p>
+            <p>他点点头，说："三年了。"言语中流露出满腔的思乡情。又说："本来部队这几天要安排我探家的，我把电报都打回家了，可突然来了任务……"他说着，把脸扭向窗外，深情地注视着窗外的世界。窗外起伏的黄色山峦，在眼前一一闪过。我想，他的家乡就要到了。</p>
+            <p>不一会儿，他扭过头来满脸兴奋的样子："你看到那道山峦了吗？最高处的那道！"</p>
+            <p>我点点头。我看到的是一道非常普通而贫瘠的黄色山峦，山脊上寥寥地生长着一些类似荆条的植物，远远望去，在秋阳里显得寂寥和淳朴。</p>
+            <p>"那就是我的家乡。"他又说，"我们的村子就在这道山的后边，从这儿看不到，不过，可以看到山脊上我们村子的那棵老柿树。"他的表情欣喜、自豪极了。</p>
+            <p>我被他的情绪感染了，指着窗外的一段山峦说："这儿离你们村子很近了吧？"</p>
+            <p>"很近了，很近了。"他又指着窗外的黄土山，"我小时候割草，总跑到这儿来，这山上的草肥极了，不一会儿就能割上一大篮子。"他兴致勃勃。</p>
+            <p class="source">（文章有删节）</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>请按照事情发生的先后顺序，根据提示，补全下面表格。（4 分）</p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #11998e; color: white;">
+                                <th style="padding: 10px 15px; text-align: left;">情节</th>
+                                <th style="padding: 10px 15px; text-align: left;">少尉的情感</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 15px;">路过家乡，停不了车，不能回家</td>
+                                <td style="padding: 10px 15px;">① ________</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
+                                <td style="padding: 10px 15px;">② ________</td>
+                                <td style="padding: 10px 15px;">郑重</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 15px;">③ ________</td>
+                                <td style="padding: 10px 15px;">④ 眷恋那棵老柿树</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Part 4, Practice 2: 中国地图 ==================== -->
+        <div class="article-section" id="p4-2">
+            <span class="part-label p4">Part 4 真题练习二</span>
+            <h2>中国地图</h2>
+            <p>爷爷曾是地图绘制工程师，绘了一辈子地图，对地图有着特殊的感情。退休后，每天对着地图默默地看，有时还自言自语，嘀嘀咕咕不知说些什么。家里有人的时候，总要给人家讲述地图上地名背后的故事。</p>
+            <p>其实，这些在别人听来都是故事，发生在爷爷身上就是事故。那时候，技术条件差，别说是卫星，航空测量都还是空白，需要带上平板仪、经纬仪，实地走访，测量，标记。在河南嵩山测量的时候，被三只饿狼盯上了。爷爷当时还是小青年，给吓得哆哆嗦嗦，准备给狼当干粮的时候，附近几个砍柴的山民及时赶来，凭借手里的镰刀和棍子吓退野狼。在陕西榆林，正在工作的时候，天气突变，一时间飞沙走石，爷爷赶紧把衣服脱下来，打算盖到平板仪上，结果晚了一步，望远镜的一个镜片被石头打烂了。几乎同一瞬间，爷爷下意识地扑到仪器上保护仪器，结果额头也被飞溅的镜片给划伤了。他到当地医院治疗的时候，认识了那里的一名护士，后来结为伉俪。奶奶曾感激地对爷爷说，若不是嫁给他，把她带进城里，她早被风沙给"吃"了——她的家乡在毛乌素沙漠的边缘上，一年三百六十天，有二百多天都是风沙……</p>
+            <p>爷爷九十多了，时而清醒时而糊涂，特别是奶奶去世后，免不了唠叨他的"想当年"。</p>
+            <p>后来，孙子小兵考上了武汉大学，学的就是地图制图学与地理信息工程专业，毕业后，干的正是地图测绘。比起爷爷，小兵这一代的测量技术有了飞速的提升，除了航空测量，还利用人造卫星拍摄地貌，足不出户，坐在计算机前就可以测绘地图。</p>
+            <p>这天，小兵拿回来一张最新的《中国地图》。爷爷两眼放光，戴着老花镜，趴在地图上瞅起来，边看边念叨："黑龙江，黄河，长江……小兵，伶仃洋上咋有一座桥？新建的？"</p>
+            <p>"爷爷，这就是港珠澳大桥，连接珠海、香港和澳门的。"</p>
+            <p>"这个桥建得好，建得好！"爷爷感慨不已，然后继续一点一点地瞅，"小兵，丹江口水库咋新增一条支流？我看看，河南，河北，北京，天津，不对吧，若是支流，到天津这里应该入海啊。是不是搞错了？"</p>
+            <p>小兵扑哧笑了，说："爷爷，这是南水北调中线工程。"</p>
+            <p>"南水北调？就是当年毛主席提出的那个计划？"爷爷扑闪着昏花的眼睛，似乎有点明白了。"对！"小兵忙不迭地点头。</p>
+            <p>爷爷满意地点点头，接下来又趴在地图上瞄起来。忽然，他叫道："小兵，榆林，毛乌素沙漠咋没有了？是不是忘记标了？"</p>
+            <p>"是啊，毛乌素沙漠呢？"小兵认真地瞅了瞅地图，皱着眉头说，"爷爷，要不，咱到榆林看一看？"</p>
+            <p>"好！古人绘制地图就是实地测绘，后人常常把地图命名为'禹迹图'，顾名思义，大禹的足迹。绘制地图就得眼见为实，哪像你们，唉！"爷爷说罢，又说，"只是我的腿不当家，怕是走不动。"</p>
+            <p>"爷爷，我开车带您去。""中。"爷爷爽快地答应了。爷爷退休后，家人多次说要带他去旅游，他都拒绝了，说："全中国我都跑遍了，山山水水都在我的心里。"</p>
+            <p>小兵开车带着爷爷，到了榆林，到了毛乌素，望着茫茫无际的林海，爷爷似乎不相信自己的眼睛。小兵忍不住说道："爷爷，是真的，这是绿洲，不是沙漠！"</p>
+            <p>爷爷回过神来，说："小兵，是不是你早就知道，故意骗爷爷来的？"</p>
+            <p>小兵憋住笑，说："爷爷，我是知道，但还真没来过……现在都是通过遥感技术来测量和绘制的。"</p>
+            <p>爷爷说："今天的技术就这么神奇？"小兵点点头，自豪地说："当然啦，通过人工智能进行地图数据收集和分析，目前已经能够高度自动化地生成要素丰富的高精地图，甚至道路上的虚线都能显示出来……"</p>
+            <p>好半天，爷爷都没说话。末了，他感慨了一句："我也想再活五百年，在福窝里还没扑腾够呢。"</p>
+            <p class="source">（选自《微型小说选刊》2022年第23期，有删节）</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>请根据文章内容，梳理爷爷对地图情感变化的脉络，完成下面表格。（4 分）</p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #ff9800; color: white;">
+                                <th style="padding: 10px 15px; text-align: left;">情节</th>
+                                <th style="padding: 10px 15px; text-align: left;">爷爷的情感/态度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 15px;">退休后，每天看地图，讲述地名背后的故事</td>
+                                <td style="padding: 10px 15px;">① ________</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
+                                <td style="padding: 10px 15px;">孙子带回最新版《中国地图》，爷爷仔细查看</td>
+                                <td style="padding: 10px 15px;">② ________</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 15px;">爷爷发现毛乌素沙漠"消失"了，孙子提议去实地看看</td>
+                                <td style="padding: 10px 15px;">③ ________</td>
+                            </tr>
+                            <tr style="background: #fafafa;">
+                                <td style="padding: 10px 15px;">开车到榆林，亲眼看到茫茫林海（绿洲）</td>
+                                <td style="padding: 10px 15px;">④ ________</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson02-part4.html">← Part 4 真题训练</a>
+            <a href="lesson02.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.style.cursor = 'pointer';
+            step.addEventListener('click', () => {
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02-appendix.html'];
+                window.location.href = pages[index];
+            });
+        });
+    </script>
+</body>
+</html>
