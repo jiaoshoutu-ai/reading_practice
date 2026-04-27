@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 02 课 第 4 部分 真题训练 - 初中现代文阅读专题课程</title>
+    <script src="../deepseek.browser.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .practice-section h2 {
+            color: #ff9800;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .passage-box p {
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        .passage-box .para-num {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .passage-box .para-line {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .passage-box .para-line > span:last-child {
+            flex: 1;
+        }
+
+        .question-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-box strong {
+            color: #e65100;
+        }
+
+        /* Answer table */
+        .answer-table-wrap {
+            margin: 20px 0;
+        }
+
+        .answer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .answer-table th {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .answer-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ffe0b2;
+            color: #333;
+        }
+
+        .answer-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .answer-table .highlight {
+            color: #11998e;
+            font-weight: bold;
+        }
+
+        /* Input fields for blanks */
+        .blank-input {
+            width: 100%;
+            min-width: 120px;
+            padding: 8px 12px;
+            border: 2px solid #ffe0b2;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: #333;
+            background: #fff8e1;
+            transition: border-color 0.2s;
+        }
+
+        .blank-input:focus {
+            outline: none;
+            border-color: #ff9800;
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
+        }
+
+        .blank-input.correct-input {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .blank-input.incorrect-input {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        /* Submit and action buttons */
+        .submit-btn {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 15px 10px 15px 0;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        /* AI comment box */
+        .ai-comment-box {
+            flex: 1;
+            display: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
+            min-width: 200px;
+        }
+
+        .ai-comment-box.show {
+            display: block;
+        }
+
+        .ai-comment-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .ai-comment-box p {
+            color: #555;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Score feedback */
+        .score-feedback {
+            display: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .score-feedback.show {
+            display: block;
+        }
+
+        .score-feedback.good {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            color: #2e7d32;
+        }
+
+        .score-feedback.partial {
+            background: #fff8e1;
+            border: 2px solid #ff9800;
+            color: #e65100;
+        }
+
+        .score-feedback.weak {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            color: #c62828;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .analysis-box {
+            background: #fff8e1;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .analysis-box strong {
+            color: #e65100;
+        }
+
+        .analysis-box p {
+            margin-top: 8px;
+            line-height: 2;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #11998e;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #11998e;
+            color: white;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .coming-soon h3 {
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+
+        .coming-soon p {
+            color: #555;
+        }
+
+        .tip-box {
+            background: #e0f2f1;
+            border-left: 4px solid #11998e;
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin: 15px 0;
+            color: #004d40;
+            font-size: 0.93rem;
+        }
+
+        .tip-box strong {
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
+            <div class="progress-step completed">Part 1 真题训练</div>
+            <div class="progress-step completed">Part 2 高度概括</div>
+            <div class="progress-step completed">Part 3 常见误区</div>
+            <div class="progress-step active">Part 4 真题训练</div>
+            <div class="progress-step">附录</div>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 02 课</span>
+            <span class="part-badge">第四部分</span>
+            <h1>真题训练（高度概括专项）</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">运用 Part 2 学到的"情节 → 情感"对应法，完成以下中考真题。每题都是填表形式，考查高度概括能力。</p>
+        </div>
+
+        <!-- ==================== Practice 1: 老柿树 ==================== -->
+        <div class="practice-section">
+            <h2>真题练习一</h2>
+
+            <div class="passage-box">
+                <div class="para-line"><span class="para-num">①</span><span>我临窗而坐，旁边坐着一位年轻的少尉。他腋下夹着一个浅灰色公文包，神色庄重。自从踏上列车，他就一直坐在我的旁边，没有言语。</span></div>
+                <div class="para-line"><span class="para-num">②</span><span>列车经过十几个小时的行驶，这会儿，已从南国秀丽的山川进入了一片丘陵地带。窗外古朴的山峦，在旭阳的铺盖下，呈现出一片醒目的土黄。</span></div>
+                <div class="para-line"><span class="para-num">③</span><span>突然，那少尉说话了："请你跟我换换座位好吗？列车就要经过我的家乡了，我想好好看看。"</span></div>
+                <div class="para-line"><span class="para-num">④</span><span>我一听，忙说："行。"</span></div>
+                <div class="para-line"><span class="para-num">⑤</span><span>换过座位，我问他："路过家乡不停停？"</span></div>
+                <div class="para-line"><span class="para-num">⑥</span><span>他说："不行啊，任务太紧。"</span></div>
+                <div class="para-line"><span class="para-num">⑦</span><span>"看样子，你很久没回过家乡了吧？"我又问。</span></div>
+                <div class="para-line"><span class="para-num">⑧</span><span>他点点头，说："三年了。"言语中流露出满腔的思乡情。又说："本来部队这几天要安排我探家的，我把电报都打回家了，可突然来了任务……"他说着，把脸扭向窗外，深情地注视着窗外的世界。窗外起伏的黄色山峦，在眼前一一闪过。我想，他的家乡就要到了。</span></div>
+                <div class="para-line"><span class="para-num">⑨</span><span>不一会儿，他扭过头来满脸兴奋的样子："你看到那道山峦了吗？最高处的那道！"</span></div>
+                <div class="para-line"><span class="para-num">⑩</span><span>我点点头。我看到的是一道非常普通而贫瘠的黄色山峦，山脊上寥寥地生长着一些类似荆条的植物，远远望去，在秋阳里显得寂寥和淳朴。</span></div>
+                <div class="para-line"><span class="para-num">⑾</span><span>"那就是我的家乡。"他又说，"我们的村子就在这道山的后边，从这儿看不到，不过，可以看到山脊上我们村子的那棵老柿树。"他的表情欣喜、自豪极了。</span></div>
+                <div class="para-line"><span class="para-num">⑿</span><span>我被他的情绪感染了，指着窗外的一段山峦说："这儿离你们村子很近了吧？"</span></div>
+                <div class="para-line"><span class="para-num">⒀</span><span>"很近了，很近了。"他又指着窗外的黄土山，"我小时候割草，总跑到这儿来，这山上的草肥极了，不一会儿就能割上一大篮子。"他兴致勃勃。</span></div>
+                <p style="text-align: center; color: #999; text-indent: 0;">（文章有删节）</p>
+            </div>
+
+            <div class="question-box">
+                <p><strong>题目：</strong>请按照事情发生的先后顺序，根据提示，补全下面表格。（4 分）</p>
+            </div>
+
+            <table class="answer-table" id="practice-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">情节</th>
+                        <th style="width: 50%;">少尉的情感</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>路过家乡，停不了车，不能回家</td>
+                        <td><input type="text" class="blank-input" id="blank1" placeholder="请输入①的情感"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="blank-input" id="blank2" placeholder="请输入②的情节"></td>
+                        <td>郑重</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="blank-input" id="blank3" placeholder="请输入③的情节"></td>
+                        <td><input type="text" class="blank-input" id="blank4" placeholder="请输入④的情感"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="btn-row">
+                <button class="submit-btn" id="submit-btn" onclick="submitAnswer()">提交答案</button>
+                <div id="score-feedback" class="score-feedback"></div>
+                <div id="ai-comment" class="ai-comment-box"></div>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleAnswer('answer1')">参考答案</button>
+
+            <div id="answer1" class="hidden-content">
+                <div class="answer-table-wrap">
+                    <table class="answer-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">情节</th>
+                                <th style="width: 50%;">少尉的情感</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>路过家乡，停不了车，不能回家</td>
+                                <td class="highlight">思乡（或：失落、遗憾）</td>
+                            </tr>
+                            <tr>
+                                <td class="highlight">请"我"换座（或：让"我"换座）</td>
+                                <td class="highlight">真挚 / 恳切</td>
+                            </tr>
+                            <tr>
+                                <td class="highlight">发现家乡（或：看到家乡的山峦、老柿树）</td>
+                                <td class="highlight">欣喜、自豪</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-box">
+                    <strong>解题思路：</strong>
+                    <p>① 对应第 ⑥⑧ 段："不行啊，任务太紧""言语中流露出满腔的思乡情"——少尉因任务紧无法回家，情感是<strong>思乡/失落/遗憾</strong>。</p>
+                    <p>② 对应第 ③⑤⑧ 段：少尉请"我"换座，原文"神色庄重""言语中流露出满腔的思乡情"——这个情节概括为<strong>请"我"换座</strong>，情感用原文提示词<strong>真挚/恳切</strong>。</p>
+                    <p>③④ 对应第 ⑨⑾ 段：看到家乡的山峦和老柿树，原文明确写出"满脸兴奋""欣喜、自豪极了"——情节概括为<strong>发现家乡</strong>，情感是<strong>欣喜、自豪</strong>。</p>
+                </div>
+
+                <div class="tip-box">
+                    <strong>🎯 对应视频教材要点：</strong>这题正好对应高度概括题的"解题三步法"——情节拆分：第 1-2 空考察对"情节发展第一步"的概括；第 3 空答案隐藏在第 ⑤-⑧ 段；第 4 空答案在第 ⑾ 段。必须严格遵循文章的叙述顺序，确定情节的前后因果关系，从而缩小信息搜寻范围并锁定关键信息。
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Coming Soon ==================== -->
+        <div class="coming-soon">
+            <h3>更多真题练习即将更新</h3>
+            <p>真题练习二、三正在准备中，敬请期待。</p>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson02-part3.html">← Part 3 常见误区</a>
+            <a href="lesson02.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.style.cursor = 'pointer';
+            step.addEventListener('click', () => {
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02.html'];
+                window.location.href = pages[index];
+            });
+        });
+
+        function toggleAnswer(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function submitAnswer() {
+            var b1 = document.getElementById('blank1').value.trim();
+            var b2 = document.getElementById('blank2').value.trim();
+            var b3 = document.getElementById('blank3').value.trim();
+            var b4 = document.getElementById('blank4').value.trim();
+
+            if (!b1 && !b2 && !b3 && !b4) {
+                alert('请先填写至少一个空后再提交');
+                return;
+            }
+
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').textContent = '提交中...';
+
+            var answers = [b1, b2, b3, b4];
+            getAIScore(answers);
+        }
+
+        function getAIScore(answers) {
+            var scoreFeedback = document.getElementById('score-feedback');
+            var aiComment = document.getElementById('ai-comment');
+
+            scoreFeedback.style.display = 'block';
+            scoreFeedback.className = 'score-feedback show';
+            scoreFeedback.textContent = 'AI 正在评分中...';
+            aiComment.classList.remove('show');
+
+            var userAnswerStr = '①' + answers[0] + '，②' + answers[1] + '，③' + answers[2] + '，④' + answers[3];
+
+            var reference = '①思乡（或失落、遗憾） ②请"我"换座（或让"我"换座） ③发现家乡（或看到家乡的山峦、老柿树） ④欣喜、自豪';
+
+            var prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】请按照事情发生的先后顺序，根据提示，补全表格（4分，每空1分）。\n【文章梗概】《老柿树》讲的是列车上，一位三年没回家的年轻少尉，路过家乡时请求邻座换座位，为了看看家乡的山峦和老柿树。他神色庄重→思乡情浓→欣喜自豪→兴致勃勃，展现了深沉的思乡之情。\n【参考答案】' + reference + '\n\n【学生答案】' + userAnswerStr + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分，每空1分）\n2. 逐空判断是否答对，并说明理由\n3. 如果有空没答到点子上，给出具体改进建议\n4. 整体语言是否简洁准确\n\n请用简洁、鼓励性的语言，总分结构回复。';
+
+            window.chat(prompt).then(function(comment) {
+                // Simple scoring based on keyword matching
+                var score = 0;
+                var b1 = answers[0];
+                var b2 = answers[1];
+                var b3 = answers[2];
+                var b4 = answers[3];
+
+                // Score blank 1 (情感)
+                if (/思乡|失落|遗憾|伤感|惆怅|思念/.test(b1)) score++;
+                // Score blank 2 (情节)
+                if (/换座|换座位|请.*换/.test(b2)) score++;
+                // Score blank 3 (情节)
+                if (/发现家乡|看到家乡|老柿树|山峦/.test(b3)) score++;
+                // Score blank 4 (情感)
+                if (/欣喜|自豪|兴奋|高兴|激动|骄傲/.test(b4)) score++;
+
+                // Show score feedback
+                if (score >= 3) {
+                    scoreFeedback.className = 'score-feedback show good';
+                    scoreFeedback.textContent = '得分：' + score + '/4 分 —— 做得很好！';
+                } else if (score >= 1) {
+                    scoreFeedback.className = 'score-feedback show partial';
+                    scoreFeedback.textContent = '得分：' + score + '/4 分 —— 部分答对，再对照参考答案完善一下～';
+                } else {
+                    scoreFeedback.className = 'score-feedback show weak';
+                    scoreFeedback.textContent = '得分：' + score + '/4 分 —— 再看看参考答案，修改一下自己的答案。';
+                }
+
+                // Show AI comment
+                aiComment.innerHTML = '<h4>AI 点评</h4><p>' + comment + '</p>';
+                aiComment.classList.add('show');
+            }).catch(function(error) {
+                console.error('AI 评分失败:', error);
+                scoreFeedback.className = 'score-feedback show weak';
+                scoreFeedback.textContent = 'AI 评分失败：' + error.message;
+                aiComment.innerHTML = '<h4>AI 点评失败</h4><p>请确保已在设置页面配置 API Key。</p>';
+                aiComment.classList.add('show');
+            });
+        }
+    </script>
+</body>
+</html>

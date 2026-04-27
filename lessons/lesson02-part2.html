@@ -351,7 +351,7 @@
             <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
             <div class="progress-step completed">Part 1 真题训练</div>
             <div class="progress-step active">Part 2 高度概括</div>
-            <div class="progress-step">Part 3 常见误区</div>
+            <div class="progress-step completed">Part 3 常见误区</div>
             <div class="progress-step">附录</div>
         </div>
 
@@ -471,7 +471,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02.html'];
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02.html'];
                 window.location.href = pages[index];
             });
         });

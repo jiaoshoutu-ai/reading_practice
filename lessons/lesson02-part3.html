@@ -661,6 +661,7 @@
             <a href="lesson02-part2.html">← Part 2 高度概括</a>
             <a href="lesson02.html">返回课程首页</a>
             <a href="../index.html">返回首页</a>
+            <a href="lesson02-part4.html">进入 Part 4：真题训练 →</a>
         </div>
     </div>
 
@@ -668,7 +669,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02.html'];
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02.html'];
                 window.location.href = pages[index];
             });
         });
