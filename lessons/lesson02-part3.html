@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 02 课 第 3 部分 常见误区与对策 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ff6b6b;
+        }
+
+        .video-section h2 {
+            color: #ff6b6b;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffe0e0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #11998e;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0f2f1;
+        }
+
+        /* Problem cards */
+        .problem-card {
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid;
+        }
+
+        .problem-card:nth-child(2) {
+            border-color: #ff5722;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .problem-card:nth-child(3) {
+            border-color: #9c27b0;
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+
+        .problem-card:nth-child(4) {
+            border-color: #4caf50;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+
+        .problem-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .problem-card:nth-child(2) h3 { color: #e64a19; }
+        .problem-card:nth-child(3) h3 { color: #7b1fa2; }
+        .problem-card:nth-child(4) h3 { color: #2e7d32; }
+
+        .problem-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .problem-card:nth-child(2) .problem-icon { background: #ff5722; }
+        .problem-card:nth-child(3) .problem-icon { background: #9c27b0; }
+        .problem-card:nth-child(4) .problem-icon { background: #4caf50; }
+
+        .problem-desc {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 2;
+            padding-left: 42px;
+        }
+
+        .solution-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            padding: 15px 18px;
+            margin-top: 10px;
+            margin-left: 42px;
+            border-left: 3px solid #11998e;
+        }
+
+        .solution-box strong {
+            color: #11998e;
+        }
+
+        .solution-box p {
+            color: #555;
+            line-height: 1.9;
+        }
+
+        .highlight-word {
+            background: #fff9c4;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #11998e;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #11998e;
+            color: white;
+        }
+
+        .watch-tip {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb74d;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #e65100;
+            font-size: 0.95rem;
+        }
+
+        .watch-tip strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .intro-text {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .summary-box h3 {
+            color: #004d40;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .summary-box p {
+            color: #004d40;
+            line-height: 2;
+        }
+
+        /* Practice section */
+        .practice-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .practice-section h2 {
+            color: #2196f3;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .passage-box p {
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        .task-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .task-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.9;
+        }
+
+        .task-list li:nth-child(1) { border-left: 4px solid #4caf50; }
+        .task-list li:nth-child(2) { border-left: 4px solid #2196f3; }
+        .task-list li:nth-child(3) { border-left: 4px solid #ff9800; }
+
+        .task-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #e91e63;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .answer-box {
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .answer-box h4 {
+            color: #33691e;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .answer-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 15px;
+            font-size: 0.93rem;
+        }
+
+        .answer-table th {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .answer-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e8f5e9;
+            color: #333;
+        }
+
+        .answer-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .answer-note {
+            background: #e8f5e9;
+            border-left: 3px solid #4caf50;
+            padding: 10px 15px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 10px;
+            color: #2e7d32;
+            font-size: 0.93rem;
+        }
+
+        .analysis-box {
+            background: #fff8e1;
+            border: 1px solid #ffcc80;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .analysis-box strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
+            <div class="progress-step completed">Part 1 真题训练</div>
+            <div class="progress-step completed">Part 2 高度概括</div>
+            <div class="progress-step active">Part 3 常见误区</div>
+            <div class="progress-step">附录</div>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 02 课</span>
+            <span class="part-badge">第三部分</span>
+            <h1>常见误区与对策</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">方法都学会了，为什么做题还是不对？视频帮你诊断三大常见问题。</p>
+        </div>
+
+        <!-- ==================== Video Section ==================== -->
+        <div class="video-section">
+            <h2>📺 视频学习：阅读之文章概括（4）方法都会，还是做不对？</h2>
+
+            <div class="video-container">
+                <iframe src="//player.bilibili.com/player.html?bvid=BV1h7411y7FC&page=1&high_quality=1&danmuk=0"
+                        scrolling="no"
+                        border="0"
+                        frameborder="no"
+                        framespacing="0"
+                        allowfullscreen="true">
+                </iframe>
+            </div>
+
+            <div class="watch-tip">
+                <strong>🎯 观看提示</strong>
+                结合自身做题经历，思考自己最常犯的是哪一种错误。每种问题都有对应的解决对策，建议记录下来。
+            </div>
+        </div>
+
+        <!-- ==================== Problem cards Section ==================== -->
+        <div class="card-section">
+            <h2>💊 常见问题诊断</h2>
+
+            <p class="intro-text">方法都会了，做题还是错。通常是因为以下三个"隐形障碍"在干扰你的判断。</p>
+
+            <!-- Problem 1: 原文关键词没捕捉到 -->
+            <div class="problem-card">
+                <h3>
+                    <span class="problem-icon">1</span>
+                    原文关键词没捕捉到
+                </h3>
+                <div class="problem-desc">
+                    <p>比如"<span class="highlight-word">神色庄重</span>""<span class="highlight-word">满脸兴奋</span>""<span class="highlight-word">欣喜自豪</span>"，这些词直接对应情感。如果没圈出来，就会概括偏。</p>
+                </div>
+                <div class="solution-box">
+                    <strong>对策：</strong>
+                    <p>阅读时用笔圈出所有描写<strong>神态、心理</strong>的词。这些词就是解题的"线索"，圈出来再做题，正确率会大幅提升。</p>
+                </div>
+            </div>
+
+            <!-- Problem 2: 不懂"表达技巧"导致误判情感 -->
+            <div class="problem-card">
+                <h3>
+                    <span class="problem-icon">2</span>
+                    不懂"表达技巧"导致误判情感
+                </h3>
+                <div class="problem-desc">
+                    <p>比如文章用"寂寥和淳朴"描写山峦，其实是烘托少尉家乡的普通，但少尉依然自豪——这里用了<strong>反衬</strong>。如果不懂反衬，就可能觉得他情感矛盾。</p>
+                </div>
+                <div class="solution-box">
+                    <strong>对策：</strong>
+                    <p>整理常见表达技巧（<strong>比喻、拟人、对比、反衬、欲扬先抑</strong>等），每个记一个例句。遇到看似矛盾的情感描写，先想"作者是不是在用某种技巧"。</p>
+                </div>
+            </div>
+
+            <!-- Problem 3: 阅历不足，理解不了人物动机 -->
+            <div class="problem-card">
+                <h3>
+                    <span class="problem-icon">3</span>
+                    阅历不足，理解不了人物动机
+                </h3>
+                <div class="problem-desc">
+                    <p>比如《中国地图》里爷爷为什么对着地图"默默地看"？没有长期测绘工作经历或阅读积累，就很难体会那种职业情怀。</p>
+                </div>
+                <div class="solution-box">
+                    <strong>对策：</strong>
+                    <p>读名著，比如<strong>《平凡的世界》《城南旧事》</strong>，先积累"别人的经历"。阅历不够，阅读来凑——每读一本书，就多了一种人生的体验。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-box">
+            <h3>📋 三句话总结</h3>
+            <p>第一句：<strong>圈关键词</strong>——神态心理词就是情感密码<br>
+            第二句：<strong>懂表达技巧</strong>——看似矛盾时，想想是不是用了反衬、欲扬先抑<br>
+            第三句：<strong>多读书</strong>——阅历不够，阅读来凑</p>
+        </div>
+
+        <!-- ==================== Practice Section ==================== -->
+        <div class="practice-section">
+            <h2>✍️ 专项小练习：运用三大对策</h2>
+
+            <div class="passage-box">
+                <p>父亲是个木匠。我小时候最讨厌他手上的老茧，摸在脸上像砂纸。直到那年我考上县一中，他半夜在院子里对着月光刨一根木头，刨花卷了满地。第二天早晨，他递给我一个崭新的木箱子，漆面亮得能照见人影。他搓着手说："将就用。"可我分明看见，他拇指上的老茧渗出了血珠。</p>
+            </div>
+
+            <ul class="task-list">
+                <li>
+                    <span class="task-num">1</span>
+                    <span>圈出描写父亲情感/态度的词句（至少 3 处）</span>
+                </li>
+                <li>
+                    <span class="task-num">2</span>
+                    <span>判断"我"的情感前后有什么变化，用两个<strong>四字词</strong>概括</span>
+                </li>
+                <li>
+                    <span class="task-num">3</span>
+                    <span>指出这里用了哪种表达技巧（提示：对比 / 先抑后扬）</span>
+                </li>
+            </ul>
+
+            <button class="toggle-btn" onclick="toggleAnswer('practice-answer')">点击查看答案与解析</button>
+
+            <div id="practice-answer" class="hidden-content">
+                <!-- Task 1 Answer -->
+                <div class="answer-box">
+                    <h4>任务 1：圈出描写父亲情感/态度的词句（至少 3 处）</h4>
+                    <table class="answer-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 8%;">序号</th>
+                                <th style="width: 42%;">原文词句</th>
+                                <th style="width: 50%;">体现的情感/态度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>①</td>
+                                <td>"半夜在院子里对着月光刨一根木头"</td>
+                                <td>默默付出、不辞辛苦</td>
+                            </tr>
+                            <tr>
+                                <td>②</td>
+                                <td>"他搓着手说"</td>
+                                <td>紧张、不好意思、掩饰辛苦</td>
+                            </tr>
+                            <tr>
+                                <td>③</td>
+                                <td>"将就用"</td>
+                                <td>故作轻松、实则重视（反话）</td>
+                            </tr>
+                            <tr>
+                                <td>④</td>
+                                <td>"拇指上的老茧渗出了血珠"</td>
+                                <td>隐忍、无私、令人心疼</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="answer-note">✅ 以上写出任 3 处即可。</div>
+                </div>
+
+                <!-- Task 2 Answer -->
+                <div class="answer-box">
+                    <h4>任务 2："我"的情感前后变化，用两个四字词概括</h4>
+                    <table class="answer-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 22%;">阶段</th>
+                                <th style="width: 38%;">情感</th>
+                                <th style="width: 40%;">四字词示例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>小时候</td>
+                                <td>讨厌父亲的老茧</td>
+                                <td>厌恶嫌弃 / 反感抵触</td>
+                            </tr>
+                            <tr>
+                                <td>看到木箱及血茧后</td>
+                                <td>被父爱感动，心生愧疚</td>
+                                <td>感动愧疚 / 心疼理解</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="answer-note">✅ 完整答案：从"厌恶嫌弃"到"感动愧疚"（顺序不能反）</div>
+                </div>
+
+                <!-- Task 3 Answer -->
+                <div class="analysis-box">
+                    <strong>任务 3：指出这里用了哪种表达技巧</strong>
+                    <p style="color: #555; margin-top: 8px; line-height: 2;">答案：<strong>先抑后扬</strong>（或 <strong>对比</strong>）</p>
+                    <p style="color: #555; margin-top: 8px; line-height: 2;">先抑：开头写"我"讨厌父亲的老茧，摸在脸上像砂纸（<strong>负面情感</strong>）</p>
+                    <p style="color: #555; line-height: 2;">后扬：后面通过做木箱、血茧等细节，展现深沉的父爱，让"我"感动（<strong>正面情感</strong>）</p>
+                    <div class="answer-note" style="margin-top: 12px;">✅ 这种手法的作用是：使情感变化更鲜明，突出父爱的无声与厚重。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson02-part2.html">← Part 2 高度概括</a>
+            <a href="lesson02.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.progress-step').forEach((step, index) => {
+            step.style.cursor = 'pointer';
+            step.addEventListener('click', () => {
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02.html'];
+                window.location.href = pages[index];
+            });
+        });
+
+        function toggleAnswer(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

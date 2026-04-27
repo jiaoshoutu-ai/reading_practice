@@ -397,8 +397,9 @@
     <div class="container">
         <!-- Progress indicator -->
         <div class="progress-indicator">
+            <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
             <div class="progress-step active">Part 1 真题训练</div>
-            <div class="progress-step">Part 2 进阶概括</div>
+            <div class="progress-step">Part 2 高度概括</div>
             <div class="progress-step">Part 3 综合练习</div>
             <div class="progress-step">附录</div>
         </div>
@@ -612,8 +613,10 @@
 
         <!-- Navigation links -->
         <div class="nav-links">
-            <a href="lesson02.html">← 返回课程首页</a>
+            <a href="lesson02-review.html">← 复习回顾</a>
+            <a href="lesson02.html">返回课程首页</a>
             <a href="../index.html">返回首页</a>
+            <a href="lesson02-part2.html">进入 Part 2：高度概括 →</a>
             <a href="lesson01-part3.html">对比 01 课真题 →</a>
         </div>
     </div>
@@ -623,7 +626,7 @@
         document.querySelectorAll('.progress-step').forEach((step, index) => {
             step.style.cursor = 'pointer';
             step.addEventListener('click', () => {
-                const pages = ['lesson02-part1.html', 'lesson02.html', 'lesson02.html', 'lesson02.html'];
+                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02.html', 'lesson02.html'];
                 window.location.href = pages[index];
             });
         });
