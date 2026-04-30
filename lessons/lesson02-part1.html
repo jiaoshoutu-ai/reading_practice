@@ -94,7 +94,12 @@
             background: #e0e0e0;
             color: #666;
             font-size: 0.9rem;
-            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
         }
 
         .progress-step.completed {
@@ -397,12 +402,12 @@
     <div class="container">
         <!-- Progress indicator -->
         <div class="progress-indicator">
-            <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
-            <div class="progress-step active">Part 1 真题训练</div>
-            <div class="progress-step completed">Part 2 高度概括</div>
-            <div class="progress-step completed">Part 3 常见误区</div>
-            <div class="progress-step">Part 4 真题训练</div>
-            <div class="progress-step">附录</div>
+            <a href="lesson02-review.html" class="progress-step" id="prog-review">Part 0 复习回顾</a>
+            <a href="lesson02-part1.html" class="progress-step active">Part 1 真题训练</a>
+            <a href="lesson02-part2.html" class="progress-step completed">Part 2 高度概括</a>
+            <a href="lesson02-part3.html" class="progress-step completed">Part 3 常见误区</a>
+            <a href="lesson02-part4.html" class="progress-step">Part 4 真题训练</a>
+            <a href="lesson02-appendix.html" class="progress-step">附录</a>
         </div>
 
         <div class="lesson-header">
@@ -623,14 +628,7 @@
     </div>
 
     <script>
-        // Progress indicator click navigation
-        document.querySelectorAll('.progress-step').forEach((step, index) => {
-            step.style.cursor = 'pointer';
-            step.addEventListener('click', () => {
-                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02-appendix.html'];
-                window.location.href = pages[index];
-            });
-        });
+        // Progress indicator is now native <a> links
 
         function toggleAnswer(id) {
             var content = document.getElementById(id);
@@ -667,7 +665,7 @@
                     throw new Error('AI 模块未加载，请刷新页面重试');
                 }
 
-                const referenceAnswer = "1. 小时候，"我"崇拜父亲吹长笛，觉得他是最了不起的人；2. 初中时，"我"因同学嘲笑，要求父亲不要再在学校附近吹长笛；3. 搬家后，父亲很少再吹长笛，只在夜深时抚摸长笛；4. 多年后，父亲在电话里为"我"吹长笛，手已生疏。";
+                const referenceAnswer = '1. 小时候，"我"崇拜父亲吹长笛，觉得他是最了不起的人；2. 初中时，"我"因同学嘲笑，要求父亲不要再在学校附近吹长笛；3. 搬家后，父亲很少再吹长笛，只在夜深时抚摸长笛；4. 多年后，父亲在电话里为"我"吹长笛，手已生疏。';
                 const prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】文章写了关于父亲的哪几件事？请用简洁的语言分别概括。（4 分）\n【文章梗概】《父亲的长笛》讲的是父亲擅长吹长笛，女儿小时候崇拜父亲，初中时因同学嘲笑嫌弃父亲在街头吹笛子，让父亲不要再在学校附近吹了。父亲收起长笛不再吹。多年后女儿在异乡工作，父亲在电话里为她吹了一段，女儿泪流满面。\n【参考答案】' + referenceAnswer + '\n\n【学生答案】' + answer + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分）\n2. 是否找出了 4 件事\n3. 是否按时间顺序概括\n4. 是否体现女儿情感的变化\n5. 语言是否简洁，有自己的归纳\n6. 具体改进建议\n\n请用简洁、鼓励性的语言，总分结构回复。';
 
                 const comment = await window.chat(prompt);
@@ -753,7 +751,7 @@
                     throw new Error('AI 模块未加载，请刷新页面重试');
                 }
 
-                const referenceAnswer = "汪老师：在"我"演讲紧张时鼓励"我"，帮"我"改演讲稿、听"我"练习，让"我"拿了演讲比赛第二名；教会了"我"要勇敢表达。\n刘老师：在"我"数学考倒数第三时，在试卷上写"我相信你"；从此"我"发奋努力，中考数学考了满分；教会了"我"不要放弃。";
+                const referenceAnswer = '汪老师：在"我"演讲紧张时鼓励"我"，帮"我"改演讲稿、听"我"练习，让"我"拿了演讲比赛第二名；教会了"我"要勇敢表达。\n刘老师：在"我"数学考倒数第三时，在试卷上写"我相信你"；从此"我"发奋努力，中考数学考了满分；教会了"我"不要放弃。';
                 const prompt = '请对以下学生的阅读理解答案进行打分和点评。\n\n【题目】文章写了两位老师的哪些事？分别对"我"产生了怎样的影响？请简要概括。（4 分）\n【文章梗概】文章为并列片段式结构：第一位汪老师是高中语文老师，她鼓励内向的"我"勇敢演讲，帮"我"改稿七遍，最终"我"拿到演讲比赛第二名；汪老师教会"我"勇敢表达。第二位刘老师是初中数学老师，在"我"考倒数第三时写下"我相信你"，"我"从此发奋，中考数学考了满分；刘老师教会"我"不要放弃。\n【参考答案】' + referenceAnswer + '\n\n【学生答案】' + answer + '\n\n请从以下几个方面进行点评：\n1. 打分（0-4 分）\n2. 是否分别概括了两位老师的事迹（不混淆）\n3. 是否写出了每位老师对"我"的具体影响\n4. 是否识别了并列片段式结构\n5. 语言是否简洁\n6. 具体改进建议\n\n请用简洁、鼓励性的语言，总分结构回复。';
 
                 const comment = await window.chat(prompt);

@@ -93,7 +93,12 @@
             background: #e0e0e0;
             color: #666;
             font-size: 0.9rem;
-            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
         }
 
         .progress-step.active {
@@ -461,11 +466,12 @@
     <div class="container">
         <!-- Progress indicator -->
         <div class="progress-indicator">
-            <div class="progress-step" id="prog-review">Part 0 复习回顾</div>
-            <div class="progress-step completed">Part 1 真题训练</div>
-            <div class="progress-step completed">Part 2 高度概括</div>
-            <div class="progress-step active">Part 3 常见误区</div>
-            <div class="progress-step">附录</div>
+            <a href="lesson02-review.html" class="progress-step" id="prog-review">Part 0 复习回顾</a>
+            <a href="lesson02-part1.html" class="progress-step completed">Part 1 真题训练</a>
+            <a href="lesson02-part2.html" class="progress-step completed">Part 2 高度概括</a>
+            <a href="lesson02-part3.html" class="progress-step active">Part 3 常见误区</a>
+            <a href="lesson02-part4.html" class="progress-step">Part 4 真题训练</a>
+            <a href="lesson02-appendix.html" class="progress-step">附录</a>
         </div>
 
         <div class="lesson-header">
@@ -666,13 +672,7 @@
     </div>
 
     <script>
-        document.querySelectorAll('.progress-step').forEach((step, index) => {
-            step.style.cursor = 'pointer';
-            step.addEventListener('click', () => {
-                const pages = ['lesson02-review.html', 'lesson02-part1.html', 'lesson02-part2.html', 'lesson02-part3.html', 'lesson02-part4.html', 'lesson02-appendix.html'];
-                window.location.href = pages[index];
-            });
-        });
+        // Progress indicator is now native <a> links
 
         function toggleAnswer(id) {
             var content = document.getElementById(id);
