@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 03 课 第 2 部分 主旨题的核心思路 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%);
+            color: white;
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #ff6b6b;
+        }
+
+        .video-section h2 {
+            color: #ff6b6b;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffe0e0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container .video-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #fb7299, #333);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .video-container .video-link:hover {
+            opacity: 0.85;
+        }
+
+        .watch-tip {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb74d;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #e65100;
+            font-size: 0.95rem;
+        }
+
+        .watch-tip strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .watch-tip ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .watch-tip li {
+            margin-bottom: 4px;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section h3 {
+            color: #e91e63;
+            font-size: 1.15rem;
+            margin: 20px 0 12px;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .card-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Two-column approach cards */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .approach-card {
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid;
+        }
+
+        .approach-card.derive {
+            background: #e8eaf6;
+            border-color: #5c6bc0;
+        }
+
+        .approach-card.locate {
+            background: #fce4ec;
+            border-color: #e91e63;
+        }
+
+        .approach-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .approach-card.derive h3 { color: #283593; }
+        .approach-card.locate h3 { color: #c62828; }
+
+        .approach-card ul {
+            margin-left: 20px;
+        }
+
+        .approach-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Genre type cards */
+        .genre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .genre-card {
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        .genre-card.person { background: #e3f2fd; border-color: #42a5f5; }
+        .genre-card.event { background: #e8f5e9; border-color: #66bb6a; }
+        .genre-card.scene { background: #fff8e1; border-color: #ffa723; }
+        .genre-card.object { background: #f3e5f5; border-color: #ab47bc; }
+
+        .genre-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .genre-card.person h4 { color: #1565c0; }
+        .genre-card.event h4 { color: #2e7d32; }
+        .genre-card.scene h4 { color: #e65100; }
+        .genre-card.object h4 { color: #6a1b9a; }
+
+        .genre-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Genre term table */
+        .term-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .term-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .term-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e8eaf6;
+        }
+
+        .term-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .term-table tr:hover {
+            background: #f0f4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .key-point {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #7b1fa2;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson03-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson03-part2.html" class="progress-step active">Part 2 核心思路</a>
+            <a href="lesson03-part3.html" class="progress-step">Part 3 真题实战</a>
+            <a href="lesson03-part4.html" class="progress-step">Part 4 综合练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 03 课</span>
+            <span class="part-badge">第二部分</span>
+            <h1>主旨题的核心思路</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">理解"主旨"的本质，掌握从内容到思想的提炼方法。</p>
+        </div>
+
+        <!-- ==================== Video Section ==================== -->
+        <div class="video-section">
+            <h2>📺 视频学习：主旨理解导学</h2>
+
+            <div class="video-container">
+                <a href="https://www.bilibili.com/video/BV1A741197bP" target="_blank" rel="noopener" class="video-link">
+                    ▶ 点击在 B 站观看视频
+                </a>
+            </div>
+
+            <div class="watch-tip">
+                <strong>🎯 观看提示</strong>
+                本节课重点讲解"主旨"的概念、考察方式及解题思路。理解主旨必须基于文章内容，不能无凭无据直接作答。
+            </div>
+        </div>
+
+        <!-- ==================== Section 1: What is 主旨 ==================== -->
+        <div class="card-section">
+            <h2>📇 一、什么是"主旨"？</h2>
+
+            <div class="formula-box">
+                <div class="formula">文字 + 结构 → 内容 → 思想感情（主旨）</div>
+                <div class="subtitle">文章由文字和结构构成内容，内容反映思想感情</div>
+            </div>
+
+            <p><strong>主旨 = 文章主要的思想感情</strong></p>
+            <p>理解主旨的逻辑顺序：</p>
+            <ol style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li><strong>先概括内容</strong>：文章写了什么人、什么事、什么景</li>
+                <li><strong>再提炼思想感情</strong>：作者通过这些内容想表达什么</li>
+            </ol>
+
+            <div class="key-point">
+                <strong>核心原则：</strong>不能无凭无据地直接回答主旨。就像评判一个人必须依据他的行为一样，理解主旨必须依据文章的内容。
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>主要内容 vs 主要思想感情</h3>
+            <div class="example-box">
+                <h4>示例：《看自行车的女人》</h4>
+                <p><strong>主要内容（概括）：</strong>看自行车的女人在暴雨中帮"我"守护自行车并寻找车钥匙。</p>
+                <p><strong>主要思想感情（主旨）：</strong>表达了"我"对陌生人真诚与善良的感激与敬意。</p>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: 不同文体中的称谓 ==================== -->
+        <div class="card-section">
+            <h2>📝 二、主旨在不同文体中的称谓</h2>
+            <p>不同文体对"核心思想"的叫法不同，但本质都是文章的核心意图。</p>
+
+            <table class="term-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">文体类型</th>
+                        <th style="width: 35%;">常用称谓</th>
+                        <th style="width: 35%;">关注重点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>记叙文（文学作品）</strong></td>
+                        <td>主题、主题思想、中心思想、思想感情</td>
+                        <td>人物情感、作者态度</td>
+                    </tr>
+                    <tr>
+                        <td><strong>议论文</strong></td>
+                        <td>中心论点、基本观点</td>
+                        <td>作者的观点和态度</td>
+                    </tr>
+                    <tr>
+                        <td><strong>说明文</strong></td>
+                        <td>中心意思</td>
+                        <td>说明对象的特征</td>
+                    </tr>
+                    <tr>
+                        <td><strong>公文</strong></td>
+                        <td>主旨</td>
+                        <td>发文目的</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ==================== Section 3: 考察方式 ==================== -->
+        <div class="card-section">
+            <h2>🎯 三、主旨的常见考察方式</h2>
+            <p>中考很少直接问"请概括本文主旨"，更多是<strong>间接考察</strong>：</p>
+
+            <table class="term-table">
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">题型</th>
+                        <th style="width: 40%;">常见问法</th>
+                        <th style="width: 25%;">与主旨的关系</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>关键句理解</strong></td>
+                        <td>"这句话有什么含义/作用？"</td>
+                        <td>该句与主旨息息相关</td>
+                    </tr>
+                    <tr>
+                        <td><strong>标题内涵</strong></td>
+                        <td>"谈谈你对标题的理解"</td>
+                        <td>标题往往暗示或直接点明主旨</td>
+                    </tr>
+                    <tr>
+                        <td><strong>启示感受</strong></td>
+                        <td>"你读了有什么感受/启示？"</td>
+                        <td>实则考察对主旨的领悟</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-point">
+                <strong>重要发现：</strong>大多数解答题最后都需落脚到"<span class="highlight">表达了作者什么样的思想感情</span>"。
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 两大核心思路 ==================== -->
+        <div class="card-section">
+            <h2>💡 四、理解主旨的两大核心思路</h2>
+
+            <div class="approach-grid">
+                <div class="approach-card derive">
+                    <h3>思路一：分析内容推导</h3>
+                    <p><strong>（基础方法）</strong></p>
+                    <ul>
+                        <li>分析文章写了什么人、什么事、什么景</li>
+                        <li>判断人物性格、事件意义、景物特点</li>
+                        <li>由此得出思想感情</li>
+                    </ul>
+                    <div class="example-box" style="margin-top: 15px; padding: 15px;">
+                        <p style="font-size: 0.9rem;"><strong>公式：</strong></p>
+                        <p style="font-size: 0.9rem;">写了谁 → 他做了什么 → 他有什么性格 → 赞美/批评什么</p>
+                    </div>
+                </div>
+                <div class="approach-card locate">
+                    <h3>思路二：直接寻找线索</h3>
+                    <p><strong>（快速定位）</strong></p>
+                    <ul>
+                        <li><strong>标题</strong>：文章的眼睛，往往暗示或直接点明主旨</li>
+                        <li><strong>开头和结尾</strong>：中心句常位于首尾</li>
+                        <li><strong>议论和抒情句</strong>：议论表达观点，抒情抒发情感</li>
+                    </ul>
+                    <div class="example-box" style="margin-top: 15px; padding: 15px;">
+                        <p style="font-size: 0.9rem;"><strong>口诀：</strong>看标题、读首尾、找议论抒情</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 不同类型文章的侧重点 ==================== -->
+        <div class="card-section">
+            <h2>📚 五、不同类型文章的侧重点</h2>
+            <p>根据文章侧重快速定位主旨：</p>
+
+            <div class="genre-grid">
+                <div class="genre-card person">
+                    <h4>写人记叙文</h4>
+                    <p>抓住人物言行<br>判断性格<br>确定中心</p>
+                </div>
+                <div class="genre-card event">
+                    <h4>叙事记叙文</h4>
+                    <p>把握事件<br>凸显意义</p>
+                </div>
+                <div class="genre-card scene">
+                    <h4>写景记叙文</h4>
+                    <p>通过景物特点<br>理解作者情感<br>（借景抒情）</p>
+                </div>
+                <div class="genre-card object">
+                    <h4>状物记叙文</h4>
+                    <p>注意托物言志<br>借物喻人<br>通过物的特点<br>映射人的品质</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson03-part1.html">← Part 1：复习回顾</a>
+            <a href="lesson03.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson03-part3.html">进入 Part 3：真题实战 →</a>
+        </div>
+    </div>
+</body>
+</html>
