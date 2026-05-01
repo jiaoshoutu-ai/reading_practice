@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 03 课 主旨理解 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .overview {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .overview p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .overview ul {
+            margin-left: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .part-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .part-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .part-card.review { border-left-color: #667eea; }
+        .part-card.part2 { border-left-color: #e91e63; }
+        .part-card.part3 { border-left-color: #2196f3; }
+        .part-card.part4 { border-left-color: #ff9800; }
+
+        .part-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .part-card.part2 .part-number { background: linear-gradient(135deg, #e91e63 0%, #ec407a 100%); }
+        .part-card.part3 .part-number { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); }
+        .part-card.part4 .part-number { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); }
+
+        .part-card h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .part-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .learning-tip {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: #1a237e;
+        }
+
+        .learning-tip h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .learning-tip ol {
+            margin-left: 25px;
+            line-height: 2;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html">&larr; 返回首页</a>
+        </nav>
+
+        <header>
+            <h1>第 03 课 主旨理解</h1>
+            <p>把握文章核心思想，学会概括主题和情感态度</p>
+        </header>
+
+        <div class="overview">
+            <h2>本课学习目标</h2>
+            <p>在前两课掌握记叙文概括方法的基础上，本课将进一步提升到<strong>主旨层面</strong>的理解。不仅要回答"文章写了什么"，更要回答"<strong>作者想表达什么</strong>"。</p>
+            <ul>
+                <li><strong>主旨概括：</strong>掌握从人物、事件、情感中提炼文章主旨的方法</li>
+                <li><strong>情感态度分析：</strong>理解作者对人、事、物的情感倾向和价值判断</li>
+                <li><strong>标题与主旨：</strong>学会通过标题线索理解文章深层含义</li>
+                <li><strong>真题实战：</strong>运用所学方法，完成中考主旨理解类真题</li>
+            </ul>
+        </div>
+
+        <div class="parts-grid">
+            <a href="lesson03-part1.html" class="part-card review">
+                <span class="part-number">Part 0</span>
+                <h3>第 01、02 课复习回顾</h3>
+                <p>回顾核心概括法、两种基本结构和进阶概括技巧</p>
+            </a>
+
+            <a href="lesson03-part2.html" class="part-card part2">
+                <span class="part-number">Part 1</span>
+                <h3>主旨题的核心思路</h3>
+                <p>理解主旨的本质，掌握主旨概括的基本方法</p>
+            </a>
+
+            <a href="lesson03-part3.html" class="part-card part3">
+                <span class="part-number">Part 2</span>
+                <h3>主旨题实战</h3>
+                <p>真题训练，运用主旨概括方法解题</p>
+            </a>
+
+            <a href="lesson03-part4.html" class="part-card part4">
+                <span class="part-number">Part 3</span>
+                <h3>综合练习</h3>
+                <p>综合运用概括与主旨理解能力</p>
+            </a>
+        </div>
+
+        <div class="learning-tip">
+            <h3>学习建议</h3>
+            <ol>
+                <li>先完成 <strong>Part 0：复习回顾</strong>，巩固前两课的概括基础</li>
+                <li>注意区分"概括内容"和"理解主旨"的区别：前者回答"写了什么"，后者回答"为什么写"</li>
+                <li>多做真题，积累不同类型文章的主旨表达模式</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>2026 初中现代文阅读专题课程 | 第 03 课</p>
+        </footer>
+    </div>
+</body>
+</html>
