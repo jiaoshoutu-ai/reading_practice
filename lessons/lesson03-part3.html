@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 03 课 第 3 部分 主旨方法及分类讲解（挚爱亲情） - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+        }
+
+        .video-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid #2196f3;
+        }
+
+        .video-section h2 {
+            color: #2196f3;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container .video-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #fb7299, #333);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .video-container .video-link:hover {
+            opacity: 0.85;
+        }
+
+        .watch-tip {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #0d47a1;
+            font-size: 0.95rem;
+        }
+
+        .watch-tip strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .watch-tip ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .watch-tip li {
+            margin-bottom: 4px;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section h3 {
+            color: #1976d2;
+            font-size: 1.15rem;
+            margin: 20px 0 12px;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .card-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        /* Category cards */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .category-card {
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid;
+            text-align: center;
+        }
+
+        .category-card.family { background: #fce4ec; border-color: #e91e63; }
+        .category-card.object { background: #f3e5f5; border-color: #ab47bc; }
+        .category-card.countryside { background: #e8f5e9; border-color: #66bb6a; }
+        .category-card.growth { background: #fff8e1; border-color: #ffb74d; }
+        .category-card.society { background: #e3f2fd; border-color: #42a5f5; }
+
+        .category-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card.family h4 { color: #c62828; }
+        .category-card.object h4 { color: #6a1b9a; }
+        .category-card.countryside h4 { color: #2e7d32; }
+        .category-card.growth h4 { color: #e65100; }
+        .category-card.society h4 { color: #1565c0; }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Role cards */
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .role-card {
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid;
+        }
+
+        .role-card.father { background: #e8eaf6; border-color: #5c6bc0; }
+        .role-card.mother { background: #fce4ec; border-color: #e91e63; }
+        .role-card.sibling { background: #fff8e1; border-color: #ffb74d; }
+        .role-card.grandparent { background: #e0f2f1; border-color: #26a69a; }
+        .role-card.other { background: #f3e5f5; border-color: #ab47bc; }
+
+        .role-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .role-card.father h4 { color: #283593; }
+        .role-card.mother h4 { color: #c62828; }
+        .role-card.sibling h4 { color: #e65100; }
+        .role-card.grandparent h4 { color: #004d40; }
+        .role-card.other h4 { color: #6a1b9a; }
+
+        .role-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #2196f3 0%, #1976d2 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #2196f3;
+        }
+
+        .timeline-item .stage-label {
+            background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .timeline-item .stage-content {
+            flex: 1;
+        }
+
+        .timeline-item .stage-content strong {
+            color: #1976d2;
+        }
+
+        .timeline-item .stage-content p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        /* Identification cards */
+        .identify-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .identify-card {
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid;
+        }
+
+        .identify-card.character { background: #e8eaf6; border-color: #5c6bc0; }
+        .identify-card.event { background: #e8f5e9; border-color: #66bb6a; }
+        .identify-card.thing { background: #fff3e0; border-color: #ff9800; }
+
+        .identify-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .identify-card.character h4 { color: #283593; }
+        .identify-card.event h4 { color: #2e7d32; }
+        .identify-card.thing h4 { color: #e65100; }
+
+        .identify-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .interpretation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .interpretation-card {
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid;
+        }
+
+        .interpretation-card.surface { background: #e8f5e9; border-color: #66bb6a; }
+        .interpretation-card.emotion { background: #fce4ec; border-color: #e91e63; }
+        .interpretation-card.memory { background: #fff8e1; border-color: #ffb74d; }
+
+        .interpretation-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .interpretation-card.surface h4 { color: #2e7d32; }
+        .interpretation-card.emotion h4 { color: #c62828; }
+        .interpretation-card.memory h4 { color: #e65100; }
+
+        .interpretation-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .high-score-badge {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2196f3;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #2196f3;
+            color: white;
+        }
+
+        .highlight {
+            color: #2196f3;
+            font-weight: bold;
+        }
+
+        .key-point {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #1565c0;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .homework-list {
+            margin-left: 25px;
+        }
+
+        .homework-list li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson03-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson03-part2.html" class="progress-step">Part 2 核心思路</a>
+            <a href="lesson03-part3.html" class="progress-step active">Part 3 主旨分类</a>
+            <a href="lesson03-part4.html" class="progress-step">Part 4 综合练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 03 课</span>
+            <span class="part-badge">第三部分</span>
+            <h1>主旨方法及分类讲解（挚爱亲情）</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">对记叙文主旨进行系统分类，重点掌握"挚爱亲情"类文章的核心特征与解题技巧。</p>
+        </div>
+
+        <!-- ==================== Video Section ==================== -->
+        <div class="video-section">
+            <h2>📺 视频学习：记叙文阅读之主旨方法及分类讲解（挚爱亲情）</h2>
+
+            <div class="video-container">
+                <a href="https://www.bilibili.com/video/BV1kZ4y1j7um?vd_source=d67a608c52aab6d3506c645a00a0be26&spm_id_from=333.788.videopod.sections" target="_blank" rel="noopener" class="video-link">
+                    ▶ 点击在 B 站观看视频
+                </a>
+            </div>
+
+            <div class="watch-tip">
+                <strong>🎯 观看重点</strong>
+                <ul>
+                    <li>主旨的五大分类体系及各自特征</li>
+                    <li>"挚爱亲情"类文章的情感本质与角色特点</li>
+                    <li>人生不同阶段亲情羁绊的演变规律</li>
+                    <li>《香椿的味道》实例解析——多维解读标题含义</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==================== Section 1: 主旨分类与回顾 ==================== -->
+        <div class="card-section">
+            <h2>📇 一、主旨分类与回顾</h2>
+
+            <div class="key-point">
+                <strong>复习要点：</strong>主旨是文章的内在核心，需通过分析内容、结构，结合标题、中心句及议论抒情句来把握。初中阶段通常无需深究写作背景，除非文中有明显提示。
+            </div>
+
+            <p>记叙文的主旨可归纳为<strong>五大类别</strong>：</p>
+
+            <div class="category-grid">
+                <div class="category-card family">
+                    <h4>挚爱亲情</h4>
+                    <p>基于血脉相连的永恒话题，滋养心灵、提供归属感</p>
+                </div>
+                <div class="category-card object">
+                    <h4>托物感怀</h4>
+                    <p>通过对具体事物的描写，抒发人生感悟与精神品质</p>
+                </div>
+                <div class="category-card countryside">
+                    <h4>乡村童年</h4>
+                    <p>以乡土生活为背景，表达对纯真年代的怀念与眷恋</p>
+                </div>
+                <div class="category-card growth">
+                    <h4>成长足迹</h4>
+                    <p>记录个人成长中的关键事件与心灵蜕变</p>
+                </div>
+                <div class="category-card society">
+                    <h4>社会关注</h4>
+                    <p>跳出自我视角，关注社会现象与人间百态（高中考察更多）</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>注意：</strong>前四类侧重<strong>个人体验</strong>，社会关注类则需跳出自我，在高中阶段考察更多。本课将重点讲解第一类——<span class="highlight">挚爱亲情</span>。
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: 挚爱亲情的核心内涵 ==================== -->
+        <div class="card-section">
+            <h2>💕 二、挚爱亲情的核心内涵</h2>
+
+            <div class="formula-box">
+                <div class="formula">血脉相连 · 不可割裂 · 滋养心灵 · 永恒归属</div>
+                <div class="subtitle">亲情的情感本质</div>
+            </div>
+
+            <p>亲情是基于血脉相连的永恒话题，具有<strong>不可割裂性</strong>，能够滋养心灵并提供<strong>归属感</strong>。在记叙文阅读中，不同亲人角色具有不同的情感表达方式：</p>
+
+            <div class="role-grid">
+                <div class="role-card father">
+                    <h4>父爱</h4>
+                    <p>严肃、刚强、深沉内敛，多通过<strong>行动</strong>而非言语表达，如《背影》</p>
+                </div>
+                <div class="role-card mother">
+                    <h4>母爱</h4>
+                    <p>温柔、热烈、慈悲，如涓涓细流滋润人心，文章多以<strong>赞颂</strong>为主</p>
+                </div>
+                <div class="role-card sibling">
+                    <h4>兄弟姐妹</h4>
+                    <p>手足情深，<strong>相互扶持</strong>，共同承担家庭责任，营造温馨氛围</p>
+                </div>
+                <div class="role-card grandparent">
+                    <h4>祖孙情</h4>
+                    <p>长辈多为<strong>爱护者</strong>，晚辈多为依赖者，祖辈常作为庇护港湾</p>
+                </div>
+                <div class="role-card other">
+                    <h4>其他亲人</h4>
+                    <p>在节日团聚中构筑家族温馨氛围，强化<strong>归属感</strong></p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>解题启示：</strong>识别文章中的亲情角色后，要联系该角色的<strong>典型情感表达方式</strong>来分析主旨。例如，写父亲的文章多强调"深沉""无言的爱"，写母亲的文章多强调"温暖""无私的付出"。
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 人生阶段的情感羁绊演变 ==================== -->
+        <div class="card-section">
+            <h2>🌱 三、人生阶段的情感羁绊演变</h2>
+            <p>亲情在不同人生阶段呈现出不同的情感形态，理解这一演变规律有助于准确把握文章的情感基调：</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="stage-label">幼年与少年</span>
+                    <div class="stage-content">
+                        <strong>依赖与服从</strong>
+                        <p>此阶段的文章多表现为对亲人的依赖、信任和服从，情感纯真而直接。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="stage-label">青年时期</span>
+                    <div class="stage-content">
+                        <strong>冲突与觉醒</strong>
+                        <p>自我意识觉醒，易与父母产生观念冲突。文章常以"冲突—理解"为情感线索。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="stage-label">成年时期</span>
+                    <div class="stage-content">
+                        <strong>理解与和解</strong>
+                        <p>逐渐理解父母的良苦用心，实现情感上的和解。文章多以"回望"视角书写感恩。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="stage-label">老年时期</span>
+                    <div class="stage-content">
+                        <strong>怀念与追忆</strong>
+                        <p>亲人离世后，情感转化为深深的怀念。如杨绛《我们仨》，以温情笔触追忆逝去的亲人。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 识别标志 ==================== -->
+        <div class="card-section">
+            <h2>🔍 四、挚爱亲情类文章的识别标志</h2>
+            <p>判断一篇文章是否属于挚爱亲情类，可从以下三个维度入手：</p>
+
+            <div class="identify-grid">
+                <div class="identify-card character">
+                    <h4>人物标志</h4>
+                    <p>文中主要人物为<strong>作者的亲人</strong>——父母、祖辈、兄弟姐妹或其他亲属。如果主要人物是非亲非故的陌生人，则不属于此类。</p>
+                </div>
+                <div class="identify-card event">
+                    <h4>事件标志</h4>
+                    <p>主要情节<strong>围绕亲人展开</strong>，如亲人之间的相处、冲突、离别、团聚等。事件的核心指向亲情关系。</p>
+                </div>
+                <div class="identify-card thing">
+                    <h4>物件标志</h4>
+                    <p>虽写物，但该物<strong>与亲人紧密相关</strong>。如《扁担的一生》表面写扁担，实质是通过扁担写父亲的一生，抒发亲情。</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>重要提醒：</strong>物件标志最容易误判。当文章以"物"为线索时，需要判断该物是否指向亲人——如果指向亲人，主旨仍是亲情而非"托物言志"。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 实例解析 ==================== -->
+        <div class="card-section">
+            <h2>📖 五、实例解析：《香椿的味道》</h2>
+
+            <h3>题目分析</h3>
+            <p>"香椿的味道"是一个典型的<strong>双层含义</strong>标题——既指<strong>实物味道</strong>，也蕴含<strong>深层情感</strong>。这种标题在中考中非常常见，需要多维度解读。</p>
+
+            <div class="interpretation-grid">
+                <div class="interpretation-card surface">
+                    <h4>表层含义</h4>
+                    <p>香椿本身<strong>清香的、自然的味道</strong>，这是最直接的字面意思。</p>
+                </div>
+                <div class="interpretation-card emotion">
+                    <h4>情感含义 <span class="high-score-badge">高分点</span></h4>
+                    <p>母亲<strong>炒香椿、寄香椿</strong>的行为，体现了<strong>母爱的味道</strong>。这是答题时需要重点展开的层面。</p>
+                </div>
+                <div class="interpretation-card memory">
+                    <h4>记忆含义</h4>
+                    <p>童年吃香椿的快乐经历，代表了<strong>童年的味道</strong>和<strong>春天的味道</strong>，蕴含怀旧之情。</p>
+                </div>
+            </div>
+
+            <h3>解题思路总结</h3>
+            <div class="example-box">
+                <h4>综合分析框架</h4>
+                <p><strong>人物</strong>：母亲与"我"（亲情关系）</p>
+                <p><strong>事件</strong>：母亲炒香椿、寄香椿（亲情的具体化）</p>
+                <p><strong>思想感情</strong>：母爱、怀旧（落脚于情感层面）</p>
+                <p><strong>主旨落脚点</strong>：对母爱的赞美，对童年美好时光的怀念</p>
+            </div>
+
+            <div class="key-point">
+                <strong>答题技巧：</strong>遇到"谈谈你对标题的理解"类题目时，首先要判断标题是否具有<strong>多层含义</strong>。挚爱亲情类文章的主旨往往落脚于<strong>情感层面</strong>，答题时要结合人物关系、具体事件和思想感情进行综合分析。
+            </div>
+        </div>
+
+        <!-- ==================== Section 6: 课后建议 ==================== -->
+        <div class="card-section">
+            <h2>📝 六、课后建议</h2>
+            <ol class="homework-list">
+                <li>完成挚爱亲情部分的<strong>练习题</strong>，体会不同亲情角色在文章中的情感表达差异。</li>
+                <li>预习下一讲<strong>"托物感怀"</strong>类文章，注意与"挚爱亲情"中物件标志的区分——关键看物是否指向人。</li>
+                <li>尝试用本课的<strong>识别标志</strong>（人物、事件、物件）判断做过的阅读篇目属于哪一主旨类别。</li>
+            </ol>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson03-part2.html">← Part 2：核心思路</a>
+            <a href="lesson03.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson03-part4.html">进入 Part 4：综合练习 →</a>
+        </div>
+    </div>
+</body>
+</html>
