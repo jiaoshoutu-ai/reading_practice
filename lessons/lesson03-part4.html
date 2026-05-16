@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.deepseek.com https://apis.iflow.cn">
+    <title>第 03 课 第 4 部分 综合练习 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        /* Reading passage */
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .passage-author {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .passage-box p {
+            text-indent: 2em;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-box .no-indent {
+            text-indent: 0;
+        }
+
+        /* Exam question */
+        .exam-question {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .exam-question h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .exam-question .source {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .exam-question p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Answer section */
+        .answer-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #66bb6a;
+        }
+
+        .answer-section h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .answer-section h3::before {
+            content: '[点击展开] ';
+            font-weight: normal;
+            font-size: 0.9rem;
+            color: #66bb6a;
+        }
+
+        .answer-section h3.expanded::before {
+            content: '[点击收起] ';
+        }
+
+        .answer-content {
+            display: none;
+        }
+
+        .answer-content.visible {
+            display: block;
+        }
+
+        .answer-content p {
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 2;
+        }
+
+        .answer-content .key-point {
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid #2e7d32;
+            padding: 12px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 12px 0;
+        }
+
+        .answer-content .key-point strong {
+            color: #1b5e20;
+        }
+
+        .answer-content h4 {
+            color: #2e7d32;
+            margin: 20px 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .answer-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .answer-content .answer-text {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 3px solid #2e7d32;
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0;
+            font-weight: 500;
+            color: #1b5e20;
+        }
+
+        .answer-content .analysis-block {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+        }
+
+        .answer-content .analysis-block p {
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .error-section {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #e91e63;
+        }
+
+        .error-section h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .error-section h3::before {
+            content: '[点击展开] ';
+            font-weight: normal;
+            font-size: 0.9rem;
+            color: #e91e63;
+        }
+
+        .error-section h3.expanded::before {
+            content: '[点击收起] ';
+        }
+
+        .error-content {
+            display: none;
+        }
+
+        .error-content.visible {
+            display: block;
+        }
+
+        .error-content h4 {
+            color: #c62828;
+            margin: 18px 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .error-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .error-content p {
+            color: #444;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .error-content ol {
+            margin-left: 20px;
+        }
+
+        .error-content li {
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 2;
+        }
+
+        .error-content .detail-block {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+        }
+
+        /* Analysis steps */
+        .analysis-steps {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .analysis-steps h4 {
+            color: #1565c0;
+            margin-bottom: 12px;
+        }
+
+        .analysis-steps ol {
+            margin-left: 20px;
+        }
+
+        .analysis-steps li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 2;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ff9800;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #ff9800;
+            color: white;
+        }
+
+        .highlight {
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        /* User answer input */
+        .user-answer-section {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #7c4dff;
+        }
+
+        .user-answer-section h3 {
+            color: #4527a0;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .user-answer-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #b39ddb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 2;
+            resize: vertical;
+            background: white;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        .user-answer-textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+        }
+
+        .user-answer-textarea::placeholder {
+            color: #9e9e9e;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #7c4dff 0%, #651fff 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-btn .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .submit-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .score-result {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #7c4dff;
+        }
+
+        .score-result.visible {
+            display: block;
+        }
+
+        .score-result h4 {
+            color: #4527a0;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .score-result .ai-feedback {
+            color: #333;
+            line-height: 2;
+            white-space: pre-wrap;
+        }
+
+        .score-result .score-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .score-badge.excellent { background: #e8f5e9; color: #2e7d32; }
+        .score-badge.good { background: #e3f2fd; color: #1565c0; }
+        .score-badge.fair { background: #fff8e1; color: #e65100; }
+        .score-badge.poor { background: #fce4ec; color: #c62828; }
+
+        .api-config-notice {
+            font-size: 0.85rem;
+            color: #7c4dff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson03-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson03-part2.html" class="progress-step">Part 2 核心思路</a>
+            <a href="lesson03-part3.html" class="progress-step">Part 3 主旨分类</a>
+            <a href="lesson03-part4.html" class="progress-step active">Part 4 综合练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 03 课</span>
+            <span class="part-badge">第四部分</span>
+            <h1>综合练习</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">综合运用概括与主旨理解能力，完成中考真题实战。</p>
+        </div>
+
+        <!-- ==================== Reading Passage ==================== -->
+        <div class="card-section">
+            <h2>📖 真题阅读：《八千里的暖》</h2>
+
+            <div class="passage-box">
+                <div class="passage-title">八千里的暖</div>
+                <div class="passage-author">马海霞</div>
+
+                <p>①他和她是中学同学，他高中毕业后参军到祖国的最北疆，她则在家乡当了一名民办教师。那时，南方的冬天还不像现在这么冷，她从小没见过雪花，他来信说，他那里冬天都是千里冰封的景象。她问他，冷不冷，是不是冬天得穿棉衣棉裤，外面还要罩个皮袍子，戴三大扇的狗皮帽子，然后狗拉雪橇，他们坐在雪橇上巡逻……</p>
+                <p>②他回信说，不是的，没那么冷，感觉这里的冬天比南方还好过些，屋子里暖和，白天太阳好时，一点儿也感觉不到冷。</p>
+                <p>③她才不信呢，第二年的冬天，学校放假后，她打算去东北看他。临走时，奶奶给她做了厚厚的棉衣棉裤，母亲给她买了件加长及踝的羽绒服，口罩、围巾、皮手套都准备妥当后，她坐上了北上的火车。</p>
+                <p>④刚下车，她就看到了他。"怎么穿这么少？"她心疼地问他。"你是不是把家里的衣服都穿上了？包裹得像个粽子。"听他这样说完，她看了看自己，又看了看下车的旅客，还真没人比自己穿得多。</p>
+                <p>⑤"真该相信你的话，东北冬天里的冷只是个传说罢了。"</p>
+                <p>⑥"也不是，是爱的温度太高了，我们感觉不到严寒。"他拉着她的手，幸福地说。</p>
+                <p>⑦从那以后，每年寒假她都会去东北看他，希望给他带去爱的温暖。后来，他们结婚了，依然是两地分居。她怀孕那年的寒假，她没有去他那里过年，他打电话说，等她生孩子时，他一定回来。可就在孩子出生前一个月，他在一次救火行动中不幸牺牲了。家人对她隐瞒了真相，骗他说他所在的部队接到了出国维和的任务，一年后任务结束再回来探亲。</p>
+                <p>⑧次年冬天，她和公婆还有一岁的儿子一起来到他牺牲的地方，她说他独自长眠在雪山下太冷了，她要去看他，陪他说说话……</p>
+                <p>⑨以前他在世时，他们也是一年见一次，每年冬天都是他俩最期盼的日子，现在他不在了，每年寒假她还会领着儿子去看他。到他的连队，他工作生活过的地方。她和儿子每次到他墓前祭奠，都不会流泪，她要让他看到她的笑容，让他放心。</p>
+                <p>⑩她告诉他，等儿子长大了，让他考军校，毕业了还来老爸的连队参军。等她退休后，她也会来这里，到那时他们一家人就团聚了。</p>
+                <p>⑪这些年，身边的朋友、亲人，连公婆都劝她再找一个人嫁了，她说，她觉得他从未离开过，她和他以前靠信件交流，后来用电话、网络联系，现在他们的交流方式只是退回到写信的年代，她每天晚上忙完了家务都习惯铺开信纸，写几句心里话，说说儿子，谈谈工作，絮叨一下家庭琐事……一周寄出一封信。她也会经常收到连队战士寄来的贺卡、照片和信件，每年冬天一到，战士们就盼着她和孩子到部队去过年。她的那些信件连队战士都给她留着，等她年底去看他时，她再在他的墓前读给他听……</p>
+                <p class="no-indent">有一种温暖，时空隔不断。</p>
+            </div>
+
+            <div class="exam-question">
+                <h4><span class="source">中考真题</span>【2022·湖北恩施·中考真题】</h4>
+                <p><strong>题目：阅读全文，概括小说的主题。</strong></p>
+            </div>
+
+            <!-- Analysis steps hint -->
+            <div class="analysis-steps">
+                <h4>💡 解题提示</h4>
+                <ol>
+                    <li>先用<strong>"谁 + 做了什么 + 结果"</strong>概括主要内容</li>
+                    <li>判断文章的主旨类别——属于哪一类？</li>
+                    <li>从<strong>内容概括</strong>和<strong>思想感情</strong>两个层面组织答案</li>
+                </ol>
+            </div>
+
+            <!-- User answer input -->
+            <div class="user-answer-section">
+                <h3>✍️ 请在此作答</h3>
+                <textarea
+                    id="userAnswer"
+                    class="user-answer-textarea"
+                    placeholder="请写下你对本文主题的概括与理解……&#10;&#10;提示：可采用"内容概括 + 情感表达"的答题格式"
+                ></textarea>
+                <button id="submitBtn" class="submit-btn" onclick="submitAnswer()">
+                    <span class="spinner"></span>
+                    <span class="btn-text">提交</span>
+                </button>
+                <p class="api-config-notice" id="apiNotice"></p>
+
+                <div id="scoreResult" class="score-result">
+                    <h4>🤖 AI 评分反馈</h4>
+                    <div id="scoreBadge"></div>
+                    <div id="aiFeedback" class="ai-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Error tips section -->
+            <div class="error-section">
+                <h3 onclick="toggleAnswer(this)">易错点快攻</h3>
+                <div class="error-content">
+                    <h4>【易错点详解】</h4>
+                    <div class="detail-block">
+                        <p>阅读记叙文，首先要能整体感知文章的内容，理清文章的思路，能初步领悟作品的内涵。整体感知包括归纳文章内容要点，分析文章的结构，理清文章的线路和思路，分析文题与内容的关系，领悟文章的主旨，把握感情基调，感受作者表达的思想感情。</p>
+                    </div>
+
+                    <h4>【对策】情感与主旨的把握</h4>
+                    <p>要从整体上去把握感知，切忌拘泥局限于某一局部。即使是某一片段、段落的分析，也要立足文章整体去思考，在抓住本质的基础上进行合理准确的概括。要通过对文段中的关键词语的解读领会文章的言外之意。必要时，还要结合文章的写作背景、作者的经历以及联系自身生活体验等方面进行思考。</p>
+                    <p><strong>具体方法如下：</strong></p>
+                    <ol>
+                        <li><strong>从标题入手：</strong>有的题目概括了文章的中心，体现了文章的主要内容。</li>
+                        <li><strong>从分析文章的开头、结尾入手：</strong>特别是开头、结尾的议论、抒情的语句。有的文章开篇点题，起到统领、点名或暗示中心的作用；有的在篇末点题或升华中心。</li>
+                        <li><strong>从分析主要人物、中心事件入手。</strong></li>
+                        <li><strong>从分析文章的背景入手。</strong></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Answer (click to reveal) -->
+            <div class="answer-section">
+                <h3 onclick="toggleAnswer(this)">参考答案与解析</h3>
+                <div class="answer-content">
+                    <h4>【答案】</h4>
+                    <div class="answer-text">
+                        小说通过他和她之间相隔八千里的爱情故事，体现了有一种爱时空隔断不了，心灵有约，就会一直温暖自己的主题。
+                    </div>
+
+                    <h4>【解析】</h4>
+                    <p>本题考查对小说主旨的把握。</p>
+                    <div class="analysis-block">
+                        <p>结合第⑥段"也不是，是爱的温度太高了，我们感觉不到严寒。"他拉着她的手，幸福地说"分析，两个人相爱，彼此关心，就不会觉得冷；</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>结合第⑨段"每年寒假她还会领着儿子去看他。到他的连队，他工作生活过的地方。她和儿子每次到他墓前祭奠，都不会流泪，她要让他看到她的笑容，让他放心"分析，她怕他在雪山下冷，所以每到寒假就去看他，让他看到她的笑容，让他放心。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>结合第⑪段"每年冬天一到，战士们就盼着她和孩子到部队去过年。她的那些信件连队战士都给她留着，等她年底去看他时，她再在他的墓前读给他听……"分析，她要去看他，陪他说说话，在他的墓前读给他写的信。然他和她彼此感到温暖。</p>
+                    </div>
+                    <p>据此分析，小说通过她和她的爱人之间的爱情故事，体现了"有一种温暖，时空隔不断"的主题。</p>
+                    <p>结合她的身份是军嫂分析，也体现了新时代军嫂甘于奉献的主题。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson03-part3.html">← Part 3：主旨分类</a>
+            <a href="lesson03.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { chat, getCurrentConfig } from '../deepseek.js';
+
+        window.toggleAnswer = function(header) {
+            var content = header.nextElementSibling;
+            header.classList.toggle('expanded');
+            content.classList.toggle('visible');
+        };
+
+        // Show API config notice
+        var config = getCurrentConfig();
+        var noticeEl = document.getElementById('apiNotice');
+        if (noticeEl) {
+            noticeEl.textContent = '当前使用 ' + config.provider + ' (' + config.model + ') 进行评分';
+        }
+
+        window.submitAnswer = async function() {
+            var textarea = document.getElementById('userAnswer');
+            var btn = document.getElementById('submitBtn');
+            var result = document.getElementById('scoreResult');
+            var badgeEl = document.getElementById('scoreBadge');
+            var feedbackEl = document.getElementById('aiFeedback');
+            var answer = textarea.value.trim();
+
+            if (!answer) {
+                alert('请先填写你的答案再提交');
+                return;
+            }
+
+            // Set loading state
+            btn.classList.add('loading');
+            btn.disabled = true;
+            btn.querySelector('.btn-text').textContent = '评分中...';
+            result.classList.remove('visible');
+
+            var prompt = '你是一位经验丰富的上海初中语文阅卷老师。请根据以下标准对学生的主旨概括题答案进行评分。\n\n' +
+                '【题目】阅读全文，概括小说的主题。\n\n' +
+                '【原文标题】八千里的暖（马海霞）\n\n' +
+                '【标准答案】小说通过他和她之间相隔八千里的爱情故事，体现了有一种爱时空隔断不了，心灵有约，就会一直温暖自己的主题。\n\n' +
+                '【评分标准】（满分6分）\n' +
+                '1. 内容概括（2分）：能准确概括文章主要内容（人物+事件）\n' +
+                '2. 主题提炼（2分）：能指出"爱的温暖跨越时空"或类似表达\n' +
+                '3. 军嫂奉献主题（1分）：能提到军嫂甘于奉献的精神\n' +
+                '4. 表达规范（1分）：语言通顺、格式规范\n\n' +
+                '【学生答案】' + answer + '\n\n' +
+                '请按以下格式输出：\n' +
+                '得分：X/6\n' +
+                '评分等级：（优秀/良好/一般/需努力）\n' +
+                '逐项点评：\n' +
+                '改进建议：';
+
+            try {
+                var aiResponse = await chat(prompt, '你是经验丰富的上海初中语文名师，擅长阅读理解评分。请用中文回答。');
+
+                // Determine score badge
+                var scoreMatch = aiResponse.match(/得分[：:]\s*(\d+)/);
+                var score = scoreMatch ? parseInt(scoreMatch[1]) : null;
+                var badgeClass = 'fair';
+                var badgeText = '待评';
+
+                if (score !== null) {
+                    if (score >= 5) { badgeClass = 'excellent'; badgeText = '优秀 ' + score + '/6'; }
+                    else if (score >= 4) { badgeClass = 'good'; badgeText = '良好 ' + score + '/6'; }
+                    else if (score >= 3) { badgeClass = 'fair'; badgeText = '一般 ' + score + '/6'; }
+                    else { badgeClass = 'poor'; badgeText = '需努力 ' + score + '/6'; }
+                }
+
+                badgeEl.innerHTML = '<span class="score-badge ' + badgeClass + '">' + badgeText + '</span>';
+                feedbackEl.textContent = aiResponse;
+                result.classList.add('visible');
+            } catch (error) {
+                badgeEl.innerHTML = '<span class="score-badge poor">评分失败</span>';
+                feedbackEl.textContent = '错误信息：' + error.message + '\n\n请检查 API Key 配置后重试。';
+                result.classList.add('visible');
+            } finally {
+                btn.classList.remove('loading');
+                btn.disabled = false;
+                btn.querySelector('.btn-text').textContent = '提交';
+            }
+        };
+    </script>
+</body>
+</html>
