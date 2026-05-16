@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 03 课 第 5 部分 素材积累 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section h3 {
+            color: #2e7d32;
+            font-size: 1.15rem;
+            margin: 25px 0 12px;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        /* Material cards */
+        .material-card {
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid;
+            background: #fafafa;
+        }
+
+        .material-card.theme-love { border-left-color: #e91e63; }
+        .material-card.theme-growth { border-left-color: #4caf50; }
+        .material-card.theme-devotion { border-left-color: #2196f3; }
+        .material-card.theme-will { border-left-color: #ff9800; }
+
+        .material-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .material-card.theme-love h4 { color: #c62828; }
+        .material-card.theme-growth h4 { color: #2e7d32; }
+        .material-card.theme-devotion h4 { color: #1565c0; }
+        .material-card.theme-will h4 { color: #e65100; }
+
+        .material-card .quote {
+            font-style: italic;
+            color: #555;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #ccc;
+        }
+
+        .material-card .usage {
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .material-card .usage strong {
+            color: #2e7d32;
+        }
+
+        /* Writing prompt */
+        .writing-prompt {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #66bb6a;
+        }
+
+        .writing-prompt h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+        }
+
+        .writing-prompt p {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .writing-prompt .prompt-text {
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 1.05rem;
+        }
+
+        /* User writing area */
+        .user-write-section {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #7c4dff;
+        }
+
+        .user-write-section h3 {
+            color: #4527a0;
+            margin-bottom: 15px;
+        }
+
+        .user-write-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #b39ddb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 2;
+            resize: vertical;
+            background: white;
+            color: #333;
+        }
+
+        .user-write-textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+        }
+
+        .user-write-textarea::placeholder {
+            color: #9e9e9e;
+        }
+
+        /* Key sentence box */
+        .key-sentence {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .key-sentence .label {
+            font-size: 0.85rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .key-sentence .sentence {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* Table */
+        .material-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .material-table th {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .material-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e8f5e9;
+        }
+
+        .material-table tr:nth-child(even) {
+            background: #f9fbe7;
+        }
+
+        .material-table tr:hover {
+            background: #e8f5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4caf50;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .highlight {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson03-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson03-part2.html" class="progress-step">Part 2 核心思路</a>
+            <a href="lesson03-part3.html" class="progress-step">Part 3 主旨分类</a>
+            <a href="lesson03-part4.html" class="progress-step">Part 4 综合练习</a>
+            <a href="lesson03-part5.html" class="progress-step active">Part 5 素材积累</a>
+            <a href="lesson03-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 03 课</span>
+            <span class="part-badge">第五部分</span>
+            <h1>素材积累</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">从阅读真题中提炼可用素材，为写作积累人物、事件、金句。</p>
+        </div>
+
+        <!-- ==================== Section 1: 从阅读到写作 ==================== -->
+        <div class="card-section">
+            <h2>🔗 一、从阅读到写作：为什么读过的文章能变成素材？</h2>
+
+            <p>我们在 Part 4 完成了两篇中考真题的阅读。这些文章不仅仅是"阅读理解的练习材料"，它们本身就是<strong>优秀的写作范例</strong>。当我们写作时遇到以下情况：</p>
+
+            <div class="key-sentence">
+                <div class="label">你可能遇到的作文题</div>
+                <div class="sentence">"写一件让你感动的事""谈谈你对爱的理解""一次成长经历""身边令我敬佩的人"</div>
+            </div>
+
+            <p>从阅读中积累的素材，可以直接转化为写作的<strong>人物原型</strong>、<strong>事件框架</strong>和<strong>金句表达</strong>。</p>
+        </div>
+
+        <!-- ==================== Section 2: 《八千里的暖》素材 ==================== -->
+        <div class="card-section">
+            <h2>📖 二、《八千里的暖》素材提炼</h2>
+
+            <h3>1. 可用主题</h3>
+            <p>这篇文章适合用于以下主题的写作：</p>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>爱情/坚守</strong></td>
+                        <td>军嫂每年冬天跨越八千里去看望丈夫，丈夫牺牲后仍坚持写信</td>
+                        <td>"最让我感动的事""一种温暖"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>思念/告别</strong></td>
+                        <td>丈夫牺牲后，妻子在墓前读信，战士们为她保留信件</td>
+                        <td>"那一刻，我流泪了""告别"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>奉献/责任</strong></td>
+                        <td>军人救火牺牲，军嫂甘于奉献不怨不悔</td>
+                        <td>"身边的榜样""了不起的人"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 人物素材</h3>
+
+            <div class="material-card theme-love">
+                <h4>人物一：军嫂（女主角）</h4>
+                <p><strong>身份</strong>：民办教师 → 军嫂 → 军烈属</p>
+                <p><strong>事迹</strong>：每年冬天从南方到北疆看望丈夫，丈夫牺牲后坚持每年带儿子去探望，每周写信寄到部队，在墓前读信。</p>
+                <div class="quote">
+                    "她觉得他从未离开过……现在他们的交流方式只是退回到写信的年代。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"坚持""信念""深情"类作文时，可以作为"用一生坚守一个承诺"的素材。
+                </div>
+            </div>
+
+            <div class="material-card theme-devotion">
+                <h4>人物二：军人（男主角）</h4>
+                <p><strong>身份</strong>：驻守北疆的军人</p>
+                <p><strong>事迹</strong>：高中毕业参军到祖国最北疆，在救火行动中牺牲。回信中总说"不冷"，怕妻子担心。</p>
+                <div class="quote">
+                    "也不是，是爱的温度太高了，我们感觉不到严寒。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"奉献""责任""舍小家为大家"类作文时，可以作为"默默守护、义无反顾"的素材。
+                </div>
+            </div>
+
+            <h3>3. 金句摘抄</h3>
+
+            <div class="key-sentence">
+                <div class="label">点题金句</div>
+                <div class="sentence">"有一种温暖，时空隔不断。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">情感金句</div>
+                <div class="sentence">"是爱的温度太高了，我们感觉不到严寒。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">细节金句</div>
+                <div class="sentence">"每天晚上忙完了家务都习惯铺开信纸，写几句心里话，说说儿子，谈谈工作，絮叨一下家庭琐事。"</div>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写练习</h4>
+                <p>仿照"有一种温暖，时空隔不断"的句式，写一个关于亲情/友情的金句：</p>
+                <textarea class="user-write-textarea" placeholder="例如：有一种牵挂，距离拉不远。&#10;       有一种记忆，岁月抹不去。"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 《禁足》素材 ==================== -->
+        <div class="card-section">
+            <h2>📖 三、《禁足》素材提炼</h2>
+
+            <h3>1. 可用主题</h3>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>成长/蜕变</strong></td>
+                        <td>可可从骄傲想出门到最后忘记"禁足"，在过程中学会了克制、体谅和关爱</td>
+                        <td>"一次成长经历""那一次，我长大了"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>意志力/坚持</strong></td>
+                        <td>可可自我"禁足"两周，面对诱惑（好天气、八哥、小狗）坚持下来</td>
+                        <td>"坚持的力量""我学会了克制"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>关爱/友爱</strong></td>
+                        <td>可可每天打电话安慰好朋友冉冉，帮她度过难关</td>
+                        <td>"温暖""朋友之间"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>责任/参与</strong></td>
+                        <td>小学生可可捐口罩、自我禁足，以小小公民的身份参与抗疫</td>
+                        <td>"我也出一份力""小公民的责任"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 人物素材</h3>
+
+            <div class="material-card theme-growth">
+                <h4>人物一：可可（五年级女生）</h4>
+                <p><strong>事迹一（捐口罩）</strong>：主动提出捐出自己拥有的口罩，并表示"我可以两星期不出门，这样就能省下不少口罩了"。</p>
+                <p><strong>事迹二（自我克制）</strong>：第五天面对好天气和小狗的诱惑，已经站在门前准备出门，但接到老师电话后选择留下。</p>
+                <p><strong>事迹三（关爱朋友）</strong>：冉冉外婆确诊后，坚持每天打电话安慰她，以至于"忘了禁足这样的事"。</p>
+                <div class="quote">
+                    "我要把'禁足'当成对自己意志力的锻炼。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"成长""自律""关爱朋友"类作文时，可可的故事是一个完整的"面对诱惑—自我克制—升华关爱"的成长叙事框架。
+                </div>
+            </div>
+
+            <div class="material-card theme-will">
+                <h4>人物二：爷爷</h4>
+                <p><strong>事迹</strong>：在社区做志愿者，理解孙女的不易，不强迫她"禁足"，在她完成目标时给予鼓励。</p>
+                <div class="quote">
+                    "你不用对自己这么严格，也有小朋友在楼下玩，你如果非常想出去，用一个口罩也不算浪费。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"长辈的爱""理解与包容""言传身教"类作文时，爷爷是温和包容型长辈的典型形象。
+                </div>
+            </div>
+
+            <h3>3. 金句摘抄</h3>
+
+            <div class="key-sentence">
+                <div class="label">成长金句</div>
+                <div class="sentence">"我要把'禁足'当成对自己意志力的锻炼。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">心理描写佳句</div>
+                <div class="sentence">"可可想出去的愿望像决了堤的河水，再难控制。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">细节描写佳句</div>
+                <div class="sentence">"可可已经戴上了口罩，已经拿起了钥匙，已经站在门前了。"</div>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写练习</h4>
+                <p>仿照"……的愿望像决了堤的河水，再难控制"的句式，写一个比喻句来描写内心的冲动：</p>
+                <textarea class="user-write-textarea" placeholder="例如：我渴望参赛的心情像燃烧的火焰，久久不能平息。"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 综合对比 ==================== -->
+        <div class="card-section">
+            <h2>🔍 四、两篇文章的对比与综合素材</h2>
+
+            <p>两篇文章虽然主题不同，但有一些<strong>共同的写作技巧</strong>值得借鉴：</p>
+
+            <h3>1. 以小见大</h3>
+            <p>两篇文章都没有写宏大的场面，而是通过<strong>小细节</strong>来表现大主题：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《八千里的暖》通过<strong>写信、读信</strong>等小事表现跨越生死的坚守</li>
+                <li>《禁足》通过<strong>省口罩、打电话安慰朋友</strong>等小事表现成长与关爱</li>
+            </ul>
+
+            <h3>2. 人物对比</h3>
+            <p>两篇文章都使用了<strong>人物行为的前后变化</strong>来推动叙事：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《禁足》中可可从"骄傲→动摇→坚定→忘记禁足"，心理变化层次分明</li>
+                <li>《八千里的暖》中两人从"相爱→牺牲→坚守"，情感层层深入</li>
+            </ul>
+
+            <h3>3. 结尾点题</h3>
+            <p>两篇文章都在结尾处<strong>自然点题</strong>，而非生硬说教：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《八千里的暖》以"有一种温暖，时空隔不断"一句独立成段，简洁有力</li>
+                <li>《禁足》以"可可愣了片刻，突然哭了起来"收尾，余味悠长</li>
+            </ul>
+
+            <div class="writing-prompt">
+                <h4>✍️ 综合写作任务</h4>
+                <p class="prompt-text">从《八千里的暖》和《禁足》中任选一篇文章，提取一个你最想用在作文中的素材，用 100-150 字把它改写成适合你自己写作的素材段落。</p>
+                <textarea class="user-write-textarea" placeholder="提示：可以替换人物身份、改变场景、调整细节，但保留核心情感……"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 素材积累清单 ==================== -->
+        <div class="card-section">
+            <h2>📋 五、素材积累清单</h2>
+
+            <p>学完本课，建议积累以下素材，便于今后写作时使用：</p>
+
+            <div class="material-card theme-love">
+                <h4>🏷️ 人物素材</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li>军嫂：每年冬天跨越八千里看望丈夫，丈夫牺牲后坚持写信、读信</li>
+                    <li>军人：驻守北疆，回信中总说"不冷"，救火行动中牺牲</li>
+                    <li>可可：五年级女生，捐口罩、自我禁足两周，学会克制和关爱</li>
+                    <li>爷爷：社区志愿者，温和包容，理解孙女的不易</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-devotion">
+                <h4>🏷️ 情感素材</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li>跨越生死的爱情：爱人虽逝，温暖不变</li>
+                    <li>军嫂的坚守：用写信的方式维持与逝去爱人的"对话"</li>
+                    <li>小学生的责任感：可可自觉参与抗疫，捐口罩、自我禁足</li>
+                    <li>友情的温暖：可可坚持每天打电话安慰好友冉冉</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-growth">
+                <h4>🏷️ 金句素材</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li>"有一种温暖，时空隔不断。"——点题句，简洁有力</li>
+                    <li>"是爱的温度太高了，我们感觉不到严寒。"——情感句，巧用温度隐喻</li>
+                    <li>"我要把'禁足'当成对自己意志力的锻炼。"——成长句，自我觉醒</li>
+                    <li>"可可想出去的愿望像决了堤的河水，再难控制。"——心理描写</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-will">
+                <h4>🏷️ 写作技巧</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>以小见大</strong>：通过小事（写信、打电话）表现大主题</li>
+                    <li><strong>心理变化层次</strong>：骄傲→动摇→坚定→升华，层层递进</li>
+                    <li><strong>结尾点题</strong>：用一句简洁有力的话独立成段，收束全文</li>
+                    <li><strong>细节铺垫</strong>：连续用"已经……已经……已经……"制造紧张感</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson03-part4.html">← Part 4：综合练习</a>
+            <a href="lesson03.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+            <a href="lesson03-appendix.html">附录：文章原文 →</a>
+        </div>
+    </div>
+</body>
+</html>

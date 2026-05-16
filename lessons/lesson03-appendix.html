@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 03 课 附录 文章原文 + 真题汇编 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-section h2 {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f5e9;
+        }
+
+        .article-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .article-section .source-info {
+            text-align: center;
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .article-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .article-section p.no-indent {
+            text-indent: 0;
+        }
+
+        .article-section .source {
+            text-align: right;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-indent: 0;
+        }
+
+        .part-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .part-label.p4a { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); }
+        .part-label.p4b { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); }
+
+        .exercise-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .exercise-box h3 {
+            color: #9c27b0;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ce93d8;
+        }
+
+        .exercise-box .exam-source {
+            display: inline-block;
+            background: #9c27b0;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+            color: #333;
+        }
+
+        .answer-space {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px dashed #9c27b0;
+            min-height: 150px;
+        }
+
+        .answer-space p {
+            text-indent: 0;
+            margin-bottom: 10px;
+            color: #9c27b0;
+            font-weight: 600;
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 29px,
+                #bbb 30px
+            );
+            background-size: 100% 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            min-height: 150px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4caf50;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .article-index {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .article-index h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .article-index ul {
+            margin-left: 20px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .article-index a {
+            color: #1b5e20;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-index a:hover {
+            text-decoration: underline;
+        }
+
+        .hint-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .hint-box p {
+            color: #555;
+            text-indent: 0;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .navbar, .nav-links, .progress-indicator, .print-btn, .article-index {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .article-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .lesson-header {
+                box-shadow: none;
+            }
+
+            .exercise-box {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson03-part1.html" class="progress-step completed">Part 1 复习回顾</a>
+            <a href="lesson03-part2.html" class="progress-step completed">Part 2 核心思路</a>
+            <a href="lesson03-part3.html" class="progress-step completed">Part 3 主旨分类</a>
+            <a href="lesson03-part4.html" class="progress-step completed">Part 4 综合练习</a>
+            <a href="lesson03-part5.html" class="progress-step completed">Part 5 素材积累</a>
+            <a href="lesson03-appendix.html" class="progress-step completed">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 03 课</span>
+            <span class="part-badge">附录</span>
+            <h1>文章原文 + 真题汇编</h1>
+            <p style="color: #666; margin-top: 10px; font-size: 0.95rem;">收录 Part 4 所有真题文章，附答题区域，方便打印练习。</p>
+        </div>
+
+        <!-- Article index -->
+        <div class="article-index">
+            <h3>📚 文章目录</h3>
+            <ul>
+                <li><a href="#a1">一、八千里的暖（Part 4 真题一）</a></li>
+                <li><a href="#a2">二、禁足（Part 4 真题二）</a></li>
+            </ul>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <!-- ==================== Article 1: 八千里的暖 ==================== -->
+        <div class="article-section" id="a1">
+            <span class="part-label p4a">Part 4 真题练习一</span>
+            <h2>八千里的暖</h2>
+            <p class="author">马海霞</p>
+
+            <p>①他和她是中学同学，他高中毕业后参军到祖国的最北疆，她则在家乡当了一名民办教师。那时，南方的冬天还不像现在这么冷，她从小没见过雪花，他来信说，他那里冬天都是千里冰封的景象。她问他，冷不冷，是不是冬天得穿棉衣棉裤，外面还要罩个皮袍子，戴三大扇的狗皮帽子，然后狗拉雪橇，他们坐在雪橇上巡逻……</p>
+            <p>②他回信说，不是的，没那么冷，感觉这里的冬天比南方还好过些，屋子里暖和，白天太阳好时，一点儿也感觉不到冷。</p>
+            <p>③她才不信呢，第二年的冬天，学校放假后，她打算去东北看他。临走时，奶奶给她做了厚厚的棉衣棉裤，母亲给她买了件加长及踝的羽绒服，口罩、围巾、皮手套都准备妥当后，她坐上了北上的火车。</p>
+            <p>④刚下车，她就看到了他。"怎么穿这么少？"她心疼地问他。"你是不是把家里的衣服都穿上了？包裹得像个粽子。"听他这样说完，她看了看自己，又看了看下车的旅客，还真没人比自己穿得多。</p>
+            <p>⑤"真该相信你的话，东北冬天里的冷只是个传说罢了。"</p>
+            <p>⑥"也不是，是爱的温度太高了，我们感觉不到严寒。"他拉着她的手，幸福地说。</p>
+            <p>⑦从那以后，每年寒假她都会去东北看他，希望给他带去爱的温暖。后来，他们结婚了，依然是两地分居。她怀孕那年的寒假，她没有去他那里过年，他打电话说，等她生孩子时，他一定回来。可就在孩子出生前一个月，他在一次救火行动中不幸牺牲了。家人对她隐瞒了真相，骗他说他所在的部队接到了出国维和的任务，一年后任务结束再回来探亲。</p>
+            <p>⑧次年冬天，她和公婆还有一岁的儿子一起来到他牺牲的地方，她说他独自长眠在雪山下太冷了，她要去看他，陪他说说话……</p>
+            <p>⑨以前他在世时，他们也是一年见一次，每年冬天都是他俩最期盼的日子，现在他不在了，每年寒假她还会领着儿子去看他。到他的连队，他工作生活过的地方。她和儿子每次到他墓前祭奠，都不会流泪，她要让他看到她的笑容，让他放心。</p>
+            <p>⑩她告诉他，等儿子长大了，让他考军校，毕业了还来老爸的连队参军。等她退休后，她也会来这里，到那时他们一家人就团聚了。</p>
+            <p>⑪这些年，身边的朋友、亲人，连公婆都劝她再找一个人嫁了，她说，她觉得他从未离开过，她和他以前靠信件交流，后来用电话、网络联系，现在他们的交流方式只是退回到写信的年代，她每天晚上忙完了家务都习惯铺开信纸，写几句心里话，说说儿子，谈谈工作，絮叨一下家庭琐事……一周寄出一封信。她也会经常收到连队战士寄来的贺卡、照片和信件，每年冬天一到，战士们就盼着她和孩子到部队去过年。她的那些信件连队战士都给她留着，等她年底去看他时，她再在他的墓前读给他听……</p>
+            <p class="no-indent">有一种温暖，时空隔不断。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题 <span class="exam-source">中考真题</span>【2022·湖北恩施】</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>阅读全文，概括小说的主题。（6 分）</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 2: 禁足 ==================== -->
+        <div class="article-section" id="a2">
+            <span class="part-label p4b">Part 4 真题练习二</span>
+            <h2>禁 足</h2>
+            <p class="source-info">（节选自《可可、木木和老人》，有删减）</p>
+
+            <p>①可可是某小学的五年级女生。2020年春节刚过，爸爸妈妈作为医院的骨干就同其他医护人员一起去武汉支援抗疫了，把她和她的小狗"木木"送到了爷爷家。</p>
+            <p>②过了两天，爸爸妈妈跟她和爷爷视频时，说武汉目前有很多人家缺口罩，如果家里有多的话，可以捐一些。家里并没有存多少口罩，可可想了想，拿出自己带来的口罩说："爷爷，我也捐一些吧。我粉尘过敏，同学们给我送过口罩，我不能只接受别人赠送却不关心别人。我可以两星期不出门，这样就能省下不少口罩了。"爷爷把可可抱在怀里说："可可真是好孩子，能和爸爸妈妈一样为抗疫作贡献了。"从那天中午起，可可就开始了自我"禁足"。</p>
+            <p>③白天，爷爷去社区做志愿者，可可一个人在家，写写作业，逗逗"木木"，看看书……晚上，可可跟爷爷一起看看电视，听爷爷讲讲外面的事……三天很快过去了，自己取得的"成绩"多少有点儿骄傲了。</p>
+            <p>④但是，当第五天上午，可可面对的考验升级了。</p>
+            <p>⑤这一天，天气非常好，蓝天白云，风和日丽，像春天般暖和。她站在窗前，打开窗子，呼吸新鲜空气。突然，一个念头涌上来："天气真好啊！下楼转转吧，就一会儿。"爷爷养的八哥"老八"在自说自话："好球！好球！""玩玩去……玩玩去……""老八"的话让她难以抑制想出门的念头。"木木"听到"老八"的话兴奋起来，闹着要出门。可可想出去的愿望像决了堤的河水，再难控制。"好吧，那就陪你出去走走。"</p>
+            <p>⑥"木木"已经把它的绳套叼到了门口，可可已经戴上了口罩，已经拿起了钥匙，已经站在门前了。就在这时，家里的电话响了，是班主任打来的。老师关切地询问了她的情况，还表扬了她。原来，可可把她捐口罩和自我"禁足"的事告诉了好朋友冉冉，冉冉又将这事告诉了老师。接完电话，可可缓缓地在椅子上坐下来，她有些不好意思。她想，仅仅为了在小区走一圈就用掉一个口罩，是不是太不值得了？</p>
+            <p>⑦午饭时，爷爷说："可可，你已经五天没出门了吧？你不用对自己这么严格，也有小朋友在楼下玩，你如果非常想出去，用一个口罩也不算浪费。""不全是浪费不浪费的事儿，我要把'禁足'当成对自己意志力的锻炼。"可可说。</p>
+            <p>⑧那天中午，爸爸妈妈终于又有时间跟他们视频了，说大家捐给武汉的口罩开始向市民发放了。听到这消息，可可和爷爷都特别高兴。</p>
+            <p>⑨可可的心又平静了下来。她的生活里有了一些新的内容。她为"木木"洗了一次澡——以前，这都是在宠物店里完成的。她还成了"老八"的语言老师，教"老八"学会了新诗句，使它变得"腹有诗书气自华"了。</p>
+            <p>⑩第十天，可可的意志力坚持到了极限。打开电视，她看到许多跟口罩有关的消息，好像全世界都急需口罩。这些消息让她有些恐慌——什么时候能买到口罩啊？家里并没有多少口罩可用了，她感到自己就快挺不住了。</p>
+            <p>⑪中午，爷爷比平时提前一小时回家，一进门就兴奋地说："可可，好消息！上午区领导来视察防疫工作，说咱们国家已经能够充足地向医院供给医用口罩了。估计民间缺口罩的日子也快要结束了！"听了爷爷的话，可可不再那么担忧，意志力似乎也增强了。</p>
+            <p>⑫下午，冉冉打电话来，说她外婆在外省被确诊了，进了抢救室。冉冉哭得很伤心，可可不知道该怎么安慰她，她从来没有经历过这样的事。但冉冉是自己最好的朋友，不会安慰也得安慰啊！从这天开始，可可坚持每天与冉冉通一次电话，想办法找开心的话题，跟她聊聊天，给她讲故事……可可心里只有一个想法，那就是尽量使自己的好朋友不被突然而来的担忧"压扁"了，以至于她竟忘了"禁足"这样的事。日子呢，似乎也没有计数的必要了……</p>
+            <p>⑬一天早上，爷爷笑着对可可说："好孙女，你完成自己的目标了，真是了不起！从今天开始，你可以下楼玩一会儿了，相信过不了多久，买口罩困难的日子就过去了。"可可愣了片刻，突然哭了起来……</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题 <span class="exam-source">中考真题</span>【2020·浙江杭州】</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>读完这篇小说，你也许会想到这些词语：成长、爱、参与、教育……请任选一个词语，结合小说内容简要分析，并谈谈你获得的启示。（6 分）</p>
+                </div>
+                <div class="hint-box">
+                    <p><strong>提示：</strong>先明确写出你选择的词语，然后结合小说中的具体情节分析该词语在文中的体现，最后联系自身实际写出启示。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 240px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson03-part5.html">← Part 5 素材积累</a>
+            <a href="lesson03.html">返回课程首页</a>
+        </div>
+    </div>
+</body>
+</html>
