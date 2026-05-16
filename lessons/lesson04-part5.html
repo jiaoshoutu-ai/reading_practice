@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.deepseek.com https://apis.iflow.cn">
+    <title>第 04 课 第 5 部分 真题练习 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .topic-tag {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .topic-tag.tuowu { background: #ede7f6; color: #4527a0; }
+        .topic-tag.rural { background: #e8f5e9; color: #2e7d32; }
+        .topic-tag.growth { background: #fff3e0; color: #e65100; }
+
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .passage-author {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .passage-box p {
+            text-indent: 2em;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-box .no-indent {
+            text-indent: 0;
+        }
+
+        .exam-question {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .exam-question h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .exam-question .source {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .exam-question p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .answer-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #66bb6a;
+        }
+
+        .answer-section h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .answer-section h3::before {
+            content: '[点击展开] ';
+            font-weight: normal;
+            font-size: 0.9rem;
+            color: #66bb6a;
+        }
+
+        .answer-section h3.expanded::before {
+            content: '[点击收起] ';
+        }
+
+        .answer-content {
+            display: none;
+        }
+
+        .answer-content.visible {
+            display: block;
+        }
+
+        .answer-content p {
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 2;
+        }
+
+        .answer-content .answer-text {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 3px solid #2e7d32;
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0;
+            font-weight: 500;
+            color: #1b5e20;
+        }
+
+        .answer-content .analysis-block {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+        }
+
+        .answer-content .analysis-block p {
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .error-section {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #e91e63;
+        }
+
+        .error-section h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .error-section h3::before {
+            content: '[点击展开] ';
+            font-weight: normal;
+            font-size: 0.9rem;
+            color: #e91e63;
+        }
+
+        .error-section h3.expanded::before {
+            content: '[点击收起] ';
+        }
+
+        .error-content {
+            display: none;
+        }
+
+        .error-content.visible {
+            display: block;
+        }
+
+        .error-content h4 {
+            color: #c62828;
+            margin: 18px 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .error-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .error-content p {
+            color: #444;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .error-content ol {
+            margin-left: 20px;
+        }
+
+        .error-content li {
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 2;
+        }
+
+        .error-content .detail-block {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+        }
+
+        .analysis-steps {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .analysis-steps h4 {
+            color: #1565c0;
+            margin-bottom: 12px;
+        }
+
+        .analysis-steps ol {
+            margin-left: 20px;
+        }
+
+        .analysis-steps li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 2;
+        }
+
+        .user-answer-section {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #7c4dff;
+        }
+
+        .user-answer-section h3 {
+            color: #4527a0;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .user-answer-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #b39ddb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 2;
+            resize: vertical;
+            background: white;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        .user-answer-textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+        }
+
+        .user-answer-textarea::placeholder {
+            color: #9e9e9e;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #7c4dff 0%, #651fff 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-btn .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .submit-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .score-result {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #7c4dff;
+        }
+
+        .score-result.visible {
+            display: block;
+        }
+
+        .score-result h4 {
+            color: #4527a0;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .score-result .ai-feedback {
+            color: #333;
+            line-height: 2;
+            white-space: pre-wrap;
+        }
+
+        .score-result .score-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .score-badge.excellent { background: #e8f5e9; color: #2e7d32; }
+        .score-badge.good { background: #e3f2fd; color: #1565c0; }
+        .score-badge.fair { background: #fff8e1; color: #e65100; }
+        .score-badge.poor { background: #fce4ec; color: #c62828; }
+
+        .api-config-notice {
+            font-size: 0.85rem;
+            color: #7c4dff;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ff5722;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #ff5722;
+            color: white;
+        }
+
+        .highlight {
+            color: #ff5722;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .divider-text {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .divider-text span {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5722 0%, #e64a19 100%);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step active">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">Part 5</span>
+            <h1>真题练习</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">针对 Part 2 托物感怀、Part 3 乡村童年、Part 4 成长足迹，各选一篇来源明确的中考真题进行实战练习。</p>
+        </div>
+
+        <!-- ============================ 真题一：托物感怀 ============================ -->
+        <div class="card-section">
+            <h2>📖 真题一：《紫藤萝瀑布》 <span class="topic-tag tuowu">托物感怀</span></h2>
+            <p style="color:#888; font-size:0.85rem; margin-bottom:5px;"><strong>来源：</strong>【2018·四川成都·中考真题】宗璞</p>
+
+            <div class="passage-box">
+                <div class="passage-title">紫藤萝瀑布</div>
+                <div class="passage-author">宗璞</div>
+
+                <p>①我不由得停住了脚步。</p>
+                <p>②从未见过开得这样盛的藤萝，只见一片辉煌的淡紫色，像一条瀑布，从空中垂下，不见其发端，也不见其终极。只是深深浅浅的紫，仿佛在流动，在欢笑，在不停地生长。紫色的大条幅上，泛着点点银光，就像迸溅的水花。仔细看时，才知道那是每一朵紫花中的最浅淡的部分，在和阳光互相挑逗。</p>
+                <p>③这里春红已谢，没有赏花的人群，也没有蜂围蝶阵。有的就是这一树闪光的、盛开的藤萝。花朵儿一串挨着一串，一朵接着一朵，彼此推着挤着，好不活泼热闹！</p>
+                <p>④"我在开花！"它们在笑。</p>
+                <p>⑤"我在开花！"它们嚷嚷。</p>
+                <p>⑥每一穗花都是上面的盛开，下面的待放。颜色便上浅下深，好像那紫色沉淀下来了，沉淀在最嫩最小的花苞里。每一朵盛开的花就像是一个小小的张满了的帆，帆下带着尖底的舱。船舱鼓鼓的，又像一个忍俊不禁的笑容，就要绽开似的。</p>
+                <p>⑦这里除了光彩，还有淡淡的芳香，香气似乎也是浅紫色的，梦幻一般轻轻地笼罩着我。忽然记起十多年前家门外也曾有过一大株紫藤萝，它依傍一株枯槐爬得很高，但花朵从来都稀落，东一穗西一串伶仃地挂在树梢，好像在察颜观色，试探什么。后来索性连那稀零的花串也没有了。园中别的紫藤花架也都拆掉，改种了果树。</p>
+                <p>⑧花和生活腐化有什么必然关系？我曾遗憾地想。</p>
+                <p>⑨过了这么多年，藤萝又开花了，而且开得这样盛，这样密，紫色的瀑布遮住了粗壮的盘虬卧龙般的枝干，不断地流着，流着，流向人的心底。</p>
+                <p>⑩花和人都会遇到各种各样的不幸，但是生命的长河是无止境的。我抚摸了一下那小小的紫色的花舱，那里满装生命的酒酿，它张满了帆，在这闪光的花的河流上航行。它是万花中的一朵，也正是由每一个一朵，组成了万花灿烂的流动的瀑布。</p>
+                <p class="no-indent">⑪在这浅紫色的光辉和浅紫色的芳香中，我不觉加快了脚步。</p>
+            </div>
+
+            <div class="exam-question">
+                <h4><span class="source">中考真题</span>【2018·四川成都·中考真题】</h4>
+                <p><strong>题目：结合全文，谈谈你对第⑩段"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的"这句话的理解。</strong></p>
+            </div>
+
+            <div class="analysis-steps">
+                <h4>💡 解题提示</h4>
+                <ol>
+                    <li>本文属于<strong>托物感怀</strong>类——借紫藤萝抒发感悟</li>
+                    <li>先理解句子的表层含义（字面意思），再理解深层含义（人生哲理）</li>
+                    <li>注意联系前文紫藤萝从衰败到盛开的变化，体会作者的情感转变</li>
+                </ol>
+            </div>
+
+            <!-- User answer input -->
+            <div class="user-answer-section">
+                <h3>✍️ 请在此作答</h3>
+                <textarea id="userAnswer1" class="user-answer-textarea" placeholder="请写下你对这句话的理解……&#10;&#10;提示：可从表层含义和深层含义两个层面作答"></textarea>
+                <button id="submitBtn1" class="submit-btn" onclick="submitAnswer(1)">
+                    <span class="spinner"></span>
+                    <span class="btn-text">提交</span>
+                </button>
+                <p class="api-config-notice" id="apiNotice1"></p>
+                <div id="scoreResult1" class="score-result">
+                    <h4>🤖 AI 评分反馈</h4>
+                    <div id="scoreBadge1"></div>
+                    <div id="aiFeedback1" class="ai-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Error tips -->
+            <div class="error-section">
+                <h3 onclick="toggleAnswer(this)">易错点快攻</h3>
+                <div class="error-content">
+                    <h4>【易错点详解】</h4>
+                    <div class="detail-block">
+                        <p>理解托物感怀类文章的关键语句时，常见错误：①只解释了字面意思，没有挖掘深层的人生哲理；②没有联系文章中"物"的变化来理解；③脱离文本，空谈道理。</p>
+                    </div>
+                    <h4>【对策】</h4>
+                    <ol>
+                        <li><strong>分层作答：</strong>先答表层含义，再答深层含义（托物言志/借物喻理）</li>
+                        <li><strong>联系"物"：</strong>将物的特征与人的品质/哲理关联起来</li>
+                        <li><strong>结合上下文：</strong>注意作者情感的变化轨迹</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Answer -->
+            <div class="answer-section">
+                <h3 onclick="toggleAnswer(this)">参考答案与解析</h3>
+                <div class="answer-content">
+                    <h4>【答案】</h4>
+                    <div class="answer-text">
+                        ①表层含义：紫藤萝曾遭遇稀落凋零的不幸，如今又盛开如瀑；人也会遇到各种挫折和不幸。<br>
+                        ②深层含义：个体的不幸是暂时的，生命的长河是永恒延续的。面对不幸，我们不应悲观绝望，而应像紫藤萝一样重新绽放生命的灿烂，以乐观积极的态度面对生活。
+                    </div>
+                    <h4>【解析】</h4>
+                    <div class="analysis-block">
+                        <p>本题考查对关键语句的理解。文章先写眼前盛开的紫藤萝（第②~⑥段），再回忆十多年前紫藤萝的稀落凋零（第⑦段），最后又回到眼前的繁盛。作者由花的命运联想到人的命运，悟出"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的"这一哲理。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>答题时应注意两点：一是理解句子的表层含义——花和人都可能遭遇不幸；二是理解深层含义——生命是永恒延续的，个体的不幸不能阻挡生命的力量。同时要指出作者借花喻人，表达了乐观向上、积极面对生活的人生态度。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ 真题二：乡村童年 ============================ -->
+        <div class="divider-text"><span>真题二</span></div>
+
+        <div class="card-section">
+            <h2>📖 真题二：《祖父的园子》 <span class="topic-tag rural">乡村童年</span></h2>
+            <p style="color:#888; font-size:0.85rem; margin-bottom:5px;"><strong>来源：</strong>【2021·江苏南京·中考真题】萧红（节选自《呼兰河传》）</p>
+
+            <div class="passage-box">
+                <div class="passage-title">祖父的园子</div>
+                <div class="passage-author">萧红</div>
+
+                <p>①我家有一个大花园，这花园里蜂子、蝴蝶、蜻蜓、蚂蚱，样样都有。蝴蝶有白蝴蝶、黄蝴蝶。这种蝴蝶小，不太好看。好看的是大红蝴蝶，满身带着金粉。蜻蜓是金的，蚂蚱是绿的。蜂子则嗡嗡地飞着，满身绒毛，落到一朵花上，胖圆圆的就跟一个小毛球似的不动了。</p>
+                <p>②祖父一天都在园子里边，我也跟着他在里面转。祖父戴一顶大草帽，我戴一顶小草帽；祖父栽花，我就栽花；祖父拔草，我就拔草。祖父种小白菜的时候，我就跟在后边，用脚把那下了种的土窝一个一个地溜平。哪里会溜得准，不过是东一脚西一脚地瞎闹。有时不但没有把菜种盖上，反而把它踢飞了。</p>
+                <p>③祖父铲地，我也铲地。因为我太小，拿不动锄头杆，祖父就把锄头杆拔下来，让我单拿着那个锄头的"头"来铲。其实哪里是铲，不过是伏在地上，用锄头乱钩一阵。我认不得哪个是苗，哪个是草，往往把谷穗当作野草一起勾掉，把狗尾草当作谷穗留着。</p>
+                <p>④祖父发现我铲的那块地还留着一片狗尾草，就问我："这是什么？"</p>
+                <p>⑤我说："谷子。"</p>
+                <p>⑥祖父大笑起来，笑得够了，把草拔下来，问我："你每天吃的就是这个吗？"</p>
+                <p>⑦我说："是的。"</p>
+                <p>⑧我看祖父还在笑，就说："你不信，我到屋里拿来给你看。"我跑到屋里拿了一个谷穗，远远地抛给祖父，说："这不是一样的吗？"</p>
+                <p>⑨祖父把我叫过去，慢慢讲给我听，说谷子是有芒针的，狗尾草却没有，只是毛嘟嘟的，很像狗尾巴。</p>
+                <p>⑩祖父虽然教我，可我并不细听。一抬头看见一个蝴蝶从头上飞过，又去追蝴蝶了。蝴蝶飞得快，我跑了一阵就累了，坐在阴凉地方歇了一会儿，又去采一朵倭瓜花，捉一个绿蚂蚱，把蚂蚱腿用线绑上，绑了一会儿，把腿绑掉了，只留下一条腿。蚂蚱跑了，我也不追，又去抓蜻蜓。</p>
+                <p>⑪玩腻了，我又跑到祖父那里乱闹一阵。祖父浇菜，我也过来浇，但不是往菜上浇，而是拿着水瓢，拼尽了力气，把水往天空一扬，大喊着："下雨啰！下雨啰！"</p>
+                <p>⑫太阳在园子里是特别大的，天空是特别高的。太阳光芒四射，亮得使人睁不开眼睛，亮得蚯蚓不敢钻出地面来，蝙蝠不敢从黑暗的地方飞出来。凡是在太阳下的，都是健康的、漂亮的。拍一拍手，仿佛大树都会发出声响；叫一两声，好像对面的土墙都会回答。</p>
+                <p>⑬花开了，就像睡醒了似的。鸟飞了，就像在天上逛似的。虫子叫了，就像虫子在说话似的。一切都活了，要做什么，就做什么，要怎么样，就怎么样，都是自由的。倭瓜愿意爬上架就爬上架，愿意爬上房就爬上房。黄瓜愿意开一朵花，就开一朵花，愿意结一个瓜，就结一个瓜。若都不愿意，就是一个瓜也不结，一朵花也不开，也没有人问它。</p>
+                <p class="no-indent">⑭玉米愿意长多高就长多高，它若愿意长上天去，也没有人管。蝴蝶随意地飞，一会儿从墙头上飞来一对黄蝴蝶，一会儿又从墙头上飞走一只白蝴蝶。它们是从谁家来的，又飞到谁家去？太阳也不知道。</p>
+            </div>
+
+            <div class="exam-question">
+                <h4><span class="source">中考真题</span>【2021·江苏南京·中考真题】</h4>
+                <p><strong>题目：结合文章内容，说说作者笔下的"祖父的园子"有什么特点？表达了作者怎样的思想感情？</strong></p>
+            </div>
+
+            <div class="analysis-steps">
+                <h4>💡 解题提示</h4>
+                <ol>
+                    <li>本文属于<strong>乡村童年</strong>类——回忆乡村童年生活</li>
+                    <li>先概括园子的特点（从景物描写和人物活动中提炼）</li>
+                    <li>再分析思想感情——怀念？赞美？眷恋？</li>
+                </ol>
+            </div>
+
+            <!-- User answer input -->
+            <div class="user-answer-section">
+                <h3>✍️ 请在此作答</h3>
+                <textarea id="userAnswer2" class="user-answer-textarea" placeholder="请先概括园子的特点，再分析思想感情……&#10;&#10;提示：可采用"特点概括 + 情感表达"的答题格式"></textarea>
+                <button id="submitBtn2" class="submit-btn" onclick="submitAnswer(2)">
+                    <span class="spinner"></span>
+                    <span class="btn-text">提交</span>
+                </button>
+                <p class="api-config-notice" id="apiNotice2"></p>
+                <div id="scoreResult2" class="score-result">
+                    <h4>🤖 AI 评分反馈</h4>
+                    <div id="scoreBadge2"></div>
+                    <div id="aiFeedback2" class="ai-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Error tips -->
+            <div class="error-section">
+                <h3 onclick="toggleAnswer(this)">易错点快攻</h3>
+                <div class="error-content">
+                    <h4>【易错点详解】</h4>
+                    <div class="detail-block">
+                        <p>回答"特点+感情"类题目时，常见错误：①只写了园子的特点，没有分析思想感情；②特点概括不全面，只写了表面景物，没有提炼深层特征（如"自由""快乐"）；③感情表述空泛，只写"表达了作者的喜爱之情"，不够具体。</p>
+                    </div>
+                    <h4>【对策】</h4>
+                    <ol>
+                        <li><strong>特点要全面：</strong>从景物、氛围、人物活动等多个角度概括</li>
+                        <li><strong>感情要具体：</strong>结合乡村童年类文章的特征（怀念、眷恋、赞美）来表述</li>
+                        <li><strong>分点作答：</strong>特点分几条，感情单独成条</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Answer -->
+            <div class="answer-section">
+                <h3 onclick="toggleAnswer(this)">参考答案与解析</h3>
+                <div class="answer-content">
+                    <h4>【答案】</h4>
+                    <div class="answer-text">
+                        特点：①充满生机——蜂子、蝴蝶、蜻蜓、蚂蚱样样都有；②自由快乐——一切"愿意做什么就做什么"，无拘无束；③充满童趣——"我"在园子里瞎闹、追蝴蝶、浇菜扬水，天真烂漫。<br>
+                        思想感情：表达了作者对童年生活的深深怀念，对祖父的眷恋，以及对自由快乐、纯真美好的乡村生活的赞美与向往。
+                    </div>
+                    <h4>【解析】</h4>
+                    <div class="analysis-block">
+                        <p>本题考查对景物特点的概括和思想感情的把握。文章前半部分（第①~⑪段）通过具体事件描写园子中的生活趣事，后半部分（第⑫~⑭段）通过抒情性描写表达对园子的赞美。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>概括特点时要抓住关键词句：第①段写园中生物种类丰富，体现"充满生机"；第⑬⑭段反复使用"愿意……就……"句式，体现"自由"；第②③⑪段写"我"的各种"瞎闹"行为，体现"童趣"。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>分析感情时，要结合乡村童年类文章的特征——作者成年后回忆乡村童年，情感必然是怀念和眷恋的。同时，从第⑫段"凡是在太阳下的，都是健康的、漂亮的"可以看出作者对这种纯真生活的赞美。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ 真题三：成长足迹 ============================ -->
+        <div class="divider-text"><span>真题三</span></div>
+
+        <div class="card-section">
+            <h2>📖 真题三：《走一步，再走一步》 <span class="topic-tag growth">成长足迹</span></h2>
+            <p style="color:#888; font-size:0.85rem; margin-bottom:5px;"><strong>来源：</strong>【2019·重庆中考B卷】莫顿·亨特</p>
+
+            <div class="passage-box">
+                <div class="passage-title">走一步，再走一步</div>
+                <div class="passage-author">莫顿·亨特</div>
+
+                <p>①那是费城七月里一个闷热的日子，虽然时隔五十七年，可那种闷热我至今还能感觉得到。当时和我一起的五个小男孩，因为玩弹子游戏玩厌了，都想找些新的花样来玩。</p>
+                <p>②"嗨！"内德说，"我们很久没有爬悬崖了。"</p>
+                <p>③"我们现在就去爬吧！"我说。于是我出主意，找到了一个很好的机会向他们炫耀自己。我确实非常渴望像其他孩子那样，能做出一些令人刮目相看的事来。</p>
+                <p>④我们打算从崖顶沿着一条迂回的小路下山回家。大约在小山一半的高度内德带头，其他的人跟着他向上爬。我落在最后，全身颤抖，冷汗直冒，也跟着他们向上爬。我的心在瘦骨嶙峋的胸腔里冬冬直跳。</p>
+                <p>⑤我终于爬了上去，蹲在石架上，心惊肉跳，尽量往里靠。其他的孩子继续向崖顶爬去，我尽量落在他们后面。我看见他们在一个最陡峭的地方停住了，他们从那里爬到了山顶。</p>
+                <p>⑥时间一分一秒地过去，暮色开始四合。在一片寂静中，我伏在岩石上，恐惧和疲乏使我全身麻木，不能动弹。</p>
+                <p>⑦暮色苍茫，天上出现了星星，悬崖下面的大地越来越暗。这时，树林里有一道手电光照来照去，我听到了杰利和我父亲的声音！</p>
+                <p>⑧父亲的手电光照着我。"下来吧，孩子，"他带着安慰的口气说，"晚饭做好了。"</p>
+                <p>⑨"我下不去！"我哭着说，"我会掉下去，我会摔死的！"</p>
+                <p>⑩"听我说吧，"我父亲说，"不要想着距离有多远。你只要想着你是在走一小步。你能办得到的。眼睛看着我电筒的光照着的地方，你能看见石架下面那块岩石吗？"</p>
+                <p>⑪我慢慢地把身体移过去。"看见了。"我说。</p>
+                <p>⑫"好，"他对我说，"现在你把左脚踏到那块岩石上。不要担心下一步。听我的话。"</p>
+                <p>⑬这似乎能办得到。我小心翼翼地伸出左脚去探那块岩石，而且踩到了它。我顿时有了信心。"很好，"我父亲叫道，"现在移动右脚，把它移到右边稍低一点的地方，那里有另外一个落脚点。"我又照着做了。我的信心大增。</p>
+                <p>⑭"我能办得到的。"我想。</p>
+                <p>⑮我每次只移动一小步，慢慢爬下悬崖。最后，我一脚踩在崖下的岩石上，投入了父亲强壮的手臂中。我先是啜泣了一会儿，然后，我产生了一种巨大的成就感。这是我永远忘不了的经历。</p>
+                <p>⑯我曾屡次发现，每当我感到前途茫茫而灰心丧气时，只要记起很久以前我在那座小悬崖上所学到的经验，我便能应付一切。我提醒自己，不要想着远在下面的岩石，而要着眼于那最初的一小步，走了这一步再走下一步，直到抵达我所要到的地方。</p>
+            </div>
+
+            <div class="exam-question">
+                <h4><span class="source">中考真题</span>【2019·重庆中考B卷】</h4>
+                <p><strong>题目：结合全文，说说标题"走一步，再走一步"的深刻含义。你从中获得了什么启示？</strong></p>
+            </div>
+
+            <div class="analysis-steps">
+                <h4>💡 解题提示</h4>
+                <ol>
+                    <li>本文属于<strong>成长足迹</strong>类——通过一次经历获得成长</li>
+                    <li>标题含义要分两层理解：表层（实际爬悬崖的动作）+ 深层（人生哲理）</li>
+                    <li>启示要联系自身实际，避免空话套话</li>
+                </ol>
+            </div>
+
+            <!-- User answer input -->
+            <div class="user-answer-section">
+                <h3>✍️ 请在此作答</h3>
+                <textarea id="userAnswer3" class="user-answer-textarea" placeholder="请先分析标题的深刻含义，再谈谈获得的启示……&#10;&#10;提示：可采用"表层含义 + 深层含义 + 启示"的答题格式"></textarea>
+                <button id="submitBtn3" class="submit-btn" onclick="submitAnswer(3)">
+                    <span class="spinner"></span>
+                    <span class="btn-text">提交</span>
+                </button>
+                <p class="api-config-notice" id="apiNotice3"></p>
+                <div id="scoreResult3" class="score-result">
+                    <h4>🤖 AI 评分反馈</h4>
+                    <div id="scoreBadge3"></div>
+                    <div id="aiFeedback3" class="ai-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Error tips -->
+            <div class="error-section">
+                <h3 onclick="toggleAnswer(this)">易错点快攻</h3>
+                <div class="error-content">
+                    <h4>【易错点详解】</h4>
+                    <div class="detail-block">
+                        <p>理解成长类文章标题含义时，常见错误：①只解释了字面意思（一步一步爬下悬崖），没有上升到人生哲理层面；②启示写得太笼统，如"我明白了做事要坚持"，没有结合文章的具体内容；③没有注意到标题的"再"字所蕴含的持续性和递进性。</p>
+                    </div>
+                    <h4>【对策】</h4>
+                    <ol>
+                        <li><strong>分层理解标题：</strong>先答表层（具体事件中的含义），再答深层（抽象的人生哲理）</li>
+                        <li><strong>抓住关键词：</strong>"走一步"强调小步行动，"再走一步"强调持续前行</li>
+                        <li><strong>启示要具体：</strong>结合自己的学习或生活经历来谈</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Answer -->
+            <div class="answer-section">
+                <h3 onclick="toggleAnswer(this)">参考答案与解析</h3>
+                <div class="answer-content">
+                    <h4>【答案】</h4>
+                    <div class="answer-text">
+                        含义：①表层含义：指"我"在父亲引导下，一步一步地从悬崖上走下来；②深层含义：在人生道路上，面对困难和挫折时，不要想着困难有多大，而要着眼于最初的一小步，走了一步再走下一步，最终就能战胜困难、达成目标。<br>
+                        启示：面对困难时不要被整体的困难吓倒，而应该把大困难分解为一个个小目标，一步一步去克服。比如学习中遇到难题时，不应急于求成，而应循序渐进，从基础做起。（启示言之成理即可）
+                    </div>
+                    <h4>【解析】</h4>
+                    <div class="analysis-block">
+                        <p>本题考查对标题含义的理解和个人感悟的表达。标题"走一步，再走一步"是文章的核心线索。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>表层含义相对容易：父亲教"我"每次只走一小步，最终成功从悬崖上下来。深层含义要结合第⑯段——这是全文的点睛之笔。作者由爬悬崖的经历感悟到人生的哲理："不要想着远在下面的岩石，而要着眼于那最初的一小步，走了这一步再走下一步"。</p>
+                    </div>
+                    <div class="analysis-block">
+                        <p>启示类题目没有唯一答案，但必须做到：①联系文章主旨（分解困难、循序渐进）；②结合自身实际（学习、生活中的具体情境）；③语言通顺、条理清晰。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part4.html">← Part 4 成长足迹</a>
+            <a href="lesson04.html">返回课程首页</a>
+            <a href="lesson04-appendix.html">附录：真题原文 →</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(header) {
+            var content = header.nextElementSibling;
+            header.classList.toggle('expanded');
+            content.classList.toggle('visible');
+        }
+    </script>
+
+    <script type="module">
+        import { chat, getCurrentConfig } from '../deepseek.js';
+
+        var questions = {
+            1: {
+                title: '紫藤萝瀑布',
+                author: '宗璞',
+                standardAnswer: '①表层含义：紫藤萝曾遭遇稀落凋零的不幸，如今又盛开如瀑；人也会遇到各种挫折和不幸。②深层含义：个体的不幸是暂时的，生命的长河是永恒延续的。面对不幸，我们不应悲观绝望，而应像紫藤萝一样重新绽放生命的灿烂，以乐观积极的态度面对生活。',
+                criteria: '【评分标准】（满分6分）\n' +
+                    '1. 表层含义（2分）：能指出紫藤萝从稀落到盛开的变化\n' +
+                    '2. 深层含义（2分）：能理解"生命的长河是无止境的"哲理——个体不幸是暂时的，生命力量是永恒的\n' +
+                    '3. 人生态度（1分）：能指出作者表达了乐观向上、积极面对生活的态度\n' +
+                    '4. 托物言志（1分）：能点明作者借紫藤萝抒发感悟（借物喻理）的写法'
+            },
+            2: {
+                title: '祖父的园子',
+                author: '萧红',
+                standardAnswer: '特点：①充满生机——蜂子、蝴蝶、蜻蜓、蚂蚱样样都有；②自由快乐——一切"愿意做什么就做什么"，无拘无束；③充满童趣——"我"在园子里瞎闹、追蝴蝶、浇菜扬水，天真烂漫。思想感情：表达了作者对童年生活的深深怀念，对祖父的眷恋，以及对自由快乐、纯真美好的乡村生活的赞美与向往。',
+                criteria: '【评分标准】（满分6分）\n' +
+                    '1. 特点概括（3分）：能答出至少两个特点（充满生机/自由快乐/充满童趣），每个1分\n' +
+                    '2. 思想感情（2分）：能指出怀念童年生活、眷恋祖父/乡村生活等\n' +
+                    '3. 表达规范（1分）：分点作答，语言通顺'
+            },
+            3: {
+                title: '走一步，再走一步',
+                author: '莫顿·亨特',
+                standardAnswer: '含义：①表层含义：指"我"在父亲引导下，一步一步地从悬崖上走下来；②深层含义：在人生道路上，面对困难和挫折时，不要想着困难有多大，而要着眼于最初的一小步，走了一步再走下一步，最终就能战胜困难、达成目标。启示：面对困难时不要被整体的困难吓倒，而应该把大困难分解为一个个小目标，一步一步去克服。',
+                criteria: '【评分标准】（满分6分）\n' +
+                    '1. 表层含义（1分）：能指出一步一步从悬崖上走下来\n' +
+                    '2. 深层含义（3分）：能理解面对困难要分解目标、循序渐进、持续前行的哲理\n' +
+                    '3. 启示（2分）：能联系自身实际，言之有物，非空话套话'
+            }
+        };
+
+        // Show API config notices
+        var config = getCurrentConfig();
+        for (var i = 1; i <= 3; i++) {
+            var el = document.getElementById('apiNotice' + i);
+            if (el) {
+                el.textContent = '当前使用 ' + config.provider + ' (' + config.model + ') 进行评分';
+            }
+        }
+
+        window.submitAnswer = async function(qNum) {
+            var textarea = document.getElementById('userAnswer' + qNum);
+            var btn = document.getElementById('submitBtn' + qNum);
+            var result = document.getElementById('scoreResult' + qNum);
+            var badgeEl = document.getElementById('scoreBadge' + qNum);
+            var feedbackEl = document.getElementById('aiFeedback' + qNum);
+            var answer = textarea.value.trim();
+            var q = questions[qNum];
+
+            if (!answer) {
+                alert('请先填写你的答案再提交');
+                return;
+            }
+
+            btn.classList.add('loading');
+            btn.disabled = true;
+            btn.querySelector('.btn-text').textContent = '评分中...';
+            result.classList.remove('visible');
+
+            var prompt = '你是一位经验丰富的上海初中语文阅卷老师。请根据以下标准对学生的阅读理解答案进行评分。\n\n' +
+                '【题目来源】' + q.title + '（' + q.author + '）\n\n' +
+                '【原文标准答案】' + q.standardAnswer + '\n\n' +
+                q.criteria + '\n\n' +
+                '【学生答案】' + answer + '\n\n' +
+                '请按以下格式输出：\n' +
+                '得分：X/6\n' +
+                '评分等级：（优秀/良好/一般/需努力）\n' +
+                '逐项点评：\n' +
+                '改进建议：';
+
+            try {
+                var aiResponse = await chat(prompt, '你是经验丰富的上海初中语文名师，擅长阅读理解评分。请用中文回答。');
+
+                var scoreMatch = aiResponse.match(/得分[：:]\s*(\d+)/);
+                var score = scoreMatch ? parseInt(scoreMatch[1]) : null;
+                var badgeClass = 'fair';
+                var badgeText = '待评';
+
+                if (score !== null) {
+                    if (score >= 5) { badgeClass = 'excellent'; badgeText = '优秀 ' + score + '/6'; }
+                    else if (score >= 4) { badgeClass = 'good'; badgeText = '良好 ' + score + '/6'; }
+                    else if (score >= 3) { badgeClass = 'fair'; badgeText = '一般 ' + score + '/6'; }
+                    else { badgeClass = 'poor'; badgeText = '需努力 ' + score + '/6'; }
+                }
+
+                badgeEl.innerHTML = '<span class="score-badge ' + badgeClass + '">' + badgeText + '</span>';
+                feedbackEl.textContent = aiResponse;
+                result.classList.add('visible');
+            } catch (error) {
+                badgeEl.innerHTML = '<span class="score-badge poor">评分失败</span>';
+                feedbackEl.textContent = '错误信息：' + error.message + '\n\n请检查 API Key 配置后重试。';
+                result.classList.add('visible');
+            } finally {
+                btn.classList.remove('loading');
+                btn.disabled = false;
+                btn.querySelector('.btn-text').textContent = '提交';
+            }
+        };
+    </script>
+</body>
+</html>

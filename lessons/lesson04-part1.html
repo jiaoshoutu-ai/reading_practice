@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 04 课 第 1 部分 第 03 课复习回顾 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .example-box .article-name {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        /* Two approach cards */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .approach-card {
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid;
+        }
+
+        .approach-card.derive {
+            background: #e8eaf6;
+            border-color: #5c6bc0;
+        }
+
+        .approach-card.locate {
+            background: #fce4ec;
+            border-color: #e91e63;
+        }
+
+        .approach-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .approach-card.derive h3 { color: #283593; }
+        .approach-card.locate h3 { color: #c62828; }
+
+        .approach-card ul {
+            margin-left: 20px;
+        }
+
+        .approach-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Category cards */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .category-card {
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid;
+            text-align: center;
+        }
+
+        .category-card.family { background: #fce4ec; border-color: #e91e63; }
+        .category-card.object { background: #f3e5f5; border-color: #ab47bc; }
+        .category-card.growth { background: #fff8e1; border-color: #ffb74d; }
+        .category-card.countryside { background: #e8f5e9; border-color: #66bb6a; }
+        .category-card.society { background: #e3f2fd; border-color: #42a5f5; }
+
+        .category-card h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card.family h4 { color: #c62828; }
+        .category-card.object h4 { color: #6a1b9a; }
+        .category-card.growth h4 { color: #e65100; }
+        .category-card.countryside h4 { color: #2e7d32; }
+        .category-card.society h4 { color: #1565c0; }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .key-point {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #c62828;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #11998e;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #11998e;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+
+        .bridge-text {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .bridge-text h3 {
+            color: #1a237e;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .bridge-text p {
+            color: #555;
+            line-height: 2;
+        }
+
+        .source-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .source-tag.l03 {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step active">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">复习回顾</span>
+            <h1>第 03 课复习回顾</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">在进入主旨理解 2 之前，先回顾第 03 课的核心知识，为新课打好基础。</p>
+        </div>
+
+        <!-- ==================== Section 1: What is 主旨 ==================== -->
+        <div class="content-section">
+            <h2>🔑 一、什么是"主旨"？ <span class="source-tag l03">来自第 03 课 Part 2</span></h2>
+
+            <div class="formula-box">
+                <div class="formula">文字 + 结构 → 内容 → 思想感情（主旨）</div>
+                <div class="subtitle">文章由文字和结构构成内容，内容反映思想感情</div>
+            </div>
+
+            <p><strong>主旨 = 文章主要的思想感情</strong></p>
+            <p>理解主旨的逻辑顺序：</p>
+            <ol style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li><strong>先概括内容</strong>：文章写了什么人、什么事、什么景</li>
+                <li><strong>再提炼思想感情</strong>：作者通过这些内容想表达什么</li>
+            </ol>
+
+            <div class="key-point">
+                <strong>核心原则：</strong>不能无凭无据地直接回答主旨。必须依据文章的内容、结构、关键词句来推导。
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="example-box">
+                <h4>示例：《看自行车的女人》</h4>
+                <p><span class="article-name">主要内容</span>：看自行车的女人在暴雨中帮"我"守护自行车并寻找车钥匙。</p>
+                <p><span class="article-name">主旨</span>：表达了"我"对陌生人真诚与善良的感激与敬意。</p>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: 两大核心思路 ==================== -->
+        <div class="content-section">
+            <h2>💡 二、理解主旨的两大核心思路 <span class="source-tag l03">来自第 03 课 Part 2</span></h2>
+
+            <div class="approach-grid">
+                <div class="approach-card derive">
+                    <h3>思路一：分析内容推导（基础方法）</h3>
+                    <ul>
+                        <li>分析文章写了什么人、什么事、什么景</li>
+                        <li>判断人物性格、事件意义、景物特点</li>
+                        <li>由此得出思想感情</li>
+                    </ul>
+                    <div class="example-box" style="margin-top: 15px; padding: 15px;">
+                        <p style="font-size: 0.9rem;"><strong>公式：</strong>写了谁 → 他做了什么 → 他有什么性格 → 赞美/批评什么</p>
+                    </div>
+                </div>
+                <div class="approach-card locate">
+                    <h3>思路二：直接寻找线索（快速定位）</h3>
+                    <ul>
+                        <li><strong>标题</strong>：文章的眼睛，往往暗示或直接点明主旨</li>
+                        <li><strong>开头和结尾</strong>：中心句常位于首尾</li>
+                        <li><strong>议论和抒情句</strong>：议论表达观点，抒情抒发情感</li>
+                    </ul>
+                    <div class="example-box" style="margin-top: 15px; padding: 15px;">
+                        <p style="font-size: 0.9rem;"><strong>口诀：</strong>看标题、读首尾、找议论抒情</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 主旨五大分类 ==================== -->
+        <div class="content-section">
+            <h2>📇 三、主旨的五大分类 <span class="source-tag l03">来自第 03 课 Part 3</span></h2>
+
+            <p>记叙文的主旨可归纳为五大类别，其中<strong>前四类侧重个人体验</strong>，社会关注类需跳出自我：</p>
+
+            <div class="category-grid">
+                <div class="category-card family">
+                    <h4>挚爱亲情</h4>
+                    <p>基于血脉相连的永恒话题</p>
+                </div>
+                <div class="category-card object">
+                    <h4>托物感怀</h4>
+                    <p>通过具体事物抒发人生感悟</p>
+                </div>
+                <div class="category-card growth">
+                    <h4>成长足迹</h4>
+                    <p>记录成长中的关键事件与蜕变</p>
+                </div>
+                <div class="category-card countryside">
+                    <h4>乡村童年</h4>
+                    <p>以乡土生活为背景，表达对纯真年代的怀念</p>
+                </div>
+                <div class="category-card society">
+                    <h4>社会关注</h4>
+                    <p>跳出自我，关注社会现象（高中考察更多）</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 挚爱亲情核心特征 ==================== -->
+        <div class="content-section">
+            <h2>💕 四、挚爱亲情类文章的核心特征 <span class="source-tag l03">来自第 03 课 Part 3</span></h2>
+
+            <div class="formula-box">
+                <div class="formula">血脉相连 · 不可割裂 · 滋养心灵 · 永恒归属</div>
+                <div class="subtitle">亲情的情感本质</div>
+            </div>
+
+            <p>判断一篇文章是否属于挚爱亲情类，可从三个维度入手：</p>
+
+            <div class="example-box">
+                <h4>人物标志</h4>
+                <p>文中主要人物为<strong>作者的亲人</strong>——父母、祖辈、兄弟姐妹。如果主要人物是非亲非故的陌生人，则不属于此类。</p>
+            </div>
+            <div class="example-box">
+                <h4>事件标志</h4>
+                <p>主要情节<strong>围绕亲人展开</strong>——相处、冲突、离别、团聚等。</p>
+            </div>
+            <div class="example-box">
+                <h4>物件标志</h4>
+                <p>虽写物，但该物<strong>与亲人紧密相关</strong>。如《扁担的一生》表面写扁担，实质是通过扁担写父亲的一生。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>重要提醒：</strong>物件标志最容易误判。当文章以"物"为线索时，需要判断该物是否指向亲人——如果指向亲人，主旨仍是亲情而非"托物言志"。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 真题回顾 ==================== -->
+        <div class="content-section">
+            <h2>📖 五、真题回顾 <span class="source-tag l03">来自第 03 课 Part 4</span></h2>
+
+            <p>第 03 课 Part 4 完成了两篇中考真题：</p>
+
+            <div class="example-box">
+                <h4>真题一：《八千里的暖》（2022·湖北恩施）</h4>
+                <p><strong>题目：</strong>阅读全文，概括小说的主题。</p>
+                <p><strong>主旨类型：</strong>挚爱亲情（恋人/夫妻关系）</p>
+                <p><strong>主旨核心：</strong>有一种温暖，时空隔不断——赞美超越生死与空间的真挚爱情。</p>
+            </div>
+
+            <div class="example-box">
+                <h4>真题二：《禁足》（2020·浙江杭州）</h4>
+                <p><strong>题目：</strong>读完这篇小说，你也许会想到这些词语：成长、爱、参与、教育……请任选一个词语，结合小说内容简要分析，并谈谈你获得的启示。</p>
+                <p><strong>主旨类型：</strong>成长足迹 / 社会关注（抗疫背景）</p>
+                <p><strong>主旨核心：</strong>通过可可自我"禁足"的过程，展现了小学生的成长与责任担当。</p>
+            </div>
+        </div>
+
+        <!-- ==================== Section 6: 素材积累 ==================== -->
+        <div class="content-section">
+            <h2>📋 六、素材积累方法 <span class="source-tag l03">来自第 03 课 Part 5</span></h2>
+
+            <p>第 03 课 Part 5 学习了从阅读中提炼写作素材的方法：</p>
+
+            <ol style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li><strong>人物素材</strong>：提取文章中的典型人物及其事迹，可用于写人作文</li>
+                <li><strong>情感素材</strong>：提炼文章中的核心情感（爱情、友情、亲情、责任等），用于情感类作文</li>
+                <li><strong>金句素材</strong>：摘抄文章中的点题句、情感句，用于提升作文的语言表达</li>
+                <li><strong>写作技巧</strong>：学习文章的写作手法（以小见大、心理变化层次、结尾点题等），用于提升作文技巧</li>
+            </ol>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我准备好进入第 04 课了吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否掌握了第 03 课的核心内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="rc1">
+                <label for="rc1"><span class="topic">主旨概念：</span>能说出"主旨"的定义和理解主旨的逻辑顺序</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc2">
+                <label for="rc2"><span class="topic">两大核心思路：</span>能说出"分析内容推导"和"直接寻找线索"两种方法</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc3">
+                <label for="rc3"><span class="topic">主旨五大分类：</span>能说出五大类别并区分哪些侧重个人体验</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc4">
+                <label for="rc4"><span class="topic">挚爱亲情识别：</span>能从人物、事件、物件三个维度判断文章是否属于挚爱亲情类</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc5">
+                <label for="rc5"><span class="topic">真题实战：</span>能运用所学方法独立完成主旨概括类题目</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- ==================== Bridge to new lesson ==================== -->
+        <div class="bridge-text">
+            <h3>🚀 准备好了吗？</h3>
+            <p>第 03 课解决了<strong>"挚爱亲情"</strong>类文章的主旨理解问题，<br>
+            第 04 课将进一步拓展到<strong>更多主旨类别</strong>，包括托物感怀、成长足迹等，<br>
+            并通过新的真题实战巩固主旨理解的两大核心思路。</p>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04.html">← 返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['rc1', 'rc2', 'rc3', 'rc4', 'rc5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了第 03 课的核心内容，可以进入新课了！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议先回顾第 03 课的相应内容，再进入新课吧！';
+            }
+        }
+    </script>
+</body>
+</html>

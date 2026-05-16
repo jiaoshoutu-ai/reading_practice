@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 04 课 主旨理解 2 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .overview {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .overview p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .overview ul {
+            margin-left: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .part-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #e91e63;
+        }
+
+        .part-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .part-card.review { border-left-color: #11998e; }
+
+        .part-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .part-card.review .part-number { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+
+        .part-card h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .part-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .learning-tip {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: #880e4f;
+        }
+
+        .learning-tip h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .learning-tip ol {
+            margin-left: 25px;
+            line-height: 2;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html">&larr; 返回首页</a>
+        </nav>
+
+        <header>
+            <h1>第 04 课 主旨理解 2</h1>
+            <p>巩固主旨理解方法，拓展更多文体类型</p>
+        </header>
+
+        <div class="overview">
+            <h2>本课学习目标</h2>
+            <p>在第 03 课的基础上，进一步巩固主旨理解的两大核心思路，拓展更多主旨类别（托物感怀、成长足迹、社会关注等），综合运用所学方法完成中考真题。</p>
+            <ul>
+                <li><strong>复习回顾：</strong>巩固主旨概念、两大核心思路、挚爱亲情类文章特征</li>
+                <li><strong>拓展主旨类别：</strong>学习托物感怀、成长足迹等新的主旨类型</li>
+                <li><strong>真题实战：</strong>运用所学方法，完成更多类型的主旨理解真题</li>
+            </ul>
+        </div>
+
+        <div class="parts-grid">
+            <a href="lesson04-part1.html" class="part-card review">
+                <span class="part-number">Part 1</span>
+                <h3>复习回顾：第 03 课</h3>
+                <p>回顾主旨概念、两大核心思路和挚爱亲情类文章</p>
+            </a>
+            <a href="lesson04-part2.html" class="part-card">
+                <span class="part-number">Part 2</span>
+                <h3>托物感怀</h3>
+                <p>学习托物感怀的概念、三大类型和判定方法</p>
+            </a>
+            <a href="lesson04-part3.html" class="part-card">
+                <span class="part-number">Part 3</span>
+                <h3>乡村童年</h3>
+                <p>学习乡村童年的时代背景和主题特征</p>
+            </a>
+            <a href="lesson04-part4.html" class="part-card">
+                <span class="part-number">Part 4</span>
+                <h3>成长足迹</h3>
+                <p>学习成长足迹的主题特征和真题分析</p>
+            </a>
+            <a href="lesson04-part5.html" class="part-card">
+                <span class="part-number">Part 5</span>
+                <h3>真题练习</h3>
+                <p>三篇来源明确的中考真题，覆盖托物感怀、乡村童年、成长足迹</p>
+            </a>
+            <a href="lesson04-part6.html" class="part-card">
+                <span class="part-number">Part 6</span>
+                <h3>素材积累</h3>
+                <p>从三篇真题中提炼可用素材，积累人物、金句和写作技巧</p>
+            </a>
+            <a href="lesson04-appendix.html" class="part-card review">
+                <span class="part-number">附录</span>
+                <h3>三套真题原文</h3>
+                <p>收录全部真题文章，附答题区域，方便打印练习</p>
+            </a>
+        </div>
+
+        <div class="learning-tip">
+            <h3>学习建议</h3>
+            <ol>
+                <li>先完成 <strong>Part 1：复习回顾</strong>，检查是否掌握了第 03 课的核心内容</li>
+                <li>重点区分不同类型文章的主旨表达模式</li>
+                <li>结合 Part 5 素材积累的写作技巧，将阅读与写作融会贯通</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>2026 初中现代文阅读专题课程 | 第 04 课 主旨理解 2</p>
+        </footer>
+    </div>
+</body>
+</html>

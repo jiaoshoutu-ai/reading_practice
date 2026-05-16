@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 04 课 第 3 部分 乡村童年 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-concept {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .key-concept h3 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .theme-card {
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .theme-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .theme-card.rural {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+
+        .theme-card.rural h4 { color: #2e7d32; }
+
+        .theme-card.childhood {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+
+        .theme-card.childhood h4 { color: #e65100; }
+
+        .theme-card.combined {
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff3e0 100%);
+            border-color: #4caf50;
+        }
+
+        .theme-card.combined h4 { color: #1b5e20; }
+
+        .identification-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .identification-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            color: #555;
+        }
+
+        .identification-list li::before {
+            content: "📌 ";
+        }
+
+        .identification-list li strong {
+            color: #4caf50;
+        }
+
+        .keyword-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .keyword-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+        }
+
+        .keyword-item h4 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        .keyword-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #4caf50;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+
+        .new-rural-box {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .new-rural-box h4 {
+            color: #0277bd;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .new-rural-box p {
+            color: #555;
+        }
+
+        .case-analysis {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .case-analysis h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .case-analysis .quote {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4caf50;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step active">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">Part 3</span>
+            <h1>主旨分类：乡村童年</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">学习"乡村童年"类文章的时代背景、主题特征和阅读方法。</p>
+        </div>
+
+        <!-- ==================== Section 1: Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 观看视频</h2>
+            <p>请认真观看以下视频，学习"乡村童年"类文章的核心知识。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1DK411L7Vk&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: Concept ==================== -->
+        <div class="content-section">
+            <h2>📖 什么是"乡村童年"？</h2>
+
+            <div class="key-concept">
+                <h3>核心概念</h3>
+                <p><strong>乡村童年</strong>包含两个关键词——"乡村"是地点，"童年"是人生的一段时期。合起来的"乡村童年"指的是<strong>在乡村中度过的童年时光</strong>，是构筑 60、70、80、90 后一代人美好记忆的摇篮。</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula">乡村（地点）+ 童年（时期）= 乡村中的童年时光</div>
+                <div class="subtitle">不可割裂的深厚情谊</div>
+            </div>
+
+            <p><strong>为什么考试常考？</strong></p>
+            <p>中考阅读文章通常比较新，而当代作家（70、80、90 后）大多经历了从农村到城市的生活转变，城镇化进程中的乡村记忆是他们创作的高产题材，也是考试常考的热点。</p>
+
+            <div class="key-point">
+                <strong>阅读提示：</strong>大多数同学可能只有纯粹的城镇生活经历，没有乡村和童年的双重体验。要读懂这类文章，只能<strong>多读、多体会</strong>。推荐接触乡土文学作品，如沈从文的文章、《湘行散记》等，了解上个世纪的农村生活和先辈们的朴实故事。
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: Three Layers ==================== -->
+        <div class="content-section">
+            <h2>🔍 三个层次的理解</h2>
+
+            <div class="theme-card rural">
+                <h4>第一层：乡村类文章</h4>
+                <p>乡村有优美的自然风光，有淳朴的人民。</p>
+                <div class="keyword-grid">
+                    <div class="keyword-item">
+                        <h4>赞美</h4>
+                        <p>赞美乡村风光和人民的纯朴美好</p>
+                    </div>
+                    <div class="keyword-item">
+                        <h4>怀念</h4>
+                        <p>表达对乡村的怀念之情</p>
+                    </div>
+                    <div class="keyword-item">
+                        <h4>不满</h4>
+                        <p>对城镇化进程中乡村破坏的不满</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theme-card childhood">
+                <h4>第二层：童年类文章</h4>
+                <p>童年是人生中最美好的一段记忆——无忧无虑、纯朴自然。</p>
+                <div class="keyword-grid">
+                    <div class="keyword-item">
+                        <h4>怀念</h4>
+                        <p>对童年时光的深深怀念</p>
+                    </div>
+                    <div class="keyword-item">
+                        <h4>赞美</h4>
+                        <p>对童年时纯朴人性的赞美</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theme-card combined">
+                <h4>第三层：乡村童年类文章（最重要）</h4>
+                <p>乡村美景、傍晚的蝉鸣、曾经嬉戏的伙伴、醇醯纯朴的乡民，都成为不可磨灭的记忆印记，引人入胜、回味无穷。</p>
+                <div class="keyword-grid">
+                    <div class="keyword-item">
+                        <h4>怀念 + 感慨</h4>
+                        <p>怀念乡村童年，感慨时光易逝</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: New Rural Development ==================== -->
+        <div class="content-section">
+            <h2>🌾 新农村与城乡融合</h2>
+
+            <div class="new-rural-box">
+                <h4>城乡融合发展</h4>
+                <p>今天提出了"新农村"模式——<strong>城乡融合发展</strong>。既要保留乡村的淳朴，又要发挥城市的现代化功能，让农村变得更加美丽，成为童年更好的归宿。</p>
+            </div>
+
+            <p>随着城乡融合发展的推进，大量文章开始<strong>赞美城乡融合发展的成果</strong>，特别是各大日报发表的文章，关注这种新趋势。</p>
+
+            <div class="key-point">
+                <strong>阅读提醒：</strong>如果文章来源于各大日报，要特别关注其中关于城乡融合发展的赞美内容。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: Identification ==================== -->
+        <div class="content-section">
+            <h2>🎯 如何判定乡村童年类文章？</h2>
+
+            <ul class="identification-list">
+                <li><strong>看标题：</strong>标题与乡村有关，如"炊烟"等乡村特有的事物。</li>
+                <li><strong>看城乡对比：</strong>如果文章出现城乡对比，往往讲城乡融合。</li>
+                <li><strong>看城镇化：</strong>关注城市化进程中对乡村的破坏，或对新农村的赞美。</li>
+                <li><strong>看背景：</strong>文章背景设定在乡村。</li>
+                <li><strong>看人物：</strong>主要人物是农民、农人等乡村人物。</li>
+            </ul>
+        </div>
+
+        <!-- ==================== Section 6: Case Study ==================== -->
+        <div class="content-section">
+            <h2>📝 真题示例：《炊烟》</h2>
+
+            <p><strong>题目：</strong>作者为什么说"留恋着乡下的炊烟，就是在坚守着一种精神"？</p>
+
+            <div class="case-analysis">
+                <h4>分析过程</h4>
+
+                <div class="quote">
+                    "许久没有见过乡下的炊烟，心里免有些思念。"
+                </div>
+                <p>文章第一段就奠定了<strong>情感基调</strong>——"思念"乡下，表面上写炊烟，实际上是写乡村，在怀念乡村。</p>
+
+                <div class="quote">
+                    "炊烟标志着平民意识……它带给我们的是淡泊的心境。"
+                </div>
+                <p>这里的"平民意识"不是贬义，而是指平常老百姓<strong>淡泊、不功利</strong>的心境。</p>
+
+                <div class="quote">
+                    "这种感情既有对曾经的炊烟弥漫过的少儿时代的怀念，更有一种对返璞归真的人生态度的守望。"
+                </div>
+                <p>这是文章的<strong>关键句</strong>，直接点明了情感——怀念少儿时代的乡村，守望返璞归真的人生态度。</p>
+
+                <div class="key-point">
+                    <strong>答案：</strong>① 对乡下（少儿时代乡村生活）的怀念；② 对返璞归真的人生态度的守望。
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>解题思路：</strong>"精神"就是文章的主旨（思想感情）。通过<strong>找主旨的方法</strong>——直接寻找关键词句（议论和抒情句），就能找到答案。这正是我们讲的两大核心思路之一。
+            </div>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我掌握了乡村童年吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否理解了本节内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="c1">
+                <label for="c1"><span class="topic">核心概念：</span>能说出"乡村童年"的含义和为什么考试常考</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c2">
+                <label for="c2"><span class="topic">三个层次：</span>能区分乡村类、童年类和乡村童年类文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c3">
+                <label for="c3"><span class="topic">新农村：</span>了解城乡融合发展的新趋势</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c4">
+                <label for="c4"><span class="topic">判定方法：</span>能从标题、城乡对比、背景等维度判定文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c5">
+                <label for="c5"><span class="topic">真题实战：</span>理解《炊烟》的分析过程和解题思路</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part2.html">← Part 2 托物感怀</a>
+            <a href="lesson04.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['c1', 'c2', 'c3', 'c4', 'c5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了乡村童年的核心知识！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议重新观看视频，巩固相关知识点！';
+            }
+        }
+    </script>
+</body>
+</html>

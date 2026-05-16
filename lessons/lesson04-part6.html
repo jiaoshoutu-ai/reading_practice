@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 04 课 第 6 部分 素材积累 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section h3 {
+            color: #2e7d32;
+            font-size: 1.15rem;
+            margin: 25px 0 12px;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .material-card {
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid;
+            background: #fafafa;
+        }
+
+        .material-card.theme-tuowu { border-left-color: #9c27b0; }
+        .material-card.theme-rural { border-left-color: #4caf50; }
+        .material-card.theme-growth { border-left-color: #ff9800; }
+        .material-card.theme-skill { border-left-color: #2196f3; }
+
+        .material-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .material-card.theme-tuowu h4 { color: #6a1b9a; }
+        .material-card.theme-rural h4 { color: #2e7d32; }
+        .material-card.theme-growth h4 { color: #e65100; }
+        .material-card.theme-skill h4 { color: #1565c0; }
+
+        .material-card .quote {
+            font-style: italic;
+            color: #555;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #ccc;
+        }
+
+        .material-card .usage {
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .material-card .usage strong {
+            color: #2e7d32;
+        }
+
+        .writing-prompt {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #66bb6a;
+        }
+
+        .writing-prompt h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+        }
+
+        .writing-prompt p {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .writing-prompt .prompt-text {
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 1.05rem;
+        }
+
+        .user-write-section {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #7c4dff;
+        }
+
+        .user-write-section h3 {
+            color: #4527a0;
+            margin-bottom: 15px;
+        }
+
+        .user-write-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #b39ddb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 2;
+            resize: vertical;
+            background: white;
+            color: #333;
+        }
+
+        .user-write-textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+        }
+
+        .user-write-textarea::placeholder {
+            color: #9e9e9e;
+        }
+
+        .key-sentence {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .key-sentence .label {
+            font-size: 0.85rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .key-sentence .sentence {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .material-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .material-table th {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .material-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e8f5e9;
+        }
+
+        .material-table tr:nth-child(even) {
+            background: #f9fbe7;
+        }
+
+        .material-table tr:hover {
+            background: #e8f5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4caf50;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .highlight {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step active">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">Part 6</span>
+            <h1>素材积累</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">从 Part 5 的三篇真题中提炼可用素材，为写作积累人物、事件、金句和技巧。</p>
+        </div>
+
+        <!-- ==================== Section 1: 从阅读到写作 ==================== -->
+        <div class="card-section">
+            <h2>🔗 一、从阅读到写作：为什么读过的文章能变成素材？</h2>
+
+            <p>我们在 Part 5 完成了三篇中考真题的阅读，分别对应三种主旨类型。这些文章本身就是<strong>优秀的写作范例</strong>。当我们写作时遇到以下情况：</p>
+
+            <div class="key-sentence">
+                <div class="label">你可能遇到的作文题</div>
+                <div class="sentence">"一次难忘的经历""生命的感悟""我身边的故事""那一刻我长大了""面对困难"</div>
+            </div>
+
+            <p>从阅读中积累的素材，可以直接转化为写作的<strong>人物原型</strong>、<strong>事件框架</strong>和<strong>金句表达</strong>。</p>
+        </div>
+
+        <!-- ==================== Section 2: 《紫藤萝瀑布》素材 ==================== -->
+        <div class="card-section">
+            <h2>📖 二、《紫藤萝瀑布》素材提炼 <span style="font-size:0.85rem;color:#888;">（托物感怀类）</span></h2>
+
+            <h3>1. 可用主题</h3>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>生命/坚韧</strong></td>
+                        <td>紫藤萝从衰败到盛开，展现生命不屈的力量</td>
+                        <td>"生命的感悟""那朵花开的时候"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>乐观/积极</strong></td>
+                        <td>作者从紫藤萝的繁盛中获得力量，加快脚步面对生活</td>
+                        <td>"一次触动""让我充满力量的事"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>自然之美</strong></td>
+                        <td>对紫藤萝盛开花海的细腻描写</td>
+                        <td>"一处美景""让我陶醉的画面"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 写作技巧提炼</h3>
+
+            <div class="material-card theme-tuowu">
+                <h4>技巧一：托物言志的写法</h4>
+                <p><strong>核心思路</strong>：先细致描写一个"物"的特征，再由物及人，引出人生感悟。</p>
+                <div class="quote">
+                    先写紫藤萝的繁盛（"像一条瀑布""彼此推着挤着"），再回忆它过去的衰败，最后悟出"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的"。
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"感悟""启示"类作文时，可先写身边的一件物品或一处景物，再由物引出自己的人生感悟。
+                </div>
+            </div>
+
+            <div class="material-card theme-tuowu">
+                <h4>技巧二：拟人化描写</h4>
+                <p>将紫藤萝拟人化，赋予其活泼的生命力。</p>
+                <div class="quote">
+                    "我在开花！"它们在笑。"我在开花！"它们嚷嚷。
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>景物描写中加入拟人手法，让静态的画面变得生动活泼，增强感染力。
+                </div>
+            </div>
+
+            <h3>3. 金句摘抄</h3>
+
+            <div class="key-sentence">
+                <div class="label">哲理金句</div>
+                <div class="sentence">"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">描写佳句</div>
+                <div class="sentence">"从未见过开得这样盛的藤萝，只见一片辉煌的淡紫色，像一条瀑布，从空中垂下，不见其发端，也不见其终极。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">比喻佳句</div>
+                <div class="sentence">"每一朵盛开的花就像是一个小小的张满了的帆，帆下带着尖底的舱。"</div>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写练习</h4>
+                <p>仿照"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的"的句式，写一个关于生命或成长的感悟：</p>
+                <textarea class="user-write-textarea" placeholder="例如：树和人都会经历风雨的摧折，但是向上的力量永远不会停止。"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 《祖父的园子》素材 ==================== -->
+        <div class="card-section">
+            <h2>📖 三、《祖父的园子》素材提炼 <span style="font-size:0.85rem;color:#888;">（乡村童年类）</span></h2>
+
+            <h3>1. 可用主题</h3>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>童年回忆</strong></td>
+                        <td>"我"在园子里追蝴蝶、铲地认错、浇菜扬水等趣事</td>
+                        <td>"童年趣事""那段快乐的时光"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>亲情</strong></td>
+                        <td>祖父对"我"的耐心教导和温和包容</td>
+                        <td>"我的爷爷/奶奶""家的温暖"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>自由/快乐</strong></td>
+                        <td>园子中的一切都是自由的——愿意怎样就怎样</td>
+                        <td>"自由的味道""快乐的秘密"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>自然之美</strong></td>
+                        <td>对园中昆虫、花鸟的细致观察和生动描写</td>
+                        <td>"我眼中的美景""一处让我留恋的地方"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 人物素材</h3>
+
+            <div class="material-card theme-rural">
+                <h4>人物一：祖父</h4>
+                <p><strong>形象</strong>：勤劳（一天都在园子里）、耐心（笑着教"我"认谷子和狗尾草）、宽容（任由"我"瞎闹）、智慧（用笑声化解错误）。</p>
+                <div class="quote">
+                    "祖父大笑起来，笑得够了，把草拔下来，问我：'你每天吃的就是这个吗？'"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"长辈的爱""我的亲人"类作文时，祖父是一个温和、耐心、充满智慧的长辈形象——他用笑声代替责备，用行动代替说教。
+                </div>
+            </div>
+
+            <div class="material-card theme-rural">
+                <h4>人物二："我"（童年作者）</h4>
+                <p><strong>事迹</strong>：跟在祖父后面栽花拔草、铲地认错、追蝴蝶采花、绑蚂蚱腿、浇菜扬水喊"下雨啰"。</p>
+                <div class="quote">
+                    "下雨啰！下雨啰！"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"童年趣事"时，这些具体的"瞎闹"行为是非常好的细节素材，能让文章充满童真童趣。
+                </div>
+            </div>
+
+            <h3>3. 写作技巧提炼</h3>
+
+            <div class="material-card theme-skill">
+                <h4>技巧一：反复句式营造节奏感</h4>
+                <p>文章第⑬⑭段连续使用"愿意……就……"的句式，营造出自由无拘的节奏。</p>
+                <div class="quote">
+                    "倭瓜愿意爬上架就爬上架，愿意爬上房就爬上房。黄瓜愿意开一朵花，就开一朵花，愿意结一个瓜，就结一个瓜。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"自由""快乐"主题时，可用反复句式增强语言气势和感染力。
+                </div>
+            </div>
+
+            <h3>4. 金句摘抄</h3>
+
+            <div class="key-sentence">
+                <div class="label">环境描写佳句</div>
+                <div class="sentence">"凡是在太阳下的，都是健康的、漂亮的。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">拟人佳句</div>
+                <div class="sentence">"花开了，就像睡醒了似的。鸟飞了，就像在天上逛似的。虫子叫了，就像虫子在说话似的。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">自由佳句</div>
+                <div class="sentence">"一切都活了，要做什么，就做什么，要怎么样，就怎么样，都是自由的。"</div>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写练习</h4>
+                <p>仿照"……愿意……就……，愿意……就……"的句式，写一段表现自由的文字：</p>
+                <textarea class="user-write-textarea" placeholder="例如：云朵愿意飘到哪里就飘到哪里，愿意变成什么形状就变成什么形状……"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 《走一步，再走一步》素材 ==================== -->
+        <div class="card-section">
+            <h2>📖 四、《走一步，再走一步》素材提炼 <span style="font-size:0.85rem;color:#888;">（成长足迹类）</span></h2>
+
+            <h3>1. 可用主题</h3>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>成长/突破</strong></td>
+                        <td>从害怕爬悬崖到一步一步走下来，完成自我突破</td>
+                        <td>"那一次，我长大了""我的第一次"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>方法/智慧</strong></td>
+                        <td>把大困难分解为小目标，一步一步去克服</td>
+                        <td>"我学会了""战胜困难"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>父爱/引导</strong></td>
+                        <td>父亲没有直接救下孩子，而是引导孩子自己走下来</td>
+                        <td>"父亲教会我的事""那一刻我懂了"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>勇气/自信</strong></td>
+                        <td>从"全身颤抖、冷汗直冒"到"我产生了一种巨大的成就感"</td>
+                        <td>"勇气""自信的力量"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. 人物素材</h3>
+
+            <div class="material-card theme-growth">
+                <h4>人物一："我"（莫顿·亨特）</h4>
+                <p><strong>困境</strong>：被困在悬崖中间，恐惧得全身麻木，不能动弹。</p>
+                <p><strong>转折</strong>：父亲出现后，不是直接抱他下来，而是指导他每次只走一小步。</p>
+                <p><strong>成长</strong>：从"我下不去"到"我能办得到的"，最终成功走下悬崖，获得了"巨大的成就感"。</p>
+                <div class="quote">
+                    "我每次只移动一小步，慢慢爬下悬崖。最后，我一脚踩在崖下的岩石上，投入了父亲强壮的手臂中。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"成长""勇气""战胜恐惧"类作文时，这是一个完整的"面对困境—获得指导—自我突破—获得成长"的叙事框架。
+                </div>
+            </div>
+
+            <div class="material-card theme-growth">
+                <h4>人物二：父亲</h4>
+                <p><strong>事迹</strong>：发现孩子被困后，没有惊慌，而是用平静的语气安慰孩子，指导孩子一步一步走下来。</p>
+                <div class="quote">
+                    "不要想着距离有多远。你只要想着你是在走一小步。你能办得到的。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"父爱""教育方式""教会我方法"类作文时，父亲是智慧型引导者的典型形象——他不包办代替，而是教会孩子自己解决问题。
+                </div>
+            </div>
+
+            <h3>3. 写作技巧提炼</h3>
+
+            <div class="material-card theme-skill">
+                <h4>技巧一：心理描写层层递进</h4>
+                <p>文章通过细腻的心理变化来展现成长过程：</p>
+                <div class="quote">
+                    "全身颤抖，冷汗直冒"→"心惊肉跳"→"恐惧和疲乏使我全身麻木"→"小心翼翼地伸出左脚"→"顿时有了信心"→"信心大增"→"巨大的成就感"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写自己的一次经历时，可模仿这种心理变化的层次写法，让读者感受到真实的成长过程。
+                </div>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>技巧二：以小见大的哲理升华</h4>
+                <p>文章从一件童年小事，升华到人生哲理，是成长足迹类文章的典范写法。</p>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"感悟""启示"类作文时，可从一次具体经历出发，最后升华到普遍的人生道理。
+                </div>
+            </div>
+
+            <h3>4. 金句摘抄</h3>
+
+            <div class="key-sentence">
+                <div class="label">方法金句</div>
+                <div class="sentence">"不要想着距离有多远。你只要想着你是在走一小步。你能办得到的。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">哲理金句</div>
+                <div class="sentence">"不要想着远在下面的岩石，而要着眼于那最初的一小步，走了这一步再走下一步，直到抵达我所要到的地方。"</div>
+            </div>
+            <div class="key-sentence">
+                <div class="label">心理描写佳句</div>
+                <div class="sentence">"我的心在瘦骨嶙峋的胸腔里冬冬直跳。"</div>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写练习</h4>
+                <p>回忆一次你面对困难的经历，用"走一步，再走一步"的方法，写一段 100-150 字的感悟：</p>
+                <textarea class="user-write-textarea" placeholder="提示：先简要描述困难，再写你是如何一步一步克服的，最后写获得的感悟……"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 综合对比 ==================== -->
+        <div class="card-section">
+            <h2>🔍 五、三篇文章的对比与综合素材</h2>
+
+            <p>三篇文章虽主旨类型不同，但有一些<strong>共同的写作技巧</strong>值得借鉴：</p>
+
+            <h3>1. 托物感怀的共性写法</h3>
+            <p>三篇文章都涉及"由物及人"的思路：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《紫藤萝瀑布》由<strong>花的盛衰</strong>引出生命的感悟</li>
+                <li>《祖父的园子》由<strong>园中的自由</strong>引出对童年的怀念</li>
+                <li>《走一步，再走一步》由<strong>爬悬崖的经历</strong>引出人生哲理</li>
+            </ul>
+
+            <h3>2. 结尾的艺术</h3>
+            <p>三篇文章的结尾各有特色：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《紫藤萝瀑布》以"我不觉加快了脚步"收尾——<strong>含蓄暗示</strong>作者获得了力量</li>
+                <li>《祖父的园子》以"太阳也不知道"收尾——<strong>余味悠长</strong>，自由的意境推向极致</li>
+                <li>《走一步，再走一步》以第⑯段哲理句收尾——<strong>直白点题</strong>，升华主题</li>
+            </ul>
+
+            <h3>3. 细节描写的力量</h3>
+            <p>三篇文章都善于用<strong>小细节</strong>表现大主题：</p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li>《紫藤萝瀑布》中"每一朵盛开的花就像是一个小小的张满了的帆"——用帆隐喻生命力</li>
+                <li>《祖父的园子》中"下雨啰！下雨啰！"——用童言表现天真烂漫</li>
+                <li>《走一步，再走一步》中"我小心翼翼地伸出左脚去探那块岩石"——用动作表现恐惧中的尝试</li>
+            </ul>
+
+            <div class="writing-prompt">
+                <h4>✍️ 综合写作任务</h4>
+                <p class="prompt-text">从三篇文章中任选一篇，提取一个你最想用在作文中的素材或写作技巧，用 150-200 字把它改写成适合你自己写作的素材段落。</p>
+                <textarea class="user-write-textarea" placeholder="提示：可以替换人物身份、改变场景、调整细节，但保留核心情感或写作手法……"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 6: 素材积累清单 ==================== -->
+        <div class="card-section">
+            <h2>📋 六、素材积累清单</h2>
+
+            <p>学完本课，建议积累以下素材，便于今后写作时使用：</p>
+
+            <div class="material-card theme-tuowu">
+                <h4>🏷️ 托物感怀类素材（《紫藤萝瀑布》）</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>哲理句：</strong>"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的。"</li>
+                    <li><strong>写作手法：</strong>托物言志——先写物，再由物及人</li>
+                    <li><strong>可用主题：</strong>生命、坚韧、乐观、自然之美</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-rural">
+                <h4>🏷️ 乡村童年类素材（《祖父的园子》）</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>人物：</strong>祖父（温和耐心、用笑声代替责备）</li>
+                    <li><strong>趣事：</strong>铲地认错、追蝴蝶、浇菜扬水喊"下雨啰"</li>
+                    <li><strong>写作手法：</strong>反复句式（"愿意……就……"）营造自由感</li>
+                    <li><strong>可用主题：</strong>童年回忆、亲情、自由快乐</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-growth">
+                <h4>🏷️ 成长足迹类素材（《走一步，再走一步》）</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>哲理句：</strong>"不要想着远在下面的岩石，而要着眼于那最初的一小步，走了这一步再走下一步。"</li>
+                    <li><strong>写作手法：</strong>心理变化层层递进（恐惧→尝试→信心→成就感）</li>
+                    <li><strong>可用主题：</strong>成长、勇气、战胜困难、父爱的智慧</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>🏷️ 通用写作技巧</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>由物及人：</strong>通过一个具体的物或事件引出人生感悟</li>
+                    <li><strong>以小见大：</strong>通过小细节（一个动作、一句话）表现大主题</li>
+                    <li><strong>结尾点题：</strong>三篇文章各有特色的结尾方式——含蓄暗示、余味悠长、直白升华</li>
+                    <li><strong>心理变化层次：</strong>按照情感变化的顺序层层推进，让读者有代入感</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part5.html">← Part 5 真题练习</a>
+            <a href="lesson04.html">返回课程首页</a>
+            <a href="lesson04-appendix.html">附录：真题原文 →</a>
+        </div>
+    </div>
+</body>
+</html>

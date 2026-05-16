@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 04 课 附录 三套真题原文 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-section h2 {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f5e9;
+        }
+
+        .article-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .article-section .source-info {
+            text-align: center;
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .article-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .article-section p.no-indent {
+            text-indent: 0;
+        }
+
+        .part-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .part-label.tuowu { background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%); }
+        .part-label.rural { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); }
+        .part-label.growth { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); }
+
+        .exercise-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .exercise-box h3 {
+            color: #9c27b0;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ce93d8;
+        }
+
+        .exercise-box .exam-source {
+            display: inline-block;
+            background: #9c27b0;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+            color: #333;
+        }
+
+        .hint-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .hint-box p {
+            color: #555;
+            text-indent: 0;
+            margin-bottom: 5px;
+        }
+
+        .answer-space {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px dashed #9c27b0;
+            min-height: 150px;
+        }
+
+        .answer-space p {
+            text-indent: 0;
+            margin-bottom: 10px;
+            color: #9c27b0;
+            font-weight: 600;
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 29px,
+                #bbb 30px
+            );
+            background-size: 100% 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            min-height: 150px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #9c27b0;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.completed {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .article-index {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .article-index h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .article-index ul {
+            margin-left: 20px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .article-index a {
+            color: #1b5e20;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-index a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .navbar, .nav-links, .progress-indicator, .print-btn, .article-index {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .article-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .lesson-header {
+                box-shadow: none;
+            }
+
+            .exercise-box {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step completed">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step completed">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step completed">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step completed">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step completed">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step completed">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step completed">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">附录</span>
+            <h1>三套真题原文汇编</h1>
+            <p style="color: #666; margin-top: 10px; font-size: 0.95rem;">收录 Part 5 所有真题文章，附答题区域，方便打印练习。</p>
+        </div>
+
+        <!-- Article index -->
+        <div class="article-index">
+            <h3>📚 文章目录</h3>
+            <ul>
+                <li><a href="#a1">一、紫藤萝瀑布（Part 5 真题一 · 托物感怀）</a></li>
+                <li><a href="#a2">二、祖父的园子（Part 5 真题二 · 乡村童年）</a></li>
+                <li><a href="#a3">三、走一步，再走一步（Part 5 真题三 · 成长足迹）</a></li>
+            </ul>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <!-- ==================== Article 1: 紫藤萝瀑布 ==================== -->
+        <div class="article-section" id="a1">
+            <span class="part-label tuowu">Part 5 真题一 · 托物感怀</span>
+            <h2>紫藤萝瀑布</h2>
+            <p class="author">宗璞</p>
+            <p class="source-info">【2018·四川成都·中考真题】</p>
+
+            <p>①我不由得停住了脚步。</p>
+            <p>②从未见过开得这样盛的藤萝，只见一片辉煌的淡紫色，像一条瀑布，从空中垂下，不见其发端，也不见其终极。只是深深浅浅的紫，仿佛在流动，在欢笑，在不停地生长。紫色的大条幅上，泛着点点银光，就像迸溅的水花。仔细看时，才知道那是每一朵紫花中的最浅淡的部分，在和阳光互相挑逗。</p>
+            <p>③这里春红已谢，没有赏花的人群，也没有蜂围蝶阵。有的就是这一树闪光的、盛开的藤萝。花朵儿一串挨着一串，一朵接着一朵，彼此推着挤着，好不活泼热闹！</p>
+            <p>④"我在开花！"它们在笑。</p>
+            <p>⑤"我在开花！"它们嚷嚷。</p>
+            <p>⑥每一穗花都是上面的盛开，下面的待放。颜色便上浅下深，好像那紫色沉淀下来了，沉淀在最嫩最小的花苞里。每一朵盛开的花就像是一个小小的张满了的帆，帆下带着尖底的舱。船舱鼓鼓的，又像一个忍俊不禁的笑容，就要绽开似的。</p>
+            <p>⑦这里除了光彩，还有淡淡的芳香，香气似乎也是浅紫色的，梦幻一般轻轻地笼罩着我。忽然记起十多年前家门外也曾有过一大株紫藤萝，它依傍一株枯槐爬得很高，但花朵从来都稀落，东一穗西一串伶仃地挂在树梢，好像在察颜观色，试探什么。后来索性连那稀零的花串也没有了。园中别的紫藤花架也都拆掉，改种了果树。</p>
+            <p>⑧花和生活腐化有什么必然关系？我曾遗憾地想。</p>
+            <p>⑨过了这么多年，藤萝又开花了，而且开得这样盛，这样密，紫色的瀑布遮住了粗壮的盘虬卧龙般的枝干，不断地流着，流着，流向人的心底。</p>
+            <p>⑩花和人都会遇到各种各样的不幸，但是生命的长河是无止境的。我抚摸了一下那小小的紫色的花舱，那里满装生命的酒酿，它张满了帆，在这闪光的花的河流上航行。它是万花中的一朵，也正是由每一个一朵，组成了万花灿烂的流动的瀑布。</p>
+            <p class="no-indent">⑪在这浅紫色的光辉和浅紫色的芳香中，我不觉加快了脚步。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题 <span class="exam-source">中考真题</span>【2018·四川成都】</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>结合全文，谈谈你对第⑩段"花和人都会遇到各种各样的不幸，但是生命的长河是无止境的"这句话的理解。（6 分）</p>
+                </div>
+                <div class="hint-box">
+                    <p><strong>提示：</strong>可从表层含义（字面意思）和深层含义（人生哲理）两个层面作答，注意联系紫藤萝从衰败到盛开的变化。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 2: 祖父的园子 ==================== -->
+        <div class="article-section" id="a2">
+            <span class="part-label rural">Part 5 真题二 · 乡村童年</span>
+            <h2>祖父的园子</h2>
+            <p class="author">萧红</p>
+            <p class="source-info">【2021·江苏南京·中考真题】（节选自《呼兰河传》）</p>
+
+            <p>①我家有一个大花园，这花园里蜂子、蝴蝶、蜻蜓、蚂蚱，样样都有。蝴蝶有白蝴蝶、黄蝴蝶。这种蝴蝶小，不太好看。好看的是大红蝴蝶，满身带着金粉。蜻蜓是金的，蚂蚱是绿的。蜂子则嗡嗡地飞着，满身绒毛，落到一朵花上，胖圆圆的就跟一个小毛球似的不动了。</p>
+            <p>②祖父一天都在园子里边，我也跟着他在里面转。祖父戴一顶大草帽，我戴一顶小草帽；祖父栽花，我就栽花；祖父拔草，我就拔草。祖父种小白菜的时候，我就跟在后边，用脚把那下了种的土窝一个一个地溜平。哪里会溜得准，不过是东一脚西一脚地瞎闹。有时不但没有把菜种盖上，反而把它踢飞了。</p>
+            <p>③祖父铲地，我也铲地。因为我太小，拿不动锄头杆，祖父就把锄头杆拔下来，让我单拿着那个锄头的"头"来铲。其实哪里是铲，不过是伏在地上，用锄头乱钩一阵。我认不得哪个是苗，哪个是草，往往把谷穗当作野草一起勾掉，把狗尾草当作谷穗留着。</p>
+            <p>④祖父发现我铲的那块地还留着一片狗尾草，就问我："这是什么？"</p>
+            <p>⑤我说："谷子。"</p>
+            <p>⑥祖父大笑起来，笑得够了，把草拔下来，问我："你每天吃的就是这个吗？"</p>
+            <p>⑦我说："是的。"</p>
+            <p>⑧我看祖父还在笑，就说："你不信，我到屋里拿来给你看。"我跑到屋里拿了一个谷穗，远远地抛给祖父，说："这不是一样的吗？"</p>
+            <p>⑨祖父把我叫过去，慢慢讲给我听，说谷子是有芒针的，狗尾草却没有，只是毛嘟嘟的，很像狗尾巴。</p>
+            <p>⑩祖父虽然教我，可我并不细听。一抬头看见一个蝴蝶从头上飞过，又去追蝴蝶了。蝴蝶飞得快，我跑了一阵就累了，坐在阴凉地方歇了一会儿，又去采一朵倭瓜花，捉一个绿蚂蚱，把蚂蚱腿用线绑上，绑了一会儿，把腿绑掉了，只留下一条腿。蚂蚱跑了，我也不追，又去抓蜻蜓。</p>
+            <p>⑪玩腻了，我又跑到祖父那里乱闹一阵。祖父浇菜，我也过来浇，但不是往菜上浇，而是拿着水瓢，拼尽了力气，把水往天空一扬，大喊着："下雨啰！下雨啰！"</p>
+            <p>⑫太阳在园子里是特别大的，天空是特别高的。太阳光芒四射，亮得使人睁不开眼睛，亮得蚯蚓不敢钻出地面来，蝙蝠不敢从黑暗的地方飞出来。凡是在太阳下的，都是健康的、漂亮的。拍一拍手，仿佛大树都会发出声响；叫一两声，好像对面的土墙都会回答。</p>
+            <p>⑬花开了，就像睡醒了似的。鸟飞了，就像在天上逛似的。虫子叫了，就像虫子在说话似的。一切都活了，要做什么，就做什么，要怎么样，就怎么样，都是自由的。倭瓜愿意爬上架就爬上架，愿意爬上房就爬上房。黄瓜愿意开一朵花，就开一朵花，愿意结一个瓜，就结一个瓜。若都不愿意，就是一个瓜也不结，一朵花也不开，也没有人问它。</p>
+            <p class="no-indent">⑭玉米愿意长多高就长多高，它若愿意长上天去，也没有人管。蝴蝶随意地飞，一会儿从墙头上飞来一对黄蝴蝶，一会儿又从墙头上飞走一只白蝴蝶。它们是从谁家来的，又飞到谁家去？太阳也不知道。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题 <span class="exam-source">中考真题</span>【2021·江苏南京】</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>结合文章内容，说说作者笔下的"祖父的园子"有什么特点？表达了作者怎样的思想感情？（6 分）</p>
+                </div>
+                <div class="hint-box">
+                    <p><strong>提示：</strong>先概括园子的特点（从景物描写和人物活动中提炼），再分析思想感情——怀念？赞美？眷恋？建议分点作答。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 210px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 3: 走一步，再走一步 ==================== -->
+        <div class="article-section" id="a3">
+            <span class="part-label growth">Part 5 真题三 · 成长足迹</span>
+            <h2>走一步，再走一步</h2>
+            <p class="author">莫顿·亨特</p>
+            <p class="source-info">【2019·重庆中考B卷】</p>
+
+            <p>①那是费城七月里一个闷热的日子，虽然时隔五十七年，可那种闷热我至今还能感觉得到。当时和我一起的五个小男孩，因为玩弹子游戏玩厌了，都想找些新的花样来玩。</p>
+            <p>②"嗨！"内德说，"我们很久没有爬悬崖了。"</p>
+            <p>③"我们现在就去爬吧！"我说。于是我出主意，找到了一个很好的机会向他们炫耀自己。我确实非常渴望像其他孩子那样，能做出一些令人刮目相看的事来。</p>
+            <p>④我们打算从崖顶沿着一条迂回的小路下山回家。大约在小山一半的高度内德带头，其他的人跟着他向上爬。我落在最后，全身颤抖，冷汗直冒，也跟着他们向上爬。我的心在瘦骨嶙峋的胸腔里冬冬直跳。</p>
+            <p>⑤我终于爬了上去，蹲在石架上，心惊肉跳，尽量往里靠。其他的孩子继续向崖顶爬去，我尽量落在他们后面。我看见他们在一个最陡峭的地方停住了，他们从那里爬到了山顶。</p>
+            <p>⑥时间一分一秒地过去，暮色开始四合。在一片寂静中，我伏在岩石上，恐惧和疲乏使我全身麻木，不能动弹。</p>
+            <p>⑦暮色苍茫，天上出现了星星，悬崖下面的大地越来越暗。这时，树林里有一道手电光照来照去，我听到了杰利和我父亲的声音！</p>
+            <p>⑧父亲的手电光照着我。"下来吧，孩子，"他带着安慰的口气说，"晚饭做好了。"</p>
+            <p>⑨"我下不去！"我哭着说，"我会掉下去，我会摔死的！"</p>
+            <p>⑩"听我说吧，"我父亲说，"不要想着距离有多远。你只要想着你是在走一小步。你能办得到的。眼睛看着我电筒的光照着的地方，你能看见石架下面那块岩石吗？"</p>
+            <p>⑪我慢慢地把身体移过去。"看见了。"我说。</p>
+            <p>⑫"好，"他对我说，"现在你把左脚踏到那块岩石上。不要担心下一步。听我的话。"</p>
+            <p>⑬这似乎能办得到。我小心翼翼地伸出左脚去探那块岩石，而且踩到了它。我顿时有了信心。"很好，"我父亲叫道，"现在移动右脚，把它移到右边稍低一点的地方，那里有另外一个落脚点。"我又照着做了。我的信心大增。</p>
+            <p>⑭"我能办得到的。"我想。</p>
+            <p>⑮我每次只移动一小步，慢慢爬下悬崖。最后，我一脚踩在崖下的岩石上，投入了父亲强壮的手臂中。我先是啜泣了一会儿，然后，我产生了一种巨大的成就感。这是我永远忘不了的经历。</p>
+            <p>⑯我曾屡次发现，每当我感到前途茫茫而灰心丧气时，只要记起很久以前我在那座小悬崖上所学到的经验，我便能应付一切。我提醒自己，不要想着远在下面的岩石，而要着眼于那最初的一小步，走了这一步再走下一步，直到抵达我所要到的地方。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题 <span class="exam-source">中考真题</span>【2019·重庆B卷】</h3>
+                <div class="question-item">
+                    <p><strong>题目：</strong>结合全文，说说标题"走一步，再走一步"的深刻含义。你从中获得了什么启示？（6 分）</p>
+                </div>
+                <div class="hint-box">
+                    <p><strong>提示：</strong>标题含义分两层理解：表层（实际爬悬崖的动作）+ 深层（人生哲理）。启示要联系自身实际，避免空话套话。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 210px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part6.html">← Part 6 素材积累</a>
+            <a href="lesson04.html">返回课程首页</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 04 课 第 4 部分 成长足迹 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-concept {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .key-concept h3 {
+            color: #00695c;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #00bcd4 0%, #009688 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .theme-card {
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .theme-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .theme-card.personal {
+            background: #ede7f6;
+            border-color: #7c4dff;
+        }
+
+        .theme-card.personal h4 { color: #4527a0; }
+
+        .theme-card.life {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+
+        .theme-card.life h4 { color: #2e7d32; }
+
+        .theme-card.social {
+            background: #e3f2fd;
+            border-color: #42a5f5;
+        }
+
+        .theme-card.social h4 { color: #1565c0; }
+
+        .identification-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .identification-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            color: #555;
+        }
+
+        .identification-list li::before {
+            content: "📌 ";
+        }
+
+        .identification-list li strong {
+            color: #00bcd4;
+        }
+
+        .keyword-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .keyword-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+        }
+
+        .keyword-item h4 {
+            color: #009688;
+            margin-bottom: 8px;
+        }
+
+        .keyword-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #009688;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #009688;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #00bcd4 0%, #009688 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+
+        .case-analysis {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .case-analysis h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .case-analysis .quote {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #009688;
+            color: #555;
+        }
+
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stage-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .stage-card .stage-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #009688;
+            margin-bottom: 8px;
+        }
+
+        .stage-card .event {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .stage-card .reaction {
+            color: #e91e63;
+            font-size: 0.85rem;
+        }
+
+        .growth-insight {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .growth-insight h4 {
+            color: #e65100;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step active">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">Part 4</span>
+            <h1>主旨分类：成长足迹</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">学习"成长足迹"类文章的主题特征、发展阶段和答题方法。</p>
+        </div>
+
+        <!-- ==================== Section 1: Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 观看视频</h2>
+            <p>请认真观看以下视频，学习"成长足迹"类文章的核心知识。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1Xi4y1b7bR&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: Concept ==================== -->
+        <div class="content-section">
+            <h2>📖 什么是"成长足迹"？</h2>
+
+            <div class="key-concept">
+                <h3>核心概念</h3>
+                <p><strong>成长</strong>是人生必不可少的话题。成长分为两个层面：</p>
+                <ul>
+                    <li><strong>生理上的长大：</strong>身体的发育变化</li>
+                    <li><strong>心理上的长大：</strong>心智的成熟与变化</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula">经历事件 → 产生变化 → 获得启发 → 心理成长</div>
+                <div class="subtitle">成长的轨迹：懂得感恩、学会团结独立、面对困难更有勇气</div>
+            </div>
+
+            <p><strong>为什么成长类是考试高频考点？</strong></p>
+            <p>不同学段的文章主题各有侧重：</p>
+            <ul>
+                <li><strong>小学阶段：</strong>更多涉及"爱"的话题</li>
+                <li><strong>初中阶段：</strong>更多涉及"成长"的话题（中考重点）</li>
+                <li><strong>高中阶段：</strong>更多涉及国家、社会、世界等更宏大的话题</li>
+            </ul>
+        </div>
+
+        <!-- ==================== Section 3: Three Types ==================== -->
+        <div class="content-section">
+            <h2>🔍 成长足迹的三个层面</h2>
+
+            <div class="theme-card personal">
+                <h4>第一层：个人类</h4>
+                <p>个人的成长足迹，更多反映在<strong>心智的成熟和变化</strong>中。</p>
+                <ul>
+                    <li>随着年龄增长，对外界的认知逐渐发生变化</li>
+                    <li>经历了某些生活之后，有了更多的启发，对世界有了更深刻的认识</li>
+                </ul>
+            </div>
+
+            <div class="theme-card life">
+                <h4>第二层：生活类</h4>
+                <p>从生活中得到启示，帮助更好地成长。常常伴随着<strong>人生哲理或感悟</strong>。</p>
+                <ul>
+                    <li>文章中描写生活，从中体会感悟</li>
+                </ul>
+            </div>
+
+            <div class="theme-card social">
+                <h4>第三层：社会类</h4>
+                <p>在社会背景下，通过事件或人物明白道理，获得成长。</p>
+                <ul>
+                    <li>例如：看到小清洁工，想到"职业平等"的观念</li>
+                </ul>
+            </div>
+
+            <div class="key-point">
+                <strong>重要提醒：</strong>成长类文章几乎在所有文章中都有体现，因为每一个事件都会给我们一些启示。这是初中阶段考得最多的类型，一定要特别关注。考试遇到的文章大多是<strong>积极、健康、向上</strong>的。
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: Identification ==================== -->
+        <div class="content-section">
+            <h2>🎯 如何判定成长足迹类文章？</h2>
+
+            <ul class="identification-list">
+                <li><strong>看标题：</strong>标题与成长有关系。</li>
+                <li><strong>看事件：</strong>主要事件涉及挑战、冲突或困境——这些事件会促进一个人的成长。</li>
+                <li><strong>看主角：</strong>文章主角是"我"，且在事件中有<strong>变化</strong>——变化就伴随着成长。</li>
+                <li><strong>看情感基调：</strong>90%以上的成长类文章都是积极、健康、向上的。</li>
+            </ul>
+
+            <div class="key-point">
+                <strong>解题关键：</strong>要学会在"变化"中找到"我"到底经历了什么样的成长，在哪方面成长。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: Case Study ==================== -->
+        <div class="content-section">
+            <h2>📝 真题示例：《蜕变》</h2>
+
+            <p><strong>题目：</strong>结合选文，谈谈你对小说标题"蜕变"的理解。</p>
+
+            <p><strong>分析思路：</strong>"蜕变"就是变化的意思——从一个状态转变为另一个状态，这本身就是成长。关注焦点一定是<strong>成长</strong>。</p>
+
+            <div class="case-analysis">
+                <h4>人物与事件分析</h4>
+                <p>这篇文章只写了<strong>一个人</strong>（"她"），但通过四个不同时期的事件来展现她的变化：</p>
+
+                <div class="stage-grid">
+                    <div class="stage-card">
+                        <div class="stage-name">幼年时期</div>
+                        <div class="event">毛毛虫爬到身上</div>
+                        <div class="reaction">惊慌尖叫，拼命挥舞，摔倒在地</div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-name">青年时期</div>
+                        <div class="event">谈恋爱时遇到毛毛虫</div>
+                        <div class="reaction">吓晕，但更在意男友出现太晚</div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-name">为人母时</div>
+                        <div class="event">女儿身边出现毛毛虫</div>
+                        <div class="reaction">勇敢挑开并踩死毛毛虫</div>
+                    </div>
+                    <div class="stage-card">
+                        <div class="stage-name">为人奶奶</div>
+                        <div class="event">孙女害怕毛毛虫</div>
+                        <div class="reaction">微笑解释"那是蝴蝶的幼虫"</div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>态度变化轨迹：</strong></p>
+            <p>幼年（极度恐惧）→ 青年（虽晕但不在意）→ 为人母（勇敢面对）→ 为人奶奶（接纳并化解他人恐惧）</p>
+
+            <div class="growth-insight">
+                <h4>💡 成熟的标志</h4>
+                <p>当你和这个世界和解的时候，你就是成熟了。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>答题要点（"蜕变"的理解）：</strong><br>
+                ① <strong>心理成熟：</strong>指一个人心理逐渐成熟的过程；<br>
+                ② <strong>结合文章内容：</strong>主人公在经历了不同角色的转变后，在不断克服各种困难中，逐渐学会了接纳；<br>
+                ③ <strong>生命领悟：</strong>在接纳中生命获得了更多的领悟，心里变得更加安宁，对周围的人和事物给予了尊重，更好地与这个世界和谐相处。
+            </div>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我掌握了成长足迹吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否理解了本节内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="c1">
+                <label for="c1"><span class="topic">核心概念：</span>能说出"成长"的两个层面（生理和心理）</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c2">
+                <label for="c2"><span class="topic">三个层面：</span>能区分个人类、生活类和社会类成长文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c3">
+                <label for="c3"><span class="topic">判定方法：</span>能从标题、事件、主角变化等维度判定文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c4">
+                <label for="c4"><span class="topic">真题实战：</span>理解《蜕变》中主人公的态度变化轨迹</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c5">
+                <label for="c5"><span class="topic">核心领悟：</span>理解"和世界和解是成熟的标志"</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part3.html">← Part 3 乡村童年</a>
+            <a href="lesson04.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['c1', 'c2', 'c3', 'c4', 'c5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了成长足迹的核心知识！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议重新观看视频，巩固相关知识点！';
+            }
+        }
+    </script>
+</body>
+</html>

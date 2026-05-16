@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 04 课 第 2 部分 托物感怀 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-concept {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .key-concept h3 {
+            color: #6a1b9a;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .key-concept p {
+            color: #555;
+        }
+
+        .concept-card {
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .concept-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .concept-card.tuowu {
+            background: #ede7f6;
+            border-color: #7c4dff;
+        }
+
+        .concept-card.tuowu h4 { color: #4527a0; }
+
+        .concept-card.jiejing {
+            background: #e8eaf6;
+            border-color: #5c6bc0;
+        }
+
+        .concept-card.jiejing h4 { color: #283593; }
+
+        .concept-card.yuli {
+            background: #e0f2f1;
+            border-color: #26a69a;
+        }
+
+        .concept-card.yuli h4 { color: #00695c; }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .identification-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .identification-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            color: #555;
+        }
+
+        .identification-list li::before {
+            content: "📌 ";
+        }
+
+        .identification-list li strong {
+            color: #e91e63;
+        }
+
+        .insect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .insect-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .insect-card h4 {
+            color: #6a1b9a;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .insect-card .key-sentence {
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .insect-card .insight {
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #11998e;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #11998e;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson04-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson04-part2.html" class="progress-step active">Part 2 托物感怀</a>
+            <a href="lesson04-part3.html" class="progress-step">Part 3 乡村童年</a>
+            <a href="lesson04-part4.html" class="progress-step">Part 4 成长足迹</a>
+            <a href="lesson04-part5.html" class="progress-step">Part 5 真题练习</a>
+            <a href="lesson04-part6.html" class="progress-step">Part 6 素材积累</a>
+            <a href="lesson04-appendix.html" class="progress-step">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 04 课</span>
+            <span class="part-badge">Part 2</span>
+            <h1>主旨分类：托物感怀</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">学习托物感怀类文章的特征、分类方法和答题技巧。</p>
+        </div>
+
+        <!-- ==================== Section 1: Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 观看视频</h2>
+            <p>请认真观看以下视频，学习"托物感怀"类文章的核心知识。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1Cg4y1b7ba&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: Concept ==================== -->
+        <div class="content-section">
+            <h2>📖 什么是"托物感怀"？</h2>
+
+            <div class="key-concept">
+                <h3>核心概念</h3>
+                <p><strong>托物感怀</strong>："托"是接触、借助的意思；"物"可以是景物，也可以是事物；"感怀"就是有所感受、有所感想、有所情感的抒发。即<strong>借助具体的景或物来抒发自己的情感</strong>。</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula">景/物 → 寄托 → 思想感情</div>
+                <div class="subtitle">万事万物都可以作为写作者寄托思想情感的场所</div>
+            </div>
+
+            <p>为什么需要"托物"？因为思想中的东西是<strong>看不见摸不着的</strong>，是抽象的。为了更好地把它们表露出来，我们就借一个具体的物来体现。</p>
+
+            <div class="example-box">
+                <h4>经典例子</h4>
+                <p><strong>朱自清《春》</strong>：通过写春天来抒发自己对生命的热爱与赞美。</p>
+                <p><strong>茅盾《白杨礼赞》</strong>：表面上写白杨，实际上写人，托物言志。</p>
+                <p><strong>梅花</strong>：通过写梅花在寒冬迎风开放，来表达"遇到困难要迎难而上"的精神。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>文化背景：</strong>中国自古以来表达情感比较委婉，不直接表达想法，而是借物来传递。这种"委婉的小智慧"不仅存在于中国文化，很多外国名著中也常见托物言志的手法。
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: Three Types ==================== -->
+        <div class="content-section">
+            <h2>🔍 托物感怀的三大类型</h2>
+
+            <div class="concept-card tuowu">
+                <h4>类型一：托物言志</h4>
+                <p>通过一个具体的物来表达自己的<strong>志向、情绪、哲理或人生观</strong>。</p>
+                <p><strong>关键点：</strong>所托之物与所表达的志、情有着<strong>高度的相似性</strong>（形似或神似）。</p>
+                <p><strong>特点：</strong>作者<strong>主动</strong>地借物来表达某种情志。</p>
+                <div class="example-box" style="margin-top: 10px;">
+                    <p><strong>示例：</strong>想要表达"遇到困难要迎难而上"，不直接说，而是写梅花在寒冷的冬天迎风开放，最后点明主旨——总有一天你会迎来属于你自己的花。</p>
+                </div>
+            </div>
+
+            <div class="concept-card jiejing">
+                <h4>类型二：借景抒情 / 借物抒情</h4>
+                <p>借景物来抒发自己的情感。也称为<strong>融情于景</strong>或<strong>融情于物</strong>。</p>
+                <p><strong>区别：</strong></p>
+                <ul>
+                    <li><strong>借景抒情：</strong>借景物来表达情感</li>
+                    <li><strong>融情于景：</strong>在写景物时，不自觉地把情感融入进去了</li>
+                </ul>
+                <p><strong>注意：</strong>这两个说法本质上是同一个东西的不同表达，答题时选哪个都可以。</p>
+                <div class="example-box" style="margin-top: 10px;">
+                    <p><strong>示例：</strong>《济南的冬天》虽然写的是济南的冬天，实际上在抒发作者的情感。人置身于美景中，情感会不自觉地流露。</p>
+                </div>
+            </div>
+
+            <div class="concept-card yuli">
+                <h4>类型三：借物喻理</h4>
+                <p>要告诉一个道理时，不是直接说，而是先讲一个现象、一个故事，再引出道理。</p>
+                <p><strong>特点：</strong>更多的是一种<strong>偶然性、触发性</strong>——突然看到某个物，受到震动，得到启示。</p>
+                <div class="example-box" style="margin-top: 10px;">
+                    <p><strong>示例：</strong>屋檐下的水滴每天滴在石头上，长大后发现石头被滴出了洞。由此感悟：人一定要持之以恒，再坚硬的东西也能击穿。</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>托物言志 vs 借物喻理：</strong>托物言志是人<strong>主动</strong>地借物表达志向；借物喻理更多的是<strong>偶然性、触发性</strong>——突然看到某个物，受到震动，得到启示。
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: Identification ==================== -->
+        <div class="content-section">
+            <h2>🎯 如何判定托物感怀类文章？</h2>
+
+            <p>不管你是标题有景物，还是文章主要写的是景物，还是文章的主角是景物，都要把它和<strong>人</strong>关联起来：</p>
+
+            <ul class="identification-list">
+                <li><strong>看标题：</strong>标题是景或物时，很可能是状物类文章。状物类文章的目的不在写物，而在写人，凸显人的精神品质。</li>
+                <li><strong>看内容：</strong>文章主要写景或写物时，一定要把它和人的情感联系起来——是托物言志？借物抒情？还是借物喻理？</li>
+                <li><strong>看主角：</strong>文章主角是景或物时，要把它和人关联起来。有人就和文中的人关联，没人就和生活中的人关联。</li>
+            </ul>
+
+            <div class="formula-box">
+                <div class="formula">物的精神品质 → 人的精神品质</div>
+                <div class="subtitle">物本身没有精神品质，是人赋予的主观想法</div>
+            </div>
+
+            <div class="key-point">
+                <strong>重要理解：</strong>梅花在冬天开放是它的生物习性和自然属性。人怕冬天，梅花不怕，所以人把"坚强"的主观想法赋予了它。遇到物的精神品质时，都要把它和人关联起来。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: Case Study ==================== -->
+        <div class="content-section">
+            <h2>📝 真题示例：《园中沉思》</h2>
+
+            <p><strong>题目：</strong>选文第八段中作者说"曾经得到过它们的一点提示"，请谈谈虫子们分别给了你怎样的启示。</p>
+
+            <p><strong>分析思路：</strong>"启示"就是某种思想感情。答题时要把具体的虫子和人关联起来去谈启示。</p>
+
+            <div class="insect-grid">
+                <div class="insect-card">
+                    <h4>🦗 蝉</h4>
+                    <div class="key-sentence">"它们竭尽全力地歌唱短暂的生命"</div>
+                    <p class="insight"><strong>启示：</strong>蝉的生命极其短暂，却依然竭力歌唱。人应该珍惜短暂的生命，对生活充满激情，努力绽放自己的生命。</p>
+                </div>
+                <div class="insect-card">
+                    <h4>🦗 蟋蟀</h4>
+                    <div class="key-sentence">"过于投入其中，外来干扰丝毫没有影响它"</div>
+                    <p class="insight"><strong>启示：</strong>蟋蟀专心演奏，不受外界干扰。人应该在任何时候专心于自己的学习和工作，保持自在与豁达的心态。</p>
+                </div>
+                <div class="insect-card">
+                    <h4>🐜 蚂蚁</h4>
+                    <div class="key-sentence">"它没有因此而退缩，而是直接去攀登那块石头"</div>
+                    <p class="insight"><strong>启示：</strong>蚂蚁面对障碍不逃避，努力前行。人应该坦然面对生活，不怕困难，努力前行。</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>答题要点：</strong>状物类文章/托物感怀类文章，一定要和<strong>人</strong>结合起来，你就能很好地整理出答案。语文没有标准答案，只要实事求是地结合文章内容去答，就是对的。
+            </div>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我掌握了托物感怀吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否理解了本节内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="c1">
+                <label for="c1"><span class="topic">核心概念：</span>能说出"托物感怀"的含义和为什么需要借物表达</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c2">
+                <label for="c2"><span class="topic">三大类型：</span>能区分托物言志、借景抒情、借物喻理</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c3">
+                <label for="c3"><span class="topic">判定方法：</span>能从标题、内容、主角三个维度判定托物感怀类文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c4">
+                <label for="c4"><span class="topic">核心理解：</span>理解"物的精神品质"是人赋予的主观想法</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c5">
+                <label for="c5"><span class="topic">答题技巧：</span>知道托物感怀类文章要和"人"结合起来答题</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson04-part1.html">← Part 1 复习回顾</a>
+            <a href="lesson04.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['c1', 'c2', 'c3', 'c4', 'c5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了托物感怀的核心知识！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议重新观看视频，巩固相关知识点！';
+            }
+        }
+    </script>
+</body>
+</html>
