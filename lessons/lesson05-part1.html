@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 05 课 第 1 部分 第 04 课复习回顾 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .category-card {
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid;
+        }
+
+        .category-card.tuowu { background: #f3e5f5; border-color: #ab47bc; }
+        .category-card.tuowu h4 { color: #6a1b9a; }
+        .category-card.rural { background: #e8f5e9; border-color: #66bb6a; }
+        .category-card.rural h4 { color: #2e7d32; }
+        .category-card.growth { background: #fff8e1; border-color: #ffb74d; }
+        .category-card.growth h4 { color: #e65100; }
+
+        .category-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .approach-card {
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid;
+        }
+
+        .approach-card.derive {
+            background: #e8eaf6;
+            border-color: #5c6bc0;
+        }
+
+        .approach-card.derive h4 { color: #283593; }
+
+        .approach-card.locate {
+            background: #fce4ec;
+            border-color: #e91e63;
+        }
+
+        .approach-card.locate h4 { color: #c62828; }
+
+        .approach-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .approach-card ul {
+            margin-left: 20px;
+        }
+
+        .approach-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #11998e;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #11998e;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+
+        .bridge-text {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .bridge-text h3 {
+            color: #1a237e;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .bridge-text p {
+            color: #555;
+            line-height: 2;
+        }
+
+        .source-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .source-tag.l04 {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step active">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step">Part 4 真题练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">复习回顾</span>
+            <h1>第 04 课复习回顾</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">在进入主旨理解 3 之前，先回顾第 04 课的核心知识，为新课打好基础。</p>
+        </div>
+
+        <!-- ==================== Section 1: 三大主旨类型 ==================== -->
+        <div class="content-section">
+            <h2>📇 一、第 04 课学习的三大主旨类型 <span class="source-tag l04">来自第 04 课 Part 2-4</span></h2>
+
+            <div class="category-grid">
+                <div class="category-card tuowu">
+                    <h4>托物感怀</h4>
+                    <p>借助具体的景或物来抒发自己的情感——托物言志、借景抒情、借物喻理。</p>
+                </div>
+                <div class="category-card rural">
+                    <h4>乡村童年</h4>
+                    <p>在乡村中度过的童年时光，是构筑一代人美好记忆的摇篮。</p>
+                </div>
+                <div class="category-card growth">
+                    <h4>成长足迹</h4>
+                    <p>通过一次经历获得成长，是初中阶段考得最多的类型。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: 托物感怀回顾 ==================== -->
+        <div class="content-section">
+            <h2>🌸 二、托物感怀 <span class="source-tag l04">来自第 04 课 Part 2</span></h2>
+
+            <div class="formula-box">
+                <div class="formula">景/物 → 寄托 → 思想感情</div>
+                <div class="subtitle">万事万物都可以作为写作者寄托思想情感的场所</div>
+            </div>
+
+            <p><strong>三大类型：</strong></p>
+            <div class="approach-grid">
+                <div class="approach-card derive">
+                    <h4>托物言志</h4>
+                    <ul>
+                        <li>通过具体的物表达自己的志向、情绪、哲理或人生观</li>
+                        <li>作者<strong>主动</strong>借物表达</li>
+                        <li>所托之物与所表达的志有着<strong>高度的相似性</strong></li>
+                    </ul>
+                </div>
+                <div class="approach-card locate">
+                    <h4>借景抒情 / 借物抒情</h4>
+                    <ul>
+                        <li>借景物来抒发自己的情感</li>
+                        <li>也称为融情于景或融情于物</li>
+                        <li>人置身于美景中，情感会不自觉地流露</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>借物喻理</h4>
+                <p>要告诉一个道理时，先讲一个现象或故事，再引出道理。更多的是一种<strong>偶然性、触发性</strong>——突然看到某个物，受到震动，得到启示。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>判定方法：</strong>标题有景物 → 文章主要写景物 → 主角是景物，都要把它和<strong>人</strong>关联起来。物的精神品质是人赋予的主观想法。
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 乡村童年回顾 ==================== -->
+        <div class="content-section">
+            <h2>🏡 三、乡村童年 <span class="source-tag l04">来自第 04 课 Part 3</span></h2>
+
+            <div class="formula-box">
+                <div class="formula">乡村（地点）+ 童年（时期）= 乡村中的童年时光</div>
+                <div class="subtitle">不可割裂的深厚情谊</div>
+            </div>
+
+            <p><strong>为什么考试常考？</strong>当代作家（70、80、90 后）大多经历了从农村到城市的生活转变，城镇化进程中的乡村记忆是创作的高产题材。</p>
+
+            <div class="example-box">
+                <h4>三个层次</h4>
+                <p><strong>乡村类：</strong>赞美风光和人民，表达对城镇化的不满。</p>
+                <p><strong>童年类：</strong>怀念童年时光，赞美纯朴人性。</p>
+                <p><strong>乡村童年类：</strong>美景、蝉鸣、伙伴、乡民，都成为不可磨灭的记忆。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>新农村：</strong>城乡融合发展——既要保留乡村的淳朴，又要发挥城市的现代化功能。如果文章来源于各大日报，要特别关注城乡融合发展的赞美内容。
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: 成长足迹回顾 ==================== -->
+        <div class="content-section">
+            <h2>👣 四、成长足迹 <span class="source-tag l04">来自第 04 课 Part 4</span></h2>
+
+            <div class="formula-box">
+                <div class="formula">经历事件 → 产生变化 → 获得启发 → 心理成长</div>
+                <div class="subtitle">成长的轨迹：懂得感恩、学会独立、面对困难更有勇气</div>
+            </div>
+
+            <p><strong>成长的两个层面：</strong></p>
+            <ul style="margin-left: 25px; color: #555; line-height: 2.2;">
+                <li><strong>生理上的长大：</strong>身体的发育变化</li>
+                <li><strong>心理上的长大：</strong>心智的成熟与变化</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>三个层面</h4>
+                <p><strong>个人类：</strong>心智的成熟和变化。</p>
+                <p><strong>生活类：</strong>从生活中得到启示，常常伴随着人生哲理。</p>
+                <p><strong>社会类：</strong>在社会背景下通过事件或人物明白道理。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>核心理悟：</strong>当你和这个世界和解的时候，你就是成熟了。和世界和解是成熟的标志。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 真题回顾 ==================== -->
+        <div class="content-section">
+            <h2>📖 五、真题回顾 <span class="source-tag l04">来自第 04 课 Part 5</span></h2>
+
+            <p>第 04 课 Part 5 完成了三篇中考真题：</p>
+
+            <div class="example-box">
+                <h4>真题一：《紫藤萝瀑布》（2018·四川成都）宗璞</h4>
+                <p><strong>主旨类型：</strong>托物感怀</p>
+                <p><strong>主旨核心：</strong>花和人都会遇到各种各样的不幸，但是生命的长河是无止境的——借紫藤萝抒发对生命的感悟。</p>
+            </div>
+
+            <div class="example-box">
+                <h4>真题二：《祖父的园子》（2021·江苏南京）萧红</h4>
+                <p><strong>主旨类型：</strong>乡村童年</p>
+                <p><strong>主旨核心：</strong>园子充满生机与自由，表达对童年生活的怀念、对祖父的眷恋、对乡村生活的赞美。</p>
+            </div>
+
+            <div class="example-box">
+                <h4>真题三：《走一步，再走一步》（2019·重庆B卷）莫顿·亨特</h4>
+                <p><strong>主旨类型：</strong>成长足迹</p>
+                <p><strong>主旨核心：</strong>面对困难不要想着距离有多远，只要着眼于最初的一小步，走了这一步再走下一步。</p>
+            </div>
+        </div>
+
+        <!-- ==================== Section 6: 两大核心思路回顾 ==================== -->
+        <div class="content-section">
+            <h2>💡 六、理解主旨的两大核心思路 <span class="source-tag l04">来自第 03/04 课</span></h2>
+
+            <div class="approach-grid">
+                <div class="approach-card derive">
+                    <h4>思路一：分析内容推导</h4>
+                    <ul>
+                        <li>分析文章写了什么人、什么事、什么景</li>
+                        <li>判断人物性格、事件意义、景物特点</li>
+                        <li>由此得出思想感情</li>
+                    </ul>
+                </div>
+                <div class="approach-card locate">
+                    <h4>思路二：直接寻找线索</h4>
+                    <ul>
+                        <li><strong>标题</strong>：文章的眼睛</li>
+                        <li><strong>开头和结尾</strong>：中心句常位于首尾</li>
+                        <li><strong>议论和抒情句</strong>：议论表达观点，抒情抒发情感</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我准备好进入第 05 课了吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否掌握了第 04 课的核心内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="rc1">
+                <label for="rc1"><span class="topic">托物感怀：</span>能说出三大类型（托物言志、借景抒情、借物喻理）的区别</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc2">
+                <label for="rc2"><span class="topic">乡村童年：</span>能理解乡村童年类文章的时代背景和三个层次</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc3">
+                <label for="rc3"><span class="topic">成长足迹：</span>能说出成长的两个层面和三个层面</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc4">
+                <label for="rc4"><span class="topic">真题实战：</span>能运用两大核心思路独立完成主旨概括类题目</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="rc5">
+                <label for="rc5"><span class="topic">核心领悟：</span>理解"和世界和解是成熟的标志"</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- ==================== Bridge to new lesson ==================== -->
+        <div class="bridge-text">
+            <h3>🚀 准备好了吗？</h3>
+            <p>第 04 课解决了<strong>"托物感怀""乡村童年""成长足迹"</strong>三类文章的主旨理解问题，<br>
+            第 05 课将进一步拓展主旨理解的深度，<br>
+            学习更多文章类型的主旨分析方法。</p>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part2.html">Part 2 社会关怀</a>
+            <a href="lesson05-part4.html">Part 4 真题练习 →</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['rc1', 'rc2', 'rc3', 'rc4', 'rc5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了第 04 课的核心内容，可以进入新课了！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议先回顾第 04 课的相应内容，再进入新课吧！';
+            }
+        }
+    </script>
+</body>
+</html>

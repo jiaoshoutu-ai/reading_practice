@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://www.bilibili.com https://*.bilibili.com https://*.hdslb.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com; connect-src 'self' https://www.bilibili.com https://api.bilibili.com">
+    <title>第 05 课 第 4 部分 真题练习 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #c62828 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #e91e63 0%, #c62828 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #e91e63;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fce4ec;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .passage-title {
+            text-align: center;
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .passage-author {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .passage-text {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 25px 30px;
+            color: #444;
+            line-height: 2.2;
+            font-size: 1rem;
+            border: 1px solid #eee;
+        }
+
+        .passage-text p {
+            text-indent: 2em;
+            margin-bottom: 12px;
+        }
+
+        .passage-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .questions-list {
+            margin: 20px 0;
+        }
+
+        .question-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #e91e63;
+        }
+
+        .question-item h4 {
+            color: #e91e63;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .question-item p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .question-score {
+            display: inline-block;
+            background: #fce4ec;
+            color: #c62828;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .student-answer {
+            width: 100%;
+            min-height: 80px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 1.8;
+            resize: vertical;
+            margin-top: 10px;
+            transition: border-color 0.2s;
+        }
+
+        .student-answer:focus {
+            outline: none;
+            border-color: #e91e63;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .show-answer-btn, .ai-score-btn {
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            color: white;
+        }
+
+        .show-answer-btn {
+            background: linear-gradient(135deg, #e91e63 0%, #c62828 100%);
+        }
+
+        .show-answer-btn:hover {
+            opacity: 0.85;
+        }
+
+        .ai-score-btn {
+            background: linear-gradient(135deg, #7c4dff 0%, #536dfe 100%);
+        }
+
+        .ai-score-btn:hover {
+            opacity: 0.85;
+        }
+
+        .ai-score-btn:disabled {
+            background: #bdbdbd;
+            cursor: not-allowed;
+        }
+
+        .answer-section {
+            display: none;
+            margin-top: 12px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .answer-section p {
+            color: #2e7d32;
+        }
+
+        .answer-section strong {
+            color: #1b5e20;
+        }
+
+        .scoring-points {
+            margin-top: 10px;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .scoring-points .point {
+            padding: 6px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .scoring-points .point:last-child {
+            border-bottom: none;
+        }
+
+        .scoring-points .point-score {
+            display: inline-block;
+            background: #fce4ec;
+            color: #c62828;
+            padding: 1px 6px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        .ai-result {
+            display: none;
+            margin-top: 12px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #7c4dff;
+            background: #f3e5f5;
+        }
+
+        .ai-result .score-display {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7c4dff;
+            margin-bottom: 10px;
+        }
+
+        .ai-result .feedback {
+            color: #4a148c;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .ai-result .loading {
+            text-align: center;
+            color: #7c4dff;
+            font-style: italic;
+        }
+
+        .ai-fallback-note {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #fff8e1;
+            border-radius: 6px;
+            border-left: 4px solid #ffb74d;
+            font-size: 0.85rem;
+            color: #e65100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #e91e63;
+            color: white;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .hint-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .hint-box strong {
+            color: #e65100;
+        }
+
+        table.fill-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table.fill-table th, table.fill-table td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: center;
+            color: #555;
+        }
+
+        table.fill-table th {
+            background: #fce4ec;
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        table.fill-table td {
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step active">Part 4 真题练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">Part 4</span>
+            <h1>真题练习</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">综合运用所学方法，完成三篇中考真题，检测主旨理解能力。</p>
+        </div>
+
+        <div class="hint-box">
+            <strong>练习提示：</strong>请先在答题区输入你的答案，然后点击"AI 打分"获得智能评分和点评，再点击"查看参考答案"对照标准答案。AI 打分需要 Chrome 137+ 浏览器。
+        </div>
+
+        <!-- ==================== Passage 1 ==================== -->
+        <div class="content-section">
+            <h2>📖 真题一：《父亲的课堂》</h2>
+
+            <div class="passage-title">父亲的课堂</div>
+            <div class="passage-author">明前茶 &nbsp;（选自《文汇报》，有删改）</div>
+
+            <div class="passage-text">
+                <p>①十年后，我还记得中考结束那年，父亲回家探亲时，进门第三天就要带我去爬山。他一手<strong>钳</strong>住我的肩膀，把我从外婆家的凉席上拽起来："你中考结束了，在家闲了三天，该跟我上山了。"</p>
+
+                <p>②父亲是地质队员，常年在外，我对他既陌生又敬畏。他带我爬的是家后面那座野山，没有石阶，只有一条打柴人踩出的土路。六月酷暑，蝉声如雷，没走多远我就气喘吁吁。父亲健步如飞，始终与我保持着十米左右的距离，不说话，也不回头。我踉踉跄跄跟在后面，几次想喊住他歇一歇，却硬是憋着没出声。</p>
+
+                <p>③快到山顶时，我脚下一滑，整个人趴在了滚烫的石头上。手心破了皮，渗出血来。父亲终于停下，转身走回来。我以为他要扶我，他却只是站在旁边，平静地说："自己站起来。"那一刻，委屈和愤怒涌上心头，我咬着牙爬起来，在心里发誓再也不要跟他爬山了。</p>
+
+                <p>④然而此后每个暑假，只要父亲回家，爬山便成了必修课。渐渐地，我不再抱怨，甚至开始期待。山路上，父亲依然不说话，我却学会了辨认岩石、观察云层、聆听鸟鸣。有一次，他忽然开口："山不会惯着你，摔倒了就得自己起来。"顿了顿，又说："人这一辈子，也没有人一直惯着你。"</p>
+
+                <p>⑤除了爬山，父亲还逼我学修自行车。他把一辆报废的"二八大杠"搬出来，扔给我一盒工具："什么时候修好，什么时候骑。"我用了整整一个暑假，拆了装、装了拆，手上磨出老茧，终于让那辆破车重新转动链条。当我歪歪扭扭骑上它时，父亲站在院子里，难得地笑了。</p>
+
+                <p>⑥高考后填报志愿，我想学文科，父亲却坚持让我报地质。我们大吵一架，我说他专制，他说我不懂。最后我妥协了。大学四年，我跟着导师跑遍了大半个中国，渐渐理解了父亲的选择——他给我的，不仅是专业，更是一种看世界的方式。</p>
+
+                <p>⑦多年后，父亲退休了，身体大不如前。有一天，他忽然说："陪我去爬山吧。"还是那座野山，只是这一次，他走得很慢。我放慢脚步，走在前面，与他保持着一米的距离。走到半山腰，他停下来喘气，我伸手去扶他。他没有拒绝。</p>
+
+                <p>⑧下山时，夕阳将我们的影子拉得很长。父亲忽然说："那年你摔倒，我其实想扶你。"我愣了一下，他说："但我知道，如果我扶了，你就永远学不会自己站起来。"</p>
+
+                <p>⑨那一刻，我终于明白——</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>阅读题目</h3>
+
+            <div class="questions-list">
+                <!-- Q15 -->
+                <div class="question-item" id="q15">
+                    <h4>第15题 <span class="question-score">3分</span></h4>
+                    <p>第①段中加点词语"钳"的表达效果是什么？</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q15')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q15">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>"钳"是用力夹住的意思<strong>（1分）</strong>，生动形象地写出了父亲抓住"我"肩膀时强有力的动作<strong>（1分）</strong>，表现了父亲不容置疑的严厉态度<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>解释词义："钳"是用力夹住的意思</div>
+                            <div class="point"><span class="point-score">1分</span>分析动作：写出了父亲抓住"我"肩膀时强有力的动作</div>
+                            <div class="point"><span class="point-score">1分</span>点明态度/性格：表现了父亲不容置疑的严厉态度</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q16 -->
+                <div class="question-item" id="q16">
+                    <h4>第16题 <span class="question-score">4分</span></h4>
+                    <p>文章第②—④段写了父亲带"我"爬山的经历，请完成下表。</p>
+                    <table class="fill-table">
+                        <tr>
+                            <th>时间</th>
+                            <th>爬山中的事件</th>
+                            <th>"我"的情感</th>
+                        </tr>
+                        <tr>
+                            <td>第一次爬山</td>
+                            <td>（1）</td>
+                            <td>委屈、愤怒</td>
+                        </tr>
+                        <tr>
+                            <td>此后每个暑假</td>
+                            <td>父亲依然不说话，"我"学会辨认岩石等</td>
+                            <td>（2）</td>
+                        </tr>
+                        <tr>
+                            <td>（3）爬山时</td>
+                            <td>父亲说："山不会惯着你……"</td>
+                            <td>逐渐理解</td>
+                        </tr>
+                    </table>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案，例如：（1）...（2）...（3）..."></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q16')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q16">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong></p>
+                        <p>（1）父亲带"我"爬野山，与"我"始终保持十米距离，"我"摔倒后让"我"自己站起来<strong>（1分）</strong></p>
+                        <p>（2）从抱怨到期待<strong>（1分）</strong></p>
+                        <p>（3）有一次<strong>（1分）</strong></p>
+                        <p>（4）父亲说出"山不会惯着你"的道理时<strong>（1分）</strong></p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>（1）答出"爬野山/保持十米距离/摔倒后让'我'自己站起来"等关键信息</div>
+                            <div class="point"><span class="point-score">1分</span>（2）答出"从抱怨到期待"或相近表述</div>
+                            <div class="point"><span class="point-score">1分</span>（3）答出"有一次/某次"</div>
+                            <div class="point"><span class="point-score">1分</span>（4）答出父亲说"山不会惯着你"道理时的时间节点</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q17 -->
+                <div class="question-item" id="q17">
+                    <h4>第17题 <span class="question-score">4分</span></h4>
+                    <p>第⑤段写父亲让"我"修自行车，能否删去？为什么？</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q17')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q17">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>不能删去<strong>（1分）</strong>。内容上，修自行车丰富了父亲对"我"的教育方式，进一步体现父亲的用心——不仅教"我"面对挫折，还教"我"生活技能<strong>（1分）</strong>；结构上，它是父亲"课堂"的重要组成部分，与爬山经历共同构成完整的"课堂"内容<strong>（1分）</strong>；情感上，父亲看到"我"骑上车时"难得地笑了"这个细节，暗示了严厉之下的父爱，为下文"我"的理解和结尾的"明白"埋下伏笔<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>明确表态：不能删去</div>
+                            <div class="point"><span class="point-score">1分</span>内容层面：丰富了父亲的教育方式，体现教生活技能</div>
+                            <div class="point"><span class="point-score">1分</span>结构层面：是"课堂"的重要组成部分，与爬山共同构成完整内容</div>
+                            <div class="point"><span class="point-score">1分</span>情感层面："难得地笑了"暗示严厉之下的父爱，为下文埋下伏笔</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q18 -->
+                <div class="question-item" id="q18">
+                    <h4>第18题 <span class="question-score">5分</span></h4>
+                    <p>结合全文，说说作者最终明白了什么？请简要阐述。</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q18')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q18">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>作者最终明白了：父亲那些看似严厉、不近人情的教育方式，其实饱含良苦用心<strong>（2分）</strong>。爬山时让"我"自己站起来，是教"我"学会独立；逼"我"修自行车，是培养"我"的生活能力；坚持让"我"报地质专业，是给"我"一种看世界的方式<strong>（1分）</strong>。多年后父亲说出"如果我扶了，你就永远学不会自己站起来"，更让作者明白，那些"不扶"的瞬间，恰恰是最深的爱<strong>（1分）</strong>。文章表达了作者对父亲深沉内敛、用心良苦的父爱的理解与感恩<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">2分</span>核心明白：父亲严厉/不近人情的教育方式其实饱含良苦用心</div>
+                            <div class="point"><span class="point-score">1分</span>结合事例：爬山教独立、修车教能力、报专业教看世界方式</div>
+                            <div class="point"><span class="point-score">1分</span>引用结尾关键句："如果我扶了，你就永远学不会自己站起来"</div>
+                            <div class="point"><span class="point-score">1分</span>点明情感主旨：对父亲深沉内敛、用心良苦的父爱的理解与感恩</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q19 -->
+                <div class="question-item" id="q19">
+                    <h4>第19题 <span class="question-score">4分</span></h4>
+                    <p>文章以"父亲的课堂"为题，有什么妙处？</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q19')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q19">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>①"课堂"一词设置悬念：父亲的"课堂"教什么？引发读者阅读兴趣<strong>（1分）</strong>；②"课堂"一语双关，既指爬山、修自行车等具体的教育场景，又指父亲用无声的方式为"我"上的人生大课<strong>（1分）</strong>；③标题高度概括了文章主要内容——父亲用独特方式教育"我"成长<strong>（1分）</strong>；④揭示了文章主旨——"课堂"的本质是深沉内敛的父爱，表达了对父亲教育智慧的赞美<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>设置悬念：引发读者对"父亲的课堂"的兴趣</div>
+                            <div class="point"><span class="point-score">1分</span>一语双关：既指具体教育场景，又指人生大课</div>
+                            <div class="point"><span class="point-score">1分</span>概括内容：父亲用独特方式教育"我"成长</div>
+                            <div class="point"><span class="point-score">1分</span>揭示主旨：深沉内敛的父爱，对父亲教育智慧的赞美</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Passage 2 ==================== -->
+        <div class="content-section">
+            <h2>📖 真题二：《黑夜的火车》</h2>
+
+            <div class="passage-title">黑夜的火车</div>
+            <div class="passage-author">李朝德 &nbsp;（选自《人民日报》2019年11月6日，有删改）</div>
+
+            <div class="passage-text">
+                <p>①挂上电话，我立刻就后悔了。车窗外，落日失去了最后一抹余晖，远山只剩下黛色的模糊轮廓。火车还有一个多小时才经过村里，那时天应该早黑透了吧，那么晚打电话告诉母亲站在路口做什么呢？列车在黑夜中呼啸着，望着车窗外的阑珊灯火，我一路忐忑。</p>
+
+                <p>②那天，我从昆明乘火车去一座叫宣威的小城参加会议，这趟城际列车要穿过村里。我家离铁路并不远，直线距离也就五六百米。火车黑夜穿过家乡，最熟悉的景致与最亲近的人将在窗外忽闪而过，那种兴奋与激动难于描述。</p>
+
+                <p>③10多分钟前，我打电话告诉母亲，我要去宣威。母亲知道我要路过村里，很是高兴："去宣威做什么？大概几点钟到？"我一一回答，有些遗憾："可惜村里没有站，不然可以回家看看。"母亲说："你忙你的，我身体好好的，不用管。"说完这句，电话里一阵沉默。我理解这时的沉默。车过村里，母子相距不过几百米，却不能相见。我打破沉默："妈，要不火车快到村里时我打电话给你，你去村里铁路口等我，我在7号车厢的门口向你摇手，你就可以看见我，我也可以看见你。"对这个突然的提议，我自己也觉得有些意外和为难，黑夜中叫母亲在路口等着见我，算怎么一回事？但母亲很高兴，一口答应了下来。</p>
+
+                <p>④那个叫小米田的路口是连接村庄与田地的一个主要路口。近些年火车多次提速，由单线变成复线后，铁路沿线早在10多年前就全线封闭。小米田路口虽然还在，但早被栅栏完全隔断，要过铁路只能翻越天桥，现在只剩下三四米宽的道口。我坐的这趟火车时速大概120公里。这样的速度通过那个道口要多长时间呢？可能半秒都不到吧！相互能看见？</p>
+
+                <p>⑤窗外一片模糊，无边的黑暗包裹着车厢，我计算着时间与路程，却总也看不见熟悉的风景。焦躁中，看见远远的公路上有车流的灯光，流光溢彩。我正纳闷儿这是哪条路呢，闪着白色光芒的"施家屯收费站"几个字就出现了。我一阵悲凉，"施家屯"是隔壁村庄，火车应该在一分钟前就已驶过松林村，我竟然没有看见我熟悉的村庄和站在路口的母亲。我颓然打电话告诉母亲："妈，天太黑了，我没有看见你，火车已经到了施家屯。"母亲也说："刚才有趟火车经过，太快了，没有看见你。我想应该就是这趟火车，知道你坐在上面就行。"</p>
+
+                <p>⑥我为自己的粗心愧疚不已，说不出话来。年迈的母亲在黑夜的冷风中站着，我在明亮温暖的车厢里坐着。本想让她看见我，我也能看见她，却害得她在路边白白等待，空欢喜一场。</p>
+
+                <p>⑦松林村的一草一木，我再熟悉不过，怎么会看不出来呢？我不甘心地说："妈，要不明晚我返回时在最近的曲靖站下？站上有到村里的汽车，半小时就能到村里，住一晚再回昆明，方便得很。"母亲连忙阻止，固执而又坚定，仿佛我这样做是她的错。我没有办法，自己赌气也是跟母亲赌气："那就明晚还在这路口，到时候我会站在最后一节车厢的车门旁招手，一定可以看见。"我又一次要求母亲去铁路口，固执得有些残忍。我坚定地认为，是我的疏忽，才会没看见站在车窗外的母亲，那么近的距离怎么能看不见？</p>
+
+                <p>⑧那晚返程时，我早早走到最后一节车厢的车门旁。黑夜的火车如一条光带在铁轨上飘移，伏在玻璃上，我尽量睁大眼睛，可还是很难看清车窗外的景物。我想起顾城的诗句："黑夜给了我黑色的眼睛，我却用它寻找光明。"我的光明在哪里呢？</p>
+
+                <p>⑨此时，我又看见了"施家屯收费站"，心头撞鹿。内外温差大，车窗内起了一层薄薄的雾。我_____用手掌擦亮玻璃，双手_____眼眶遮挡车内的亮光，让自己也陷入与外面一样的黑夜，在微弱的光线下仔细搜索一景一物。我终于看见被车灯照出几米远模糊的路面轮廓，看见了村庄里萤火般的昏黄灯光。</p>
+
+                <p>⑩就在一个路口，我突然看见有束手电筒光在黑暗中照着火车！我刚要寻找并摇手呼喊，火车却过了！我忙掏出电话，颤抖着告诉母亲："妈，我看见你在路口啦！"母亲也说："我也看见你了。"两句话说完，车外再没有了村庄，母亲越来越远了。</p>
+
+                <p>⑪我在黑夜中的火车里不过是一晃而过的黑点，那个叫小米田的道口，不过三四米宽，而站在道口的母亲，她还没有一米六高啊……</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>阅读题目</h3>
+
+            <div class="questions-list">
+                <!-- Q14 -->
+                <div class="question-item" id="q2_14">
+                    <h4>第14题 <span class="question-score">2分</span></h4>
+                    <p>联系上下文，第⑨段括号内应当填入的词语依次是______、______（填编号）</p>
+                    <p style="color: #888; font-size: 0.9rem;">A．慌忙 &nbsp;&nbsp; B．急忙 &nbsp;&nbsp;&nbsp;&nbsp; A．捂住 &nbsp;&nbsp; B．罩住</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q2_14')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q2_14">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>依次是 <strong>A（慌忙）</strong>、<strong>B（罩住）</strong>（每空1分，共2分）</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>第一空选A"慌忙"——"慌忙"不仅表示动作快，还带有心理上的紧张、急切，符合当时"心头撞鹿"的紧张心境；"急忙"仅表示动作快</div>
+                            <div class="point"><span class="point-score">1分</span>第二空选B"罩住"——"罩住"指双手拢住、围住，更准确地写出遮挡光线的动作；"捂住"是盖住、按住，不如"罩住"准确</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q15 -->
+                <div class="question-item" id="q2_15">
+                    <h4>第15题 <span class="question-score">4分</span></h4>
+                    <p>梳理文章内容，填写下列表格。</p>
+                    <table class="fill-table">
+                        <tr>
+                            <th>情节</th>
+                            <th>母亲的表现</th>
+                            <th>"我"的内心情感</th>
+                        </tr>
+                        <tr>
+                            <td>提议见面</td>
+                            <td>②</td>
+                            <td>意外、为难</td>
+                        </tr>
+                        <tr>
+                            <td>①</td>
+                            <td>安慰我</td>
+                            <td>悲凉、不甘、愧疚</td>
+                        </tr>
+                        <tr>
+                            <td>如愿见面</td>
+                            <td>③</td>
+                            <td>紧张、激动</td>
+                        </tr>
+                        <tr>
+                            <td>等待见面（返程）</td>
+                            <td>④</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案，例如：①...②...③...④..."></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q2_15')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q2_15">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>（每空1分，共4分）</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>① 错过见面 / 没有看到彼此 / 第一次没见成（答出"错过/没看见"之意即可）</div>
+                            <div class="point"><span class="point-score">1分</span>② 很高兴，一口答应（答出母亲的高兴和爽快答应）</div>
+                            <div class="point"><span class="point-score">1分</span>③ 用手电筒照着路口 / 打手电在路口等待（答出母亲用行动配合）</div>
+                            <div class="point"><span class="point-score">1分</span>④ 连忙阻止，固执而又坚定 / 连忙阻止（答出母亲阻止"我"回家住宿）</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q16 -->
+                <div class="question-item" id="q2_16">
+                    <h4>第16题 <span class="question-score">4分</span></h4>
+                    <p>第⑦段中的两处"固执"含义是否相同？请结合文章内容简要分析。</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q2_16')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q2_16">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>不相同<strong>（1分）</strong>。</p>
+                        <p>母亲的"固执"：指母亲坚决不让"我"下车回家住宿，怕耽误"我"的事<strong>（1分）</strong>，体现了母亲对儿子的体贴和关爱。</p>
+                        <p>"我"的"固执"：指"我"坚持要求母亲再次去路口等"我"<strong>（1分）</strong>，源于"我"没有看到母亲的愧疚和不甘心，一定要弥补遗憾的决心<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>明确表态：两处"固执"含义不相同</div>
+                            <div class="point"><span class="point-score">1分</span>分析母亲的"固执"：坚决不让"我"下车，体现体贴关爱</div>
+                            <div class="point"><span class="point-score">1分</span>分析"我"的"固执"：坚持要求母亲再次去路口等待</div>
+                            <div class="point"><span class="point-score">1分</span>点明"我"固执背后的情感：愧疚、不甘、弥补遗憾</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q17 -->
+                <div class="question-item" id="q2_17">
+                    <h4>第17题 <span class="question-score">3分</span></h4>
+                    <p>下列对文章的理解分析不正确的一项是（&nbsp;&nbsp;&nbsp;&nbsp;）</p>
+                    <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                        <li>A．第①段画线句是环境描写，交代故事发生的时间和地点，推动故事情节发展。</li>
+                        <li>B．第③段加点词"沉默"表明母亲的话是在安慰"我"，她其实渴望见到"我"。</li>
+                        <li>C．本文语言生动华丽，饱含母子间互相牵挂、关心体贴的深厚情感，极具表现力。</li>
+                        <li>D．本文的记叙顺序是倒叙，且以第一人称视角，增强了文章的感染力。</li>
+                    </ul>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案（填选项字母）……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q2_17')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q2_17">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong><strong>C</strong>（3分）</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">3分</span>选C。C项错误在于"语言生动华丽"——本文语言风格是质朴自然、朴实真挚，并非"华丽"。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q18 -->
+                <div class="question-item" id="q2_18">
+                    <h4>第18题 <span class="question-score">5分</span></h4>
+                    <p>分析文章结尾的妙处。</p>
+                    <p style="color: #888; font-size: 0.9rem;">"我在黑夜中的火车里不过是一晃而过的黑点，那个叫小米田的道口，不过三四米宽，而站在道口的母亲，她还没有一米六高啊……"</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q2_18')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q2_18">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong></p>
+                        <p>①运用对比手法（或数字对比），以"我"在火车中是"一晃而过的黑点"、道口"不过三四米宽"、母亲"还没有一米六高"等具体的数字和极小的事物，凸显了在黑夜飞驰的火车中看到彼此的困难<strong>（1分）</strong>；</p>
+                        <p>②强烈地表达了"我"对母亲的心疼、愧疚和感动之情——母亲如此矮小，却在那样寒冷的黑夜里为自己等待<strong>（2分）</strong>；</p>
+                        <p>③省略号结尾，言有尽而意无穷，给读者留下想象空间，余韵悠长<strong>（1分）</strong>；</p>
+                        <p>④点明主旨，深化了母子之间深沉而朴素的亲情主题<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>手法分析：运用对比/列数字，凸显看到彼此的困难</div>
+                            <div class="point"><span class="point-score">2分</span>情感表达：表达"我"对母亲的心疼、愧疚和感动（答出2个情感得2分，1个得1分）</div>
+                            <div class="point"><span class="point-score">1分</span>结构效果：省略号结尾，言有尽意无穷，余韵悠长</div>
+                            <div class="point"><span class="point-score">1分</span>主旨效果：点明主旨，深化母子深沉朴素的亲情主题</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Passage 3 ==================== -->
+        <div class="content-section">
+            <h2>📖 真题三：《半个笔者》</h2>
+
+            <div class="passage-title">半个笔者</div>
+            <div class="passage-author">王选 &nbsp;（选自《人民日报》，有删改）</div>
+
+            <div class="passage-text">
+                <p>①那天，我蹲在街角修鞋。</p>
+
+                <p>②我是个修鞋匠，在这座城市的角落里摆了十五年摊。十五年里，我见过形形色色的脚，却很少记住脚的主人。只有她，我一直记得。</p>
+
+                <p>③她第一次来，是五年前的冬天。那天飘着小雪，她拎着一双红色的高跟鞋，鞋跟磨偏了，鞋尖蹭掉了漆。她站在摊前，犹豫了很久才开口："师傅，能修好吗？"</p>
+
+                <p>④我接过鞋，翻看鞋底。鞋底已经磨得薄如纸，边缘开胶，鞋跟歪向一边。我说："鞋底该换了，鞋跟也得重做，费用不低。"她低下头，双手绞在一起，过了好一会儿才说："那……那先修鞋跟吧，鞋底还能穿。"</p>
+
+                <p>⑤我看了她一眼。她穿着洗得发白的棉袄，袖口已经磨出了棉絮，脚上是一双旧棉鞋，鞋面沾着泥点。我忽然有些不忍："鞋底也换了吧，我给你便宜点。"</p>
+
+                <p>⑥她抬起头，眼里有光，但很快又暗下去："还是……还是先修鞋跟吧。"</p>
+
+                <p>⑦我修好鞋跟，她付了钱，小心翼翼地把鞋装进布袋，走了。从那以后，她每隔两三个月来一次，每次都是那双红鞋，每次都是能省则省。</p>
+
+                <p>⑧后来，我断断续续从她口中知道了一些事。她叫阿芳，是这座城市的清洁工。每天凌晨四点上班，扫两条街，一直到中午十二点。下午去商场做保洁，晚上还要去一户人家帮忙做饭。她说，丈夫在工地摔伤了腰，干不了重活，两个孩子一个上初中，一个上小学，都在老家。</p>
+
+                <p>⑨"那你怎么不回去？"我问。</p>
+
+                <p>⑩她笑了笑："回去挣不到钱。在这里，我一个人打三份工，够孩子们上学。等他们考上大学，我就不干了。"她说这话时，眼角的皱纹挤在一起，像秋天干裂的土地。</p>
+
+                <p>⑪去年春天，她来的时候，破天荒地要换鞋底。她把鞋往我手里一塞："师傅，这次换最好的。"我打趣她："发财了？"她抿着嘴笑，眼角却湿了："闺女考上县一中了，我得体体面面去开家长会。"</p>
+
+                <p>⑫那是她唯一一次换了整双鞋底。新鞋底厚实，走起路来无声无息。她穿上，在摊前走了几步，像个孩子一样笑了："轻了，走路都轻了。"</p>
+
+                <p>⑬后来，她有半年没来。</p>
+
+                <p>⑭再见到她，是去年秋天。她瘦了很多，头发白了一半。她没有带鞋，只是站在摊前，问我生意好不好。我说还行。她点点头，从口袋里掏出一个橘子递给我："师傅，我要回去了。丈夫的病又重了，我得回去照顾他。"</p>
+
+                <p>⑮她把那双红鞋从布袋里拿出来，鞋底还好好的，鞋面却旧得不成样子了。她摸了摸鞋面，说："这鞋跟了我八年了。刚来城里时买的，二十块钱。穿着它，我扫过每一条街，擦过每一层楼，洗过每一个碗。"她把鞋放在我手里："师傅，送给你吧。你是好人。"</p>
+
+                <p>⑯我还没来得及说话，她已经转身走了。背影在秋风里缩得很小很小，像一片被风吹落的叶子。</p>
+
+                <p>⑰那双红鞋，我至今留在摊上。每当有人问起，我就给他们讲阿芳的故事。</p>
+
+                <p>⑱她在这座城市里，扫了八年街，擦了八年楼，洗了八年碗，却始终没有一双完整的鞋。</p>
+
+                <p>⑲她叫阿芳。这座城市里，有无数个阿芳。</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>阅读题目</h3>
+
+            <div class="questions-list">
+                <!-- Q15 -->
+                <div class="question-item" id="q3_15">
+                    <h4>第15题 <span class="question-score">3分</span></h4>
+                    <p>文章第⑤段画线句运用了什么描写方法？有什么作用？</p>
+                    <p style="color: #888; font-size: 0.9rem; font-style: italic;">"她穿着洗得发白的棉袄，袖口已经磨出了棉絮，脚上是一双旧棉鞋，鞋面沾着泥点。"</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q3_15')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q3_15">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>运用了外貌描写<strong>（1分）</strong>。"洗得发白""磨出棉絮""旧棉鞋""沾着泥点"等词语，生动形象地写出了阿芳衣着破旧、生活拮据的样子<strong>（1分）</strong>，为下文她修鞋时"能省则省"的举动做了铺垫，也表现了作者对她处境的关注与不忍<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>指出描写方法：外貌描写</div>
+                            <div class="point"><span class="point-score">1分</span>分析内容：写出了阿芳衣着破旧、生活拮据的样子</div>
+                            <div class="point"><span class="point-score">1分</span>作用：为下文"能省则省"做铺垫，表现作者的关注与不忍</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q16 -->
+                <div class="question-item" id="q3_16">
+                    <h4>第16题 <span class="question-score">4分</span></h4>
+                    <p>文中阿芳换鞋底前后的态度有何变化？请结合文章内容简要分析。</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q3_16')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q3_16">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>此前修鞋时，阿芳总是能省则省，只肯修鞋跟，坚决不换鞋底<strong>（1分）</strong>；去年春天，她破天荒要换最好的鞋底，因为"闺女考上县一中"，要"体体面面去开家长会"<strong>（1分）</strong>。这一变化表明，阿芳虽然对自己极度节俭，却愿意为孩子的荣耀倾其所有<strong>（1分）</strong>，体现了底层劳动者对尊严的渴望和对子女深沉的爱<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>换鞋前态度：能省则省，只修鞋跟，坚决不换鞋底</div>
+                            <div class="point"><span class="point-score">1分</span>换鞋后态度：破天荒要换最好的，因女儿考上县一中要体面开家长会</div>
+                            <div class="point"><span class="point-score">1分</span>变化含义：对自己极度节俭，却愿意为孩子的荣耀倾其所有</div>
+                            <div class="point"><span class="point-score">1分</span>深层情感：底层劳动者对尊严的渴望和对子女深沉的爱</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q17 -->
+                <div class="question-item" id="q3_17">
+                    <h4>第17题 <span class="question-score">4分</span></h4>
+                    <p>文章第⑮段写道："这鞋跟了我八年了。刚来城里时买的，二十块钱。穿着它，我扫过每一条街，擦过每一层楼，洗过每一个碗。"这句话有什么深刻含义？</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q3_17')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q3_17">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>这句话用排比句式（"扫过……擦过……洗过……"），概述了阿芳在这座城市八年的艰辛劳作<strong>（1分）</strong>。一双二十元的鞋，承载了她作为清洁工、保洁员、帮厨的全部记忆，是她全部生活的见证<strong>（1分）</strong>。这句话既暗含阿芳对自己劳动的自豪与感慨，也流露出底层劳动者默默付出却不被看见的酸楚<strong>（1分）</strong>，引发读者对社会底层劳动者的关注与尊重<strong>（1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>手法分析：排比句式，概述阿芳八年的艰辛劳作</div>
+                            <div class="point"><span class="point-score">1分</span>含义：二十元的鞋承载了她全部记忆，是她生活的见证</div>
+                            <div class="point"><span class="point-score">1分</span>情感：暗含自豪与感慨，也流露出默默付出却不被看见的酸楚</div>
+                            <div class="point"><span class="point-score">1分</span>深层意蕴：引发读者对社会底层劳动者的关注与尊重</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q18 -->
+                <div class="question-item" id="q3_18">
+                    <h4>第18题 <span class="question-score">5分</span></h4>
+                    <p>文章结尾说："这座城市里，有无数个阿芳。"请结合全文主旨，谈谈你对这句话的理解。</p>
+                    <textarea class="student-answer" placeholder="在这里输入你的答案……"></textarea>
+                    <div class="btn-row">
+                        <button class="ai-score-btn" onclick="aiScore(this, 'q3_18')">AI 打分</button>
+                        <button class="show-answer-btn" onclick="toggleAnswer(this)">查看参考答案</button>
+                    </div>
+                    <div class="ai-result" id="ai-q3_18">
+                        <div class="loading">AI 正在评分，请稍候……</div>
+                    </div>
+                    <div class="ai-fallback-note">
+                        当前浏览器不支持 AI 打分功能（需 Chrome 137+），请对照参考答案进行自评。
+                    </div>
+                    <div class="answer-section">
+                        <p><strong>参考答案：</strong>本文通过修鞋匠的视角，叙述了清洁工阿芳在城市里艰难谋生的故事，刻画了一个勤劳、坚韧、节俭、深爱子女的底层劳动者形象<strong>（概括内容，1分）</strong>。阿芳在这座城市里扫了八年街、擦了八年楼、洗了八年碗，却始终没有一双完整的鞋——她的付出与所得形成巨大反差<strong>（人物命运分析，1分）</strong>。</p>
+                        <p>文章结尾说"有无数个阿芳"，将个体命运上升到群体高度，揭示了文章的主旨：阿芳不是孤例，她是千千万万城市底层劳动者的缩影<strong>（揭示主旨，2分）</strong>。这句话表达了作者对社会底层劳动者的深切同情与关注，呼唤社会对他们给予更多理解、尊重与关怀<strong>（情感态度，1分）</strong>。</p>
+                        <div class="scoring-points">
+                            <div class="point"><span class="point-score">1分</span>概括内容：修鞋匠视角叙述阿芳艰难谋生的故事，刻画底层劳动者形象</div>
+                            <div class="point"><span class="point-score">1分</span>人物命运分析：付出与所得形成巨大反差</div>
+                            <div class="point"><span class="point-score">2分</span>揭示主旨：将个体命运上升到群体高度，阿芳是千千万万底层劳动者的缩影（答出"个体上升到群体"得1分，答出"缩影/千千万万"得1分）</div>
+                            <div class="point"><span class="point-score">1分</span>情感态度：表达对底层劳动者的同情与关注，呼唤社会给予理解、尊重与关怀</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Review Section ==================== -->
+        <div class="content-section" style="background: linear-gradient(135deg, #f3e5f5 0%, #e8eaf6 100%); border: 2px solid #9c27b0;">
+            <h2 style="color: #7b1fa2; border-bottom-color: #ce93d8;">📝 主旨题解题要点回顾</h2>
+
+            <p style="color: #4a148c; margin-bottom: 20px; font-size: 0.95rem;">
+                本部分重点训练<strong>主旨题</strong>。通过前面的真题练习，回顾主旨题的核心解题思路。
+            </p>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">一、什么是主旨题？</h3>
+            <p style="color: #555; margin-bottom: 15px;">
+                主旨题要求你概括文章的<strong>中心思想</strong>或<strong>核心情感</strong>。记叙文的主旨是<strong>看不见的内在东西</strong>，需要通过外在的内容去分析推导。常见提问方式：
+            </p>
+            <ul style="list-style: none; margin-bottom: 20px;">
+                <li style="padding: 6px 12px; background: white; border-radius: 6px; margin-bottom: 8px; color: #555;">"这篇文章表达了作者怎样的思想感情？"</li>
+                <li style="padding: 6px 12px; background: white; border-radius: 6px; margin-bottom: 8px; color: #555;">"结合全文，说说作者最终明白了什么？"</li>
+                <li style="padding: 6px 12px; background: white; border-radius: 6px; margin-bottom: 8px; color: #555;">"文章塑造 XX 人物有什么意义？"</li>
+                <li style="padding: 6px 12px; background: white; border-radius: 6px; margin-bottom: 8px; color: #555;">"文章标题有什么含义/妙处？"</li>
+            </ul>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">二、两大解题思路</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 12px; padding: 20px; border-left: 4px solid #5c6bc0;">
+                    <h4 style="color: #283593; margin-bottom: 10px;">思路一：分析内容推导</h4>
+                    <p style="color: #555; font-size: 0.95rem;">通过分析文章的<strong>内容要素</strong>来推导主旨。</p>
+                    <ul style="margin-left: 18px; color: #555; font-size: 0.9rem; margin-top: 8px;">
+                        <li>写了什么<strong>人物</strong>？这个人物有什么特点/精神品质？</li>
+                        <li>发生了什么事<strong>件</strong>？事件有什么意义？</li>
+                        <li>描写了什么景<strong>物</strong>？景物寄托了什么情感？</li>
+                        <li>最终表达了怎样的<strong>思想感情</strong>？</li>
+                    </ul>
+                    <p style="color: #888; font-size: 0.85rem; margin-top: 8px;">人物 → 事件 → 情感 → 主旨</p>
+                </div>
+                <div style="background: white; border-radius: 12px; padding: 20px; border-left: 4px solid #e91e63;">
+                    <h4 style="color: #c62828; margin-bottom: 10px;">思路二：直接寻找线索</h4>
+                    <p style="color: #555; font-size: 0.95rem;">在文章中<strong>找到最能体现主旨的关键句</strong>。</p>
+                    <ul style="margin-left: 18px; color: #555; font-size: 0.9rem; margin-top: 8px;">
+                        <li><strong>看标题：</strong>标题是文章的眼睛</li>
+                        <li><strong>看开头结尾：</strong>中心句常位于文章首尾</li>
+                        <li><strong>看议论抒情句：</strong>议论表达观点，抒情抒发情感</li>
+                    </ul>
+                    <p style="color: #888; font-size: 0.85rem; margin-top: 8px;">标题 → 首尾 → 议论抒情句 → 主旨</p>
+                </div>
+            </div>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">三、基本思想四要素</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #283593;">内容</div>
+                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">文章写了什么</div>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #c62828;">人物</div>
+                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">人物特点与品质</div>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #e65100;">事件</div>
+                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">事件的意义</div>
+                </div>
+                <div style="background: white; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="font-size: 1.2rem; font-weight: bold; color: #00695c;">思想感情</div>
+                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">主旨核心</div>
+                </div>
+            </div>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">四、主旨五大分类</h3>
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+                    <div style="background: #e3f2fd; border-radius: 8px; padding: 12px; text-align: center;">
+                        <div style="font-weight: bold; color: #1565c0; font-size: 0.95rem;">挚爱亲情</div>
+                        <div style="color: #888; font-size: 0.8rem;">个人类</div>
+                    </div>
+                    <div style="background: #f3e5f5; border-radius: 8px; padding: 12px; text-align: center;">
+                        <div style="font-weight: bold; color: #6a1b9a; font-size: 0.95rem;">托物感怀</div>
+                        <div style="color: #888; font-size: 0.8rem;">个人类</div>
+                    </div>
+                    <div style="background: #e8f5e9; border-radius: 8px; padding: 12px; text-align: center;">
+                        <div style="font-weight: bold; color: #2e7d32; font-size: 0.95rem;">乡村童年</div>
+                        <div style="color: #888; font-size: 0.8rem;">个人类</div>
+                    </div>
+                    <div style="background: #fff3e0; border-radius: 8px; padding: 12px; text-align: center;">
+                        <div style="font-weight: bold; color: #e65100; font-size: 0.95rem;">成长足迹</div>
+                        <div style="color: #888; font-size: 0.8rem;">个人类</div>
+                    </div>
+                    <div style="background: #fce4ec; border-radius: 8px; padding: 12px; text-align: center; border: 2px solid #e91e63;">
+                        <div style="font-weight: bold; color: #c62828; font-size: 0.95rem;">社会关怀</div>
+                        <div style="color: #888; font-size: 0.8rem;">跳出自我 → 社会</div>
+                    </div>
+                </div>
+                <p style="color: #888; font-size: 0.85rem; margin-top: 12px; text-align: center;">
+                    前四类属于<strong style="color: #1565c0;">个人类</strong>（站在个人角度），第五类<strong style="color: #c62828;">社会关怀</strong>是跳出自我去看待社会。
+                </p>
+            </div>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">五、主旨题答题模板</h3>
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-radius: 8px; padding: 20px; text-align: center; font-size: 1.05rem; color: #283593; font-weight: bold; margin-bottom: 15px;">
+                    本文通过……（内容/人物/事件），<br>表现了/抒发了/赞美了……（思想感情/精神品质），<br>表达了作者……（情感态度/价值追求）。
+                </div>
+                <p style="color: #555; font-size: 0.95rem;"><strong>答题三步法：</strong></p>
+                <ol style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>概括内容：</strong>用一句话概括文章写了什么（人物+事件）</li>
+                    <li><strong>提炼情感：</strong>指出文章表达了怎样的思想感情或精神品质</li>
+                    <li><strong>点明主旨：</strong>总结作者的深层用意或价值追求</li>
+                </ol>
+            </div>
+
+            <h3 style="color: #7b1fa2; margin-bottom: 15px;">六、真题回看</h3>
+
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px;">
+                <h4 style="color: #283593; margin-bottom: 10px;">真题一：《父亲的课堂》——挚爱亲情 + 成长足迹</h4>
+                <p style="color: #555; margin-bottom: 8px;"><strong>第18题："结合全文，说说作者最终明白了什么？"</strong>——典型的主旨题。</p>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>思路一（分析内容）：</strong>父亲爬山不扶"我" → 教独立；逼"我"修自行车 → 教生活能力；坚持报地质 → 给看世界的方式 → 主旨：父爱的深沉与用心</li>
+                    <li><strong>思路二（找线索）：</strong>结尾"如果我扶了，你就永远学不会自己站起来"就是主旨线索 → 父亲的不扶恰恰是最深的爱</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px;">
+                <h4 style="color: #c62828; margin-bottom: 10px;">真题二：《黑夜的火车》——挚爱亲情</h4>
+                <p style="color: #555; margin-bottom: 8px;"><strong>第18题："分析文章结尾的妙处。"</strong>——结尾即主旨所在。</p>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>思路一（分析内容）：</strong>母亲在寒冷黑夜中站在三四米宽的道口等火车上的儿子 → 母子相距几百米却见不到 → 主旨：母子间深沉朴素的牵挂与爱</li>
+                    <li><strong>思路二（找线索）：</strong>结尾"我在黑夜中的火车里不过是一晃而过的黑点……而站在道口的母亲，她还没有一米六高啊" → 用极小的对比凸显极深的母爱</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px;">
+                <h4 style="color: #e65100; margin-bottom: 10px;">真题三：《半个笔者》——小人物大社会（社会关怀）</h4>
+                <p style="color: #555; margin-bottom: 8px;"><strong>第18题："这座城市里，有无数个阿芳。"谈谈你对这句话的理解。</strong>——从个体上升到群体的主旨题。</p>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>思路一（分析内容）：</strong>修鞋匠视角讲述清洁工阿芳八年艰辛劳作，却始终没有一双完整的鞋 → 付出与所得的巨大反差 → 主旨：底层劳动者的坚韧与默默付出</li>
+                    <li><strong>思路二（找线索）：</strong>结尾"有无数个阿芳" → 从一个人看到一群人，将个体命运上升到群体高度，呼唤社会关注与尊重</li>
+                    <li><strong>主旨分类：</strong>属于<strong style="color: #c62828;">社会关怀</strong>类中的"小人物大社会"——跳出自我，关注社会底层群体。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part3.html">← Part 3 主旨总结</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(btn) {
+            var questionItem = btn.closest('.question-item');
+            var answer = questionItem.querySelector('.answer-section');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                btn.textContent = '查看参考答案';
+            } else {
+                answer.style.display = 'block';
+                btn.textContent = '收起答案';
+            }
+        }
+
+        var scoringRubrics = {
+            q15: {
+                total: 3,
+                question: '第①段中加点词语"钳"的表达效果是什么？',
+                points: [
+                    {score: 1, desc: '解释词义："钳"是用力夹住的意思'},
+                    {score: 1, desc: '分析动作：写出了父亲抓住"我"肩膀时强有力的动作'},
+                    {score: 1, desc: '点明态度/性格：表现了父亲不容置疑的严厉态度'}
+                ]
+            },
+            q16: {
+                total: 4,
+                question: '文章第②—④段写了父亲带"我"爬山的经历，请完成下表。',
+                points: [
+                    {score: 1, desc: '（1）答出"爬野山/保持十米距离/摔倒后让\'我\'自己站起来"等关键信息'},
+                    {score: 1, desc: '（2）答出"从抱怨到期待"或相近表述'},
+                    {score: 1, desc: '（3）答出"有一次/某次"'},
+                    {score: 1, desc: '（4）答出父亲说出"山不会惯着你"的道理时的时间节点'}
+                ]
+            },
+            q17: {
+                total: 4,
+                question: '第⑤段写父亲让"我"修自行车，能否删去？为什么？',
+                points: [
+                    {score: 1, desc: '明确表态：不能删去'},
+                    {score: 1, desc: '内容层面：丰富了父亲的教育方式，体现教生活技能'},
+                    {score: 1, desc: '结构层面：是"课堂"的重要组成部分，与爬山共同构成完整内容'},
+                    {score: 1, desc: '情感层面："难得地笑了"暗示严厉之下的父爱，为下文埋下伏笔'}
+                ]
+            },
+            q18: {
+                total: 5,
+                question: '结合全文，说说作者最终明白了什么？请简要阐述。',
+                points: [
+                    {score: 2, desc: '核心明白：父亲严厉/不近人情的教育方式其实饱含良苦用心'},
+                    {score: 1, desc: '结合事例：爬山教独立、修车教能力、报专业教看世界方式'},
+                    {score: 1, desc: '引用结尾关键句："如果我扶了，你就永远学不会自己站起来"'},
+                    {score: 1, desc: '点明情感主旨：对父亲深沉内敛、用心良苦的父爱的理解与感恩'}
+                ]
+            },
+            q19: {
+                total: 4,
+                question: '文章以"父亲的课堂"为题，有什么妙处？',
+                points: [
+                    {score: 1, desc: '设置悬念：引发读者对"父亲的课堂"的兴趣'},
+                    {score: 1, desc: '一语双关：既指具体教育场景，又指人生大课'},
+                    {score: 1, desc: '概括内容：父亲用独特方式教育"我"成长'},
+                    {score: 1, desc: '揭示主旨：深沉内敛的父爱，对父亲教育智慧的赞美'}
+                ]
+            },
+            q2_14: {
+                total: 2,
+                question: '第⑨段括号内应当填入的词语依次是什么？',
+                points: [
+                    {score: 1, desc: '第一空选A"慌忙"——带有心理上的紧张、急切，符合"心头撞鹿"的心境'},
+                    {score: 1, desc: '第二空选B"罩住"——双手拢住围住，更准确地写出遮挡光线的动作'}
+                ]
+            },
+            q2_15: {
+                total: 4,
+                question: '梳理文章内容，填写下列表格。',
+                points: [
+                    {score: 1, desc: '① 答出"错过见面/没有看到彼此/第一次没见成"之意'},
+                    {score: 1, desc: '② 答出母亲"很高兴，一口答应"'},
+                    {score: 1, desc: '③ 答出母亲"用手电筒照着路口/打手电在路口等待"'},
+                    {score: 1, desc: '④ 答出母亲"连忙阻止，固执而又坚定"'}
+                ]
+            },
+            q2_16: {
+                total: 4,
+                question: '第⑦段中的两处"固执"含义是否相同？请结合文章内容简要分析。',
+                points: [
+                    {score: 1, desc: '明确表态：两处"固执"含义不相同'},
+                    {score: 1, desc: '分析母亲的"固执"：坚决不让"我"下车，体现体贴关爱'},
+                    {score: 1, desc: '分析"我"的"固执"：坚持要求母亲再次去路口等待'},
+                    {score: 1, desc: '点明"我"固执背后的情感：愧疚、不甘、弥补遗憾'}
+                ]
+            },
+            q2_17: {
+                total: 3,
+                question: '下列对文章的理解分析不正确的一项是？',
+                points: [
+                    {score: 3, desc: '选C。C项错误在于"语言生动华丽"——本文语言风格是质朴自然、朴实真挚，并非"华丽"'}
+                ]
+            },
+            q2_18: {
+                total: 5,
+                question: '分析文章结尾的妙处。',
+                points: [
+                    {score: 1, desc: '手法分析：运用对比/列数字，凸显看到彼此的困难'},
+                    {score: 2, desc: '情感表达：表达"我"对母亲的心疼、愧疚和感动（答出2个情感得2分，1个得1分）'},
+                    {score: 1, desc: '结构效果：省略号结尾，言有尽意无穷，余韵悠长'},
+                    {score: 1, desc: '主旨效果：点明主旨，深化母子深沉朴素的亲情主题'}
+                ]
+            },
+            q3_15: {
+                total: 3,
+                question: '文章第⑤段画线句运用了什么描写方法？有什么作用？',
+                points: [
+                    {score: 1, desc: '指出描写方法：外貌描写'},
+                    {score: 1, desc: '分析内容：写出了阿芳衣着破旧、生活拮据的样子'},
+                    {score: 1, desc: '作用：为下文"能省则省"做铺垫，表现作者的关注与不忍'}
+                ]
+            },
+            q3_16: {
+                total: 4,
+                question: '文中阿芳换鞋底前后的态度有何变化？请结合文章内容简要分析。',
+                points: [
+                    {score: 1, desc: '换鞋前态度：能省则省，只修鞋跟，坚决不换鞋底'},
+                    {score: 1, desc: '换鞋后态度：破天荒要换最好的，因女儿考上县一中要体面开家长会'},
+                    {score: 1, desc: '变化含义：对自己极度节俭，却愿意为孩子的荣耀倾其所有'},
+                    {score: 1, desc: '深层情感：底层劳动者对尊严的渴望和对子女深沉的爱'}
+                ]
+            },
+            q3_17: {
+                total: 4,
+                question: '文章第⑮段中"这鞋跟了我八年了……"这句话有什么深刻含义？',
+                points: [
+                    {score: 1, desc: '手法分析：排比句式，概述阿芳八年的艰辛劳作'},
+                    {score: 1, desc: '含义：二十元的鞋承载了她全部记忆，是她生活的见证'},
+                    {score: 1, desc: '情感：暗含自豪与感慨，也流露出默默付出却不被看见的酸楚'},
+                    {score: 1, desc: '深层意蕴：引发读者对社会底层劳动者的关注与尊重'}
+                ]
+            },
+            q3_18: {
+                total: 5,
+                question: '文章结尾说："这座城市里，有无数个阿芳。"请结合全文主旨，谈谈你对这句话的理解。',
+                points: [
+                    {score: 1, desc: '概括内容：修鞋匠视角叙述阿芳艰难谋生的故事，刻画底层劳动者形象'},
+                    {score: 1, desc: '人物命运分析：付出与所得形成巨大反差'},
+                    {score: 2, desc: '揭示主旨：将个体命运上升到群体高度，阿芳是千千万万底层劳动者的缩影（答出"个体上升到群体"得1分，答出"缩影/千千万万"得1分）'},
+                    {score: 1, desc: '情感态度：表达对底层劳动者的同情与关注，呼唤社会给予理解、尊重与关怀'}
+                ]
+            }
+        };
+
+        function aiScore(btn, qid) {
+            var questionItem = document.getElementById(qid);
+            var textarea = questionItem.querySelector('.student-answer');
+            var studentAnswer = textarea.value.trim();
+            var resultDiv = document.getElementById('ai-' + qid);
+            var fallbackNote = questionItem.querySelector('.ai-fallback-note');
+            var rubric = scoringRubrics[qid];
+
+            if (!studentAnswer) {
+                alert('请先在答题区输入你的答案再点击 AI 打分。');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = '评分中……';
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '<div class="loading">AI 正在评分，请稍候……</div>';
+
+            if (window.ai && window.ai.languageModel) {
+                var prompt = '你是一位经验丰富的初中语文阅卷老师。请根据以下评分标准和学生的答案，给出评分和点评。\n\n' +
+                    '【题目】' + rubric.question + '\n' +
+                    '【满分】' + rubric.total + '分\n' +
+                    '【评分标准】\n' +
+                    rubric.points.map(function(p) { return p.score + '分：' + p.desc; }).join('\n') + '\n\n' +
+                    '【学生的答案】' + studentAnswer + '\n\n' +
+                    '请严格按以下格式回复：\n' +
+                    '得分：X/' + rubric.total + '分\n' +
+                    '点评：（简短点评，指出优点和不足，3-4句话）\n' +
+                    '逐点评判：（逐一列出每个得分点，标注"得X分"或"未得分"及简要原因）';
+
+                window.ai.languageModel.create().then(function(model) {
+                    return model.prompt(prompt);
+                }).then(function(result) {
+                    var text = result.response;
+                    var scoreMatch = text.match(/得分[：:]\s*(\d+)/);
+                    var score = scoreMatch ? parseInt(scoreMatch[1]) : null;
+                    var display = '';
+                    if (score !== null) {
+                        display += '<div class="score-display">' + score + '/' + rubric.total + ' 分</div>';
+                    }
+                    display += '<div class="feedback">' + text.replace(/\n/g, '<br>') + '</div>';
+                    resultDiv.innerHTML = display;
+                    btn.disabled = false;
+                    btn.textContent = '重新打分';
+                }).catch(function() {
+                    resultDiv.style.display = 'none';
+                    fallbackNote.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'AI 打分';
+                });
+            } else {
+                resultDiv.style.display = 'none';
+                fallbackNote.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'AI 打分';
+            }
+        }
+    </script>
+</body>
+</html>

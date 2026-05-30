@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>第 05 课 第 5 部分 素材积累 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+        }
+
+        .card-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-section h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .card-section h3 {
+            color: #2e7d32;
+            font-size: 1.15rem;
+            margin: 25px 0 12px;
+        }
+
+        .card-section p {
+            color: #555;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+
+        .passage-box {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .passage-author {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .passage-box p {
+            text-indent: 2em;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .passage-box .no-indent {
+            text-indent: 0;
+        }
+
+        .material-card {
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid;
+            background: #fafafa;
+        }
+
+        .material-card.theme-growth { border-left-color: #ff9800; }
+        .material-card.theme-skill { border-left-color: #2196f3; }
+        .material-card.theme-social { border-left-color: #e91e63; }
+
+        .material-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .material-card.theme-growth h4 { color: #e65100; }
+        .material-card.theme-skill h4 { color: #1565c0; }
+        .material-card.theme-social h4 { color: #c62828; }
+
+        .material-card .quote {
+            font-style: italic;
+            color: #555;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #ccc;
+        }
+
+        .material-card .usage {
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .material-card .usage strong {
+            color: #2e7d32;
+        }
+
+        .writing-prompt {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #66bb6a;
+        }
+
+        .writing-prompt h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+        }
+
+        .writing-prompt p {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .writing-prompt .prompt-text {
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 1.05rem;
+        }
+
+        .user-write-section {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #7c4dff;
+        }
+
+        .user-write-section h3 {
+            color: #4527a0;
+            margin-bottom: 15px;
+        }
+
+        .user-write-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #b39ddb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 2;
+            resize: vertical;
+            background: white;
+            color: #333;
+        }
+
+        .user-write-textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+        }
+
+        .user-write-textarea::placeholder {
+            color: #9e9e9e;
+        }
+
+        .key-sentence {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .key-sentence .label {
+            font-size: 0.85rem;
+            color: #e65100;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .key-sentence .sentence {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .material-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .material-table th {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .material-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e8f5e9;
+        }
+
+        .material-table tr:nth-child(even) {
+            background: #f9fbe7;
+        }
+
+        .material-table tr:hover {
+            background: #e8f5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4caf50;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .highlight {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .analysis-steps {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .analysis-steps h4 {
+            color: #1565c0;
+            margin-bottom: 12px;
+        }
+
+        .analysis-steps ol {
+            margin-left: 20px;
+        }
+
+        .analysis-steps li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step">Part 4 真题练习</a>
+            <a href="lesson05-part5.html" class="progress-step active">Part 5 素材积累</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">Part 5</span>
+            <h1>素材积累</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">阅读一篇"成长类"名家作品，提炼人物、事件、金句和写作技巧，为阅读和写作双向积累。</p>
+        </div>
+
+        <!-- ==================== Section 1: 全文阅读 ==================== -->
+        <div class="card-section">
+            <h2>📖 一、全文阅读：《那个夏天》</h2>
+            <p style="color: #888; font-size: 0.85rem; margin-bottom: 5px;"><strong>作者：</strong>张佳玮 &nbsp;（当代散文，选自《读者》）</p>
+
+            <div class="passage-box">
+                <div class="passage-title">那个夏天</div>
+                <div class="passage-author">张佳玮</div>
+
+                <p>①我学骑自行车，是在十二岁那年的夏天。</p>
+
+                <p>②说起来有些丢人——别的孩子七八岁就会的事，我拖到了十二岁。不是我不愿意学，是我怕摔。小时候被摔过几次，心里留下了阴影，看见两个轮子的东西就腿软。</p>
+
+                <p>③那年暑假，外公来我家小住。他看我整天窝在家里看书，便说："走，学车去。"我说我不会。他说："就是不会才要学。"</p>
+
+                <p>④那辆自行车是爸爸小时候骑的"二八大杠"，漆已经掉了一半，链条也松松垮垮的。外公推着它，带我到小区后面的一条空路上。路上没什么车，两边是齐腰高的杂草。外公说："这里好，摔了也不疼。"</p>
+
+                <p>⑤我跨上车座，脚勉强够到踏板。外公在后面扶着后座，说："往前骑，我在后面呢。"我小心翼翼地蹬了几圈，车摇摇晃晃地往前走。风吹过来，带着夏天杂草特有的腥味儿，我忽然觉得学车好像也没那么可怕。</p>
+
+                <p>⑥但好景不长。骑了大概十几米，外公不知什么时候松了手。我回头一看，心一下慌了，车头猛地歪向一边。我连人带车摔进草里，膝盖磕在车架上，疼得倒吸一口冷气。</p>
+
+                <p>⑦我坐在草里，眼泪差点掉下来。不是疼的，是气的——气外公为什么松手。外公走过来，不扶我，也不道歉，只说了一句："你刚才能骑十几米了，不错。"</p>
+
+                <p>⑧我气鼓鼓地爬起来，把车扶起来。外公又说："再来。"我说我不想学了。外公看着我，说："你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</p>
+
+                <p>⑨我愣了一下。那句话像一根针，扎进了我心里最虚的地方。我重新跨上车，外公在后面扶着。这次我骑得更远了一些。他又松手了，我歪了几下，居然没摔。再回头，他已经站在好远的地方了。</p>
+
+                <p>⑩就这样，练了一个下午。从一开始他扶着骑，到他松手我摔，再到他松手我不摔。最后一次，他松手后我骑了快一百米，到路的尽头才停下来。我转过头，看见外公站在远处的路口，朝我竖起了大拇指。</p>
+
+                <p>⑪那天回家，我的膝盖上多了好几块淤青，但心里特别畅快。那个夏天剩下的日子里，我骑着那辆破旧的"二八大杠"，把小区周围的路都骑了个遍。</p>
+
+                <p>⑫多年以后，我遇到了很多比学车难得多的事情——考试失利、比赛落选、第一次离家远行。每当觉得扛不下去的时候，我就会想起那个夏天的下午，想起外公说的那句话：</p>
+
+                <p class="no-indent">⑬"你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</p>
+
+                <p class="no-indent">⑭然后我就咬咬牙，自己站起来了。</p>
+            </div>
+
+            <div class="analysis-steps">
+                <h4>💡 阅读提示</h4>
+                <ol>
+                    <li>本文属于<strong>成长足迹</strong>类——通过学骑自行车的经历，写出从恐惧到勇敢的成长过程</li>
+                    <li>注意分析外公这个人物形象——他不仅是引导者，更是成长路上的"精神导师"</li>
+                    <li>关注文章的结尾——从学车这件事上升到人生中面对困难的态度，体现了<strong>以小见大</strong>的写法</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: 人物素材 ==================== -->
+        <div class="card-section">
+            <h2>👤 二、人物素材提炼</h2>
+
+            <div class="material-card theme-growth">
+                <h4>人物一："我"——从恐惧到勇敢的蜕变</h4>
+                <p><strong>困境：</strong>十二岁还不会骑自行车，怕摔，看见两个轮子的东西就腿软。</p>
+                <p><strong>转折：</strong>外公第一次松手，"我"摔进草里，差点哭出来——不是因为疼，是因为"摔了之后没人扶"的恐惧。</p>
+                <p><strong>成长：</strong>从"他扶着骑"到"他松手我摔"，再到"他松手我不摔"，最后骑了一百米。膝盖上多了好几块淤青，但心里特别畅快。</p>
+                <div class="quote">
+                    "我重新跨上车……他松手了，我歪了几下，居然没摔。再回头，他已经站在好远的地方了。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"那一次，我长大了""战胜恐惧""勇敢"类作文时，这是一个完整的"面对恐惧—获得引导—自我突破—获得成长"的叙事框架。
+                </div>
+            </div>
+
+            <div class="material-card theme-growth">
+                <h4>人物二：外公——智慧型引导者</h4>
+                <p><strong>事迹：</strong>看到外孙整天窝在家里看书，主动带他去学车；不直接教方法，而是在后面扶着让孩子自己感受；松手时不声张，让孩子在不知不觉中独立；摔了不扶，只说一句鼓励的话。</p>
+                <div class="quote">
+                    "你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写"长辈教会我的事""那一刻我懂了""陪伴与放手"类作文时，外公是一个智慧型长辈的典型形象——他不包办代替，不溺爱，用一句话点醒孩子，让孩子自己面对恐惧。
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: 主题素材 ==================== -->
+        <div class="card-section">
+            <h2>📋 三、可用主题与素材对照</h2>
+
+            <table class="material-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">适用主题</th>
+                        <th style="width: 35%;">可用素材</th>
+                        <th style="width: 40%;">适用作文题</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>成长/突破</strong></td>
+                        <td>从十二岁不会骑车到学会，克服心理恐惧</td>
+                        <td>"那一次，我长大了""我的第一次""成长的足迹"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>勇气/恐惧</strong></td>
+                        <td>怕摔→摔倒→自己爬起来→歪了几下没摔→骑了一百米</td>
+                        <td>"勇气""战胜恐惧""勇敢的那一刻"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>亲情/引导</strong></td>
+                        <td>外公不溺爱、不包办，用"放手"教会独立</td>
+                        <td>"他教会我的事""那一刻我懂了""陪伴与放手"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>哲理/感悟</strong></td>
+                        <td>从学车延伸到人生——面对困难时"自己站起来"</td>
+                        <td>"一句话的力量""让我铭记的一句话"</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ==================== Section 4: 写作技巧 ==================== -->
+        <div class="card-section">
+            <h2>✍️ 四、写作技巧提炼</h2>
+
+            <div class="material-card theme-skill">
+                <h4>技巧一：欲扬先抑的开头</h4>
+                <p>文章开篇先写"丢人"的事——十二岁还不会骑车，怕摔，制造了一种"自嘲"的氛围，让读者产生好奇。</p>
+                <div class="quote">
+                    "说起来有些丢人——别的孩子七八岁就会的事，我拖到了十二岁。"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写自己的成长经历时，可以先写自己的"失败"或"不足"，再写后来的突破，形成反差，增强文章的吸引力。
+                </div>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>技巧二：心理变化层层递进</h4>
+                <p>文章通过细腻的心理变化展现成长过程，层次分明：</p>
+                <div class="quote">
+                    "怕摔（腿软）"→"小心翼翼"→"觉得也没那么可怕"→"心一下慌了"→"气鼓鼓地爬起来"→"愣了一下"→"心里特别畅快"
+                </div>
+                <div class="usage">
+                    <strong>适用场景：</strong>写一次经历时，按照心理变化的顺序层层推进，让读者感受到真实的成长过程。不要只写结果，要写出心理变化的轨迹。
+                </div>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>技巧三：以小见大的结尾</h4>
+                <p>文章最后两段，从学自行车这件小事，延伸到人生中面对困难的态度——"考试失利、比赛落选、第一次离家远行"，完成了主旨的升华。</p>
+                <div class="usage">
+                    <strong>适用场景：</strong>成长足迹类文章，结尾一定要从"这一次经历"上升到"以后的人生"，这样才能完成主旨的升华。
+                </div>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>技巧四：一句话贯穿全文</h4>
+                <p>外公的那句话"你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来"，在文中出现两次——第一次是"我"摔倒时说的，第二次是多年以后"我"遇到困难时回忆的。这句话既是全文的核心线索，也是主旨的集中表达。</p>
+                <div class="usage">
+                    <strong>适用场景：</strong>写人记事类作文，可以让某个人说一句话，然后在文章开头或中间出现一次，结尾再回顾一次，形成首尾呼应，增强文章的结构感。
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: 金句摘抄 ==================== -->
+        <div class="card-section">
+            <h2>💎 五、金句摘抄</h2>
+
+            <div class="key-sentence">
+                <div class="label">主旨金句</div>
+                <div class="sentence">"你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</div>
+            </div>
+
+            <div class="key-sentence">
+                <div class="label">哲理金句</div>
+                <div class="sentence">"每当觉得扛不下去的时候，我就会想起那个夏天的下午……然后我就咬咬牙，自己站起来了。"</div>
+            </div>
+
+            <div class="key-sentence">
+                <div class="label">细节描写佳句</div>
+                <div class="sentence">"风吹过来，带着夏天杂草特有的腥味儿，我忽然觉得学车好像也没那么可怕。"</div>
+            </div>
+
+            <div class="key-sentence">
+                <div class="label">对比佳句</div>
+                <div class="sentence">"那天回家，我的膝盖上多了好几块淤青，但心里特别畅快。"</div>
+            </div>
+
+            <div class="key-sentence">
+                <div class="label">画面佳句</div>
+                <div class="sentence">"我转过头，看见外公站在远处的路口，朝我竖起了大拇指。"</div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 6: 阅读与写作联动 ==================== -->
+        <div class="card-section">
+            <h2>🔗 六、从阅读到写作：这篇《那个夏天》能用在哪里？</h2>
+
+            <p>这篇成长类文章本身就是一篇<strong>优秀的范文</strong>，它的结构和写法可以直接借鉴到以下作文题中：</p>
+
+            <div class="writing-prompt">
+                <h4>📝 可直接套用的作文题</h4>
+                <ul style="margin-left: 20px; color: #333; line-height: 2.5;">
+                    <li>"那一次，我长大了"——替换事件，保留"恐惧→突破→成长"的结构</li>
+                    <li>"他（她）教会我的事"——替换长辈和事件，保留"智慧型引导者"的人物框架</li>
+                    <li>"一句话的力量"——直接引用外公那句话，作为全文核心线索</li>
+                    <li>"战胜困难"——将学车换成自己的一次真实经历，保留心理变化层次</li>
+                    <li>"成长的足迹"——直接参考本文结构：开头自嘲→事件过程→结尾升华</li>
+                </ul>
+            </div>
+
+            <div class="writing-prompt">
+                <h4>✍️ 仿写任务</h4>
+                <p class="prompt-text">模仿《那个夏天》的结构，写一段你学会某件事（如游泳、跳绳、演讲、弹琴等）的经历。要求：①开头用欲扬先抑的写法；②写出心理变化的层次；③结尾用一句话升华主题。150-200 字。</p>
+                <textarea class="user-write-textarea" placeholder="提示：先简要写出你的"丢人"之处（开头欲扬先抑），再写学习过程中的心理变化，最后写一句让你铭记的话或感悟……"></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== Section 7: 综合积累 ==================== -->
+        <div class="card-section">
+            <h2>📋 七、本课素材积累清单</h2>
+
+            <div class="material-card theme-growth">
+                <h4>🏷️ 人物素材</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>外公：</strong>智慧型引导者——不包办、不溺爱、放手让孩子自己面对恐惧</li>
+                    <li><strong>"我"：</strong>从恐惧到勇敢的蜕变——"怕摔→摔倒→自己站起来→骑了一百米"</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-skill">
+                <h4>🏷️ 写作技巧</h4>
+                <ul style="margin-left: 20px; color: #555; line-height: 2.2;">
+                    <li><strong>欲扬先抑：</strong>开头先写自己的不足，制造反差</li>
+                    <li><strong>心理变化层次：</strong>恐惧→尝试→突破→畅快，层层递进</li>
+                    <li><strong>以小见大：</strong>从学车延伸到人生面对困难的态度</li>
+                    <li><strong>一句话贯穿：</strong>让核心金句在文中反复出现，形成结构感和主旨聚焦</li>
+                </ul>
+            </div>
+
+            <div class="material-card theme-growth">
+                <h4>🏷️ 主旨金句（建议背诵）</h4>
+                <p style="font-size: 1.05rem; color: #333; line-height: 2; padding: 10px 0;">"你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</p>
+                <div class="usage">
+                    <strong>适用主题：</strong>成长、勇气、独立、战胜恐惧、长辈的教诲
+                </div>
+            </div>
+
+            <div class="material-card theme-social">
+                <h4>🏷️ 与本课主旨的关联</h4>
+                <p>本文属于<strong>成长足迹</strong>类（个人类），与第 04 课 Part 4 相呼应。同时，文中外公"放手让孩子自己站起来"的教育方式，也与第 05 课《父亲的课堂》中的父爱主题形成了<strong>跨课对比</strong>——两位长辈都用"不扶"的方式教会了孩子独立，体现了深沉内敛的教育智慧。</p>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part4.html">← Part 4 真题练习</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+</body>
+</html>

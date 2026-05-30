@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 05 课 第 3 部分 主旨总结 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #9c27b0;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f3e5f5;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .key-card {
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid;
+        }
+
+        .key-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .key-card p, .key-card ul {
+            color: #555;
+        }
+
+        .key-card ul {
+            margin-left: 20px;
+        }
+
+        .key-card ul li {
+            margin-bottom: 4px;
+        }
+
+        .key-card.review { background: #f3e5f5; border-color: #9c27b0; }
+        .key-card.review h4 { color: #6a1b9a; }
+
+        .key-card.method { background: #e8eaf6; border-color: #5c6bc0; }
+        .key-card.method h4 { color: #283593; }
+
+        .key-card.technique { background: #e0f2f1; border-color: #26a69a; }
+        .key-card.technique h4 { color: #00695c; }
+
+        .key-card.classify { background: #fff3e0; border-color: #ff9800; }
+        .key-card.classify h4 { color: #e65100; }
+
+        .key-card.read { background: #e8f5e9; border-color: #4caf50; }
+        .key-card.read h4 { color: #2e7d32; }
+
+        .key-card.experience { background: #fce4ec; border-color: #e91e63; }
+        .key-card.experience h4 { color: #c62828; }
+
+        .key-card.practice { background: #fff8e1; border-color: #ffb74d; }
+        .key-card.practice h4 { color: #e65100; }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .four-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .topic-card {
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .topic-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .topic-card.gaikuo { background: #e8eaf6; }
+        .topic-card.gaikuo h4 { color: #283593; }
+        .topic-card.hanyi { background: #e3f2fd; }
+        .topic-card.hanyi h4 { color: #1565c0; }
+        .topic-card.shangxi { background: #fce4ec; }
+        .topic-card.shangxi h4 { color: #c62828; }
+        .topic-card.zuoyong { background: #e0f7fa; }
+        .topic-card.zuoyong h4 { color: #00695c; }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #9c27b0;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #9c27b0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step">Part 4 真题练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">Part 3</span>
+            <h1>主旨总结</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">全面回顾记叙文主旨的核心知识，梳理答题思路，并给出提升阅读理解能力的三个方向。</p>
+        </div>
+
+        <!-- ==================== Section 1: Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 视频讲解</h2>
+            <p>本视频是第 03–05 课"主旨理解"系列的总结篇，系统梳理记叙文主旨的全部核心知识。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1de411W7Xb&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: Key Points ==================== -->
+        <div class="content-section">
+            <h2>📌 视频核心要点</h2>
+
+            <div class="key-grid">
+                <div class="key-card review">
+                    <h4>一、四大母题与解题思路</h4>
+                    <p>记叙文题型可概括为四大母题：</p>
+                    <div class="four-topics">
+                        <div class="topic-card gaikuo">
+                            <h4>概括题</h4>
+                            <p>用"基本思想"解决</p>
+                        </div>
+                        <div class="topic-card hanyi">
+                            <h4>含义题</h4>
+                            <p>用"基本思想"解决</p>
+                        </div>
+                        <div class="topic-card shangxi">
+                            <h4>赏析题</h4>
+                            <p>表达技巧 + 基本思想</p>
+                        </div>
+                        <div class="topic-card zuoyong">
+                            <h4>作用题</h4>
+                            <p>表达技巧 + 基本思想</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-card technique">
+                    <h4>二、表达技巧的应用场景</h4>
+                    <ul>
+                        <li><strong>赏析题</strong>常考：修辞手法、表达方式</li>
+                        <li><strong>作用题</strong>常考：表达方式、表现手法、结构手法</li>
+                        <li><strong>基本思想四要素：</strong>内容、人物、事件、思想感情</li>
+                        <li><strong>作文题</strong>还要考虑结构（即结构手法）</li>
+                    </ul>
+                </div>
+
+                <div class="key-card method">
+                    <h4>三、基本思想的构成与分析路径</h4>
+                    <p>基本思想包含两大要素：<strong>结构</strong> 和 <strong>内容</strong>。内容又包含人物、事件、思想感情。</p>
+                    <p><strong>分析路径：</strong>思想感情来自内容 → 主旨通过分析内容得出。</p>
+                    <ul>
+                        <li><strong>分析方法：</strong>分析内容、写作背景、文章结构</li>
+                        <li><strong>寻找线索：</strong>标题、开头结尾、议论抒情句</li>
+                    </ul>
+                </div>
+
+                <div class="key-card classify">
+                    <h4>四、主旨五大分类</h4>
+                    <ul>
+                        <li><strong>个人类（初中重点）：</strong>挚爱亲情、托物感怀、乡村童年、成长足迹——站在个人角度</li>
+                        <li><strong>社会类（高中重点）：</strong>社会关注——跳出自我，看待社会</li>
+                        <li>初中也会考查：小人物大社会、人与自然、文化传统</li>
+                        <li>近年来，社会关注类考查越来越多</li>
+                    </ul>
+                    <div class="key-point">
+                        <strong>成长规律：</strong>初中之前更多关注自我（欲望、理想），上了高中后思维会越来越大——关注社会、国家、世界，甚至全人类的命运。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: Three Directions ==================== -->
+        <div class="content-section">
+            <h2>🚀 读不懂主旨怎么办？三个方向</h2>
+
+            <div class="key-grid">
+                <div class="key-card read">
+                    <h4>方向一：去阅读</h4>
+                    <p>阅读是最短的捷径——通过阅读快速获取世事无常、五味杂陈、七情六欲的体验。</p>
+                    <ul>
+                        <li><strong>独立阅读 + 独立思考：</strong>广泛阅读经典名著，拓宽情感视野和思想深度</li>
+                        <li><strong>讨论与分享：</strong>不能闭门造车，多和伙伴学习分享，收集他人对书的观点和解读</li>
+                        <li><strong>拓展阅读面：</strong>不仅看文学名著，还要看社科类、心理学类、文艺类书籍</li>
+                        <li><strong>加入读书俱乐部：</strong>参加线上线下交流讨论，通过交流促进情感理解和升华</li>
+                    </ul>
+                    <div class="key-point">
+                        <strong>阅读量建议：</strong>每天至少 20 分钟，每月至少读一本名著，每年至少 12 本。
+                    </div>
+                    <ul>
+                        <li><strong>固定时间读：</strong>睡前 15–30 分钟</li>
+                        <li><strong>碎片时间读：</strong>吃饭时听书、洗手间看书等</li>
+                    </ul>
+                </div>
+
+                <div class="key-card experience">
+                    <h4>方向二：去经历</h4>
+                    <p>亲身体验不同的生活场景和情感状态，丰富人生经历，对文章情感更容易产生共鸣。</p>
+                    <ul>
+                        <li><strong>生活体验：</strong>旅行、志愿服务、团队项目等，体验多样化活动</li>
+                        <li><strong>观察生活：</strong>观察家人、朋友、同学的情绪反应和表达方式，理解人情感的微妙之处</li>
+                        <li><strong>艺术鉴赏：</strong>走进博物馆、音乐会、画展、电影院，学习从细节中感知情感</li>
+                    </ul>
+                </div>
+
+                <div class="key-card practice">
+                    <h4>方向三：去练习</h4>
+                    <ul>
+                        <li><strong>写日记：</strong>每天一句话记录生活、情绪和感受。多年后回头看，就是一本记录喜怒哀乐的"时光相册"。</li>
+                        <li><strong>练思维：</strong>培养批判性思维，学会质疑和分析，避免单一解读。可以有意识地训练自己的批判性思维，学习心理学相关课程。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point" style="text-align: center; font-size: 1.1rem;">
+                <strong>聪明人找方法，笨的人找借口。</strong>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: Homework ==================== -->
+        <div class="content-section">
+            <h2>📝 课后任务</h2>
+
+            <div class="key-card read" style="border-left-color: #4caf50;">
+                <h4>规划你的阅读清单和时间</h4>
+                <ul>
+                    <li>列出<strong>每月要读的书</strong>，不要仅局限于文学作品，适当加入科普类、文艺类、艺术类书籍</li>
+                    <li>规划<strong>每天至少 20 分钟</strong>的阅读时间，充分利用碎片时间</li>
+                    <li>不给自己找借口，<strong>聪明人找方法，笨的人找借口</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part2.html">← Part 2 社会关怀</a>
+            <a href="lesson05-part4.html">Part 4 真题练习 →</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+</body>
+</html>

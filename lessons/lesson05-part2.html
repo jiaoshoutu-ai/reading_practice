@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 05 课 第 2 部分 社会关怀 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #3f51b5;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8eaf6;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .key-concept {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .key-concept h3 {
+            color: #283593;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-box h4 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .theme-card {
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+
+        .theme-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .theme-card.minor { background: #e3f2fd; border-color: #42a5f5; }
+        .theme-card.minor h4 { color: #1565c0; }
+        .theme-card.moral { background: #e8f5e9; border-color: #66bb6a; }
+        .theme-card.moral h4 { color: #2e7d32; }
+        .theme-card.patriot { background: #fce4ec; border-color: #e91e63; }
+        .theme-card.patriot h4 { color: #c62828; }
+        .theme-card.nature { background: #e0f2f1; border-color: #26a69a; }
+        .theme-card.nature h4 { color: #00695c; }
+        .theme-card.urban { background: #fff3e0; border-color: #ff9800; }
+        .theme-card.urban h4 { color: #e65100; }
+        .theme-card.culture { background: #f3e5f5; border-color: #ab47bc; }
+        .theme-card.culture h4 { color: #6a1b9a; }
+
+        .identification-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .identification-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            color: #555;
+        }
+
+        .identification-list li::before {
+            content: "📌 ";
+        }
+
+        .identification-list li strong {
+            color: #3f51b5;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #3f51b5;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #3f51b5;
+            color: white;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin: 25px 0;
+        }
+
+        .self-check-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .self-check-section h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #3f51b5;
+        }
+
+        .check-item label {
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .check-item label .topic {
+            font-weight: bold;
+            color: #3f51b5;
+        }
+
+        .check-result {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .check-result.pass {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+
+        .check-result.review {
+            background: #fff8e1;
+            color: #e65100;
+            border: 2px solid #ffb74d;
+        }
+
+        .check-btn {
+            background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .check-btn:hover {
+            opacity: 0.9;
+        }
+
+        .case-analysis {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .case-analysis h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .case-analysis .quote {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #3f51b5;
+            color: #555;
+        }
+
+        .moral-circle {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .moral-circle h4 {
+            color: #e65100;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step active">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step">Part 4 真题练习</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">Part 2</span>
+            <h1>主旨分类：社会关怀</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">学习"社会关怀"类文章的特征、关注方向和判定方法。</p>
+        </div>
+
+        <!-- ==================== Section 1: Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 观看视频</h2>
+            <p>请认真观看以下视频，学习"社会关怀"类文章的核心知识。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1cZ4y147vt&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== Section 2: Concept ==================== -->
+        <div class="content-section">
+            <h2>📖 什么是"社会关怀"？</h2>
+
+            <div class="key-concept">
+                <h3>核心概念</h3>
+                <p>前四类主旨（挚爱亲情、托物感怀、乡村童年、成长足迹）都是<strong>站在个人的角度</strong>——关注自己、自己的亲人、自己的童年和自己的成长。</p>
+                <p>而<strong>社会关怀</strong>则是<strong>跳出自我，回归到社会当中去</strong>——关注社会当中存在的问题和发展过程中显现的那些现象。</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula">人 + 环境 = 社会</div>
+                <div class="subtitle">跳出自我，关注社会存在的问题与发展过程中的现象</div>
+            </div>
+
+            <p><strong>为什么高中更需要社会关怀？</strong></p>
+            <ul>
+                <li>小学初中阶段，个人关怀类文章较多</li>
+                <li><strong>高中阶段，社会关注一定是重点</strong>——眼光要更广，理解要更透彻深刻</li>
+                <li>建议：多关注时事、国家、社会，多参与社会性事物</li>
+            </ul>
+
+            <div class="key-point">
+                <strong>学习提示：</strong>学会从"自我"的思维中跳跃出来，去关注社会、关注民生、关注人与自然、关注传统文化。
+            </div>
+        </div>
+
+        <!-- ==================== Section 3: Six Focus Areas ==================== -->
+        <div class="content-section">
+            <h2>🔍 社会关怀的六大关注方向</h2>
+
+            <div class="theme-card minor">
+                <h4>方向一：小人物大社会</h4>
+                <p>生活当中有很多"小人物"，他们平时不显眼，但可能有更好的品质值得学习。</p>
+                <ul>
+                    <li>外卖小哥、快递小哥：敬业精神</li>
+                    <li>普通人民教师：默默奉献</li>
+                    <li>劳模：不平凡的精神品质</li>
+                </ul>
+                <p><strong>关注点：</strong>那些频繁的人物身上体现出的不平凡的精神品质。</p>
+            </div>
+
+            <div class="theme-card moral">
+                <h4>方向二：社会公德</h4>
+                <p>社会公德是社会当中大家普遍认同并遵循的社会规范，是维系社会和谐、人际和睦的重要道德准则。</p>
+                <div class="moral-circle">
+                    <h4>两个圈</h4>
+                    <p><strong>公德圈</strong>：每个人在社会中需要遵循的道德规范。突破会遭到谴责。</p>
+                    <p><strong>法律圈</strong>：最后的底线。突破要受到法律的制裁。</p>
+                </div>
+                <p><strong>考试常考：</strong>正面模范或反面教训的文章，让学生分析评价社会公德问题。</p>
+                <ul>
+                    <li>老人摔倒该不该扶</li>
+                    <li>公众场合为什么不能吸烟</li>
+                    <li>电梯中为什么不能大声喧哗</li>
+                </ul>
+            </div>
+
+            <div class="theme-card patriot">
+                <h4>方向三：爱国情怀</h4>
+                <p>表现出对国家的民族情怀。只有每个人都深爱着这个国家，社会才会更加美好，国家才会更加团结。</p>
+                <p><strong>体现人物：</strong>人民子弟兵、消防员等伟大的人物。</p>
+                <p><strong>核心精神：</strong>民族精神、爱国情感。</p>
+            </div>
+
+            <div class="theme-card nature">
+                <h4>方向四：人与自然</h4>
+                <p>人与自然的关系经历了三个阶段的演变：</p>
+                <ul>
+                    <li><strong>敬畏自然</strong>：原始社会，自然不可逾越</li>
+                    <li><strong>征服自然</strong>：工业化进程开始，大力破坏</li>
+                    <li><strong>和谐共处</strong>：反思后的正确选择——和才能共生，才能长久</li>
+                </ul>
+                <div class="key-point">
+                    <strong>重要理念：</strong>人与自然和谐共处。人与自然不可分割，脱离自然的人绝对不是完整的人。
+                </div>
+            </div>
+
+            <div class="theme-card urban">
+                <h4>方向五：城乡发展</h4>
+                <p>乡村和城市发展带来的变化，在此过程中产生的现象和问题。</p>
+                <ul>
+                    <li>今天更多提出的是<strong>城乡融合发展</strong>——国家重要的战略性方向</li>
+                    <li>城乡融合发展能促进人民生活幸福</li>
+                    <li>此类文章往往<strong>赞美新时代</strong></li>
+                </ul>
+            </div>
+
+            <div class="theme-card culture">
+                <h4>方向六：文化传统</h4>
+                <p>文化有两个关键词：</p>
+                <ul>
+                    <li><strong>继承</strong>：批判继承传统文化</li>
+                    <li><strong>发扬</strong>：多方面、多角度地发扬和巩固</li>
+                </ul>
+                <p>最终目的是建立<strong>文化自信</strong>。</p>
+                <p><strong>涉及内容：</strong>工匠精神的传承、传统手工艺、传统文化等。</p>
+            </div>
+        </div>
+
+        <!-- ==================== Section 4: Identification ==================== -->
+        <div class="content-section">
+            <h2>🎯 如何判定社会关怀类文章？</h2>
+
+            <ul class="identification-list">
+                <li><strong>看内容：</strong>涉及到社会问题，或围绕社会问题展开。</li>
+                <li><strong>看人与自然：</strong>讲述人和动物或环境的关系。</li>
+                <li><strong>看旧物/旧手艺/旧文化：</strong>涉及到传统文化和民族精神。</li>
+                <li><strong>看人物：</strong>人物具有代表性，如底层人物（快递小哥、基层教师等）。</li>
+                <li><strong>看作者态度：</strong>有明确的批判、呼吁或倡导。</li>
+            </ul>
+
+            <div class="key-point">
+                <strong>来源提示：</strong>如果文章出自报纸（如各大日报），大多数时候是关注社会的。因为报纸为社会服务，不是个人情感的宣泄。要把这类文章往社会角度进行深入思考。
+            </div>
+        </div>
+
+        <!-- ==================== Section 5: Case Study ==================== -->
+        <div class="content-section">
+            <h2>📝 真题示例：《桑伯》</h2>
+
+            <p><strong>题目：</strong>文章塑造桑伯这一人物有什么意义？联系全文谈谈你的理解。</p>
+
+            <div class="case-analysis">
+                <h4>分析过程</h4>
+
+                <p><strong>文章出处：</strong>来自山西日报——报纸类文章，关注民生、关注社会。</p>
+
+                <div class="quote">
+                    "我这手艺卖给识货的。"桑伯用手摩挲着床腿，"我就不信，我这把式就赶不上城里的那一捶就破的组合家具。"一双紧握刨子四十载的老手，青筋凸起。
+                </div>
+                <p>老木匠的手艺 vs 城里的新式组合家具——涉及<strong>传统手艺与现代冲击</strong>的问题。</p>
+
+                <div class="quote">
+                    儿子不肯接班，在城里经营新式样家具店。
+                </div>
+                <p>手艺无人继承——传统手艺面临断代。</p>
+
+                <div class="quote">
+                    桑伯忘了疼痛，手被弄得鲜红，痴迷地盯着血珠在木料上绽开，一行泪水溢出眼眶。
+                </div>
+                <p>特别无奈的情绪——对传统手艺命运的无奈。</p>
+
+                <div class="quote">
+                    忙完陶家的活，桑伯回到家里，当晚就病了。一连几天胸闷喘气，茶饭不思。体检结果一切正常。
+                </div>
+                <p><strong>心病</strong>——手艺无人继承，传统手艺遭到现代新式手艺的冲击。</p>
+
+                <div class="quote">
+                    檀木靠椅，是他病愈后用藏了十多年的木料打制的唯一留给自己的作品。
+                </div>
+                <p>这"唯一"不光是留给自己的作品，更是传统木工手艺在世界上的最后一次证明。桑伯走了，这门手艺就真的伴随着他离开了。</p>
+            </div>
+
+            <div class="key-point">
+                <strong>答案要点（桑伯的意义）：</strong><br>
+                ① <strong>关注现状：</strong>让我们关注当今社会传统手艺人的生存状态；<br>
+                ② <strong>深层思考：</strong>思考传统手艺人的命运和价值应该如何衡量；<br>
+                ③ <strong>反思传承：</strong>反思应该如何保护和传承优秀的工匠精神和传统文化。
+            </div>
+        </div>
+
+        <!-- ==================== Self-check ==================== -->
+        <div class="self-check-section">
+            <h3>🧪 自我检测：我掌握了社会关怀吗？</h3>
+            <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">勾选以下知识点，看看你是否理解了本节内容。</p>
+
+            <div class="check-item">
+                <input type="checkbox" id="c1">
+                <label for="c1"><span class="topic">核心概念：</span>能说出社会关怀与个人关怀的区别</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c2">
+                <label for="c2"><span class="topic">六大方向：</span>能说出小人物、社会公德、爱国情怀、人与自然、城乡发展、文化传统</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c3">
+                <label for="c3"><span class="topic">判定方法：</span>能从内容、人物、作者态度等维度判定文章</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c4">
+                <label for="c4"><span class="topic">真题实战：</span>理解《桑伯》的分析过程和答题要点</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="c5">
+                <label for="c5"><span class="topic">核心理念：</span>理解人与自然和谐共处、文化自信等理念</label>
+            </div>
+
+            <button class="check-btn" onclick="checkReadiness()">检查准备情况</button>
+            <div id="check-result" class="check-result"></div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part1.html">← Part 1 复习回顾</a>
+            <a href="lesson05-part3.html">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html">Part 4 真题练习 →</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+
+    <script>
+        function checkReadiness() {
+            var checks = ['c1', 'c2', 'c3', 'c4', 'c5'];
+            var checkedCount = 0;
+            checks.forEach(function(id) {
+                if (document.getElementById(id).checked) checkedCount++;
+            });
+
+            var result = document.getElementById('check-result');
+            result.style.display = 'block';
+
+            if (checkedCount >= 4) {
+                result.className = 'check-result pass';
+                result.innerHTML = '太棒了！你已经掌握了社会关怀的核心知识！';
+            } else {
+                result.className = 'check-result review';
+                result.innerHTML = '建议重新观看视频，巩固相关知识点！';
+            }
+        }
+    </script>
+</body>
+</html>
