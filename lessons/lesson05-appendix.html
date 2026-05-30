@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>第 05 课 附录 真题原文与素材 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-section h2 {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f5e9;
+        }
+
+        .article-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .article-section .source-info {
+            text-align: center;
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .article-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .article-section p.no-indent {
+            text-indent: 0;
+        }
+
+        .part-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .part-label.father { background: linear-gradient(135deg, #e91e63 0%, #c62828 100%); }
+        .part-label.train { background: linear-gradient(135deg, #e91e63 0%, #c62828 100%); }
+        .part-label.half { background: linear-gradient(135deg, #e91e63 0%, #c62828 100%); }
+        .part-label.summer { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); }
+
+        .exercise-box {
+            background: #fce4ec;
+            border: 2px solid #e91e63;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .exercise-box h3 {
+            color: #c62828;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #f48fb1;
+        }
+
+        .exercise-box .exam-source {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+            color: #333;
+        }
+
+        .question-item .quote-text {
+            font-style: italic;
+            color: #666;
+            padding: 8px 12px;
+            background: #fafafa;
+            border-radius: 4px;
+            border-left: 3px solid #e91e63;
+            margin: 8px 0;
+        }
+
+        .hint-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-left: 4px solid #ffb300;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .hint-box p {
+            color: #555;
+            text-indent: 0;
+            margin-bottom: 5px;
+        }
+
+        .answer-space {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            border: 1px dashed #e91e63;
+            min-height: 150px;
+        }
+
+        .answer-space p {
+            text-indent: 0;
+            margin-bottom: 10px;
+            color: #e91e63;
+            font-weight: 600;
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 29px,
+                #bbb 30px
+            );
+            background-size: 100% 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            min-height: 150px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #9c27b0;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.completed {
+            background: #9c27b0;
+            color: white;
+        }
+
+        .article-index {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border: 2px solid #e91e63;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .article-index h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .article-index ul {
+            margin-left: 20px;
+            color: #333;
+            line-height: 2.2;
+        }
+
+        .article-index a {
+            color: #c62828;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-index a:hover {
+            text-decoration: underline;
+        }
+
+        .divider-text {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .divider-text span {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .material-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .material-section h2 {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f5e9;
+        }
+
+        .material-section .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .material-section .source-info {
+            text-align: center;
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .material-section p {
+            color: #333;
+            margin-bottom: 15px;
+            text-indent: 2em;
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .material-section p.no-indent {
+            text-indent: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .navbar, .nav-links, .progress-indicator, .print-btn, .article-index {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            .article-section, .material-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .lesson-header {
+                box-shadow: none;
+            }
+
+            .exercise-box {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson05-part1.html" class="progress-step completed">Part 1 复习回顾</a>
+            <a href="lesson05-part2.html" class="progress-step completed">Part 2 社会关怀</a>
+            <a href="lesson05-part3.html" class="progress-step completed">Part 3 主旨总结</a>
+            <a href="lesson05-part4.html" class="progress-step completed">Part 4 真题练习</a>
+            <a href="lesson05-part5.html" class="progress-step completed">Part 5 素材积累</a>
+            <a href="lesson05-appendix.html" class="progress-step completed">附录</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 05 课</span>
+            <span class="part-badge">附录</span>
+            <h1>真题原文与素材汇编</h1>
+            <p style="color: #666; margin-top: 10px; font-size: 0.95rem;">收录 Part 4 三套真题文章和 Part 5 素材文章，附答题区域，方便打印练习。</p>
+        </div>
+
+        <!-- Article index -->
+        <div class="article-index">
+            <h3>📚 文章目录</h3>
+            <ul>
+                <li><a href="#a1">一、父亲的课堂（Part 4 真题一 · 挚爱亲情）</a></li>
+                <li><a href="#a2">二、黑夜的火车（Part 4 真题二 · 挚爱亲情）</a></li>
+                <li><a href="#a3">三、半个笔者（Part 4 真题三 · 社会关怀）</a></li>
+            </ul>
+        </div>
+
+        <div class="article-index" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-color: #4caf50;">
+            <h3 style="color: #2e7d32;">📖 素材阅读</h3>
+            <ul>
+                <li><a href="#a4" style="color: #2e7d32;">四、那个夏天（Part 5 素材积累 · 成长足迹）</a></li>
+            </ul>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ 打印全部文章</button>
+
+        <!-- ==================== Article 1: 父亲的课堂 ==================== -->
+        <div class="article-section" id="a1">
+            <span class="part-label father">Part 4 真题一 · 挚爱亲情</span>
+            <h2>父亲的课堂</h2>
+            <p class="author">明前茶</p>
+            <p class="source-info">（选自《文汇报》，有删改）</p>
+
+            <p>①十年后，我还记得中考结束那年，父亲回家探亲时，进门第三天就要带我去爬山。他一手<strong>钳</strong>住我的肩膀，把我从外婆家的凉席上拽起来："你中考结束了，在家闲了三天，该跟我上山了。"</p>
+
+            <p>②父亲是地质队员，常年在外，我对他既陌生又敬畏。他带我爬的是家后面那座野山，没有石阶，只有一条打柴人踩出的土路。六月酷暑，蝉声如雷，没走多远我就气喘吁吁。父亲健步如飞，始终与我保持着十米左右的距离，不说话，也不回头。我踉踉跄跄跟在后面，几次想喊住他歇一歇，却硬是憋着没出声。</p>
+
+            <p>③快到山顶时，我脚下一滑，整个人趴在了滚烫的石头上。手心破了皮，渗出血来。父亲终于停下，转身走回来。我以为他要扶我，他却只是站在旁边，平静地说："自己站起来。"那一刻，委屈和愤怒涌上心头，我咬着牙爬起来，在心里发誓再也不要跟他爬山了。</p>
+
+            <p>④然而此后每个暑假，只要父亲回家，爬山便成了必修课。渐渐地，我不再抱怨，甚至开始期待。山路上，父亲依然不说话，我却学会了辨认岩石、观察云层、聆听鸟鸣。有一次，他忽然开口："山不会惯着你，摔倒了就得自己起来。"顿了顿，又说："人这一辈子，也没有人一直惯着你。"</p>
+
+            <p>⑤除了爬山，父亲还逼我学修自行车。他把一辆报废的"二八大杠"搬出来，扔给我一盒工具："什么时候修好，什么时候骑。"我用了整整一个暑假，拆了装、装了拆，手上磨出老茧，终于让那辆破车重新转动链条。当我歪歪扭扭骑上它时，父亲站在院子里，难得地笑了。</p>
+
+            <p>⑥高考后填报志愿，我想学文科，父亲却坚持让我报地质。我们大吵一架，我说他专制，他说我不懂。最后我妥协了。大学四年，我跟着导师跑遍了大半个中国，渐渐理解了父亲的选择——他给我的，不仅是专业，更是一种看世界的方式。</p>
+
+            <p>⑦多年后，父亲退休了，身体大不如前。有一天，他忽然说："陪我去爬山吧。"还是那座野山，只是这一次，他走得很慢。我放慢脚步，走在前面，与他保持着一米的距离。走到半山腰，他停下来喘气，我伸手去扶他。他没有拒绝。</p>
+
+            <p>⑧下山时，夕阳将我们的影子拉得很长。父亲忽然说："那年你摔倒，我其实想扶你。"我愣了一下，他说："但我知道，如果我扶了，你就永远学不会自己站起来。"</p>
+
+            <p>⑨那一刻，我终于明白——</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题练习</h3>
+                <div class="question-item">
+                    <p><strong>第15题（3分）：</strong>第①段中加点词语"钳"的表达效果是什么？</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 120px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第16题（4分）：</strong>文章第②—④段写了父亲带"我"爬山的经历，请完成下表。</p>
+                    <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.95rem;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">时间</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">爬山中的事件</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">"我"的情感</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">第一次爬山</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">（1）</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">委屈、愤怒</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">此后每个暑假</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">父亲依然不说话，"我"学会辨认岩石等</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">（2）</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">（3）爬山时</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">父亲说："山不会惯着你……"</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">逐渐理解</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 90px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第17题（4分）：</strong>第⑤段写父亲让"我"修自行车，能否删去？为什么？</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第18题（5分）：</strong>结合全文，说说作者最终明白了什么？请简要阐述。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 210px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第19题（4分）：</strong>文章以"父亲的课堂"为题，有什么妙处？</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 2: 黑夜的火车 ==================== -->
+        <div class="article-section" id="a2">
+            <span class="part-label train">Part 4 真题二 · 挚爱亲情</span>
+            <h2>黑夜的火车</h2>
+            <p class="author">李朝德</p>
+            <p class="source-info">（选自《人民日报》2019年11月6日，有删改）</p>
+
+            <p>①挂上电话，我立刻就后悔了。车窗外，落日失去了最后一抹余晖，远山只剩下黛色的模糊轮廓。火车还有一个多小时才经过村里，那时天应该早黑透了吧，那么晚打电话告诉母亲站在路口做什么呢？列车在黑夜中呼啸着，望着车窗外的阑珊灯火，我一路忐忑。</p>
+
+            <p>②那天，我从昆明乘火车去一座叫宣威的小城参加会议，这趟城际列车要穿过村里。我家离铁路并不远，直线距离也就五六百米。火车黑夜穿过家乡，最熟悉的景致与最亲近的人将在窗外忽闪而过，那种兴奋与激动难于描述。</p>
+
+            <p>③10多分钟前，我打电话告诉母亲，我要去宣威。母亲知道我要路过村里，很是高兴："去宣威做什么？大概几点钟到？"我一一回答，有些遗憾："可惜村里没有站，不然可以回家看看。"母亲说："你忙你的，我身体好好的，不用管。"说完这句，电话里一阵沉默。我理解这时的沉默。车过村里，母子相距不过几百米，却不能相见。我打破沉默："妈，要不火车快到村里时我打电话给你，你去村里铁路口等我，我在7号车厢的门口向你摇手，你就可以看见我，我也可以看见你。"对这个突然的提议，我自己也觉得有些意外和为难，黑夜中叫母亲在路口等着见我，算怎么一回事？但母亲很高兴，一口答应了下来。</p>
+
+            <p>④那个叫小米田的路口是连接村庄与田地的一个主要路口。近些年火车多次提速，由单线变成复线后，铁路沿线早在10多年前就全线封闭。小米田路口虽然还在，但早被栅栏完全隔断，要过铁路只能翻越天桥，现在只剩下三四米宽的道口。我坐的这趟火车时速大概120公里。这样的速度通过那个道口要多长时间呢？可能半秒都不到吧！相互能看见？</p>
+
+            <p>⑤窗外一片模糊，无边的黑暗包裹着车厢，我计算着时间与路程，却总也看不见熟悉的风景。焦躁中，看见远远的公路上有车流的灯光，流光溢彩。我正纳闷儿这是哪条路呢，闪着白色光芒的"施家屯收费站"几个字就出现了。我一阵悲凉，"施家屯"是隔壁村庄，火车应该在一分钟前就已驶过松林村，我竟然没有看见我熟悉的村庄和站在路口的母亲。我颓然打电话告诉母亲："妈，天太黑了，我没有看见你，火车已经到了施家屯。"母亲也说："刚才有趟火车经过，太快了，没有看见你。我想应该就是这趟火车，知道你坐在上面就行。"</p>
+
+            <p>⑥我为自己的粗心愧疚不已，说不出话来。年迈的母亲在黑夜的冷风中站着，我在明亮温暖的车厢里坐着。本想让她看见我，我也能看见她，却害得她在路边白白等待，空欢喜一场。</p>
+
+            <p>⑦松林村的一草一木，我再熟悉不过，怎么会看不出来呢？我不甘心地说："妈，要不明晚我返回时在最近的曲靖站下？站上有到村里的汽车，半小时就能到村里，住一晚再回昆明，方便得很。"母亲连忙阻止，固执而又坚定，仿佛我这样做是她的错。我没有办法，自己赌气也是跟母亲赌气："那就明晚还在这路口，到时候我会站在最后一节车厢的车门旁招手，一定可以看见。"我又一次要求母亲去铁路口，固执得有些残忍。我坚定地认为，是我的疏忽，才会没看见站在车窗外的母亲，那么近的距离怎么能看不见？</p>
+
+            <p>⑧那晚返程时，我早早走到最后一节车厢的车门旁。黑夜的火车如一条光带在铁轨上飘移，伏在玻璃上，我尽量睁大眼睛，可还是很难看清车窗外的景物。我想起顾城的诗句："黑夜给了我黑色的眼睛，我却用它寻找光明。"我的光明在哪里呢？</p>
+
+            <p>⑨此时，我又看见了"施家屯收费站"，心头撞鹿。内外温差大，车窗内起了一层薄薄的雾。我_____用手掌擦亮玻璃，双手_____眼眶遮挡车内的亮光，让自己也陷入与外面一样的黑夜，在微弱的光线下仔细搜索一景一物。我终于看见被车灯照出几米远模糊的路面轮廓，看见了村庄里萤火般的昏黄灯光。</p>
+
+            <p>⑩就在一个路口，我突然看见有束手电筒光在黑暗中照着火车！我刚要寻找并摇手呼喊，火车却过了！我忙掏出电话，颤抖着告诉母亲："妈，我看见你在路口啦！"母亲也说："我也看见你了。"两句话说完，车外再没有了村庄，母亲越来越远了。</p>
+
+            <p>⑪我在黑夜中的火车里不过是一晃而过的黑点，那个叫小米田的道口，不过三四米宽，而站在道口的母亲，她还没有一米六高啊……</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题练习</h3>
+                <div class="question-item">
+                    <p><strong>第14题（2分）：</strong>联系上下文，第⑨段括号内应当填入的词语依次是______、______。</p>
+                    <p style="color: #888; font-size: 0.9rem;">A．慌忙 &nbsp;&nbsp; B．急忙 &nbsp;&nbsp;&nbsp;&nbsp; A．捂住 &nbsp;&nbsp; B．罩住</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 60px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第15题（4分）：</strong>梳理文章内容，填写下列表格。</p>
+                    <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.95rem;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">情节</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">母亲的表现</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; background: #fce4ec; color: #c62828;">"我"的内心情感</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">提议见面</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">②</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">意外、为难</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">①</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">安慰我</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">悲凉、不甘、愧疚</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">如愿见面</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">③</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">紧张、激动</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">等待见面（返程）</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">④</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 120px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第16题（4分）：</strong>第⑦段中的两处"固执"含义是否相同？请结合文章内容简要分析。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第17题（3分）：</strong>下列对文章的理解分析不正确的一项是（&nbsp;&nbsp;&nbsp;&nbsp;）</p>
+                    <ul style="margin-left: 20px; color: #333; line-height: 2.2; margin-bottom: 10px;">
+                        <li>A．第①段画线句是环境描写，交代故事发生的时间和地点，推动故事情节发展。</li>
+                        <li>B．第③段加点词"沉默"表明母亲的话是在安慰"我"，她其实渴望见到"我"。</li>
+                        <li>C．本文语言生动华丽，饱含母子间互相牵挂、关心体贴的深厚情感，极具表现力。</li>
+                        <li>D．本文的记叙顺序是倒叙，且以第一人称视角，增强了文章的感染力。</li>
+                    </ul>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 60px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第18题（5分）：</strong>分析文章结尾的妙处。</p>
+                    <div class="quote-text">"我在黑夜中的火车里不过是一晃而过的黑点，那个叫小米田的道口，不过三四米宽，而站在道口的母亲，她还没有一米六高啊……"</div>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 210px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 3: 半个笔者 ==================== -->
+        <div class="article-section" id="a3">
+            <span class="part-label half">Part 4 真题三 · 社会关怀</span>
+            <h2>半个笔者</h2>
+            <p class="author">王选</p>
+            <p class="source-info">（选自《人民日报》，有删改）</p>
+
+            <p>①那天，我蹲在街角修鞋。</p>
+
+            <p>②我是个修鞋匠，在这座城市的角落里摆了十五年摊。十五年里，我见过形形色色的脚，却很少记住脚的主人。只有她，我一直记得。</p>
+
+            <p>③她第一次来，是五年前的冬天。那天飘着小雪，她拎着一双红色的高跟鞋，鞋跟磨偏了，鞋尖蹭掉了漆。她站在摊前，犹豫了很久才开口："师傅，能修好吗？"</p>
+
+            <p>④我接过鞋，翻看鞋底。鞋底已经磨得薄如纸，边缘开胶，鞋跟歪向一边。我说："鞋底该换了，鞋跟也得重做，费用不低。"她低下头，双手绞在一起，过了好一会儿才说："那……那先修鞋跟吧，鞋底还能穿。"</p>
+
+            <p>⑤我看了她一眼。<u>她穿着洗得发白的棉袄，袖口已经磨出了棉絮，脚上是一双旧棉鞋，鞋面沾着泥点。</u>我忽然有些不忍："鞋底也换了吧，我给你便宜点。"</p>
+
+            <p>⑥她抬起头，眼里有光，但很快又暗下去："还是……还是先修鞋跟吧。"</p>
+
+            <p>⑦我修好鞋跟，她付了钱，小心翼翼地把鞋装进布袋，走了。从那以后，她每隔两三个月来一次，每次都是那双红鞋，每次都是能省则省。</p>
+
+            <p>⑧后来，我断断续续从她口中知道了一些事。她叫阿芳，是这座城市的清洁工。每天凌晨四点上班，扫两条街，一直到中午十二点。下午去商场做保洁，晚上还要去一户人家帮忙做饭。她说，丈夫在工地摔伤了腰，干不了重活，两个孩子一个上初中，一个上小学，都在老家。</p>
+
+            <p>⑨"那你怎么不回去？"我问。</p>
+
+            <p>⑩她笑了笑："回去挣不到钱。在这里，我一个人打三份工，够孩子们上学。等他们考上大学，我就不干了。"她说这话时，眼角的皱纹挤在一起，像秋天干裂的土地。</p>
+
+            <p>⑪去年春天，她来的时候，破天荒地要换鞋底。她把鞋往我手里一塞："师傅，这次换最好的。"我打趣她："发财了？"她抿着嘴笑，眼角却湿了："闺女考上县一中了，我得体体面面去开家长会。"</p>
+
+            <p>⑫那是她唯一一次换了整双鞋底。新鞋底厚实，走起路来无声无息。她穿上，在摊前走了几步，像个孩子一样笑了："轻了，走路都轻了。"</p>
+
+            <p>⑬后来，她有半年没来。</p>
+
+            <p>⑭再见到她，是去年秋天。她瘦了很多，头发白了一半。她没有带鞋，只是站在摊前，问我生意好不好。我说还行。她点点头，从口袋里掏出一个橘子递给我："师傅，我要回去了。丈夫的病又重了，我得回去照顾他。"</p>
+
+            <p>⑮她把那双红鞋从布袋里拿出来，鞋底还好好的，鞋面却旧得不成样子了。她摸了摸鞋面，说："这鞋跟了我八年了。刚来城里时买的，二十块钱。穿着它，我扫过每一条街，擦过每一层楼，洗过每一个碗。"她把鞋放在我手里："师傅，送给你吧。你是好人。"</p>
+
+            <p>⑯我还没来得及说话，她已经转身走了。背影在秋风里缩得很小很小，像一片被风吹落的叶子。</p>
+
+            <p>⑰那双红鞋，我至今留在摊上。每当有人问起，我就给他们讲阿芳的故事。</p>
+
+            <p>⑱她在这座城市里，扫了八年街，擦了八年楼，洗了八年碗，却始终没有一双完整的鞋。</p>
+
+            <p>⑲她叫阿芳。这座城市里，有无数个阿芳。</p>
+
+            <div class="exercise-box">
+                <h3>📝 真题练习</h3>
+                <div class="question-item">
+                    <p><strong>第15题（3分）：</strong>文章第⑤段画线句运用了什么描写方法？有什么作用？</p>
+                    <div class="quote-text">"她穿着洗得发白的棉袄，袖口已经磨出了棉絮，脚上是一双旧棉鞋，鞋面沾着泥点。"</div>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 120px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第16题（4分）：</strong>文中阿芳换鞋底前后的态度有何变化？请结合文章内容简要分析。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第17题（4分）：</strong>文章第⑮段写道："这鞋跟了我八年了。刚来城里时买的，二十块钱。穿着它，我扫过每一条街，擦过每一层楼，洗过每一个碗。"这句话有什么深刻含义？</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 180px;"></div>
+                </div>
+
+                <div class="question-item">
+                    <p><strong>第18题（5分）：</strong>文章结尾说："这座城市里，有无数个阿芳。"请结合全文主旨，谈谈你对这句话的理解。</p>
+                </div>
+                <div class="answer-space">
+                    <p>答题区：</p>
+                    <div class="writing-lines" style="min-height: 210px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Article 4: 那个夏天 (Material) ==================== -->
+        <div class="divider-text"><span>素材阅读</span></div>
+
+        <div class="material-section" id="a4">
+            <span class="part-label summer">Part 5 素材积累 · 成长足迹</span>
+            <h2>那个夏天</h2>
+            <p class="author">张佳玮</p>
+            <p class="source-info">（当代散文，选自《读者》）</p>
+
+            <p>①我学骑自行车，是在十二岁那年的夏天。</p>
+
+            <p>②说起来有些丢人——别的孩子七八岁就会的事，我拖到了十二岁。不是我不愿意学，是我怕摔。小时候被摔过几次，心里留下了阴影，看见两个轮子的东西就腿软。</p>
+
+            <p>③那年暑假，外公来我家小住。他看我整天窝在家里看书，便说："走，学车去。"我说我不会。他说："就是不会才要学。"</p>
+
+            <p>④那辆自行车是爸爸小时候骑的"二八大杠"，漆已经掉了一半，链条也松松垮垮的。外公推着它，带我到小区后面的一条空路上。路上没什么车，两边是齐腰高的杂草。外公说："这里好，摔了也不疼。"</p>
+
+            <p>⑤我跨上车座，脚勉强够到踏板。外公在后面扶着后座，说："往前骑，我在后面呢。"我小心翼翼地蹬了几圈，车摇摇晃晃地往前走。风吹过来，带着夏天杂草特有的腥味儿，我忽然觉得学车好像也没那么可怕。</p>
+
+            <p>⑥但好景不长。骑了大概十几米，外公不知什么时候松了手。我回头一看，心一下慌了，车头猛地歪向一边。我连人带车摔进草里，膝盖磕在车架上，疼得倒吸一口冷气。</p>
+
+            <p>⑦我坐在草里，眼泪差点掉下来。不是疼的，是气的——气外公为什么松手。外公走过来，不扶我，也不道歉，只说了一句："你刚才能骑十几米了，不错。"</p>
+
+            <p>⑧我气鼓鼓地爬起来，把车扶起来。外公又说："再来。"我说我不想学了。外公看着我，说："你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</p>
+
+            <p>⑨我愣了一下。那句话像一根针，扎进了我心里最虚的地方。我重新跨上车，外公在后面扶着。这次我骑得更远了一些。他又松手了，我歪了几下，居然没摔。再回头，他已经站在好远的地方了。</p>
+
+            <p>⑩就这样，练了一个下午。从一开始他扶着骑，到他松手我摔，再到他松手我不摔。最后一次，他松手后我骑了快一百米，到路的尽头才停下来。我转过头，看见外公站在远处的路口，朝我竖起了大拇指。</p>
+
+            <p>⑪那天回家，我的膝盖上多了好几块淤青，但心里特别畅快。那个夏天剩下的日子里，我骑着那辆破旧的"二八大杠"，把小区周围的路都骑了个遍。</p>
+
+            <p>⑫多年以后，我遇到了很多比学车难得多的事情——考试失利、比赛落选、第一次离家远行。每当觉得扛不下去的时候，我就会想起那个夏天的下午，想起外公说的那句话：</p>
+
+            <p class="no-indent">⑬"你怕的不是摔跤，是摔了之后没人扶你。但你早晚得学会没人扶也自己站起来。"</p>
+
+            <p class="no-indent">⑭然后我就咬咬牙，自己站起来了。</p>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson05-part5.html">← Part 5 素材积累</a>
+            <a href="lesson05.html">返回课程首页</a>
+        </div>
+    </div>
+</body>
+</html>
