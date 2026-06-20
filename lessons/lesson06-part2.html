@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' https://player.bilibili.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src 'self' https://player.bilibili.com">
+    <title>第 06 课 第 2 部分 解题演示 - 初中现代文阅读专题课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lesson-header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .lesson-header h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .part-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .progress-step:hover {
+            opacity: 0.85;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section h2 {
+            color: #ff6f00;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fff3e0;
+        }
+
+        .content-section h3 {
+            color: #e65100;
+            font-size: 1.15rem;
+            margin: 20px 0 12px;
+        }
+
+        .content-section p, .content-section li {
+            color: #555;
+            line-height: 2;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 25px;
+            color: #555;
+            line-height: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pre-tip {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .pre-tip h3 {
+            color: #bf360c;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .pre-tip ol, .pre-tip ul {
+            margin-left: 25px;
+            color: #555;
+            line-height: 2;
+        }
+
+        .summary-card {
+            background: #fff3e0;
+            border-left: 4px solid #ff6f00;
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .summary-card h4 {
+            color: #bf360c;
+            margin-bottom: 10px;
+        }
+
+        .summary-card p, .summary-card li {
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .formula-box .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .step-list {
+            counter-reset: step;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .step-list li {
+            counter-increment: step;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: #fff8e1;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .key-point {
+            background: #fff8e1;
+            border-left: 4px solid #ffb74d;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .key-point strong {
+            color: #e65100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-links a {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ff6f00;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: #ff6f00;
+            color: white;
+        }
+
+        .article-box {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            font-family: "Songti SC", "宋体", "Noto Serif CJK SC", serif;
+        }
+
+        .article-box h3 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .article-box p {
+            text-indent: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 25px 0;
+        }
+
+        .question-list {
+            margin: 15px 0;
+        }
+
+        .question-item {
+            padding: 10px 0;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .q-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #ff6f00;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">&larr; 返回首页</a>
+    </nav>
+
+    <div class="container">
+        <!-- Progress indicator -->
+        <div class="progress-indicator">
+            <a href="lesson06-part1.html" class="progress-step">Part 1 复习回顾</a>
+            <a href="lesson06-part2.html" class="progress-step active">Part 2 解题演示</a>
+        </div>
+
+        <div class="lesson-header">
+            <span class="lesson-number">第 06 课</span>
+            <span class="part-badge">Part 2</span>
+            <h1>解题演示</h1>
+            <p style="color: #666; margin-top: 15px; font-size: 1rem;">观看梓墨老师的完整解题示范，学习如何将知识转化为答题能力。</p>
+        </div>
+
+        <!-- ==================== 看前提示 ==================== -->
+        <div class="content-section">
+            <h2>📋 看前提示</h2>
+            <p>在观看视频之前，请先通读下面的原文和题目，<strong>尝试自己作答</strong>，再带着问题去看演示，效果会更好。</p>
+
+            <!-- Original article -->
+            <div class="article-box">
+                <h3>📖 阅读下面的文章，完成下列小题。</h3>
+                <h3 style="text-align: center; font-size: 1.3rem; margin: 20px 0;">目光里的松阳</h3>
+                <p style="text-align: center; color: #999; margin-bottom: 20px;">彭程</p>
+
+                <p>①"按节下松阳，清江响铙吹。"诗人王维的诗句给深藏在浙西南群山中的松阳注入了一种悠久厚重的历史感。僻远的地理位置，让松阳有幸保存下众多的古村落，也保存了一个良好的生态环境。</p>
+
+                <p>②这里，蓝天白云是天空的常态，缭绕的云雾是山中的常客；溪水澄碧清亮，茶园舒缓开阔，桂花浓香飘逸。行走于山水间，仿佛置身于一幅立体的水墨长卷中。更为可贵的是，这巨幅山水画中，保留了一百多座格局完整的传统村落。这些山水环绕、林木蓊郁的村落，依据地形的不同，或倚靠青山，或襟带绿水，或俯瞰幽谷，散布在县境各处。</p>
+
+                <p>③来到村头，或者是一道溪流，溪水汩汩有声，清净见底；或者有一棵甚至几棵高大粗壮的古树，伸展的树冠遮住了一大片地面。再向里走，街巷里大青石铺就的石径弯曲幽深，石径的边沿和墙脚交界处，覆盖着一层湿滑的绿苔；街巷两侧分布着宗祠、水井、水槽、晒谷坛……这些在别处早已经消亡的典型的农村建筑和器具，仿佛一位位耄耋老者，虽历经沧桑却安然无恙。随意推开一扇老旧的门板，走进一座老宅，都会看到曲折的廊道、萦回的天井，地面的方砖大半已经龟裂，纹路纷乱；房屋里外上下，石雕、木雕或彩绘到处可见，构图生动，笔法细腻，堪称精美的艺术品。</p>
+
+                <p>④古村落弥漫着传统美学的韵味和情致，同时，在种种美的样貌形态背后，还有丰厚的蕴含。石雕、木雕和彩绘，内容多取材于神话传说或传统典籍，八仙过海、岁寒三友、松下问童子、鲤鱼跳龙门……，笔法精致、细腻、生动，有祝祷的寓意，有教化的作用；"耕读传家"被刻写无数古宅老院的匾额上，并扩展成"耕读传家久，诗书继世长"镌刻于楹柱上，让孩子们在耳濡目染中受到熏陶。杨家堂村是明代开国第一文臣宋濂后裔聚居地，文风昌盛，绵延不衰，这不能不说是先人的文魂引领的结果。古村落中这些传承数千年的文化价值，滋润着一代代人的灵魂。</p>
+
+                <p>⑤仿佛是上天的特意安排，在遥远宁静的群山之间，安放一种古朴传统的美好，让人们真切地领悟到什么才是诗意的生存。今天，这里的人们也没有辜负上苍的厚爱。</p>
+
+                <p>⑥西屏街是一条明清老街，长约两公里，青石板的街路两旁，鳞次栉比地排列着下店上宅式的几十家二层木结构店铺。通过设施改建，西屏街既提高了居住舒适度，又较为完好地保存了当年的样子，堪称街区"活态传承"的样本。位于半山腰处的平田村，在古村落改造中强调"原真性保护"，二十八幢老屋被改建成不同档次的民宿，以品位不俗、知名度高吸引着大批的游客。</p>
+
+                <p>⑦但是，现代化浪潮席卷之处，一应城市乡村都无所逃遁。这样的古村落在不少地方或者被拆除，或者住户被迁走，只留下徒有"古老"外壳、毫无"人气"的所谓的旅游项目。喧嚣和躁动，忙乱和焦虑，速度和效益，织就一张无形巨网，让人们灵性窒息，疲惫不堪。相形之下，这里静谧古雅的氛围、诗意的生活方式和浓郁的人文气息，便愈发显得可贵。</p>
+
+                <p style="text-align: right; color: #999; font-size: 0.9rem; margin-top: 10px;">（选自《人民日报》，有删改）</p>
+
+                <div class="divider"></div>
+
+                <div class="question-list">
+                    <div class="question-item">
+                        <span class="q-num">1.</span> 第④段中，"丰厚的蕴含"包括哪些具体内容？
+                    </div>
+                    <div class="question-item">
+                        <span class="q-num">2.</span> 赏析画横线语句的表达效果。<br>
+                        <span style="margin-left: 25px;">喧嚣和躁动，忙乱和焦虑，速度和效益，织就一张无形巨网，让人们灵性窒息，疲惫不堪。</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="q-num">3.</span> 作者通过"目光里的松阳"，表达了怎样的观点？
+                    </div>
+                </div>
+            </div>
+
+            <div class="pre-tip">
+                <h3>👀 观看时重点关注</h3>
+                <ol>
+                    <li>梓墨老师拿到一篇文章后，<strong>第一步做什么</strong>？</li>
+                    <li>细读文章时，他<strong>在哪些地方做了标注</strong>？标注了什么内容？</li>
+                    <li>他是如何从文章内容中<strong>推导出多个观点</strong>的？（不止一个！）</li>
+                    <li>文章标题"目光里的松阳"——为什么是"目光里"？解题后你理解了吗？</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ==================== Video ==================== -->
+        <div class="content-section">
+            <h2>🎬 观看视频</h2>
+            <p>请认真观看以下视频，跟随梓墨老师一步步完成解题过程。</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1TC4y1x7ZB&page=1&high_quality=1" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- ==================== 看后梳理 ==================== -->
+        <div class="content-section">
+            <h2>📝 看后梳理</h2>
+            <p>视频看完后，对照以下梳理，检查你是否掌握了所有要点。</p>
+
+            <!-- 解题方法回顾 -->
+            <h3>一、解题方法框架</h3>
+
+            <div class="formula-box">
+                <div class="formula">表达技巧 + 基本思想 + 解题方法</div>
+                <div class="subtitle">三者构成完整的解题能力</div>
+            </div>
+
+            <div class="summary-card">
+                <h4>解题三大意识</h4>
+                <p><strong>标题意识</strong>——标题是文章的眼睛，暗示或直接点明主旨</p>
+                <p><strong>主角意识</strong>——明确文章的写作对象是谁/什么</p>
+                <p><strong>语境意识</strong>——关注语言环境，理解词句在上下文中的含义</p>
+            </div>
+
+            <div class="summary-card">
+                <h4>解题六步法</h4>
+                <ol class="step-list">
+                    <li><strong>分析标题</strong>——判断写作对象，预测文章内容</li>
+                    <li><strong>标注段落</strong>——有序号则跳过</li>
+                    <li><strong>分析题目</strong>——圈画关键词，明确题目问什么</li>
+                    <li><strong>细读文章</strong>——忘掉题目，做标注、写感想，带着三大意识阅读</li>
+                    <li><strong>做题</strong>——结合分析内容推导和直接寻找线索</li>
+                    <li><strong>检查</strong>——（时间允许时）</li>
+                </ol>
+            </div>
+
+            <div class="key-point">
+                <strong>时间分配：</strong>前几步（分析标题、细读文章）要花更多时间，做题也花对应的时间。两部分要分开对待。
+            </div>
+
+            <!-- 文章分析 -->
+            <h3>二、《目光里的松阳》文章结构</h3>
+
+            <div class="summary-card">
+                <h4>文章出处：人民日报</h4>
+                <p>→ 社会关注类文章，关注点与社会、民生、传统文化相关</p>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem;">
+                <thead>
+                    <tr style="background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%); color: white;">
+                        <th style="padding: 10px; text-align: left; border-radius: 8px 0 0 0;">段落</th>
+                        <th style="padding: 10px; text-align: left;">内容</th>
+                        <th style="padding: 10px; text-align: left; border-radius: 0 8px 0 0;">分析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #fff8e1;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第①段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">王维诗句引出松阳，偏远地理位置保存了古村落和生态</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">引出下文，点明松阳是地点</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第②段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">蓝天白云、溪水澄碧、茶园舒缓……保留一百多座传统村落</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">自然景观</td>
+                    </tr>
+                    <tr style="background: #fff8e1;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第③段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">古树、石径、宗祠、石雕木雕彩绘……堪称精美的艺术品</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">人文景观</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第④段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">传统美学韵味，文化价值滋润一代代人</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">文化价值（承上深化）</td>
+                    </tr>
+                    <tr style="background: #fff8e1;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第⑤段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">上天特意安排，人们没有辜负厚爱</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">过渡</td>
+                    </tr>
+                    <tr style="background: #fff3e0;">
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">第⑥段</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">西平街改造：保留原样 + 提高舒适度，原真性保护</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #ffe0b2;">改造实践（正面案例）</td>
+                    </tr>
+                    <tr style="background: #fff8e1;">
+                        <td style="padding: 10px;">第⑦段</td>
+                        <td style="padding: 10px;">批判粗暴改造，肯定松阳的可贵</td>
+                        <td style="padding: 10px;">对比批判 + 点题（转折后是重点）</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 三个观点 -->
+            <h3>三、文章表达的三个观点（答题要点）</h3>
+
+            <div class="summary-card">
+                <h4>观点一：古村落具有美学价值和文化价值</h4>
+                <p>古村落既有自然景观和人文景观构成的美学价值，也有传统文化滋润人心的文化价值，应当加以保护。</p>
+                <p style="font-size: 0.85rem; color: #999;">来源：分析内容推导（第②③④段）</p>
+            </div>
+
+            <div class="summary-card">
+                <h4>观点二：古村落改造要兼顾传统保护与人居环境</h4>
+                <p>在古村落的改造和保护过程中，既要保护传统文化元素（原真性保护），又要考虑现代人居环境，实现活态传承。</p>
+                <p style="font-size: 0.85rem; color: #999;">来源：分析内容推导（第⑥⑦段）</p>
+            </div>
+
+            <div class="summary-card">
+                <h4>观点三：诗意生活是现代社会弥足珍贵的东西</h4>
+                <p>静谧古雅的氛围、诗意的生活方式和浓郁的人文气息，是现代社会可贵的东西，值得珍惜。</p>
+                <p style="font-size: 0.85rem; color: #999;">来源：直接寻找线索（结尾句改写）</p>
+            </div>
+
+            <div class="key-point">
+                <strong>解题关键：</strong>不要只想到一个点！分析内容推导可以得出观点一和观点二，直接寻找线索（结尾句）可以得出观点三。三个观点缺一不可。
+            </div>
+
+            <!-- 方法总结 -->
+            <h3>四、解题方法总结</h3>
+
+            <div class="summary-card">
+                <h4>分析内容推导（得出观点一、二）</h4>
+                <ul>
+                    <li>分析文章结构：自然 → 人文 → 文化价值 → 改造 → 对比</li>
+                    <li>关注写作背景：人民日报 → 社会关注</li>
+                    <li>分层次提炼：每个层次都可能对应一个观点</li>
+                </ul>
+            </div>
+
+            <div class="summary-card">
+                <h4>直接寻找线索（得出观点三）</h4>
+                <ul>
+                    <li>看结尾：最后一段转折后的句子直接改写</li>
+                    <li>看标题："目光里的松阳"——为什么目光里只有松阳？因为松阳有美景、有文化、有诗意生活</li>
+                </ul>
+            </div>
+
+            <div class="key-point">
+                <strong>核心方法：</strong>先用"直接寻找线索"快速定位（看标题、首尾、议论抒情句），再用"分析内容推导"验证补充（分析结构、层次、背景），两相结合，确保答案完整。
+            </div>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="lesson06-part1.html">← Part 1 复习回顾</a>
+            <a href="lesson06.html">返回课程首页</a>
+            <a href="../index.html">返回首页</a>
+        </div>
+    </div>
+</body>
+</html>
